@@ -17,7 +17,7 @@ footage/raw/
 *.zip
 
 # Generated / reproducible
-node_modules/
+node_modules
 .wrangler/
 .venv/
 __pycache__/
