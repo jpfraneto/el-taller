@@ -1,0 +1,66 @@
+# Camera originals and heavy media: never in git (raw/ is sacred and lives on disk/backups)
+footage/raw/
+*.mov
+*.MOV
+*.mp4
+*.MP4
+*.m4v
+*.wav
+*.m4a
+*.mp3
+*.aac
+*.webm
+*.mkv
+*.heic
+*.HEIC
+*.psd
+*.zip
+
+# Generated / reproducible
+node_modules/
+.wrangler/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+footage/**/proxy/
+footage/**/reels/
+footage/**/cover/frames/
+footage/**/.plans/
+footage/youtube/
+footage/tmp/
+footage/output/
+webs/_assets/
+footage/el-taller/leads/shots/
+footage/el-taller/leads/raw*.json
+
+# Secrets: never commit
+.dev.vars
+*.env
+.env*
+!.dev.vars.example
+wa-auth/
+
+# Pipeline scratch (frames, intermediates)
+.work/
+footage/**/transcript/*.json
+footage/**/muestra/
+
+# Secrets (never in git)
+.dev.vars
+footage/el-taller/.openrouter_key
+footage/**/.equipo_key
+footage/**/.pili_key
+footage/**/.panel_key
+public/taller/s/
+footage/**/semilla/.codigo
+.publish.lock
+
+# render_earth.py frames (temporary, ~2 GB per reel)
+.earth/
+.seed.sql
+.cache*/
+.cache*.json
+footage/tools/.cutout
+footage/tools/.facescore
+footage/tools/.airdrop

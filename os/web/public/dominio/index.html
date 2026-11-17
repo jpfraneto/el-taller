@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tu dominio · El Taller de Rubén</title>
+<meta name="description" content="Compra tu dominio .cl en NIC.cl y conéctalo a Cloudflare. Cuatro pasos, unos 15 minutos.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El Taller de Rubén">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Tu dominio, en 4 pasos">
+<meta property="og:description" content="Compra tu .cl en NIC.cl y conéctalo a Cloudflare. Es tuyo, a tu nombre.">
+<meta name="theme-color" content="#14110f">
+<link rel="icon" href="/ruben/icono.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #14110f; --fg: #f4efe6; --mute: rgba(244,239,230,.64); --y: #ffd23f; --line: rgba(255,255,255,.13); --card: #1d1916;
+    --ok: #5fd38d; --head: "Inter Tight", "Inter", system-ui, sans-serif; --sans: "Inter", system-ui, -apple-system, sans-serif; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: var(--y); }
+  main { max-width: 560px; margin: 0 auto; padding: 18px 20px 48px; }
+  .marca { font-family: var(--head); font-weight: 900; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--fg); text-decoration: none; }
+  .kicker { font-family: var(--head); font-weight: 900; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--y); margin: 34px 0 8px; }
+  h1 { font-family: var(--head); font-weight: 900; text-transform: uppercase; font-size: clamp(36px, 10.5vw, 56px); line-height: .92; letter-spacing: -0.02em; margin: 0; }
+  m { display: inline-block; background: var(--y); color: var(--bg); padding: 0 .12em; transform: skew(-8deg); }
+  m > span { display: inline-block; transform: skew(8deg); }
+  .lede { font-size: 16px; line-height: 1.5; color: var(--mute); margin: 14px 0 0; }
+  .lede b { color: var(--fg); }
+  .costos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 20px 0 0; }
+  .costos div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px; font-size: 12px; color: var(--mute); line-height: 1.3; }
+  .costos b { display: block; font-family: var(--head); font-weight: 900; font-size: 19px; color: var(--fg); margin-bottom: 2px; }
+
+  .barra { display: flex; gap: 6px; margin: 28px 0 6px; }
+  .barra i { flex: 1; height: 6px; border-radius: 3px; background: var(--line); transition: background .3s; }
+  .barra i.on { background: var(--y); }
+  .cuenta { font-size: 13px; color: var(--mute); }
+
+  .paso { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 16px; margin-top: 14px; }
+  .paso.hecho { border-color: rgba(255,210,63,.5); }
+  .paso header { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; }
+  .n { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--y); color: var(--bg);
+    font-family: var(--head); font-weight: 900; font-size: 20px; }
+  .paso.hecho .n { background: var(--ok); }
+  h2 { font-family: var(--head); font-weight: 900; font-size: 22px; line-height: 1.05; margin: 2px 0 4px; text-transform: uppercase; }
+  .para { margin: 0; font-size: 14px; color: var(--mute); line-height: 1.4; }
+  ol { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 8px; font-size: 15px; line-height: 1.5; }
+  code, .ui { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; background: rgba(255,255,255,.08);
+    border-radius: 5px; padding: 1px 5px; white-space: nowrap; }
+  .ui { font-family: var(--sans); font-weight: 600; font-size: 14px; }
+  .ojo { margin: 12px 0 0; font-size: 13px; line-height: 1.45; color: var(--mute); border-left: 3px solid var(--y); padding-left: 10px; }
+  .ojo b { color: var(--fg); }
+  .listo { margin-top: 14px; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; cursor: pointer; }
+  .listo input { width: 22px; height: 22px; accent-color: var(--y); }
+  .ir { display: inline-block; margin-top: 12px; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--y); color: var(--y);
+    text-decoration: none; font-weight: 700; font-size: 14px; }
+
+  .probar { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin-top: 12px; }
+  .probar input { font: inherit; font-size: 16px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: #0f0d0b; color: var(--fg); }
+  .probar button, .avisar { border: 0; border-radius: 12px; background: var(--y); color: var(--bg); font-family: var(--head); font-weight: 900;
+    font-size: 16px; padding: 0 16px; text-transform: uppercase; cursor: pointer; }
+  .resultado { margin-top: 12px; font-size: 15px; line-height: 1.5; min-height: 1px; }
+  .resultado.ok { color: var(--ok); }
+  .resultado .ns { font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: var(--mute); }
+  .avisar { display: flex; justify-content: center; align-items: center; padding: 16px; margin-top: 14px; text-decoration: none; border-radius: 999px; font-size: 17px; }
+  .avisar[hidden] { display: none; }
+  .pie { margin-top: 36px; text-align: center; font-size: 12px; color: var(--mute); line-height: 1.6; }
+  .pie a { color: var(--mute); }
+</style>
+</head>
+<body>
+<main>
+  <a class="marca" href="/">El Taller de Rubén</a>
+
+  <p class="kicker">quest · tu dominio</p>
+  <h1>Tu dirección en internet, <m><span>a tu nombre</span></m></h1>
+  <p class="lede">Lo compras en <b>NIC.cl</b> (el registro oficial de los .cl) y lo conectas a <b>Cloudflare</b> (donde vive tu
+    página, gratis). Es tuyo: si mañana cambias todo, el dominio sigue siendo tuyo.</p>
+  <div class="costos">
+    <div><b>$9.990</b>el año, en NIC.cl</div>
+    <div><b>$0</b>Cloudflare, plan Free</div>
+    <div><b>15 min</b>y después esperar unas horas</div>
+  </div>
+
+  <div class="barra" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="cuenta" id="cuenta">0 de 4</div>
+
+  <section class="paso" data-paso="1">
+    <header><span class="n">1</span><div><h2>Elige y compra</h2><p class="para">En NIC.cl, a tu nombre.</p></div></header>
+    <ol>
+      <li>Entra a <a href="https://www.nic.cl" target="_blank" rel="noopener">nic.cl</a> y busca el nombre que quieres (por ejemplo <code>tumarca.cl</code>).</li>
+      <li>Si está libre, inscríbelo. Te pide crear una cuenta y los datos del titular: <b>pon los tuyos</b>, no los de otra persona.</li>
+      <li>Paga. Llega un correo de NIC.cl confirmando que el dominio es tuyo.</li>
+    </ol>
+    <p class="ojo"><b>Corto y fácil de decir.</b> Lo vas a decir en voz alta y escribir en historias: sin guiones si se puede, sin números raros.</p>
+    <label class="listo"><input type="checkbox"> Ya es mío</label>
+  </section>
+
+  <section class="paso" data-paso="2">
+    <header><span class="n">2</span><div><h2>Agrégalo a Cloudflare</h2><p class="para">Primero aquí, después en NIC.cl.</p></div></header>
+    <ol>
+      <li>Crea tu cuenta gratis en <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">cloudflare.com</a>.</li>
+      <li>Ve a <span class="ui">Domains</span> → botón azul <span class="ui">Add domain</span> → <span class="ui">Connect a domain</span>.</li>
+      <li>Escribe tu dominio. Lo demás déjalo como viene → <span class="ui">Continue</span>.</li>
+      <li>Elige <b>Free ($0)</b>: el botón blanco de la izquierda. El <b>Pro</b> viene destacado en azul y cuesta US$20 al mes: no lo necesitas.</li>
+      <li>Si en la lista aparece <code>www → urlfwd1.nic.cl</code>, toca <span class="ui">Delete</span>: es la página de espera que pone NIC.cl.</li>
+      <li><span class="ui">Continue to activation</span>. Te muestra <b>2 nameservers</b>, así: <code>nombre.ns.cloudflare.com</code>. Cópialos tal cual.</li>
+    </ol>
+    <p class="ojo"><b>¿Por qué primero Cloudflare?</b> Porque NIC.cl revisa que esos servidores existan y respondan por tu dominio
+      antes de aceptarlos.</p>
+    <label class="listo"><input type="checkbox"> Tengo los 2 nameservers</label>
+  </section>
+
+  <section class="paso" data-paso="3">
+    <header><span class="n">3</span><div><h2>Pégalos en NIC.cl</h2><p class="para">Le dices a internet dónde vive tu dominio.</p></div></header>
+    <ol>
+      <li>Entra a <a href="https://clientes.nic.cl" target="_blank" rel="noopener">clientes.nic.cl</a> → <span class="ui">Mis dominios</span> → toca tu dominio.</li>
+      <li>Baja a <b>4. Configuración Técnica</b>. Un dominio nuevo viene en <span class="ui">Redireccionamiento Web</span>: marca <span class="ui">Servidores DNS</span>.</li>
+      <li>En <span class="ui">Nombre de Servidor</span> escribe el primero de Cloudflare, sin punto al final → <span class="ui">Agregar Servidor de Nombre</span> → en el campo nuevo, el segundo.</li>
+      <li>Deja sin marcar <span class="ui">Configurar a NIC Chile como servidor secundario</span>.</li>
+      <li>Abajo, botón verde <span class="ui">Actualizar datos de dominio</span>. Sale: "La modificación fue realizada correctamente".</li>
+    </ol>
+    <label class="listo"><input type="checkbox"> Los pegué y guardé</label>
+  </section>
+
+  <section class="paso" data-paso="4">
+    <header><span class="n">4</span><div><h2>Comprueba</h2><p class="para">Puede tardar de minutos a unas horas.</p></div></header>
+    <form class="probar" id="probar">
+      <input name="dominio" placeholder="tumarca.cl" autocomplete="off" autocapitalize="none" spellcheck="false" inputmode="url" required>
+      <button type="submit">Comprobar</button>
+    </form>
+    <div class="resultado" id="resultado" role="status"></div>
+    <a class="avisar" id="avisar" hidden target="_blank" rel="noopener" href="#">Avisarle a Rubén</a>
+  </section>
+
+  <p class="pie">Cuando tu dominio apunta a Cloudflare, tu página se publica ahí: tu cuenta, tu dominio, tu código.<br>
+    <a href="/">El Taller de Rubén</a> · una foto de tu marca, con dirección e intención</p>
+</main>
+<script>
+  const $ = (s) => document.querySelector(s);
+  const pasos = [...document.querySelectorAll('.paso')];
+  const guardado = (() => { try { return JSON.parse(localStorage.getItem('quest-dominio') || '{}'); } catch { return {}; } })();
+
+  function pintar() {
+    const hechos = pasos.filter((p) => p.classList.contains('hecho')).length;
+    document.querySelectorAll('.barra i').forEach((i, n) => i.classList.toggle('on', n < hechos));
+    $('#cuenta').textContent = hechos === 4 ? '4 de 4 · listo' : `${hechos} de 4`;
+  }
+  function marcar(paso, si) {
+    paso.classList.toggle('hecho', si);
+    const c = paso.querySelector('.listo input');
+    if (c) c.checked = si;
+    guardado[paso.dataset.paso] = si;
+    try { localStorage.setItem('quest-dominio', JSON.stringify(guardado)); } catch {}
+    pintar();
+  }
+  pasos.forEach((p) => {
+    const c = p.querySelector('.listo input');
+    if (c) c.addEventListener('change', () => marcar(p, c.checked));
+    if (guardado[p.dataset.paso]) marcar(p, true);
+  });
+
+  // The real check: ask a public DNS (Cloudflare's DNS-over-HTTPS) which nameservers the domain has right now.
+  $('#probar').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const d = e.target.dominio.value.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
+    const r = $('#resultado');
+    r.className = 'resultado';
+    r.textContent = 'Mirando…';
+    $('#avisar').hidden = true;
+    marcar(pasos[3], false);
+    try {
+      const j = await fetch(`https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(d)}&type=NS`, { headers: { accept: 'application/dns-json' } }).then((x) => x.json());
+      const ns = (j.Answer || []).filter((a) => a.type === 2).map((a) => a.data.replace(/\.$/, ''));
+      if (j.Status === 3) {
+        r.textContent = `${d} todavía no existe en internet. ¿Terminaste de comprarlo? (NIC.cl puede tardar un rato en publicarlo.)`;
+      } else if (ns.length && ns.every((n) => n.endsWith('.ns.cloudflare.com'))) {
+        r.className = 'resultado ok';
+        r.innerHTML = `✓ <b>${d}</b> ya apunta a Cloudflare.<div class="ns">${ns.join(' · ')}</div>`;
+        marcar(pasos[3], true);
+        $('#avisar').href = `https://wa.me/56948455809?text=${encodeURIComponent(`Hola Rubén, mi dominio ${d} ya apunta a Cloudflare 🙌`)}`;
+        $('#avisar').hidden = false;
+      } else if (ns.length) {
+        r.innerHTML = `Todavía apunta a otro lado:<div class="ns">${ns.join(' · ')}</div>Si ya pegaste los de Cloudflare, espera un rato y vuelve a comprobar.`;
+      } else {
+        r.textContent = 'No encontré sus servidores todavía. Espera un rato y vuelve a comprobar.';
+      }
+    } catch {
+      r.textContent = 'No pude comprobar ahora. Prueba de nuevo en un minuto.';
+    }
+  });
+</script>
+</body>
+</html>

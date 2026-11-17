@@ -1,0 +1,496 @@
+{
+ "ep": "05",
+ "name": "Umbral Sur",
+ "accent": "#DBD2C6",
+ "accent_ink": "#111111",
+ "fixes": [
+  [
+   "isaac",
+   "Isaacs"
+  ],
+  [
+   "umbral sur",
+   "Umbral Sur"
+  ],
+  [
+   "un umbral sur",
+   "Umbral Sur"
+  ],
+  [
+   "paridas",
+   "partidas"
+  ],
+  [
+   "poco burrí",
+   "popurrí"
+  ],
+  [
+   "chatgtp",
+   "ChatGPT"
+  ],
+  [
+   "gemini",
+   "Gemini"
+  ],
+  [
+   "ceo",
+   "CEO"
+  ],
+  [
+   "whatsapp",
+   "WhatsApp"
+  ],
+  [
+   "se grave",
+   "se grabe"
+  ],
+  [
+   "estáis",
+   "estái"
+  ],
+  [
+   "podéis",
+   "podís"
+  ],
+  [
+   "veis",
+   "veís"
+  ],
+  [
+   "cubos",
+   "cupos"
+  ],
+  [
+   "como es la confianza",
+   "como este la confianza"
+  ],
+  [
+   "detrás del proyecto",
+   "detrás de este proyecto"
+  ],
+  [
+   "me está ahí ofreciendo",
+   "me estái ofreciendo"
+  ],
+  [
+   "sensorial muéstramelo",
+   "sensorial muéstrame, loco"
+  ],
+  [
+   "analiza el proyecto",
+   "analiza este proyecto"
+  ],
+  [
+   "empieza el tema",
+   "empieza este tema"
+  ],
+  [
+   "podría ir a vender",
+   "podría vender"
+  ],
+  [
+   "inteligencia artificial",
+   "inteligencia artificial"
+  ]
+ ],
+ "reels": [
+  {
+   "id": "01-el-caso",
+   "act": "1/3",
+   "hook": [
+    "BORRA EL",
+    "LOGO DE",
+    "<m>GEMINI</m>"
+   ],
+   "pieces": [
+    {
+     "t": 126,
+     "say": "Incluso algunas tienen el logo de Gemini. Grave error."
+    },
+    {
+     "t": 103.4,
+     "say": "hoy día vamos a trabajar con Umbral Sur, que es una empresa del sur de Chile que vende refugios modulares."
+    },
+    {
+     "t": 122,
+     "say": "pasa mucho que en un principio hay un popurrí de imágenes generadas con inteligencia artificial."
+    },
+    {
+     "t": 160,
+     "say": "después Instagram empieza a catalogar nuestra cuenta como una cuenta de inteligencia artificial."
+    },
+    {
+     "t": 168,
+     "say": "Generalmente existe esta resistencia a la inteligencia artificial."
+    },
+    {
+     "t": 190,
+     "say": "Y sobre todo cuando te están vendiendo una casa, empieza este tema de la confianza."
+    },
+    {
+     "t": 200,
+     "say": "¿Quién es la persona que va a construir?"
+    },
+    {
+     "t": 218,
+     "say": "Tenemos una persona que pone su cara detrás de esta marca, lo cual yo valoro muchísimo."
+    },
+    {
+     "t": 399.8,
+     "say": "Hay una publicación en la cual dice ya, logramos nuestro primer proyecto."
+    },
+    {
+     "t": 409,
+     "say": "sácale el jugo con todo. Es tu mayor activo."
+    },
+    {
+     "t": 413.7,
+     "say": "Porque si no tuvieras ese proyecto, si no tuvieras una casa que ya se está construyendo, lo tienes mucho más difícil."
+    },
+    {
+     "t": 420,
+     "say": "Porque tienes que empezar a construir con inteligencia artificial todo el contenido."
+    },
+    {
+     "t": 424.7,
+     "say": "En cambio ahora ya acá hay una historia que se puede empezar a contar."
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "BORRA EL LOGO",
+      "*DE GEMINI*"
+     ],
+     "until": "hoy día"
+    },
+    {
+     "type": "image",
+     "at": "popurrí",
+     "until": "después instagram",
+     "src": "assets/ig/ig-grid-generated.png",
+     "label": "SU INSTAGRAM · MAYO 2026",
+     "width": 1000
+    },
+    {
+     "type": "image",
+     "at": "después instagram",
+     "until": "generalmente",
+     "src": "assets/ig/ig-post-ai-content-label.png",
+     "label": "«AI CONTENT»",
+     "width": 1000
+    },
+    {
+     "type": "callout",
+     "at": "resistencia",
+     "through": "inteligencia artificial",
+     "lines": [
+      "HAY RESISTENCIA",
+      "*A LA IA*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "quién es la persona",
+     "through": "construir",
+     "lines": [
+      "¿QUIÉN",
+      "*CONSTRUYE?*"
+     ]
+    },
+    {
+     "type": "image",
+     "at": "tenemos una persona",
+     "until": "hay una publicación",
+     "src": "assets/site/Recurso-24@4x-scaled.png",
+     "label": "IVÁN ISAACS · CEO"
+    },
+    {
+     "type": "image",
+     "at": "hay una publicación",
+     "until": "sácale",
+     "src": "assets/ig/ig-post-vendimos-primer-refugio.png",
+     "label": "JULIO 2026",
+     "width": 1000
+    },
+    {
+     "type": "callout",
+     "at": "mayor activo",
+     "through": "mayor activo",
+     "lines": [
+      "TU MAYOR",
+      "*ACTIVO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "una historia",
+     "through": "empezar a contar",
+     "lines": [
+      "UNA HISTORIA",
+      "*QUE YA EXISTE*"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "02-el-nudo",
+   "act": "2/3",
+   "hook": [
+    "LA IA TAMBIÉN",
+    "LEE TU",
+    "<m>PÁGINA WEB</m>"
+   ],
+   "pieces": [
+    {
+     "t": 825,
+     "say": "Y esas personas son personas que visitan la página web. Y también inteligencia artificial que indexa esta página web para darle recomendaciones a otra gente."
+    },
+    {
+     "t": 838,
+     "say": "si yo le escribo a Claude y le digo, analiza este proyecto, me quiero comprar una casa, analízalo."
+    },
+    {
+     "t": 846,
+     "say": "eso no está comprimido de una forma que se transmita esa información claramente"
+    },
+    {
+     "t": 781.1,
+     "say": "¿cuántos metros cuadrados tiene la casa que cuesta 92 millones? No tengo idea. No aparece en la página."
+    },
+    {
+     "t": 733.9,
+     "say": "Después me hablan de cotiza a tu medida y me hacen poner metros cuadrados."
+    },
+    {
+     "t": 740.7,
+     "say": "No entiendo por qué al principio de la página me ofrecía ahí un proyecto de 92 millones y ahora me estáis ofreciendo metros cuadrados."
+    },
+    {
+     "t": 798,
+     "say": "mientras más opciones tengo, más eso me genera ruido."
+    },
+    {
+     "t": 715,
+     "say": "es muy importante poder ir desarrollando esa capacidad de comprimir la información"
+    },
+    {
+     "t": 810,
+     "say": "¿Ofrezco opciones o ofrezco algo que ya está listo?"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "LA IA TAMBIÉN",
+      "*LEE TU WEB*"
+     ],
+     "until": "si yo le escribo"
+    },
+    {
+     "type": "image",
+     "at": "si yo le escribo",
+     "until": "cuántos metros",
+     "src": "assets/claude/claude-umbral.png",
+     "label": "LE PREGUNTAMOS A CLAUDE",
+     "width": 960
+    },
+    {
+     "type": "image",
+     "at": "cuántos metros",
+     "until": "después me hablan",
+     "src": "assets/raw/m-site-home-top.png",
+     "label": "UMBRALSUR.COM"
+    },
+    {
+     "type": "image",
+     "at": "cotiza a tu medida",
+     "until": "mientras más",
+     "src": "assets/raw/crop-cotiza-m2.png",
+     "label": "COTIZA A TU MEDIDA",
+     "width": 1000
+    },
+    {
+     "type": "callout",
+     "at": "más opciones",
+     "through": "ruido",
+     "lines": [
+      "MÁS OPCIONES,",
+      "*MÁS RUIDO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "comprimir",
+     "through": "la información",
+     "lines": [
+      "COMPRIMIR",
+      "*LA INFORMACIÓN*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "ofrezco opciones",
+     "through": "está listo",
+     "lines": [
+      "¿OPCIONES O",
+      "*ALGO LISTO?*"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "03-la-propuesta",
+   "act": "3/3",
+   "hook": [
+    "MUÉSTRAME",
+    "EL AVANCE",
+    "<m>DE LA CASA</m>"
+   ],
+   "pieces": [
+    {
+     "t": 1014.3,
+     "say": "Yo personalmente estuve a punto de ampliar mi casa con una construcción modular."
+    },
+    {
+     "t": 1019.8,
+     "say": "con una empresa con la cual yo confiaba porque conocía a los dueños."
+    },
+    {
+     "t": 1025.3,
+     "say": "Pero me metí al Instagram y él me decía que estaban construyendo una casa, pero yo no veía ningún avance"
+    },
+    {
+     "t": 1049.9,
+     "say": "y no veo movimiento, ¿cómo voy a confiar en esa empresa?"
+    },
+    {
+     "t": 601.2,
+     "say": "Yo prefiero mil veces que me diga, ya, tengo 3 cupos para construir 3 casas. Y se van llenando."
+    },
+    {
+     "t": 608.3,
+     "say": "¿y cuál es el avance de la casa?"
+    },
+    {
+     "t": 615,
+     "say": "Si es que ese proceso se mostrara gráficamente en la página web y yo pudiera ver ese avance concreto dentro de la página web, eso a mí me entregaría un nivel de confianza"
+    },
+    {
+     "t": 975.7,
+     "say": "ese algo que es distintivo puede entrar por un CEO que comparte por redes sociales todo lo que pasa a la hora de construir una casa."
+    },
+    {
+     "t": 992,
+     "say": "podría vender la segunda casa con un descuento y decirle a la persona, ya te hago un descuento, pero me permites documentar todo el proceso"
+    },
+    {
+     "t": 1202.2,
+     "say": "tenemos que hablarle a su dolor y tenemos que mostrarle cómo nosotros somos el antídoto a ese dolor."
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "MUÉSTRAME",
+      "*EL AVANCE*"
+     ],
+     "until": "pero me metí"
+    },
+    {
+     "type": "callout",
+     "at": "ningún avance",
+     "through": "ningún avance",
+     "lines": [
+      "NINGÚN",
+      "*AVANCE*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "cómo voy a confiar",
+     "through": "esa empresa",
+     "lines": [
+      "¿CÓMO VOY",
+      "*A CONFIAR?*"
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "yo prefiero",
+     "until": "y cuál es el avance",
+     "src": "assets/rec/cupos.mp4",
+     "from": 2,
+     "label": "POCOS, A PROPÓSITO",
+     "keys": [
+      [
+       "yo prefiero",
+       "pocos, a propósito"
+      ],
+      [
+       "se van llenando",
+       "cupo 2: tuyo, si conversamos"
+      ]
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "y cuál es el avance",
+     "until": "ese algo",
+     "src": "assets/rec/avance.mp4",
+     "from": 4.5,
+     "label": "AVANCE DE OBRA",
+     "keys": [
+      [
+       "cuál es el avance",
+       "avance"
+      ],
+      [
+       "avance concreto",
+       "etapas"
+      ]
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "ese algo",
+     "until": "podría vender",
+     "src": "assets/rec/ivan.mp4",
+     "from": 1,
+     "label": "QUIÉN LA CONSTRUYE",
+     "keys": [
+      [
+       "un ceo",
+       "Iván Isaacs"
+      ]
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "un descuento#2",
+     "through": "documentar todo el proceso",
+     "lines": [
+      "DESCUENTO",
+      "*SI LO MUESTRAS*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "el antídoto",
+     "through": "ese dolor",
+     "lines": [
+      "EL ANTÍDOTO",
+      "*A ESE DOLOR*"
+     ],
+     "pop": [
+      "antídoto",
+      "dolor"
+     ]
+    }
+   ]
+  }
+ ]
+}

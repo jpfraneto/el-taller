@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parcelas, propiedades y venta. Puerto Varas</title>
+<meta name="description" content="Las parcelas en venta de todo Chile en un solo lugar. Publicar la tuya es gratis y sin comisión.">
+<meta property="og:title" content="Parcelas y Terrenos · directo con el dueño">
+<meta property="og:description" content="Parcelas en el sur de Chile. Publicar es gratis, sin comisión.">
+<meta property="og:image" content="/img/og.jpg">
+<meta name="theme-color" content="#1d3528">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+
+<header class="top" id="top">
+  <a class="marca" href="/">Parcelas <span>y</span> Terrenos</a>
+  <nav>
+    <a href="/fuentes/">De dónde vienen</a>
+  </nav>
+  <a class="btn-top" href="/publicar/">Publicar gratis</a>
+</header>
+
+<!-- ── Inicio: Chile, con sus parcelas ── -->
+<main id="vista-inicio" class="vista mapa-app">
+  <div class="barra">
+    <div class="barra-fila">
+      <a class="marca-mapa" href="/">Parcelas <span>y</span> Terrenos</a>
+      <button class="btn-filtros" id="abrir-filtros" aria-label="Filtros">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M3 6h18M7 12h10M10 18h4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+        <span>Filtros</span><b id="n-filtros" hidden></b>
+      </button>
+    </div>
+    <div class="rapidos" id="rapidos">
+      <button class="si" data-r="todas">Todas</button>
+      <button data-r="chica">Hasta 5.000 m²</button>
+      <button data-r="media">5.000 m² a 1 ha</button>
+      <button data-r="grande">Más de 1 ha</button>
+      <button data-r="precio">Con precio</button>
+      <button class="dado" id="dado" type="button">🎲 Sorpréndeme</button>
+    </div>
+  </div>
+
+  <div class="mapa-y-lista">
+    <div class="mapa-scroll" id="mapa-scroll">
+      <div class="mapa-lienzo" id="lienzo">
+        <svg id="mapa" aria-label="Mapa de Chile con las parcelas en venta"></svg>
+        <div class="pines" id="pines"></div>
+      </div>
+    </div>
+    <div class="mapa-n" id="contador"></div>
+    <div class="estas-en" id="estas-en">Estás en <b></b></div>
+    <div class="pista" id="pista">Desliza para recorrer Chile ↓</div>
+    <div class="zoom"><button id="zoom-mas" aria-label="Acercar">+</button><button id="zoom-menos" aria-label="Alejar">−</button><button id="zoom-chile" class="zoom-chile" aria-label="Ver todo Chile" hidden>Todo<br>Chile</button></div>
+    <aside class="lista" id="lista" aria-label="Las parcelas">
+      <div class="lista-cab"><b id="lista-titulo">Todas</b><span id="lista-n"></span>
+        <button class="cerrar" id="lista-cerrar" aria-label="Cerrar">×</button></div>
+      <div class="lista-cuerpo" id="lista-cuerpo"></div>
+    </aside>
+  </div>
+
+  <nav class="dock">
+    <button id="ver-lista"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>Lista<span id="ver-lista-n"></span></button>
+    <a href="/publicar/">+ Publicar gratis</a>
+    <button data-chat><span class="punto"></span>Pregúntame</button>
+  </nav>
+</main>
+
+<!-- Filtros -->
+<div class="modal-fondo" id="modal-filtros" hidden>
+  <form class="modal" id="form-filtros">
+    <div class="modal-cab"><b>Filtros</b><button type="button" class="cerrar" data-cerrar-filtros aria-label="Cerrar">×</button></div>
+    <div class="modal-cuerpo">
+      <label class="campo"><span>Región</span><select name="region" id="f-region"><option value="">Todo Chile</option></select></label>
+      <label class="campo"><span>Comuna o palabra</span><input name="q" placeholder="Ej: Chaitén, vista al lago" autocomplete="off"></label>
+      <p class="campo-t">Tamaño</p>
+      <div class="opciones" data-grupo="tam">
+        <label><input type="radio" name="tam" value="" checked><span>Cualquiera</span></label>
+        <label><input type="radio" name="tam" value="chica"><span>Hasta 5.000 m²</span></label>
+        <label><input type="radio" name="tam" value="media"><span>5.000 m² a 1 ha</span></label>
+        <label><input type="radio" name="tam" value="grande"><span>Más de 1 ha</span></label>
+      </div>
+      <p class="campo-t">Precio hasta</p>
+      <div class="opciones">
+        <label><input type="radio" name="max" value="" checked><span>Cualquiera</span></label>
+        <label><input type="radio" name="max" value="30000000"><span>$30 millones</span></label>
+        <label><input type="radio" name="max" value="60000000"><span>$60 millones</span></label>
+        <label><input type="radio" name="max" value="120000000"><span>$120 millones</span></label>
+      </div>
+      <label class="check-fila"><input type="checkbox" name="conprecio"><span>Solo las que muestran precio</span></label>
+      <p class="campo-t">Dónde está publicada</p>
+      <div class="opciones" id="f-fuentes"></div>
+    </div>
+    <div class="modal-pie">
+      <button type="button" class="btn borde-oscuro" id="limpiar">Limpiar</button>
+      <button type="submit" class="btn verde" id="ver-n">Ver parcelas</button>
+    </div>
+  </form>
+</div>
+
+<!-- ── Corredoras ── -->
+<main id="vista-corredoras" class="vista" hidden>
+  <section class="seccion corredoras">
+    <a class="volver" href="/">← El mapa</a>
+    <p class="kicker oscuro">Para corredoras</p>
+    <h2>Tus parcelas, en el mapa de Chile. <span class="subrayado">Gratis.</span></h2>
+    <p class="txt">La gente llega a parcelasyterrenos.cl buscando parcelas desde 2012. Pon las tuyas en el mapa: cada visita va directo a tu página o a tu WhatsApp. No cobramos comisión, nunca.</p>
+    <div class="beneficios">
+      <div><span>🗺️</span><b>En el mapa</b><p>Cada parcela con su precio, donde está.</p></div>
+      <div><span>↗</span><b>A tu página</b><p>El que quiere saber más, llega a ti. Te contamos cuántos.</p></div>
+      <div><span>✓</span><b>Con tu logo</b><p>Corredora verificada, al lado de cada parcela.</p></div>
+    </div>
+    <p class="campo-t">Así se van a ver</p>
+    <div class="vista-previa" id="co-previa"></div>
+    <form class="form" id="form-corredora">
+      <div class="fila2">
+        <label>Nombre de la corredora<input name="nombre" required placeholder="Ej: Propiedades del Lago"></label>
+        <label>Tu web<input name="web" inputmode="url" placeholder="https://…"></label>
+      </div>
+      <div class="fila2">
+        <label>WhatsApp de la corredora<input name="whatsapp" inputmode="tel" placeholder="9 1234 5678" required></label>
+        <label>Comuna<input name="comuna" placeholder="Ej: Puerto Varas"></label>
+      </div>
+      <p class="campo-t">¿Cómo nos pasas tus parcelas?</p>
+      <div class="vias" id="vias">
+        <label><input type="radio" name="tipo" value="feed" checked><span><b>Tengo un feed XML</b><small>El link que ya le das a Trovit, Mitula o Properati</small></span></label>
+        <label><input type="radio" name="tipo" value="easybroker"><span><b>Uso EasyBroker</b><small>Con tu API key, se actualiza sola</small></span></label>
+        <label><input type="radio" name="tipo" value="tokko"><span><b>Uso Tokko Broker</b><small>Con tu API key, se actualiza sola</small></span></label>
+        <label><input type="radio" name="tipo" value="ayuda"><span><b>No sé, ayúdenme</b><small>Te escribimos por WhatsApp y lo vemos juntos</small></span></label>
+      </div>
+      <div class="via-extra" data-via="feed">
+        <label>Link del feed<input name="feed" inputmode="url" placeholder="https://…/feed.xml"></label>
+        <button type="button" class="btn borde-oscuro" id="probar-feed">Probar</button>
+        <p class="probado" id="probado" hidden></p>
+      </div>
+      <div class="via-extra" data-via="easybroker" hidden><label>API key de EasyBroker<input name="clave_easybroker" autocomplete="off"></label><small class="ayuda">En EasyBroker: Configuración → Integraciones → API.</small></div>
+      <div class="via-extra" data-via="tokko" hidden><label>API key de Tokko<input name="clave_tokko" autocomplete="off"></label><small class="ayuda">En Tokko: Configuración → Mi empresa → Permisos → API key.</small></div>
+      <label class="check autoriza"><input type="checkbox" name="autoriza" required> <span>Autorizo a parcelasyterrenos.cl a mostrar el título, la ubicación, la superficie, el precio y el link de mis publicaciones, y mi logo. Puedo salirme cuando quiera.</span></label>
+      <button class="btn verde" type="submit">Poner mis parcelas en el mapa</button>
+      <p class="form-err" hidden></p>
+    </form>
+    <div class="publicado co-listo" hidden>
+      <p class="check-grande">✓</p>
+      <h3>¡Bienvenida!</h3>
+      <p class="txt">Revisamos tus datos y tus parcelas aparecen en el mapa. Te avisamos por WhatsApp.</p>
+      <a class="btn borde-oscuro" href="/">Ver el mapa</a>
+    </div>
+  </section>
+</main>
+
+<!-- ── Fuentes ── -->
+<main id="vista-fuentes" class="vista" hidden>
+  <section class="seccion fuentes">
+    <a class="volver" href="/">← Parcelas</a>
+    <p class="kicker oscuro">Transparencia</p>
+    <h2>De dónde vienen las parcelas</h2>
+    <p class="txt">Hay dos tipos. Las que publican sus dueños aquí, gratis, con sus fotos y su nombre. Y las que ya están publicadas en otros sitios de internet: las encontramos todos los días para que veas todo lo que está en venta en un solo lugar.</p>
+    <div class="reglas">
+      <div><b>Lo que copiamos</b><p>Solo los datos: título, región, comuna, superficie, precio y el link a la publicación original.</p></div>
+      <div><b>Lo que no copiamos</b><p>Fotos, descripciones largas, ni nombres o teléfonos de nadie. Para contactar al vendedor, te llevamos a su publicación.</p></div>
+      <div><b>Cómo lo hacemos</b><p>Solo leemos páginas que cada sitio permite leer (su robots.txt), despacio, una vez al día, diciendo quiénes somos.</p></div>
+      <div><b>Si es tuya</b><p>Publícala aquí gratis con tus fotos (botón "¿Es tuya?"), o pídenos quitarla: se quita al tiro.</p></div>
+    </div>
+    <h3 class="h3-fuentes">Los sitios</h3>
+    <div id="lista-fuentes"></div>
+    <h3 class="h3-fuentes" id="quitar">Quitar una publicación</h3>
+    <form class="form" id="form-quitar">
+      <label>Link de la publicación<input name="url" placeholder="https://…" required></label>
+      <label>Motivo (opcional)<input name="motivo" placeholder="Ej: ya se vendió, es mía y no quiero que aparezca"></label>
+      <button class="btn verde" type="submit">Quitarla</button>
+      <p class="form-ok" hidden>Listo, ya no aparece.</p>
+      <p class="form-err" hidden></p>
+    </form>
+  </section>
+</main>
+
+<!-- ── Una parcela ── -->
+<main id="vista-parcela" class="vista" hidden>
+  <div class="detalle" id="detalle"></div>
+  <section class="seccion">
+    <div class="cab-seccion"><div><p class="kicker oscuro">También en venta</p><h2>Más parcelas</h2></div></div>
+    <div class="fila-scroll" id="fila-mas"></div>
+  </section>
+</main>
+
+<!-- ── Publicar ── -->
+<main id="vista-publicar" class="vista" hidden>
+  <section class="seccion publicar">
+    <a class="volver" href="/">← Parcelas</a>
+    <p class="kicker oscuro">Gratis · sin comisión</p>
+    <h2>Publica tu parcela</h2>
+    <p class="txt">La gente llega a esta página buscando parcelas desde 2012. La tuya aparece primero que las que encontramos en internet, con tus fotos y tu nombre. Los interesados te llegan por WhatsApp.</p>
+    <p class="reclamo" id="reclamo" hidden></p>
+    <a class="es-corredora" href="/corredoras/">¿Eres corredora? Súmate con todas tus parcelas →</a>
+    <form id="form-publicar" class="form">
+      <fieldset>
+        <legend>Tú</legend>
+        <div class="fila2">
+          <label>Tu nombre<input name="nombre" autocomplete="name" required></label>
+          <label>WhatsApp<input name="telefono" inputmode="tel" autocomplete="tel" placeholder="9 1234 5678" required></label>
+        </div>
+        <label>Quién eres, en una línea<input name="quien" maxlength="240" placeholder="Ej: Crecí aquí; la vendo porque me fui a Santiago."></label>
+      </fieldset>
+      <fieldset>
+        <legend>Tu parcela</legend>
+        <label>Título<input name="titulo" maxlength="80" required placeholder="Ej: Una hectárea con vista al lago"></label>
+        <div class="fila2">
+          <label>Región<select name="region" id="p-region" required><option value="">Elige</option></select></label>
+          <label>Comuna<input name="comuna" required placeholder="Ej: Frutillar"></label>
+        </div>
+        <label>Sector<input name="sector" placeholder="Ej: Camino a Totoral"></label>
+        <div class="fila2">
+          <label>Superficie (m²)<input name="m2" inputmode="numeric" placeholder="5000"></label>
+          <label>Precio (opcional)<input name="precio" inputmode="numeric" placeholder="$"></label>
+        </div>
+        <label class="check"><input type="checkbox" name="credito"> Doy crédito directo</label>
+        <p class="etq">Qué tiene</p>
+        <div class="servicios" id="servicios"></div>
+        <label>Cuéntala con tus palabras<textarea name="texto" rows="4" placeholder="Qué se ve, qué tiene, por qué la vendes…"></textarea></label>
+        <p class="etq">Fotos (hasta 8)</p>
+        <label class="subir"><input type="file" id="fotos" accept="image/*" multiple><span>+ Agregar fotos</span></label>
+        <div class="previas" id="previas"></div>
+      </fieldset>
+      <button class="btn verde" type="submit">Publicar gratis</button>
+      <p class="form-err" hidden></p>
+    </form>
+    <div class="publicado" hidden>
+      <p class="check-grande">✓</p>
+      <h3>¡Ya está en el mapa!</h3>
+      <p class="txt" id="publicado-txt">Cuando alguien pregunte por ella, te llega por WhatsApp.<span id="dueno-revisa" hidden></span></p>
+      <a class="btn borde-oscuro" href="/">Ver las parcelas</a>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <p>parcelasyterrenos.cl · todas las parcelas de Chile · desde 2012 · <a href="/fuentes/">De dónde vienen</a> · <a href="/publicar/">Publicar gratis</a></p>
+</footer>
+
+<!-- Chat -->
+<button class="burbuja" data-chat aria-label="Hacer una pregunta"><span class="punto"></span>Pregúntame</button>
+<div class="hoja" id="chat" hidden>
+  <div class="hoja-cab">
+    <div>
+      <b>Parcelas y Terrenos</b>
+      <small><span class="punto"></span><span id="chat-sub">Claude responde a cualquier hora</span></small>
+    </div>
+    <button class="cerrar" data-cerrar aria-label="Cerrar">×</button>
+  </div>
+  <div class="mensajes" id="mensajes"></div>
+  <div class="rapidas" id="rapidas"></div>
+  <form class="escribir" id="escribir">
+    <input id="entrada" autocomplete="off" placeholder="Escribe tu pregunta…" maxlength="600">
+    <button type="submit" aria-label="Enviar">↑</button>
+  </form>
+</div>
+
+<!-- Agendar visita -->
+<div class="hoja" id="visita" hidden>
+  <div class="hoja-cab">
+    <div><b>Agendar visita</b><small id="visita-sub">El dueño te la muestra y te confirma por WhatsApp</small></div>
+    <button class="cerrar" data-cerrar aria-label="Cerrar">×</button>
+  </div>
+  <form class="form visita-form" id="form-visita">
+    <label>Parcela<select name="parcela" id="v-parcela"></select></label>
+    <p class="etq">Día</p>
+    <div class="chips-sel" id="v-dias"></div>
+    <p class="etq">Hora</p>
+    <div class="chips-sel" id="v-horas"></div>
+    <div class="fila2">
+      <label>Tu nombre<input name="nombre" autocomplete="name" required></label>
+      <label>WhatsApp<input name="telefono" inputmode="tel" autocomplete="tel" placeholder="9 1234 5678" required></label>
+    </div>
+    <button class="btn verde" type="submit">Agendar</button>
+    <p class="form-err" hidden></p>
+  </form>
+  <div class="visita-ok" hidden>
+    <p class="check-grande">✓</p>
+    <h3>Listo, <span id="ok-nombre"></span></h3>
+    <p id="ok-cuando"></p>
+    <p class="txt"><span id="ok-vendedor"></span> te escribe por WhatsApp para confirmar.</p>
+    <button class="btn borde-oscuro" data-cerrar>Cerrar</button>
+  </div>
+</div>
+
+<!-- Auspiciar -->
+<div class="hoja" id="hoja-auspicio" hidden>
+  <div class="hoja-cab">
+    <div><b>Auspicia aquí</b><small id="auspicio-sub"></small></div>
+    <button class="cerrar" data-cerrar aria-label="Cerrar">×</button>
+  </div>
+  <div class="form visita-form" id="a-pronto" hidden>
+    <p class="txt aus-txt">Muy pronto vas a poder poner tu marca en un letrero de la Ruta 5, en el mapa de Chile, frente a todos los que buscan parcelas. Solo un link: el que le interesa, entra.</p>
+    <p class="txt aus-txt">Son 6 letreros numerados (5 para marcas, 1 para ONGs) y cambian de orden cada vez que alguien abre la página: todos pasan por el norte y por el sur.</p>
+    <p class="txt aus-txt">¿Te interesa? Escríbenos y te avisamos primero.</p>
+    <a class="btn verde" id="a-wa" target="_blank" rel="noopener">Me interesa · escribir por WhatsApp</a>
+  </div>
+  <form class="form visita-form" id="form-auspicio">
+    <p class="txt aus-txt">Tu link en un letrero de la Ruta 5, en el mapa de Chile, frente a todos los que buscan parcelas. Solo el link: el que le interesa, entra. 30 días.</p>
+    <p class="txt aus-txt">Son 6 letreros numerados (5 se venden, 1 es para ONGs) y cambian de orden cada vez que alguien abre la página: todos pasan por el norte y por el sur.</p>
+    <div class="cupos" id="a-cupos"></div>
+    <label>Tu link<input name="url" inputmode="url" required placeholder="casasdelsur.cl"></label>
+    <label>Tu imagen <small class="opc">opcional · apaisada, como un letrero (3 de ancho por 1 de alto). Sin imagen, armamos el letrero con tu link.</small>
+      <input type="file" name="imagen" accept="image/*"></label>
+    <div class="cartel-previa"><span class="cartel" id="a-previa"></span></div>
+    <button class="btn verde" type="submit" id="a-pagar">Pagar con Mercado Pago</button>
+    <p class="form-err" hidden></p>
+  </form>
+</div>
+
+<!-- ONG: el sexto cartel es gratis -->
+<div class="hoja" id="hoja-ong" hidden>
+  <div class="hoja-cab">
+    <div><b>Un letrero gratis para ONGs</b><small>Uno de los 6 letreros de la Ruta 5</small></div>
+    <button class="cerrar" data-cerrar aria-label="Cerrar">×</button>
+  </div>
+  <form class="form visita-form" id="form-ong">
+    <p class="txt aus-txt">De los seis letreros de la Ruta 5, cinco se venden y uno se regala. Las ONGs inscritas se turnan, y el letrero cambia de lugar: cada visita lo ve en otro. Como los demás, es solo un link.</p>
+    <label>Nombre de la ONG<input name="nombre" maxlength="80" required placeholder="Ej: Fundación Bosque Nativo"></label>
+    <label>Su link<input name="url" inputmode="url" required placeholder="bosquenativo.cl"></label>
+    <label>Qué hacen, en una línea<input name="que" maxlength="300" placeholder="Ej: Reforestamos con especies nativas en Los Lagos"></label>
+    <label>Correo o WhatsApp para avisarte<input name="contacto" maxlength="120" required placeholder="hola@bosquenativo.cl"></label>
+    <div class="cartel-previa"><span class="cartel" id="o-previa"></span></div>
+    <button class="btn verde" type="submit">Inscribir la ONG</button>
+    <p class="form-err" hidden></p>
+  </form>
+  <div class="ong-ok" hidden>
+    <p class="txt"><b>¡Listo!</b> Revisamos la inscripción y te avisamos cuando tu link esté en el mapa.</p>
+    <button class="btn borde-oscuro" data-cerrar>Cerrar</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+<div class="lightbox" id="lightbox" hidden><img alt=""><button class="cerrar" aria-label="Cerrar">×</button></div>
+
+<script src="/js/app.js"></script>
+<script src="/js/letrero.js"></script>
+<script src="/js/mapa.js"></script>
+</body>
+</html>

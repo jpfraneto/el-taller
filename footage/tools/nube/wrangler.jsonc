@@ -1,0 +1,19 @@
+{
+  "$schema": "../../el-taller/ep10-campoymar/prototype/node_modules/wrangler/config-schema.json",
+  // El Taller's posting schedule in the cloud (JP 2026-11-14: "que quede agendado en la nube así no tengo que estar
+  // preocupado que se me apague el computador"). tools/nube.py uploads each reel + cover to R2 and its caption + time
+  // to the queue; every 5 minutes this Worker posts what's due to @eltallerconjp (the same calls as publish_ig.py).
+  "name": "eltaller-agenda",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  "routes": [{ "pattern": "agenda.jpfraneto.com", "custom_domain": true }],
+  "r2_buckets": [{ "binding": "R", "bucket_name": "eltaller-agenda" }],
+  // cola = the queue (one JSON list), log = what each tick did
+  "kv_namespaces": [{ "binding": "COLA", "id": "0de92aeb437a4851b634eb156ee343f1" }],
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "vars": { "IG_API_VERSION": "v23.0" }
+  // Secrets (npx wrangler secret put NAME):
+  //   IG_USER_ID, IG_ACCESS_TOKEN   from ~/.config/eltaller/instagram.env (an EA… token: graph.facebook.com)
+  //   CLAVE                         what nube.py sends as "Authorization: Bearer …" (~/.config/eltaller/nube.env)
+  //   TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID   a message to JP when a reel goes out or fails
+}

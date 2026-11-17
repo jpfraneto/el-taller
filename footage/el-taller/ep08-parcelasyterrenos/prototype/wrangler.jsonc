@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "parcelasyterrenos-app",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  // Prototype on jpfraneto.com (always noindex). On his own domain (once it's on Cloudflare): uncomment the two routes
+  // below. Only www.parcelasyterrenos.cl is indexed (the address Google has known since 2012); without www → 301 to www.
+  // The link for Sebastián is /propuesta/ (parcelasyterrenos.eltallerderuben.cl redirects here since 2026-11-14).
+  "routes": [
+    { "pattern": "parcelasyterrenos.jpfraneto.com", "custom_domain": true }
+    // , { "pattern": "www.parcelasyterrenos.cl", "custom_domain": true }
+    // , { "pattern": "parcelasyterrenos.cl", "custom_domain": true }
+  ],
+  // The Worker answers every page first: the old Webnode addresses (/parcelas/, /plano/…) and the noindex header.
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
+  // The index of public listings (src/indice.js) is read again every day at 09:00 UTC = 06:00 in Chile.
+  "triggers": { "crons": ["0 9 * * *"] },
+  // Conversations (c:<id>), listings (p:<id>), photos (f:), sponsors (a:), the index (ix:<fuente>), rate limits (rl:…).
+  "kv_namespaces": [{ "binding": "DB", "id": "abbcabc6cf094c489fc0ea545304e47f" }],
+  "vars": {
+    // His domain: the only host Google indexes (www.<DOMINIO>); every other host gets noindex.
+    "DOMINIO": "parcelasyterrenos.cl",
+    // Chat messages per IP per day.
+    "LIMITE_DIARIO": "80"
+  }
+  // Secrets (npx wrangler secret put NAME · local: .dev.vars):
+  //   OPENROUTER_API_KEY  Claude answering visitors (anthropic/claude-haiku-5.5, sonnet-5.5 as fallback); key in footage/el-taller/.openrouter_key
+  //   PANEL_KEY           Sebastián's panel (/sebastian); kept in ../.panel_key (git-ignored)
+}

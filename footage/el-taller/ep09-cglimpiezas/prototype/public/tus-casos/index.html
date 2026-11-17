@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CG Limpiezas · tus casos</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f5f2ec">
+<link rel="icon" href="../img/pfp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/app.css">
+<style>
+  .caso { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: start; }
+  .caso img { width: 96px; aspect-ratio: 3/4; object-fit: cover; border-radius: 10px; }
+  .caso .f { font-size: 12px; color: #5a6a80; }
+  .caso .t { font-size: 13px; line-height: 1.35; color: #33435c; margin: 2px 0 8px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .caso .campos { grid-column: 1 / -1; display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 8px; }
+  .caso .campos label { display: grid; gap: 3px; font-size: 12px; color: #5a6a80; }
+  .caso select, .caso input[type=text], .caso input[inputmode] { font: inherit; font-size: 16px; padding: 9px; border-radius: 10px; border: 1px solid #d5d9e0; background: #fff; color: var(--tinta); width: 100%; }
+  .caso .precio-in { grid-column: 1 / -1; }
+  .caso .precio-in input { font-family: var(--marca); font-weight: 800; font-size: 22px; }
+  .caso .mostrar { grid-column: 1 / -1; display: flex; gap: 8px; align-items: center; font-size: 13px; color: #33435c; }
+  .barra { position: sticky; bottom: 0; background: var(--espuma); padding: 12px 0 16px; }
+  .guardar { width: 100%; padding: 15px; border: 0; border-radius: 14px; background: var(--tinta); color: var(--espuma); font-family: var(--marca); font-weight: 700; font-size: 18px; }
+  .progreso { font-size: 14px; color: #33435c; margin: 0 0 8px; text-align: center; }
+</style>
+</head>
+<body>
+<main class="cz">
+  <div class="cz-top"><img src="../img/logo.png" alt="CG Limpiezas"><a href="../cotiza/">ver el cotizador →</a></div>
+  <section id="cotizaciones" hidden>
+    <h2 class="trabajos-t">Cotizaciones que llegaron</h2>
+    <ul class="trabajos" id="lista-cot"></ul>
+  </section>
+  <h1>¿Cuánto cobraron<br><em>por cada uno?</em></h1>
+  <p class="sub">Estos son los trabajos que tienen públicos en Instagram. Para cada uno, anota cuánto cobraron (más o
+    menos está bien). Ya pusimos qué es y de qué tamaño: corrígelo si no calza. Con eso, el cotizador deja de usar precios
+    de otras empresas y usa <b>los de ustedes</b>.</p>
+  <p class="error" id="error" hidden></p>
+  <div id="lista"></div>
+  <div class="barra">
+    <p class="progreso" id="progreso"></p>
+    <button type="button" class="guardar" id="guardar">Guardar</button>
+  </div>
+</main>
+<script type="module" src="../js/casos.js"></script>
+</body>
+</html>

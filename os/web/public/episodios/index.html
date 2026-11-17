@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El Taller con JP</title>
+<meta name="description" content="Cada marca que pasó por El Taller: su sector, su reporte y el prototipo que construimos.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="El Taller con JP">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="El Taller con JP">
+<meta property="og:description" content="Cada marca que pasó por El Taller: su sector, su reporte y el prototipo que construimos.">
+<meta name="theme-color" content="#14110f">
+<link rel="icon" href="https://eltallerconjp.jpfraneto.com/episodios/icono.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #14110f; --fg: #f4efe6; --mute: rgba(244,239,230,.62); --dim: rgba(244,239,230,.38); --y: #ffd23f; --line: rgba(255,255,255,.12);
+    --head: "Inter Tight", "Inter", system-ui, sans-serif; --sans: "Inter", system-ui, -apple-system, sans-serif; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  main { max-width: 620px; margin: 0 auto; padding: 18px 16px 40px; }
+  .marca { font-family: var(--head); font-weight: 900; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; }
+  .pfp { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; background: #2a2622; display: block; }
+  .pfp.vacia { display: grid; place-items: center; font-family: var(--head); font-weight: 900; color: var(--dim); }
+  .btn { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 7px 12px;
+    border: 1px solid var(--line); border-radius: 999px; white-space: nowrap; }
+  .btn:hover { border-color: rgba(255,210,63,.6); color: var(--y); }
+  .btn.y { background: var(--y); color: var(--bg); border-color: var(--y); }
+  .btn.y:hover { color: var(--bg); filter: brightness(1.06); }
+  .btn.off { color: var(--dim); border-style: dashed; pointer-events: none; }
+  main { padding-bottom: calc(120px + env(safe-area-inset-bottom)); }
+  header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 22px; }
+  header p { margin: 0; font-size: 13px; color: var(--dim); }
+  ol { list-style: none; margin: 0; padding: 0; }
+  li { display: grid; grid-template-columns: 22px 48px minmax(0, 1fr); column-gap: 12px; row-gap: 12px; align-items: center;
+    padding: 18px 0; border-top: 1px solid var(--line); }
+  li:last-child { border-bottom: 1px solid var(--line); }
+  .caps { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; border-radius: 10px; overflow: hidden; }
+  .caps a { display: block; aspect-ratio: 3 / 4; background: #2a2622; }
+  .caps img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .caps a:hover img { opacity: .85; }
+  .n { font-family: var(--head); font-weight: 700; font-size: 12px; color: var(--dim); font-variant-numeric: tabular-nums; }
+  .quien { min-width: 0; }
+  .quien b { display: block; font-weight: 600; font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .quien b a:hover { color: var(--y); }
+  .quien span { display: block; font-size: 13px; color: var(--mute); margin-top: 2px; }
+  .links { grid-column: 1 / -1; display: flex; gap: 8px; flex-wrap: wrap; }
+  .cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; padding: 28px 16px calc(14px + env(safe-area-inset-bottom));
+    background: linear-gradient(to bottom, rgba(20,17,15,0), var(--bg) 42%); }
+  .cta a { display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 588px; min-height: 68px;
+    margin: 0 auto; padding: 10px 20px; border-radius: 18px; background: var(--y); color: var(--bg);
+    box-shadow: 0 10px 34px rgba(255,210,63,.24); transition: transform .12s ease; }
+  .cta a:active { transform: scale(.98); }
+  .cta b { font-family: var(--head); font-weight: 900; font-size: 21px; letter-spacing: -.01em; text-transform: uppercase; line-height: 1.05; }
+  .cta span { font-size: 13px; font-weight: 600; opacity: .72; margin-top: 3px; }
+
+</style>
+</head>
+<body>
+<main>
+  <header><span class="marca">El Taller con JP</span><p>9 marcas</p></header>
+  <ol>
+    <li><span class="n">10</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/10.jpg" alt="campoymar_chiloe" loading="lazy">
+      <div class="quien"><b><a href="https://instagram.com/campoymar_chiloe" target="_blank" rel="noopener">@campoymar_chiloe</a></b><span>Alimentos · pastelería sin azúcar</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/DftLZrgxJz1/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/10-1.jpg?v=1794756438" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DftK8aTJ5QN/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/10-2.jpg?v=1794756438" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DftKErgTzwI/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/10-3.jpg?v=1794756439" alt="" loading="lazy"></a></div>
+      <div class="links"><a class="btn" href="https://jpfraneto.com/reporte/campoymar_chiloe/">Reporte</a><a class="btn y" href="https://campoymar.jpfraneto.com/">Prototipo →</a></div></li>
+    <li><span class="n">09</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/09.jpg" alt="cglimpiezas" loading="lazy">
+      <div class="quien"><b><a href="https://instagram.com/cglimpiezas" target="_blank" rel="noopener">@cglimpiezas</a></b><span>Servicios del hogar · limpieza de alfombras y tapices</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/DfqaGAJhLpg/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/09-1.jpg?v=1794756439" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfqZyL7iQiV/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/09-2.jpg?v=1794756439" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfqZg-qzQR0/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/09-3.jpg?v=1794756440" alt="" loading="lazy"></a></div>
+      <div class="links"><a class="btn" href="https://jpfraneto.com/reporte/cglimpiezas/">Reporte</a><a class="btn y" href="https://cglimpiezas.jpfraneto.com/cotiza/">Prototipo →</a></div></li>
+    <li><span class="n">08</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/08.jpg" alt="parcelasyterrenos.cl" loading="lazy">
+      <div class="quien"><b>parcelasyterrenos.cl</b><span>Inmobiliaria · marketplace de parcelas sin comisión</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/DfnR4Qhsx4h/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/08-1.jpg?v=1794756440" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfnRji0hr4r/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/08-2.jpg?v=1794756440" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfnRRKrBolG/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/08-3.jpg?v=1794756441" alt="" loading="lazy"></a></div>
+      <div class="links"><span class="btn off">Reporte</span><a class="btn y" href="https://parcelasyterrenos.jpfraneto.com/">Prototipo →</a></div></li>
+    <li><span class="n">07</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/07.jpg" alt="arboldelilith" loading="lazy">
+      <div class="quien"><b><a href="https://instagram.com/arboldelilith" target="_blank" rel="noopener">@arboldelilith</a></b><span>Bienestar · círculos de mujeres y terapias</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/Dfla8_oBOFE/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/07-1.jpg?v=1794756441" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DflahxQiFUY/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/07-2.jpg?v=1794756441" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DflaK7OSL4h/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/07-3.jpg?v=1794756442" alt="" loading="lazy"></a></div>
+      <div class="links"><a class="btn" href="https://jpfraneto.com/reporte/arboldelilith/">Reporte</a><a class="btn y" href="https://arboldelilith.jpfraneto.com/">Prototipo →</a></div></li>
+    <li><span class="n">06</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/06.jpg" alt="automotriztuauto.cl" loading="lazy">
+      <div class="quien"><b><a href="https://instagram.com/automotriztuauto.cl" target="_blank" rel="noopener">@automotriztuauto.cl</a></b><span>Automotriz · autos seminuevos</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/Dfhys8cAiT6/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/06-1.jpg?v=1794756442" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfhyPCKjEVn/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/06-2.jpg?v=1794756442" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/Dfhxe70CARL/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/06-3.jpg?v=1794756443" alt="" loading="lazy"></a></div>
+      <div class="links"><a class="btn" href="https://jpfraneto.com/reporte/automotriztuauto.cl/">Reporte</a><a class="btn y" href="https://tuauto.jpfraneto.com/">Prototipo →</a></div></li>
+    <li><span class="n">05</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/05.jpg" alt="refugiosumbralsur" loading="lazy">
+      <div class="quien"><b><a href="https://instagram.com/refugiosumbralsur" target="_blank" rel="noopener">@refugiosumbralsur</a></b><span>Construcción · refugios modulares</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/DfZurBcijmH/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/05-1.jpg?v=1794756443" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfZuSTKgbbn/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/05-2.jpg?v=1794756444" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfZtxx4jAIZ/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/05-3.jpg?v=1794756444" alt="" loading="lazy"></a></div>
+      <div class="links"><a class="btn" href="https://jpfraneto.com/reporte/refugiosumbralsur/">Reporte</a><a class="btn y" href="https://umbralsur.jpfraneto.com/">Prototipo →</a></div></li>
+    <li><span class="n">04</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/04.jpg" alt="endemico.ft" loading="lazy">
+      <div class="quien"><b><a href="https://instagram.com/endemico.ft" target="_blank" rel="noopener">@endemico.ft</a></b><span>Deporte y salud · entrenamiento funcional</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/DfXj2LwCsAk/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/04-1.jpg?v=1794756444" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfXjeBbinDy/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/04-2.jpg?v=1794756445" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfXi7P4FAZH/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/04-3.jpg?v=1794756445" alt="" loading="lazy"></a></div>
+      <div class="links"><a class="btn" href="https://jpfraneto.com/reporte/endemico.ft/">Reporte</a><a class="btn y" href="https://endemico.jpfraneto.com/">Prototipo →</a></div></li>
+    <li><span class="n">03</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/03.jpg" alt="lajuntaescalada" loading="lazy">
+      <div class="quien"><b><a href="https://instagram.com/lajuntaescalada" target="_blank" rel="noopener">@lajuntaescalada</a></b><span>Deporte · gimnasio de escalada</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/DfP8Uc2y3wW/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/03-1.jpg?v=1794756445" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfP7qWaS3mR/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/03-2.jpg?v=1794756446" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfP6YELSIp6/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/03-3.jpg?v=1794756446" alt="" loading="lazy"></a></div>
+      <div class="links"><a class="btn" href="https://jpfraneto.com/reporte/lajuntaescalada/">Reporte</a><a class="btn y" href="https://lajunta.jpfraneto.com/">Prototipo →</a></div></li>
+    <li><span class="n">02</span><img class="pfp" src="https://eltallerconjp.jpfraneto.com/episodios/pfp/02.jpg" alt="constructora_aubel" loading="lazy">
+      <div class="quien"><b><a href="https://instagram.com/constructora_aubel" target="_blank" rel="noopener">@constructora_aubel</a></b><span>Construcción · casas llave en mano</span></div>
+      <div class="caps"><a href="https://www.instagram.com/reel/DfUxtOBDE7c/" target="_blank" rel="noopener" aria-label="Capítulo 1 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/02-1.jpg?v=1794756447" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfUsjT2yVVj/" target="_blank" rel="noopener" aria-label="Capítulo 2 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/02-2.jpg?v=1794756447" alt="" loading="lazy"></a><a href="https://www.instagram.com/reel/DfUrA-EyjJ1/" target="_blank" rel="noopener" aria-label="Capítulo 3 de 3"><img src="https://eltallerconjp.jpfraneto.com/episodios/reels/02-3.jpg?v=1794756447" alt="" loading="lazy"></a></div>
+      <div class="links"><a class="btn" href="https://jpfraneto.com/reporte/constructora_aubel/">Reporte</a><a class="btn y" href="https://aubel.jpfraneto.com/">Prototipo →</a></div></li>
+  </ol>
+</main>
+<div class="cta"><a href="https://eltallerconjp.jpfraneto.com/espacio/"><b>Trabajemos 1:1</b><span>5 cupos disponibles</span></a></div>
+</body>
+</html>

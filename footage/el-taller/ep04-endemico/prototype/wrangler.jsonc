@@ -1,0 +1,42 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "endemico-app",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // jpfraneto.com is on Cloudflare: the Worker answers on this subdomain directly.
+  "routes": [{ "pattern": "endemico.jpfraneto.com", "custom_domain": true }],
+  "assets": {
+    "directory": "./public",
+    "run_worker_first": ["/api/*", "/c/*", "/mp/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "endemico",
+      // Replace with the id printed by `npx wrangler d1 create endemico` before deploying.
+      "database_id": "23154a39-d575-4c72-a714-27c2a145fd5b"
+    }
+  ],
+  "vars": {
+    // Numbers that always log in as coach (digits only, comma separated). Seba.
+    "COACH_PHONES": "56900000000",
+    // The gym's WhatsApp (from their IG bio), for "pídele a Seba que te agregue".
+    "GYM_WA": "56963326827",
+    // Secret part of the door QR URL (/c/<DOOR_KEY>). Change it and reprint the QR to invalidate old ones.
+    "DOOR_KEY": "puerta-endemico-2026",
+    // Public https URL once deployed (Mercado Pago needs it for webhooks and auto-return). Empty = use the request origin.
+    "PUBLIC_URL": "https://endemico.jpfraneto.com",
+    // Monthly price of "El entrenamiento de la semana" for people outside the gym (CLP). Placeholder.
+    "SEMANA_PRECIO": "15000",
+    // Prototype: the login code is shown on screen as a fake WhatsApp message instead of being sent.
+    // Set to "" once the WhatsApp Cloud API is connected.
+    "DEMO_OTP": "1",
+    "DEMO": "1"
+  }
+  // Secrets (npx wrangler secret put NAME; local dev: .dev.vars):
+  //   COACH_CODE         6 digits; Seba's number only logs in with it (prototype, until WhatsApp OTP is connected)
+  //   ANTHROPIC_API_KEY  reads the whiteboard photo
+  //   MP_ACCESS_TOKEN    Mercado Pago access token (Tus integraciones → la app → Credenciales)
+  //   MP_WEBHOOK_SECRET  Mercado Pago webhook secret key (Webhooks → Configurar notificaciones)
+}

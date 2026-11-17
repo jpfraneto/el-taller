@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "la-junta-app",
+  "main": "src/worker.js",
+  "routes": [{ "pattern": "lajunta.jpfraneto.com", "custom_domain": true }],
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./public",
+    "run_worker_first": ["/api/*", "/webhook/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "la-junta",
+      // Replace with the id printed by `npx wrangler d1 create la-junta` before deploying.
+      "database_id": "7a03d74d-429d-46ae-b6d2-7a073c53167c"
+    }
+  ],
+  "vars": {
+    // WhatsApp number people write to, international format, digits only (used for wa.me links).
+    "WA_NUMBER": "56985491126",
+    // Manual login (no Meta account yet): people ask WA_NUMBER for a code by WhatsApp and
+    // someone replies with this fixed 6-digit code. Set to "" to use the real WhatsApp Cloud API.
+    "LOGIN_CODE": "888888",
+    "SOCIOS_CUPOS": "100",
+    "SOCIO_PRECIO": "100000",
+    // Shows a small "DEMO" badge and allows the demo data reset.
+    "DEMO": "1"
+  }
+}

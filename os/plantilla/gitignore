@@ -1,0 +1,16 @@
+# Secretos: nunca entran al historial
+.env
+.env.*
+*.pem
+*.key
+*.p12
+secretos/
+credenciales*
+.dev.vars
+.claude/settings.local.json
+
+# Basura del sistema
+.DS_Store
+Thumbs.db
+node_modules/
+.wrangler/

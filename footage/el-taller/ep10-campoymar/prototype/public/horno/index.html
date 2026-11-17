@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El horno · Campo &amp; Mar</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#3a2219">
+<link rel="icon" href="../img/pfp.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+<main class="pide horno">
+  <header class="marca">
+    <div class="logo">EL HORNO</div>
+    <div class="sub">Campo &amp; Mar · solo para ustedes</div>
+    <p class="nota" style="margin-top:12px">Lo que escriben aquí aparece al tiro en <a href="../hoy/">/hoy</a>. Guarden este link: es la llave.</p>
+  </header>
+  <p class="error" id="error"></p>
+
+  <section>
+    <div class="rotulo">salió</div>
+    <h2>¿Qué salió hoy?</h2>
+    <form class="form" id="f-hoy">
+      <label>Ancud<textarea name="ancud" rows="3" placeholder="una cosa por línea"></textarea></label>
+      <label>Castro<textarea name="castro" rows="3" placeholder="una cosa por línea"></textarea></label>
+      <button type="submit" class="wa" style="background:var(--cacao)">Publicar la hornada de hoy</button>
+    </form>
+  </section>
+
+  <section>
+    <div class="rotulo">en prueba</div>
+    <h2>Las pruebas y sus reservas</h2>
+    <div id="pruebas"></div>
+    <details class="form" style="margin-top:12px"><summary style="cursor:pointer;font-weight:700">+ Abrir una prueba nueva</summary>
+      <form id="f-nueva" style="display:grid;gap:12px;margin-top:12px">
+        <label>Nombre<input name="nombre" required maxlength="60" placeholder="Muffins de murta"></label>
+        <label>Una línea<input name="texto" maxlength="300" placeholder="La probamos el fin de semana. ¿La quieres?"></label>
+        <label>¿Con cuántas reservas la hornean?<input name="meta" type="number" min="1" max="999" inputmode="numeric"></label>
+        <button type="submit" class="wa" style="background:var(--cacao)">Abrir la prueba</button>
+      </form>
+    </details>
+  </section>
+
+  <section>
+    <div class="rotulo">llegó</div>
+    <h2>¿Dónde llegó algo hoy?</h2>
+    <form class="form" id="f-llego">
+      <div class="dos">
+        <label>Dónde<input name="donde" required maxlength="60" placeholder="@manduca.pv"></label>
+        <label>Ciudad<input name="ciudad" maxlength="40" placeholder="Nueva Braunau"></label>
+      </div>
+      <label>Qué llegó<input name="que" required maxlength="120" placeholder="2 tortas pudú y 12 alfajores"></label>
+      <button type="submit" class="wa" style="background:var(--cacao)">Contarlo</button>
+    </form>
+  </section>
+</main>
+<script type="module" src="../js/horno.js"></script>
+</body>
+</html>

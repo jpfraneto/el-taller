@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>La Junta · Escalada Puerto Varas</title>
+  <meta name="description" content="La Junta: centro de escalada en Puerto Varas. Escala. Comparte. Sé parte.">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="La Junta">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+  <meta property="og:title" content="La Junta · Escala. Comparte. Sé parte.">
+  <meta property="og:description" content="Centro de escalada en Puerto Varas. Verano 2027.">
+  <meta property="og:image" content="/assets/brand/render-escalada.jpg">
+  <link rel="preload" href="/assets/SpaceGrotesk-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <aside class="desk-side" aria-hidden="true">
+    <img class="desk-logo" src="/assets/brand/logo-blanco-horizontal.png" alt="">
+    <p class="desk-claim">Escala.<br>Comparte.<br>Sé parte.</p>
+    <div class="desk-qr" id="desk-qr"></div>
+    <p class="desk-hint" data-i18n="desk.hint">Ábrelo en tu teléfono</p>
+  </aside>
+
+  <div class="app" id="app">
+    <header class="topbar" id="topbar">
+      <a href="#/" class="topbar-logo" aria-label="La Junta">
+        <img src="/assets/brand/isotipo-blanco.png" alt="">
+        <span>LA JUNTA</span>
+      </a>
+      <span class="demo-pill" id="demo-pill" hidden>DEMO</span>
+      <div class="topbar-right">
+        <button class="lang-btn" id="lang-btn" aria-label="Idioma / Language">EN</button>
+        <button class="avatar-btn" id="avatar-btn" aria-label="Perfil"></button>
+      </div>
+    </header>
+
+    <main id="view" class="view" tabindex="-1"></main>
+
+    <nav class="tabbar" id="tabbar">
+      <a href="#/" data-tab="inicio">
+        <svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        <span data-i18n="tab.inicio">Inicio</span>
+      </a>
+      <a href="#/juntas" data-tab="juntas">
+        <svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3.2"/><circle cx="16.5" cy="9" r="2.6"/><path d="M2.5 19.5c.6-3.4 2.9-5.2 5.5-5.2s4.9 1.8 5.5 5.2M13.5 15.2c.9-.8 1.9-1.2 3-1.2 2.2 0 4 1.5 4.6 4.6"/></svg>
+        <span data-i18n="tab.juntas">Juntas</span>
+      </a>
+      <a href="#/gimnasio" data-tab="gimnasio">
+        <svg viewBox="0 0 24 24"><path d="M4 20V8l8-4 8 4v12"/><path d="M8 20v-6h8v6"/><circle cx="10" cy="10" r="1"/><circle cx="14.5" cy="11.5" r="1"/></svg>
+        <span data-i18n="tab.gimnasio">Gimnasio</span>
+      </a>
+      <a href="#/socios" data-tab="socios">
+        <svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.8z"/></svg>
+        <span data-i18n="tab.socios">Socios</span>
+      </a>
+    </nav>
+  </div>
+
+  <div class="sheet-root" id="sheet-root"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

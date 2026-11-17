@@ -1,0 +1,20 @@
+{
+  "_que_es": "Su post 'Oportunidades de noviembre' (15 nov 2026), tal cual: sus 5 elegidas y su texto de cada diapo. Fotos y precio salen de propiedades.json por código.",
+  "fuente": "https://www.instagram.com/p/DfyBQ7Ny8bt/",
+  "titulo": "Oportunidades de noviembre",
+  "bajada": "a excelente precio",
+  "portada": "3203",
+  "intro":"5 oportunidades para encontrar tu lugar en el sur 🌿 Casas rodeadas de bosque, parcelas urbanizadas y loteos con laguna, entre Puerto Varas y Frutillar.",
+  "propiedades": [
+    { "id": "2418", "nombre": "Parcelación Los Canelos", "lugar": "Puerto Varas",
+      "puntos": ["Dos casas recepcionadas en 5.000 m² de terreno (63 m² + 49 m²)", "Ambas actualmente arrendadas y equipadas con cortinas y lámparas"] },
+    { "id": "3234", "nombre": "Espacio Frutillar", "lugar": "Frutillar",
+      "puntos": ["Parcela plana de 5.200 m²", "Loteo con caminos asfaltados, fibra óptica y quincho"] },
+    { "id": "3203", "nombre": "Loteo El Arboreto", "lugar": "Puerto Varas",
+      "puntos": ["230 m² construidos en 5.000 m² de terreno", "4 dormitorios y 3 baños, en loteo consolidado"] },
+    { "id": "2763", "nombre": "La Reserva de Frutillar", "lugar": "Frutillar",
+      "puntos": ["Casa nueva de 166 m² construidos en 5.000 m² de terreno", "Loteo con laguna, senderos y acceso a lago"] },
+    { "id": "3028", "nombre": "Loteo Las Tranqueras", "lugar": "Puerto Varas",
+      "puntos": ["Parcela plana de 5.000 m²", "Loteo con calles asfaltadas, laguna y caballerizas"] }
+  ]
+}

@@ -1,0 +1,12 @@
+# Seba's login code (6 digits) while the WhatsApp code is simulated. Empty = his code shows on screen like everyone's.
+COACH_CODE=
+# Copy to .dev.vars (never commit it).
+# Reads the whiteboard photo ("Foto de la pizarra").
+ANTHROPIC_API_KEY=
+# Mercado Pago: mercadopago.cl/developers → Tus integraciones → tu app (Checkout Pro) → Credenciales.
+# For tests use the credentials of a TEST seller account (Cuentas de prueba).
+MP_ACCESS_TOKEN=
+# Webhooks → Configurar notificaciones → clave secreta. Only needed once deployed (webhooks don't reach localhost).
+MP_WEBHOOK_SECRET=
+# Local dev: keep empty so Mercado Pago sends the buyer back to localhost instead of endemico.jpfraneto.com.
+PUBLIC_URL=

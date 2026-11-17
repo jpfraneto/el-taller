@@ -1,0 +1,480 @@
+{
+ "ep": "06",
+ "name": "TuAuto",
+ "take": "IMG_4688",
+ "accent": "#E0C878",
+ "accent_ink": "#2E3F74",
+ "fixes": [
+  [
+   "se llama tu auto",
+   "se llama TuAuto"
+  ],
+  [
+   "con tu auto y no",
+   "con TuAuto y no"
+  ],
+  [
+   "que mi auto vende",
+   "que TuAuto vende"
+  ],
+  [
+   "whatsapp",
+   "WhatsApp"
+  ],
+  [
+   "ceo",
+   "CEO"
+  ],
+  [
+   "comodity",
+   "commodity"
+  ],
+  [
+   "queráis",
+   "querái"
+  ],
+  [
+   "tenés",
+   "tenís"
+  ]
+ ],
+ "reels": [
+  {
+   "id": "01-el-caso",
+   "act": "1/3",
+   "pieces": [
+    {
+     "t": 1044.5,
+     "say": "si vendo al principio olvídalo la gente lo borra de su mente"
+    },
+    {
+     "t": 1048.5,
+     "say": "me está vendiendo no quiero"
+    },
+    {
+     "t": 66.5,
+     "say": "hoy día vamos a trabajar con una automotora que se llama tu auto ellos están en Temuco"
+    },
+    {
+     "t": 74.5,
+     "say": "me encanta porque tienen una presencia en Instagram que es dinámica es entretenida publican contenido el CEO aparece harto en cámara Patricio"
+    },
+    {
+     "t": 978.0,
+     "say": "me llama la atención la poca interacción que tienen las publicaciones 10 15 likes tienen 15 mil seguidores"
+    },
+    {
+     "t": 988.5,
+     "say": "la publicación más popular que tuvieron fue una en la que hicieron una dinámica en la que comparaban distintas marcas"
+    },
+    {
+     "t": 997.5,
+     "say": "ese es contenido que la gente quiere consumir sin necesariamente ser vendida un auto"
+    },
+    {
+     "t": 1008.5,
+     "say": "primero tenemos que agregarle valor a las personas"
+    },
+    {
+     "t": 1014.5,
+     "say": "a partir de crear contenido que los entretenga los informe y después de repente les podemos vender"
+    },
+    {
+     "t": 1036.5,
+     "say": "agrego valor"
+    },
+    {
+     "t": 1040.5,
+     "say": "al final vendo"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "SI VENDES PRIMERO,",
+      "*TE BORRAN*"
+     ],
+     "until": "hoy día"
+    },
+    {
+     "type": "image",
+     "at": "ellos están",
+     "until": "me llama la atención",
+     "src": "assets/ig/ig-profile-phone.png",
+     "label": "@AUTOMOTRIZTUAUTO.CL · TEMUCO",
+     "width": 900
+    },
+    {
+     "type": "image",
+     "at": "el ceo",
+     "until": "me llama la atención",
+     "src": "assets/ig/reel-patricio-con-mate.jpg",
+     "label": "PATRICIO VERGARA · CEO",
+     "width": 760
+    },
+    {
+     "type": "image",
+     "at": "las publicaciones",
+     "until": "la publicación más popular",
+     "src": "assets/ig/post-2026-11-06-citroen-berlingo.jpg",
+     "label": "SOLO EL AUTO · 11 ME GUSTA",
+     "width": 760
+    },
+    {
+     "type": "stamp",
+     "at": "15 mil seguidores",
+     "for": 2.0,
+     "text": "15 MIL SEGUIDORES"
+    },
+    {
+     "type": "image",
+     "at": "la publicación más popular",
+     "until": "primero tenemos",
+     "src": "assets/ig/reel-torneo-marcas-japonesas.jpg",
+     "label": "TORNEO DE MARCAS JAPONESAS",
+     "width": 760
+    },
+    {
+     "type": "callout",
+     "at": "sin necesariamente",
+     "through": "un auto",
+     "lines": [
+      "SIN VENDERTE",
+      "*UN AUTO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "primero tenemos",
+     "through": "a las personas",
+     "lines": [
+      "PRIMERO",
+      "*AGREGA VALOR*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "agrego valor",
+     "through": "al final vendo",
+     "lines": [
+      "AL FINAL,",
+      "*VENDES*"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "02-el-nudo",
+   "act": "2/3",
+   "pieces": [
+    {
+     "t": 811.5,
+     "say": "por qué tomaría la decisión de vender mi auto con tu auto y no con otros"
+    },
+    {
+     "t": 109.5,
+     "say": "uno no vende muchos autos en la vida"
+    },
+    {
+     "t": 117.0,
+     "say": "la vez que tuve que vender mi auto lo publiqué porque un amigo me habló de una cuenta de Instagram que publicaba autos usados"
+    },
+    {
+     "t": 126.5,
+     "say": "y fue como la solución más rápida"
+    },
+    {
+     "t": 131.5,
+     "say": "cuando uno va a vender el auto quiere vender el auto nomás"
+    },
+    {
+     "t": 168.0,
+     "say": "hoy día en el centro me encontré con una persona con la que había trabajado Marcelo"
+    },
+    {
+     "t": 184.5,
+     "say": "me contó que estaba vendiendo tres autos"
+    },
+    {
+     "t": 380.0,
+     "say": "le pregunté cómo lo estaba haciendo y me dijo por mientras por WhatsApp con amigos porque no tengo tiempo"
+    },
+    {
+     "t": 803.0,
+     "say": "tú tenís una especie de commodity acá que es vender autos"
+    },
+    {
+     "t": 816.5,
+     "say": "porque me ofrecen esto me ofrecen esto me ofrecen esto"
+    },
+    {
+     "t": 820.5,
+     "say": "cómo eso se comunica cómo eso se clarifica"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "¿POR QUÉ CONTIGO",
+      "*Y NO CON OTROS?*"
+     ],
+     "until": "uno no vende"
+    },
+    {
+     "type": "callout",
+     "at": "uno no vende",
+     "through": "en la vida",
+     "lines": [
+      "NADIE VENDE",
+      "*MUCHOS AUTOS*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "la solución más rápida",
+     "through": "nomás",
+     "lines": [
+      "QUIERES",
+      "*VENDERLO NOMÁS*"
+     ]
+    },
+    {
+     "type": "stamp",
+     "at": "tres autos",
+     "for": 2.0,
+     "text": "3 AUTOS"
+    },
+    {
+     "type": "callout",
+     "at": "por WhatsApp",
+     "through": "no tengo tiempo",
+     "lines": [
+      "POR WHATSAPP,",
+      "*SIN TIEMPO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "comodity",
+     "through": "vender autos",
+     "lines": [
+      "VENDER AUTOS",
+      "*ES COMMODITY*"
+     ]
+    },
+    {
+     "type": "image",
+     "at": "me ofrecen esto",
+     "until": "me ofrecen esto#2",
+     "src": "assets/site/a-compramos-al-instante-4-pasos.png",
+     "label": "«COMPRAMOS TUAUTO AL INSTANTE»",
+     "width": 980
+    },
+    {
+     "type": "image",
+     "at": "me ofrecen esto#2",
+     "until": "me ofrecen esto#3",
+     "src": "assets/ig/reel-vende-tu-auto-con-nosotros.jpg",
+     "label": "«VENDE TU AUTO CON NOSOTROS»",
+     "width": 700
+    },
+    {
+     "type": "image",
+     "at": "me ofrecen esto#3",
+     "until": "cómo eso se comunica",
+     "src": "assets/site/d-auto-valor-contado.png",
+     "label": "«ESTÁNDAR DE ORO»",
+     "width": 980
+    },
+    {
+     "type": "callout",
+     "at": "cómo eso se comunica",
+     "through": "se clarifica",
+     "lines": [
+      "¿CÓMO",
+      "*SE COMUNICA?*"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "03-la-propuesta",
+   "act": "3/3",
+   "pieces": [
+    {
+     "t": 259.5,
+     "say": "hay algo entretenido en poder sacarle una foto a tu auto y saber cuánto vale"
+    },
+    {
+     "t": 275.5,
+     "say": "y después como que te agarra para el hueveo por tu auto"
+    },
+    {
+     "t": 278.0,
+     "say": "en inglés se dice roast"
+    },
+    {
+     "t": 209.0,
+     "say": "yo creía que era la solución más novedosa pero"
+    },
+    {
+     "t": 211.5,
+     "say": "me dijo Marcelo que ya existe"
+    },
+    {
+     "t": 389.0,
+     "say": "me dijo que te castigaba demasiado el precio"
+    },
+    {
+     "t": 234.0,
+     "say": "independiente que algo ya exista la forma en la que se muestra a las personas"
+    },
+    {
+     "t": 288.0,
+     "say": "esa dinámica de que te dice algo con respecto a tu auto que después tú puedes compartir es un mecanismo de viralidad"
+    },
+    {
+     "t": 354.0,
+     "say": "lo comparto la gente descubre la herramienta hace lo mismo por su auto y un porcentaje de esa gente descubre que mi auto vende autos usados"
+    },
+    {
+     "t": 762.0,
+     "say": "se puede ahí meter un lead que lleve a WhatsApp"
+    },
+    {
+     "t": 547.0,
+     "say": "los distintos vendedores el CEO"
+    },
+    {
+     "t": 552.5,
+     "say": "puedan estar en la misma página"
+    },
+    {
+     "t": 866.0,
+     "say": "no me interesa eliminar a las personas"
+    },
+    {
+     "t": 870.5,
+     "say": "solo me interesa hacer que la comunicación de la persona con la otra persona contenga un contexto"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "¿CUÁNTO VALE",
+      "*TU AUTO?*"
+     ],
+     "until": "sacarle una foto"
+    },
+    {
+     "type": "phone",
+     "at": "sacarle una foto",
+     "until": "yo creía",
+     "src": "assets/rec/talla.mp4",
+     "from": 0.5,
+     "w": 540,
+     "y": 960,
+     "label": "TUAUTO.JPFRANETO.COM",
+     "keys": [
+      [
+       "cuánto vale",
+       6.7
+      ],
+      [
+       "hueveo",
+       9.7
+      ]
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "yo creía",
+     "through": "ya existe",
+     "lines": [
+      "«ESO",
+      "*YA EXISTE»*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "castigaba",
+     "through": "el precio",
+     "lines": [
+      "TE CASTIGA",
+      "*EL PRECIO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "la forma",
+     "through": "a las personas",
+     "lines": [
+      "LO QUE IMPORTA:",
+      "*CÓMO SE MUESTRA*"
+     ]
+    },
+    {
+     "type": "image",
+     "at": "tú puedes compartir",
+     "until": "un porcentaje",
+     "src": "assets/rec/talla-card.jpg",
+     "label": "LA TARJETA PARA COMPARTIR",
+     "width": 800,
+     "y": 800
+    },
+    {
+     "type": "phone",
+     "at": "se puede ahí",
+     "until": "los distintos vendedores",
+     "src": "assets/rec/tasar.mp4",
+     "from": 15.4,
+     "w": 540,
+     "y": 960,
+     "label": "UN LEAD A WHATSAPP",
+     "keys": [
+      [
+       "whatsapp",
+       19.6
+      ]
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "los distintos vendedores",
+     "until": "no me interesa",
+     "src": "assets/rec/equipo.mp4",
+     "from": 1.5,
+     "w": 540,
+     "y": 960,
+     "label": "EL EQUIPO, EN LA MISMA PÁGINA",
+     "keys": [
+      [
+       "misma página",
+       5.7
+      ]
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "contenga un contexto",
+     "through": "contenga un contexto",
+     "lines": [
+      "PERSONAS",
+      "*CON CONTEXTO*"
+     ]
+    }
+   ]
+  }
+ ],
+ "zooms": [
+  2.0,
+  2.5,
+  2.2,
+  2.6,
+  2.0,
+  2.4
+ ]
+}

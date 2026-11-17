@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CG Limpiezas · cotización</title>
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CG Limpiezas">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://cglimpiezas.jpfraneto.com/c/">
+<meta property="og:title" content="CG Limpiezas · tu cotización">
+<meta property="og:description" content="La foto, lo que vimos y el precio. Alfombras, sillones y colchones, hace 35 años.">
+<meta property="og:image" content="https://cglimpiezas.jpfraneto.com/img/og/cotiza.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CG Limpiezas · tu cotización">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CG Limpiezas · tu cotización">
+<meta name="twitter:description" content="La foto, lo que vimos y el precio. Alfombras, sillones y colchones, hace 35 años.">
+<meta name="twitter:image" content="https://cglimpiezas.jpfraneto.com/img/og/cotiza.jpg">
+<meta name="theme-color" content="#f5f2ec">
+<link rel="icon" href="../img/pfp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/app.css">
+<style>
+  .estado { display: inline-block; font-size: 13px; font-weight: 700; border-radius: 999px; padding: 4px 10px; margin: 12px 0 4px; }
+  .estado.nueva { background: #fff3cc; color: #7a5b00; }
+  .estado.confirmada { background: #dff3fb; color: #0b5d80; }
+  .estado.pagada { background: #dcf5e3; color: #146c2e; }
+  .que { font-family: var(--marca); font-size: 22px; font-weight: 700; letter-spacing: -0.01em; margin: 4px 0; }
+  .pagar { width: 100%; margin-top: 14px; padding: 16px; border: 0; border-radius: 14px; background: #009ee3; color: #fff; font-weight: 700; font-size: 18px; }
+  .cg { margin-top: 18px; border: 2px dashed var(--tinta); border-radius: 18px; padding: 16px; background: #fff; }
+  .cg h2 { font-family: var(--marca); font-size: 20px; margin: 0 0 10px; }
+  .cg label { display: grid; gap: 4px; font-size: 13px; color: #5a6a80; margin-bottom: 10px; }
+  .cg input, .cg textarea { font: inherit; font-size: 16px; padding: 10px; border-radius: 10px; border: 1px solid #d5d9e0; color: var(--tinta); }
+  .cg input.monto { font-family: var(--marca); font-weight: 800; font-size: 26px; }
+  .cg .btn { width: 100%; padding: 14px; border: 0; border-radius: 12px; background: var(--tinta); color: var(--espuma); font-weight: 700; font-size: 16px; margin-top: 4px; }
+  .cg .btn.sec { background: #25d366; color: #fff; }
+  .prueba { background: #fff8e1; border: 1px solid #f2d27a; border-radius: 14px; padding: 14px; margin-top: 14px; font-size: 14px; line-height: 1.45; }
+  .prueba .btn { width: 100%; margin-top: 10px; padding: 12px; border: 0; border-radius: 10px; background: var(--tinta); color: var(--espuma); font-weight: 700; }
+</style>
+</head>
+<body>
+<main class="cz">
+  <div class="cz-top"><img src="../img/logo.png" alt="CG Limpiezas"><a href="../cotiza/">cotizar otra cosa</a></div>
+  <p class="error" id="error" hidden></p>
+
+  <section class="tarjeta" id="cot" hidden>
+    <img id="foto" class="foto-cliente" alt="La foto de la cotización">
+    <span class="estado" id="estado"></span>
+    <div class="que" id="que"></div>
+    <p class="nota" id="veo"></p>
+    <div class="precio" id="precio"></div>
+    <p class="nota" id="nota"></p>
+    <button type="button" class="pagar" id="pagar" hidden></button>
+    <div class="prueba" id="prueba" hidden>
+      <b>Pago de prueba.</b> No se cobra nada: CG todavía no conecta su Mercado Pago. Cuando lo conecte, este botón
+      lleva a pagar de verdad y la plata llega directo a su cuenta.
+      <button type="button" class="btn" id="simular">Simular el pago</button>
+    </div>
+  </section>
+
+  <section class="cg" id="cg" hidden>
+    <h2>Para CG</h2>
+    <label>El precio (total, en pesos)<input class="monto" id="monto" inputmode="numeric" placeholder="$"></label>
+    <label>Una nota para el cliente (opcional)<textarea id="nota-cg" rows="2" placeholder="Ej: incluye el sanitizado. Vamos el jueves en la tarde."></textarea></label>
+    <button type="button" class="btn" id="confirmar">Confirmar precio</button>
+    <button type="button" class="btn sec" id="copiar" hidden>Copiar respuesta para el cliente</button>
+    <p class="nota" id="cg-msg"></p>
+  </section>
+</main>
+<script type="module" src="../js/c.js"></script>
+</body>
+</html>

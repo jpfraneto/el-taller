@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>El Taller · Conecta tu negocio</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0c0b0a" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0b0a'/%3E%3Ctext x='31' y='43' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff'%3Ejp%3C/text%3E%3Ccircle cx='50' cy='42' r='3.5' fill='%23FFD23F'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg: #0c0b0a; --panel: #151412; --ink: #fff; --mute: rgba(255,255,255,.66); --dim: rgba(255,255,255,.42); --line: rgba(255,255,255,.13);
+    --y: #ffd23f; --wa: #25d366; --ig: linear-gradient(45deg, #f9ce34, #ee2a7b 55%, #6228d7);
+    --head: "Inter Tight", "Inter", system-ui, sans-serif; --sans: "Inter", system-ui, -apple-system, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100svh; display: flex; flex-direction: column; background: var(--bg); color: var(--ink); font: 17px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+  main { flex: 1; width: 100%; max-width: 520px; margin: 0 auto; padding: 40px 16px 32px; }
+  .kicker { font: 700 12px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--y); }
+  h1 { font: 900 clamp(34px, 9vw, 46px)/.95 var(--head); letter-spacing: -.03em; text-transform: uppercase; margin: 12px 0 14px; }
+  h1 span { color: var(--y); }
+  p { color: var(--mute); margin: 0 0 22px; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; border: 0; border-radius: 16px; padding: 18px 20px; margin: 0 0 12px;
+    font: 800 19px var(--head); text-decoration: none; cursor: pointer; color: #fff; }
+  .btn svg { width: 26px; height: 26px; flex: none; }
+  .ig { background: var(--ig); }
+  .wa { background: var(--wa); color: #0b2e17; }
+  .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+  .hecho-ok { display: flex; align-items: center; gap: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin: 0 0 12px; font-weight: 600; }
+  .hecho-ok i { width: 22px; height: 22px; border-radius: 50%; background: var(--wa); flex: none; display: grid; place-items: center; font-style: normal; color: #0b2e17; font-size: 14px; }
+  .msg { font-size: 15px; margin: 10px 0 0; min-height: 1.5em; } .msg.error { color: #ff8a65; } .msg.bien { color: var(--wa); }
+  .nota { font-size: 14px; color: var(--dim); margin-top: 26px; }
+  .hecho { display: block; text-align: center; padding: 14px 16px 18px; font: 600 12px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-decoration: none; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">El Taller · conecta tu negocio</div>
+  <h1>Un toque y <span>listo.</span></h1>
+  <p id="intro">Entras con tus cuentas de siempre. Meta te pregunta qué compartir; tú eliges. Todo queda a tu nombre.</p>
+
+  <div id="hechos"></div>
+  <a class="btn ig" id="btnIg" href="#" aria-disabled="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+    Entrar con Instagram
+  </a>
+  <button class="btn wa" id="btnWa" type="button" aria-disabled="true">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+    Conectar WhatsApp
+  </button>
+  <a class="nota" id="btnWaApp" href="#" hidden>¿Tu número ya está en WhatsApp Business, en un teléfono? Conéctalo así: la app sigue funcionando.</a>
+  <div class="msg" id="msg"></div>
+  <p class="nota" id="nota">Para un número nuevo necesitas el teléfono de la pega con el chip a mano: Meta le manda un código por SMS. Si ese número ya usa la app WhatsApp Business, usa el link de arriba (no hace falta borrar nada).</p>
+</main>
+<a class="hecho" href="https://jpfraneto.com">hecho por jp en puerto varas</a>
+
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), s = q.get("s") || "", h = q.get("h") || "";
+  var $ = function (id) { return document.getElementById(id); };
+  function msg(t, tipo) { $("msg").textContent = t || ""; $("msg").className = "msg " + (tipo || ""); }
+  if (q.get("error")) msg(q.get("error"), "error");
+  if (q.get("listo") === "instagram") msg("Instagram conectado. Tu computador ya lo está recibiendo.", "bien");
+  if (!s || !h) {
+    $("intro").textContent = "Este enlace se abre desde el panel de El Taller en tu computador (el código QR de “Conectar con Meta”).";
+    $("nota").hidden = true; return;
+  }
+  $("btnIg").href = "/conectar/instagram?s=" + encodeURIComponent(s) + "&h=" + encodeURIComponent(h);
+
+  function estado() {
+    fetch("/conectar/estado?s=" + encodeURIComponent(s) + "&h=" + encodeURIComponent(h)).then(function (r) { return r.json(); }).then(function (e) {
+      if (e.error) { msg(e.error, "error"); return; }
+      var hechos = $("hechos"); hechos.innerHTML = "";
+      (e.instagram || []).forEach(function (u) { hechos.insertAdjacentHTML("beforeend", "<div class='hecho-ok'><i>✓</i>Instagram " + u.replace(/[<>&]/g, "") + "</div>"); });
+      if (e.whatsapp) hechos.insertAdjacentHTML("beforeend", "<div class='hecho-ok'><i>✓</i>WhatsApp " + e.whatsapp.replace(/[<>&]/g, "") + "</div>");
+      if (e.recogido) msg("Listo: tu computador ya tiene todo. Puedes cerrar esta página.", "bien");
+    }).catch(function () {});
+  }
+  estado(); setInterval(estado, 4000);
+
+  fetch("/conectar/config").then(function (r) { return r.json(); }).then(function (cfg) {
+    if (!cfg.listo) { msg("El Taller todavía se está conectando con Meta. Prueba en un rato.", "error"); return; }
+    if (cfg.ig_config) $("btnIg").setAttribute("aria-disabled", "false");
+    if (!cfg.wa_config) { $("btnWa").lastChild.textContent = " WhatsApp: muy pronto"; return; }
+    // WhatsApp: la ventana oficial de Meta (Embedded Signup). El código vive 30 segundos: se manda al tiro.
+    var datos = null, codigo = null, conApp = false;
+    function intentar() {
+      if (!datos || !codigo) return;
+      msg("Conectando tu número…");
+      fetch("/conectar/whatsapp", { method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({ s: s, h: h, code: codigo, waba_id: datos.waba_id, phone_number_id: datos.phone_number_id, business_id: datos.business_id, app: conApp }) })
+        .then(function (r) { return r.json(); }).then(function (j) {
+          if (j.error) msg(j.error, "error"); else { msg("WhatsApp conectado" + (j.numero ? ": " + j.numero : "") + ".", "bien"); estado(); }
+        }).catch(function () { msg("Se cortó la conexión. Inténtalo de nuevo.", "error"); });
+      datos = codigo = null;
+    }
+    window.addEventListener("message", function (ev) {
+      if (!/(^|\.)facebook\.com$/.test(new URL(ev.origin).hostname)) return;
+      try {
+        var d = JSON.parse(ev.data);
+        if (d.type !== "WA_EMBEDDED_SIGNUP") return;
+        if (d.event === "CANCEL") msg("Lo dejaste a medias (paso: " + ((d.data && d.data.current_step) || "?") + "). Puedes volver a intentarlo.", "error");
+        else if (d.event === "ERROR") msg("Meta dio un error: " + ((d.data && d.data.error_message) || "?"), "error");
+        else if (/^FINISH/.test(d.event)) { datos = d.data || {}; intentar(); }
+      } catch (e) { /* no era para nosotros */ }
+    });
+    window.fbAsyncInit = function () {
+      FB.init({ appId: cfg.app_id, autoLogAppEvents: true, xfbml: false, version: cfg.version });
+      $("btnWa").setAttribute("aria-disabled", "false");
+      $("btnWaApp").hidden = false;
+    };
+    var sc = document.createElement("script"); sc.async = true; sc.defer = true; sc.crossOrigin = "anonymous";
+    sc.src = "https://connect.facebook.net/es_LA/sdk.js"; document.body.appendChild(sc);
+    // Two ways in: a new number (the work phone's chip, no WhatsApp on it) or a number that already lives in the
+    // WhatsApp Business app on a phone (Meta's "coexistence": the app keeps working and El Taller answers too).
+    function abrir(app) {
+      conApp = app;
+      msg(app ? "Se abre la ventana de Meta. Ten a mano el teléfono con WhatsApp Business: te va a pedir escanear un código." : "Se abre la ventana de Meta…");
+      var extras = app ? { setup: {}, featureType: "whatsapp_business_app_onboarding", sessionInfoVersion: "3" } : { setup: {} };
+      FB.login(function (r) {
+        if (r.authResponse && r.authResponse.code) { codigo = r.authResponse.code; intentar(); }
+        else msg("No se completó. Puedes volver a intentarlo.", "error");
+      }, { config_id: cfg.wa_config, response_type: "code", override_default_response_type: true, extras: extras });
+    }
+    $("btnWa").addEventListener("click", function () { abrir(false); });
+    $("btnWaApp").addEventListener("click", function (e) { e.preventDefault(); abrir(true); });
+  });
+})();
+</script>
+</body>
+</html>

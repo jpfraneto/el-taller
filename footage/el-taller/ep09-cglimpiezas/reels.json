@@ -1,0 +1,478 @@
+{
+ "ep": "09",
+ "name": "CG Limpiezas",
+ "accent": "#27A8E0",
+ "accent_ink": "#0E2240",
+ "fixes": [
+  [
+   "whatsapp",
+   "WhatsApp"
+  ],
+  [
+   "instagram",
+   "Instagram"
+  ],
+  [
+   "vay",
+   "vai"
+  ],
+  [
+   "cg limpiezas",
+   "CG Limpiezas"
+  ],
+  [
+   "fran",
+   "Fran"
+  ]
+ ],
+ "reels": [
+  {
+   "id": "01-el-contraste",
+   "act": "1/3",
+   "nombre": "EL CONTRASTE",
+   "para": "Quien tiene un negocio de servicio (limpieza, arreglos, belleza) y no sabe qué publicar",
+   "idea": "Si tu negocio vende un contraste (entra mugre, sale limpio), cada post tiene que mostrar el antes y el después.",
+   "hook": [
+    "TU NEGOCIO",
+    "VENDE UN",
+    "<m>CONTRASTE</m>"
+   ],
+   "pieces": [
+    {
+     "t": 2005.3,
+     "say": "Entra mugre Sale Limpio Antes Después Contraste Ese es el contraste Que vende esta empresa"
+    },
+    {
+     "t": 532.8,
+     "say": "Ocupan agua Más químicos Para sacar La suciedad Hay una ecuación ahí Muy concreta"
+    },
+    {
+     "t": 574.2,
+     "say": "Tienen puras publicaciones Que no conversan Bien unas con otras No tienen una línea gráfica"
+    },
+    {
+     "t": 583.2,
+     "say": "Se me ocurre Que cada una De las publicaciones Podría tener una imagen Que mostrara Un antes Y un después"
+    },
+    {
+     "t": 2015.1,
+     "say": "Un contraste Que es sumamente importante Porque Lo sucio Enferma"
+    },
+    {
+     "t": 2021.6,
+     "say": "El musgo Atrapado En los muebles Enferma Entonces Podemos ocupar Ese antes y después Para ir mostrando Historias De Gente Que cambiando"
+    },
+    {
+     "t": 2032.9,
+     "say": "La higiene De su espacio Limpiando su sillón Cambió la vida"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "ENTRA MUGRE,",
+      "*SALE LIMPIO*"
+     ],
+     "until": "antes"
+    },
+    {
+     "type": "image",
+     "at": "antes",
+     "until": "después",
+     "src": "assets/frames/20240701-C85JWsQJR2k-00001-0.03.jpg",
+     "label": "ANTES"
+    },
+    {
+     "type": "image",
+     "at": "después",
+     "until": "ocupan agua",
+     "src": "assets/frames/20240701-C85JWsQJR2k-00001-0.97.jpg",
+     "label": "DESPUÉS"
+    },
+    {
+     "type": "image",
+     "at": "ocupan agua",
+     "until": "ecuación",
+     "src": "assets/frames/20241202-DDF6L6byinX-0.03.jpg",
+     "label": "@CGLIMPIEZAS"
+    },
+    {
+     "type": "callout",
+     "at": "ecuación",
+     "through": "muy concreta",
+     "lines": [
+      "UNA ECUACIÓN",
+      "*MUY CONCRETA*"
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "tienen puras publicaciones",
+     "until": "se me ocurre",
+     "src": "assets/rec/hoy.mp4",
+     "from": 0.4,
+     "label": "SU INSTAGRAM HOY",
+     "w": 480
+    },
+    {
+     "type": "callout",
+     "at": "línea gráfica",
+     "through": "línea gráfica",
+     "lines": [
+      "SIN LÍNEA",
+      "*GRÁFICA*"
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "cada una",
+     "until": "lo sucio",
+     "src": "assets/rec/perfil.mp4",
+     "from": 5.7,
+     "label": "LA PROPUESTA",
+     "w": 480
+    },
+    {
+     "type": "callout",
+     "at": "lo sucio",
+     "through": "enferma",
+     "lines": [
+      "LO SUCIO",
+      "*ENFERMA*"
+     ]
+    },
+    {
+     "type": "image",
+     "at": "el musgo",
+     "until": "entonces podemos",
+     "src": "assets/frames/20240821-C-6VREhNPhE-00001-0.5.jpg",
+     "label": "LO QUE SALE DEL SILLÓN"
+    },
+    {
+     "type": "callout",
+     "at": "limpiando su sillón",
+     "through": "cambió la vida",
+     "lines": [
+      "LIMPIANDO",
+      "SU SILLÓN",
+      "*CAMBIÓ LA VIDA*"
+     ]
+    }
+   ],
+   "cta": [
+    "¿Cuál es el antes y el después",
+    "*de lo que tú haces?*",
+    "Coméntalo abajo"
+   ]
+  },
+  {
+   "id": "02-la-cara",
+   "act": "2/3",
+   "nombre": "LA CARA",
+   "para": "Dueños de negocios que entran a la casa del cliente y nunca muestran quién está detrás",
+   "idea": "Si me pides entrar a mi casa, muéstrame tu cara y una identidad cohesiva: la confianza se construye mostrando quién eres.",
+   "hook": [
+    "MUÉSTRAME",
+    "TU <m>CARA</m>",
+    "Y TE CONFÍO"
+   ],
+   "pieces": [
+    {
+     "t": 602.6,
+     "say": "Las personas Detrás del negocio Nunca aparecen"
+    },
+    {
+     "t": 605.5,
+     "say": "No hay ninguna cara"
+    },
+    {
+     "t": 607.8,
+     "say": "Y cuando yo te voy a A permitir Que tú Limpies La alfombra O los cojines O el sillón De mi casa Te estoy entregando Un nivel de confianza"
+    },
+    {
+     "t": 618,
+     "say": "Que haría Que yo Probablemente Te confiaría Un poco más Si es que tú Me estás mostrando La cara"
+    },
+    {
+     "t": 625,
+     "say": "O si es que tú Me estás mostrando Una identidad Que se siente Cohesiva"
+    },
+    {
+     "t": 650.1,
+     "say": "Eso yo Lo percibo Y lo siento Cuando no existe Una identidad Gráfica Que haga que todo Este debajo De un mismo Techo"
+    },
+    {
+     "t": 871,
+     "say": "La historia Y la trayectoria Que tiene esta empresa Y esta marca"
+    },
+    {
+     "t": 879.2,
+     "say": "35 años Limpiando Suciedad En Chile En Santiago Entonces Eso es una Trayectoria Que debería llegar Así Pum"
+    },
+    {
+     "t": 889.7,
+     "say": "Nosotros somos Esto Y esto es lo que hacemos"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "NO HAY",
+      "*NINGUNA CARA*"
+     ],
+     "until": "no hay ninguna cara"
+    },
+    {
+     "type": "phone",
+     "at": "no hay ninguna cara",
+     "until": "y cuando yo",
+     "src": "assets/rec/hoy.mp4",
+     "from": 0.4,
+     "label": "SU INSTAGRAM HOY",
+     "w": 480
+    },
+    {
+     "type": "image",
+     "at": "el sillón",
+     "until": "te estoy entregando",
+     "src": "assets/frames/20240821-C-6VREhNPhE-00001-0.03.jpg",
+     "label": "@CGLIMPIEZAS"
+    },
+    {
+     "type": "callout",
+     "at": "nivel de confianza",
+     "through": "nivel de confianza",
+     "lines": [
+      "UN NIVEL",
+      "*DE CONFIANZA*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "la cara",
+     "through": "la cara",
+     "lines": [
+      "*MUÉSTRAME*",
+      "LA CARA"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "una identidad",
+     "through": "cohesiva",
+     "lines": [
+      "UNA IDENTIDAD",
+      "*COHESIVA*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "identidad gráfica",
+     "through": "techo",
+     "lines": [
+      "BAJO UN",
+      "*MISMO TECHO*"
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "la historia",
+     "until": "nosotros somos",
+     "src": "assets/rec/perfil.mp4",
+     "from": 0,
+     "label": "LA PROPUESTA",
+     "w": 480
+    },
+    {
+     "type": "stamp",
+     "at": "35 años",
+     "for": 2.2,
+     "text": "35 AÑOS"
+    },
+    {
+     "type": "phone",
+     "at": "nosotros somos",
+     "through": "lo que hacemos",
+     "src": "assets/rec/perfil.mp4",
+     "from": 2.8,
+     "label": "AQUÍ VA LA FAMILIA CG",
+     "w": 480
+    }
+   ],
+   "cta": [
+    "¿Tu cara está",
+    "*en tu negocio?*",
+    "Coméntalo abajo"
+   ]
+  },
+  {
+   "id": "03-la-foto",
+   "act": "3/3",
+   "nombre": "LA FOTO",
+   "para": "Quien vende un servicio por WhatsApp y recibe muchos '¿cuánto cuesta?' que nunca se concretan",
+   "idea": "Antes que un WhatsApp, deja que el cliente suba una foto y vea el precio: es menos compromiso y menos fricción.",
+   "hook": [
+    "EL WHATSAPP",
+    "<m>INTIMIDA</m>",
+    "SUBE UNA FOTO"
+   ],
+   "pieces": [
+    {
+     "t": 1890.8,
+     "say": "algo que puede atraer gente Es esta página En la cual la gente Sube una foto"
+    },
+    {
+     "t": 1897,
+     "say": "De su alfombra Y le responden Cuál va a ser el precio De esa alfombra"
+    },
+    {
+     "t": 1902.9,
+     "say": "¿Por qué esto"
+    },
+    {
+     "t": 1905.1,
+     "say": "Antes que un Whatsapp? Porque el Whatsapp intimida"
+    },
+    {
+     "t": 1908.4,
+     "say": "Mi historia personal Me dice Que si le mando un Whatsapp Genero una dinámica Un poco"
+    },
+    {
+     "t": 1915.7,
+     "say": "más cercana"
+    },
+    {
+     "t": 1918.3,
+     "say": "Subir una foto De una alfombra Que quiero cotizar Es una"
+    },
+    {
+     "t": 1925.6,
+     "say": "especie de juego"
+    },
+    {
+     "t": 1941.1,
+     "say": "Es un grado De compromiso menor Que mandar un Whatsapp Para preguntarle A un ser humano"
+    },
+    {
+     "t": 1945.7,
+     "say": "Cuánto cuesta Esto"
+    },
+    {
+     "t": 1947.6,
+     "say": "Y las personas Queremos hacer menos trabajo Entonces bajémosle El trabajo que tiene que hacer Esa persona"
+    },
+    {
+     "t": 1965,
+     "say": "Sube tu foto acá Para el presupuesto O envíame un Whatsapp directo Está la opción Pero no es la principal Porque la"
+    },
+    {
+     "t": 1972.7,
+     "say": "principal Es la que es Menos fricción"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "UNA FOTO",
+      "*Y EL PRECIO*"
+     ],
+     "until": "sube una foto"
+    },
+    {
+     "type": "phone",
+     "at": "sube una foto",
+     "until": "por qué esto",
+     "src": "assets/rec/cotiza.mp4",
+     "from": 3.7,
+     "label": "EL LINK DE LA BIO",
+     "keys": [
+      [
+       "el precio",
+       "lo que ve + el precio"
+      ]
+     ],
+     "w": 480
+    },
+    {
+     "type": "callout",
+     "at": "intimida",
+     "through": "intimida",
+     "lines": [
+      "EL WHATSAPP",
+      "*INTIMIDA*"
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "subir una foto",
+     "until": "especie de juego",
+     "src": "assets/rec/cotiza.mp4",
+     "from": 3.6,
+     "label": "SÁCALE UNA FOTO",
+     "w": 480
+    },
+    {
+     "type": "callout",
+     "at": "especie de juego",
+     "through": "especie de juego",
+     "lines": [
+      "ES UNA ESPECIE",
+      "*DE JUEGO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "compromiso menor",
+     "through": "un ser humano",
+     "lines": [
+      "MENOS",
+      "*COMPROMISO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "queremos hacer menos trabajo",
+     "through": "menos trabajo",
+     "lines": [
+      "QUEREMOS HACER",
+      "*MENOS TRABAJO*"
+     ]
+    },
+    {
+     "type": "phone",
+     "at": "sube tu foto",
+     "until": "menos fricción",
+     "src": "assets/rec/cotiza.mp4",
+     "from": 9,
+     "label": "EL WHATSAPP, DESPUÉS",
+     "w": 480
+    },
+    {
+     "type": "callout",
+     "at": "menos fricción",
+     "through": "menos fricción",
+     "lines": [
+      "*MENOS FRICCIÓN*"
+     ]
+    }
+   ],
+   "cta": [
+    "¿Qué te preguntan siempre",
+    "*antes de comprarte?*",
+    "Coméntalo abajo"
+   ]
+  }
+ ],
+ "take": "IMG_4742",
+ "zooms": [
+  2.0,
+  2.4,
+  2.15,
+  2.5,
+  2.0,
+  2.3
+ ]
+}

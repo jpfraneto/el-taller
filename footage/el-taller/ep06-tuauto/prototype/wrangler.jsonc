@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tuauto-app",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // jpfraneto.com is on Cloudflare: the Worker answers on this subdomain directly.
+  "routes": [{ "pattern": "tuauto.jpfraneto.com", "custom_domain": true }],
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  // Backup photo reader if OpenRouter fails (Cloudflare's own vision model, no key needed).
+  "ai": { "binding": "AI" },
+  // Requests sent to the team ("Mandar a TuAuto"): card data in the key's metadata, the small photo in the value.
+  "kv_namespaces": [{ "binding": "SOLICITUDES", "id": "6441b3aceceb45bd8b954687171ededd" }],
+  "vars": {
+    // TuAuto's WhatsApp on their sell page and on every car's "Contacto" button (automotriztuauto.cl, 2026-11-08). Confirm.
+    "TUAUTO_WA": "56966492665",
+    // Photo reads per IP per day.
+    "LIMITE_DIARIO": "40"
+  }
+  // Secrets (npx wrangler secret put NAME; local dev: .dev.vars):
+  //   EQUIPO_KEY         the key the team types on /equipo
+  //   OPENROUTER_API_KEY reads the photo (google/gemini-2.5-flash-lite); key in footage/el-taller/.openrouter_key
+}

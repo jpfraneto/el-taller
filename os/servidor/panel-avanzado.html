@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>El Taller · servidor</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316423C'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%23E9B44C'/%3E%3C/svg%3E" />
+<style>
+  :root {
+    --paper: #f3eee4; --card: #faf7f0; --ink: #1b211e; --soft: #5a615c; --lake: #16423c; --ember: #c4491f;
+    --sun: #e9b44c; --rule: #d8cfbd; --ok: #2f7a4f; --bubble: #e7efe9;
+    --serif: "Iowan Old Style", Georgia, serif; --sans: -apple-system, system-ui, "Segoe UI", sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #141816; --card: #1c211e; --ink: #ece7dc; --soft: #a3a99f; --lake: #7fc1b1; --ember: #ef8a5f;
+      --sun: #e9b44c; --rule: #2f3632; --ok: #6fcf97; --bubble: #23302a; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+  main { max-width: 1080px; margin: 0 auto; padding: 32px 16px 64px; display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 900px) { main { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; } .wide { grid-column: 1 / -1; } }
+  header { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; }
+  .kicker { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ember); font-weight: 600; }
+  h1 { font: 500 clamp(28px, 5vw, 40px)/1.1 var(--serif); margin: 4px 0 0; }
+  h2 { font: 600 13px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--soft); margin: 0 0 10px; }
+  .card { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 18px; }
+  .switch { display: flex; align-items: center; gap: 12px; background: var(--card); border: 1px solid var(--rule); border-radius: 99px; padding: 8px 10px 8px 18px; }
+  .switch b { font-size: 15px; }
+  .toggle { width: 52px; height: 30px; border-radius: 99px; border: 0; background: var(--rule); position: relative; cursor: pointer; }
+  .toggle::after { content: ""; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; transition: left .15s; }
+  .toggle[aria-pressed="true"] { background: var(--ok); }
+  .toggle[aria-pressed="true"]::after { left: 25px; }
+  .grupo + .grupo { margin-top: 22px; }
+  details.item { border-top: 1px solid var(--rule); }
+  details.item:first-of-type { border-top: 0; }
+  summary { list-style: none; display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; align-items: start; padding: 11px 0; cursor: pointer; }
+  summary::-webkit-details-marker { display: none; }
+  .dot { width: 14px; height: 14px; border-radius: 50%; margin-top: 4px; border: 2px solid var(--ember); }
+  .ok .dot { background: var(--ok); border-color: var(--ok); }
+  .opcional .dot { border-color: var(--rule); border-style: dashed; }
+  .t { font-weight: 600; }
+  .d { color: var(--soft); font-size: 14px; overflow-wrap: anywhere; }
+  .mas { color: var(--soft); font-size: 13px; padding-top: 2px; }
+  details[open] .mas { color: var(--lake); }
+  .cuerpo { padding: 0 0 16px 32px; font-size: 15px; }
+  .cuerpo ol { margin: 0 0 12px; padding-left: 20px; } .cuerpo li { margin: 0 0 6px; }
+  label { display: block; font-size: 13px; color: var(--soft); margin: 10px 0 4px; }
+  input, textarea { width: 100%; font: 15px var(--sans); color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 9px; padding: 9px 11px; }
+  textarea { min-height: 120px; resize: vertical; }
+  button.b { font: 600 14px var(--sans); border: 0; border-radius: 9px; padding: 9px 16px; margin-top: 12px; cursor: pointer; background: var(--lake); color: var(--paper); }
+  button.b.sec { background: transparent; color: var(--lake); border: 1px solid var(--rule); }
+  button.b:disabled { opacity: .5; cursor: wait; }
+  .copiar { display: flex; margin: 6px 0; border-radius: 9px; overflow: hidden; background: var(--ink); color: var(--paper); }
+  .copiar code { flex: 1; min-width: 0; padding: 9px 12px; font: 13.5px/1.4 var(--mono); overflow-x: auto; white-space: nowrap; }
+  .copiar button { border: 0; background: var(--sun); color: #1b211e; font: 600 13px var(--sans); padding: 0 12px; cursor: pointer; }
+  .codigo { font: 600 30px var(--mono); letter-spacing: .06em; color: var(--lake); margin: 6px 0; }
+  .msg { font-size: 14px; margin-top: 8px; } .msg.error { color: var(--ember); } .msg.bien { color: var(--ok); }
+  .ayuda ol { margin: 6px 0 0; padding-left: 20px; } .ayuda li { margin-bottom: 6px; }
+  .ayuda { border-left: 4px solid var(--sun); }
+  .chat { display: flex; flex-direction: column; gap: 8px; max-height: 460px; overflow-y: auto; padding: 4px 2px; }
+  .burbuja { max-width: 85%; padding: 8px 12px; border-radius: 14px; white-space: pre-wrap; font-size: 15px; overflow-wrap: anywhere; }
+  .burbuja small { display: block; color: var(--soft); font-size: 11.5px; margin-top: 3px; }
+  .dueno { align-self: flex-end; background: var(--lake); color: var(--paper); border-bottom-right-radius: 4px; }
+  .dueno small { color: inherit; opacity: .7; }
+  .amigo { align-self: flex-start; background: var(--bubble); border-bottom-left-radius: 4px; } /* burbuja de Claude (de="amigo" en los registros, nombre viejo) */
+  .sistema { align-self: center; color: var(--soft); font-size: 13px; text-align: center; }
+  .vacio { color: var(--soft); font-size: 14px; }
+  .fila { display: flex; gap: 8px; margin-top: 12px; } .fila input { flex: 1; } .fila button { margin: 0; }
+  .lista { font-size: 13.5px; color: var(--soft); margin: 0; padding-left: 18px; }
+  .lista li { margin-bottom: 4px; overflow-wrap: anywhere; }
+  .pie { color: var(--soft); font-size: 13px; }
+  .accesos { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 8px 0; }
+  .accesos a.b { display: inline-block; text-decoration: none; font: 600 14px var(--sans); border-radius: 9px; padding: 9px 16px; margin-top: 8px; background: var(--lake); color: var(--paper); }
+  .accesos a.b.sec { background: transparent; color: var(--lake); border: 1px solid var(--rule); }
+  [hidden] { display: none !important; }
+  .qr { background: #fff; padding: 10px; border-radius: 12px; line-height: 0; }
+</style>
+</head>
+<body>
+<main>
+  <header class="wide">
+    <div>
+      <div class="kicker">El Taller · servidor</div>
+      <h1 id="titulo">Claude para tu negocio</h1>
+    </div>
+    <div class="switch"><b id="estadoTxt">Apagado</b><button class="toggle" id="encender" aria-pressed="false" aria-label="Encender o apagar"></button></div>
+  </header>
+
+  <section class="card" id="pasos">
+    <div class="grupo"><h2>Tu negocio</h2><div id="g-negocio"></div></div>
+    <div class="grupo"><h2>Meta (WhatsApp + Instagram)</h2><div id="g-meta"></div></div>
+    <div class="grupo"><h2>Este computador</h2><div id="g-servidor"></div></div>
+  </section>
+
+  <div style="display:grid;gap:20px;min-width:0">
+    <section class="card ayuda">
+      <h2>Si Claude no contesta</h2>
+      <ol>
+        <li>Mira este computador: <b>prendido, enchufado y con la tapa abierta</b>.</li>
+        <li>Revisa que tenga <b>internet</b>: abre cualquier página.</li>
+        <li><b>Reinícialo</b> (menú Apple → Reiniciar). Vuelve solo en un par de minutos.</li>
+        <li>¿Sigue sin contestar? Abre esta página (<b id="urlPanel">localhost:4747</b>): lo que esté en rojo es lo que falla. Si no se entiende, escríbele a JP.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>La conversación</h2>
+      <div class="chat" id="chat"><div class="vacio">Todavía no hablan.</div></div>
+      <div class="fila"><input id="probarTxt" placeholder="Pruébalo: escríbele desde aquí" /><button class="b" id="probar">Enviar</button></div>
+      <div class="msg" id="probarMsg"></div>
+      <p class="pie">Lo que escribes aquí no sale por WhatsApp: es para probar. Claude recuerda todo igual.</p>
+      <button class="b sec" id="nueva">Empezar conversación nueva</button>
+    </section>
+
+    <section class="card">
+      <h2>Lo que pasó</h2>
+      <ul class="lista" id="eventos"></ul>
+      <h2 style="margin-top:14px">Clientes</h2>
+      <ul class="lista" id="clientes"></ul>
+      <h2 style="margin-top:14px">Mensajes de otros (no se responden)</h2>
+      <ul class="lista" id="desconocidos"></ul>
+    </section>
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const CLAVE = "{{CLAVE}}";
+let E = null;
+
+const api = async (ruta, datos) => {
+  const r = await fetch(ruta, { method: datos === undefined ? "GET" : "POST", headers: { "X-Taller-Clave": CLAVE, "Content-Type": "application/json" },
+    body: datos === undefined ? undefined : JSON.stringify(datos) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || ("error " + r.status));
+  return j;
+};
+const h = (tag, attrs = {}, ...hijos) => {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) { if (k === "html") el.innerHTML = v; else if (k.startsWith("on")) el.addEventListener(k.slice(2), v); else el.setAttribute(k, v); }
+  for (const c of hijos.flat()) if (c != null) el.append(c.nodeType ? c : document.createTextNode(c));
+  return el;
+};
+const copiar = (getter) => { const code = h("code"); const b = h("button", { type: "button", onclick: () => { navigator.clipboard.writeText(code.textContent); b.textContent = "Copiado"; setTimeout(() => b.textContent = "Copiar", 1500); } }, "Copiar");
+  const el = h("div", { class: "copiar" }, code, b); el._upd = () => { code.textContent = getter() || "—"; }; return el; };
+const campo = (id, etiqueta, tipo = "input", ph = "") => [h("label", { for: id }, etiqueta), h(tipo, { id, placeholder: ph, autocomplete: "off" })];
+const val = (id) => document.getElementById(id).value;
+const boton = (texto, ruta, datos, despues) => {
+  const msg = h("div", { class: "msg" });
+  const b = h("button", { class: "b", type: "button", onclick: async () => {
+    b.disabled = true; msg.className = "msg"; msg.textContent = "Un momento…";
+    try { const j = await api(ruta, datos()); msg.className = "msg bien"; msg.textContent = (despues && despues(j)) || "Listo."; await refrescar(); }
+    catch (e) { msg.className = "msg error"; msg.textContent = e.message; }
+    finally { b.disabled = false; }
+  } }, texto);
+  return [b, msg];
+};
+const pasos = (...l) => h("ol", {}, l.map((x) => h("li", { html: x })));
+
+// Qué se muestra adentro de cada paso (instrucciones + formulario). Lo que se actualiza solo lleva _upd.
+const CUERPOS = {
+  carpeta: () => [
+    h("p", {}, "Cuéntale a Claude de qué se trata el negocio. Con esto nace la memoria; lo demás te lo pregunta por chat."),
+    ...campo("n-nombre", "Nombre del negocio"), ...campo("n-dueno", "Nombre del dueño"), ...campo("n-ig", "Instagram del negocio", "input", "@minegocio"),
+    ...campo("n-ctx", "Lo que contó de su negocio (su bio, qué vende, qué le cuesta…)", "textarea"),
+    ...boton("Crear la memoria", "/api/negocio", () => ({ nombre: val("n-nombre"), dueno: val("n-dueno"), instagram: val("n-ig"), contexto: val("n-ctx") })),
+  ],
+  amigo: () => [  // paso "amigo" = qué hace Claude sin preguntar (id y ruta /api/amigo con nombre viejo)
+    h("p", {}, "Opcional. Si lo dejas vacío, Claude te pregunta antes de todo, salvo anotar en la memoria."),
+    ...campo("a-solo", "¿Qué puede hacer sin preguntarte?", "input", "por ahora: solo anotar en la memoria"),
+    ...campo("a-modelo", "Modelo de Claude (avanzado, vacío = el normal)", "input", "sonnet · opus · haiku"),
+    ...boton("Guardar", "/api/amigo", () => ({ puede_solo: val("a-solo"), modelo: val("a-modelo") })),
+  ],
+  whatsapp: () => [
+    pasos("Pon el <b>chip prepago nuevo</b> en el <b>teléfono de la pega</b> (uno que se queda en el negocio), solo para recibir el SMS. <b>No le instales WhatsApp.</b> Si ya lo hiciste, borra la cuenta en la app (Ajustes → Cuenta → Eliminar cuenta) antes de conectarlo.",
+      "En tu app de Meta (<a href='https://developers.facebook.com/apps' target='_blank'>developers.facebook.com/apps</a>) → <b>WhatsApp → Configuración de la API</b> → <b>Agregar número de teléfono</b>, y verifícalo con el SMS. Desde ahí ese número ya no se usa en la app de WhatsApp: es el WhatsApp de tu negocio, y lo responde Claude.",
+      "Copia el <b>Identificador del número de teléfono</b> (phone number ID).",
+      "Crea un token permanente: <a href='https://business.facebook.com/settings/system-users' target='_blank'>Meta Business → Usuarios del sistema</a> → Agregar (administrador) → <b>Generar token</b> para tu app, con los permisos <code>whatsapp_business_messaging</code> y <code>whatsapp_business_management</code>."),
+    ...campo("w-id", "Identificador del número (phone number ID)"), ...campo("w-tok", "Token del usuario del sistema", "input", "se guarda solo en este computador"),
+    ...campo("w-waba", "ID de la cuenta de WhatsApp Business (opcional: si los mensajes no llegan)"),
+    ...boton("Conectar y probar", "/api/whatsapp", () => ({ phone_number_id: val("w-id"), token: val("w-tok"), waba_id: val("w-waba") }), () => "Conectado: Meta reconoce el número."),
+  ],
+  instagram: () => [
+    pasos("La cuenta de Instagram del negocio tiene que ser <b>profesional</b> (empresa o creador).",
+      "En tu app de Meta → <b>Instagram → Configuración de la API con inicio de sesión de Instagram</b> → <b>Generar token</b> para la cuenta.",
+      "En la misma página, en Webhooks, pega la dirección y el token de verificación de “Meta sabe dónde avisar” y suscribe <b>messages</b>."),
+    ...campo("i-tok", "Token de Instagram"),
+    ...boton("Conectar y probar", "/api/instagram", () => ({ token: val("i-tok") }), () => "Conectado."),
+  ],
+  dueno: () => {
+    const cod = h("div", { class: "codigo" }); cod._upd = () => { cod.textContent = E.datos.codigo_pareo || "—"; };
+    const num = h("p", {}); num._upd = () => { num.innerHTML = E.datos.whatsapp.numero ? `Desde <b>tu WhatsApp personal</b>, manda este código al WhatsApp de tu negocio (<b>${E.datos.whatsapp.numero}</b>), o por DM a su Instagram:` : "Primero conecta el WhatsApp de tu negocio. Después, desde tu teléfono, le mandas el código:"; };
+    const vence = h("p", { class: "pie" }); vence._upd = () => { vence.textContent = E.datos.codigo_pareo ? `Vence a las ${E.datos.codigo_vence} y sirve una vez. Así Claude sabe que eres tú: contigo trabaja completo; con los demás, solo atiende.` : "Genera un código cuando tengas el teléfono a mano (dura 30 minutos)."; };
+    // Un toque: el QR (o el botón, si estás en el teléfono) abre WhatsApp con el código ya escrito. Solo falta Enviar.
+    const qr = h("div", { class: "qr" }), btnWa = h("a", { class: "b", target: "_blank", rel: "noopener" }, "Abrir WhatsApp con el código"),
+      btnIg = h("a", { class: "b sec", target: "_blank", rel: "noopener" }, "Abrir su Instagram");
+    let ultimo = "";
+    const accesos = h("div", { class: "accesos" }, qr, h("div", {}, h("p", { class: "pie" }, "Escanéalo con la cámara de tu teléfono: se abre WhatsApp con el código escrito. Solo aprieta Enviar."), btnWa, " ", btnIg));
+    accesos._upd = () => {
+      const n = (E.datos.whatsapp.numero || "").replace(/\D/g, ""), c = E.datos.codigo_pareo, u = E.datos.instagram.usuario;
+      accesos.hidden = !c || (!n && !u);
+      btnWa.hidden = !n; btnIg.hidden = !u;
+      if (u) btnIg.href = "https://ig.me/m/" + u;
+      const link = n ? "https://wa.me/" + n + "?text=" + encodeURIComponent(c) : "";
+      if (n) btnWa.href = link;
+      if (link && link !== ultimo && window.QRCode) { qr.innerHTML = ""; new QRCode(qr, { text: link, width: 168, height: 168, correctLevel: QRCode.CorrectLevel.M }); ultimo = link; }
+      qr.hidden = !link;
+    };
+    return [num, cod, vence, accesos, ...boton("Generar código", "/api/nuevo-codigo", () => ({}))];
+  },
+  publico: () => [h("p", { html: "Lo <b>único</b> que sabe Claude cuando le escribe un cliente: qué vendes, precios, horarios, cómo se compra. Lo demás de tu memoria no lo ve." }),
+    pasos("Lo más fácil: escríbele a Claude “a los clientes diles que…” y lo anota en <code>negocio/publico.md</code> (te pregunta antes)."),
+    h("p", { class: "pie" }, "Mientras esté vacío, a los clientes les dice que te avisa.")],
+  clientes: () => {
+    const sw = h("button", { class: "b", type: "button" }), msg = h("div", { class: "msg" });
+    sw._upd = () => { sw.textContent = E.datos.atiende_clientes ? "Apagar la atención a clientes" : "Encender la atención a clientes"; };
+    sw.addEventListener("click", async () => { try { await api("/api/clientes", { activo: !E.datos.atiende_clientes }); refrescar(); } catch (e) { msg.className = "msg error"; msg.textContent = e.message; } });
+    const inp = h("input", { placeholder: "Escribe como si fueras un cliente" }), out = h("div", { class: "msg" });
+    const b = h("button", { class: "b sec", type: "button", onclick: async () => {
+      if (!inp.value.trim()) return; b.disabled = true; out.className = "msg"; out.textContent = "Pensando…";
+      try { const j = await api("/api/probar-cliente", { texto: inp.value }); inp.value = "";
+        out.className = "msg bien"; out.textContent = "Respondió: " + j.respuesta + (j.avisos.length ? "\n\nY a ti te avisa: " + j.avisos.join(" · ") : ""); out.style.whiteSpace = "pre-wrap"; }
+      catch (e) { out.className = "msg error"; out.textContent = e.message; } b.disabled = false; refrescar(); } }, "Probar");
+    return [h("p", { html: "Claude responde el WhatsApp de tu negocio a cualquiera que escriba. Con los clientes <b>no tiene herramientas</b>: no ve tu memoria ni el computador, no cobra ni confirma nada. Lo que necesites saber, te lo avisa a tu WhatsApp." }),
+      sw, msg, h("label", {}, "Pruébalo como cliente (no sale por WhatsApp)"), h("div", { class: "fila" }, inp, b), out];
+  },
+  ventana: () => [h("p", { html: "La web de tu negocio puede mostrar a Claude trabajando: si está en línea, cuántos clientes atendió hoy, lo que les cuenta (<code>publico.md</code>) y su diario (<code>diario.md</code>, cada línea con tu sí). <b>Nunca</b> conversaciones ni datos de clientes." }),
+    ...campo("v-url", "Dirección de publicación", "input", "https://tunegocio.jpfraneto.com/api/ventana"), ...campo("v-clave", "Clave de publicación (te la da JP)"),
+    ...boton("Conectar y publicar", "/api/ventana", () => ({ url: val("v-url"), clave: val("v-clave") }), () => "Publicado.")],
+  encendido: () => [h("p", {}, "Arriba a la derecha. Apagado, Claude no responde (los mensajes quedan anotados aquí).")],
+  conectar: () => {
+    const qr = h("div", { class: "qr" }), a = h("a", { class: "b", target: "_blank", rel: "noopener" }, "Abrir en este computador"), box = h("div", { class: "accesos" }, qr, h("div", {},
+      h("p", { class: "pie" }, "Escanéalo con tu teléfono. Se abre una página con dos botones: Entrar con Instagram y Conectar WhatsApp (ten el chip a mano: llega un SMS). Vence en 30 minutos."), a));
+    let ultimo = "";
+    box._upd = () => {
+      const l = E.datos.conectar_link; box.hidden = !l; if (!l) return; a.href = l;
+      if (l !== ultimo && window.QRCode) { qr.innerHTML = ""; new QRCode(qr, { text: l, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M }); ultimo = l; }
+    };
+    return [h("p", { html: "La forma fácil: entras con tus cuentas de siempre y Meta te pregunta qué compartir. No hay que copiar nada, y los mensajes llegan por El Taller (sin túnel)." }),
+      box, ...boton("Conectar con Meta", "/api/conectar-meta", () => ({}), () => "Escanea el código con tu teléfono.")];
+  },
+  app: () => [h("p", { class: "pie" }, "Avanzado: solo si no usas “Conectar con Meta” y tienes tu propia app."),
+    pasos("Entra a <a href='https://developers.facebook.com/apps' target='_blank'>developers.facebook.com/apps</a> con tu Facebook → <b>Crear app</b> → tipo <b>Negocios</b>, y elige el portafolio de tu negocio.",
+      "Agrega el producto <b>WhatsApp</b> (y, si quieres, <b>Instagram</b>).",
+      "En <b>Configuración de la app → Básica</b>: copia el <b>Identificador de la app</b> y la <b>Clave secreta</b>."),
+    ...campo("m-id", "Identificador de la app (App ID)"), ...campo("m-sec", "Clave secreta de la app"),
+    ...campo("m-igsec", "Clave secreta de Instagram (opcional, si usas Instagram)"),
+    ...boton("Guardar", "/api/meta", () => ({ app_id: val("m-id"), app_secret: val("m-sec"), ig_app_secret: val("m-igsec") })),
+  ],
+  webhook: () => {
+    const u = copiar(() => E.datos.webhook_url), t = copiar(() => E.datos.verify_token);
+    return [pasos("En tu app de Meta → <b>WhatsApp → Configuración</b> → <b>Webhook</b> → Editar.", "Pega la <b>URL de devolución de llamada</b> y el <b>token de verificación</b>:"),
+      h("label", {}, "URL de devolución de llamada"), u, h("label", {}, "Token de verificación"), t,
+      pasos("Aprieta <b>Verificar y guardar</b>. Si sale bien, este paso se pone verde solo.", "Abajo, en campos del webhook, suscribe <b>messages</b>.")];
+  },
+  claude: () => [pasos("Abre la app <b>Terminal</b> y pega:"), copiar(() => "curl -fsSL https://claude.ai/install.sh | bash"),
+    pasos("Después entra con tu cuenta de Claude:"), copiar(() => "~/.local/bin/claude auth login")],
+  git: () => [pasos("En Terminal, pega esto y aprieta Instalar en la ventana de Apple (5-10 minutos):"), copiar(() => "xcode-select --install")],
+  caja: () => {
+    const p = h("p", {}); p._upd = () => { p.textContent = E.servidor.find((x) => x.id === "caja").estado === "ok" ? "Claude trabaja sin pedir permiso, pero dentro de una caja: puede leer y escribir la memoria del negocio, y no puede ver las claves de este computador." : "Sin la caja, Claude podría leer las claves de Meta guardadas en este computador."; };
+    return [p, ...boton("Activar la caja", "/api/caja", () => ({ activa: true }))];
+  },
+  arranque: () => [h("p", {}, "Para que Claude vuelva solo después de un corte de luz o un reinicio. El instalador lo deja listo; si está en rojo, en Terminal:"),
+    copiar(() => "/usr/bin/python3 ~/ElTaller/.servidor/taller.py --arranque"),
+    pasos("Y en <b>Configuración del Sistema → Usuarios y grupos</b>, activa <b>Iniciar sesión automáticamente</b> con este usuario: si no, después de un corte el computador se queda esperando la contraseña y Claude no despierta.",
+      "Déjalo <b>enchufado y con la tapa abierta</b>.")],
+  tunel: () => {
+    const desc = h("div"); desc._upd = () => { desc.hidden = E.datos.cloudflared; };
+    desc.append(...boton("1 · Descargar el túnel de Cloudflare", "/api/cloudflared", () => ({})));
+    return [h("p", {}, "Meta tiene que poder avisarle a este computador cuando llega un mensaje. El túnel abre una sola puerta (para Meta), no el computador entero."),
+      desc,
+      pasos("En <a href='https://one.dash.cloudflare.com' target='_blank'>Cloudflare Zero Trust</a> → <b>Redes → Túneles</b> → <b>Crear túnel</b> (Cloudflared), nombre <b>taller</b>.",
+        "Copia el <b>token</b> (el texto largo después de <code>--token</code>) y pégalo abajo.",
+        "En <b>Nombre de host público</b>: un subdominio (ej. <code>taller.tunegocio.cl</code>), servicio <b>HTTP</b>, URL <code>localhost:4748</code>."),
+      ...campo("t-tok", "Token del túnel"), ...campo("t-url", "Dirección pública", "input", "https://taller.tunegocio.cl"),
+      ...boton("Guardar y probar", "/api/tunel", () => ({ token: val("t-tok"), url_publica: val("t-url") }), () => "Guardado. En unos segundos se prueba solo.")];
+  },
+};
+
+const ITEMS = {};
+function armar(grupo, lista) {
+  const cont = document.getElementById("g-" + grupo); cont.innerHTML = "";
+  for (const p of lista) {
+    const dot = h("span", { class: "dot" }), t = h("div", { class: "t" }, p.titulo), d = h("div", { class: "d" });
+    const det = h("details", { class: "item" }, h("summary", {}, dot, h("div", {}, t, d), h("span", { class: "mas" }, "cómo")),
+      h("div", { class: "cuerpo" }, ...(CUERPOS[p.id] ? CUERPOS[p.id]() : [])));
+    ITEMS[p.id] = { det, d }; cont.append(det);
+  }
+}
+function pintar() {
+  if (!Object.keys(ITEMS).length) { armar("negocio", E.negocio); armar("meta", E.meta); armar("servidor", E.servidor); abrirPrimero(); }
+  for (const p of [...E.negocio, ...E.meta, ...E.servidor]) {
+    const it = ITEMS[p.id]; if (!it) continue;
+    it.det.className = "item " + p.estado; it.d.textContent = p.detalle;
+  }
+  document.querySelectorAll("#pasos *").forEach((el) => el._upd && el._upd());
+  const n = E.datos.negocio;
+  document.getElementById("titulo").textContent = n.nombre ? `Claude · ${n.nombre}` : "Claude para tu negocio";
+  document.title = n.nombre ? `El Taller · ${n.nombre}` : "El Taller · servidor";
+  const tg = document.getElementById("encender"); tg.setAttribute("aria-pressed", String(E.datos.encendido));
+  document.getElementById("estadoTxt").textContent = E.datos.encendido ? "Encendido" : "Apagado";
+  document.getElementById("urlPanel").textContent = E.datos.panel.replace("http://", "");
+  const chat = document.getElementById("chat"), abajo = chat.scrollHeight - chat.scrollTop - chat.clientHeight < 40;
+  chat.innerHTML = "";
+  if (!E.conversacion.length) chat.append(h("div", { class: "vacio" }, "Todavía no hablan."));
+  for (const m of E.conversacion) chat.append(h("div", { class: "burbuja " + m.de }, m.texto, h("small", {}, `${m.fecha.slice(5, 16)} · ${m.canal}`)));
+  if (abajo) chat.scrollTop = chat.scrollHeight;
+  const ev = document.getElementById("eventos"); ev.innerHTML = "";
+  for (const e of [...E.eventos].reverse()) ev.append(h("li", {}, `${e.fecha.slice(5, 16)} · ${e.texto}`));
+  const cs = document.getElementById("clientes"); cs.innerHTML = "";
+  if (!E.clientes.length) cs.append(h("li", {}, "Ninguno todavía."));
+  for (const e of [...E.clientes].reverse().slice(0, 12)) cs.append(h("li", {}, `${e.fecha.slice(5, 16)} · ${e.quien === "cliente" ? e.canal + " " + e.de : "→ Claude"}: ${e.texto}`));
+  const ds = document.getElementById("desconocidos"); ds.innerHTML = "";
+  if (!E.desconocidos.length) ds.append(h("li", {}, "Ninguno."));
+  for (const e of [...E.desconocidos].reverse()) ds.append(h("li", {}, `${e.fecha.slice(5, 16)} · ${e.canal} ${e.de}: ${e.texto}`));
+}
+function abrirPrimero() {
+  const pedido = location.hash.slice(1); if (pedido && ITEMS[pedido]) { ITEMS[pedido].det.open = true; ITEMS[pedido].det.scrollIntoView(); return; }
+  for (const p of [...E.negocio, ...E.meta, ...E.servidor]) if (p.estado === "falta") { ITEMS[p.id].det.open = true; return; }
+}
+async function refrescar() { try { E = await api("/api/estado"); pintar(); } catch (e) { document.getElementById("estadoTxt").textContent = "Sin conexión con el servidor"; } }
+
+document.getElementById("encender").addEventListener("click", async () => { await api("/api/encender", { encendido: !E.datos.encendido }).catch(() => {}); refrescar(); });
+document.getElementById("nueva").addEventListener("click", async () => { await api("/api/nueva-conversacion", {}); refrescar(); });
+const enviar = async () => {
+  const inp = document.getElementById("probarTxt"), msg = document.getElementById("probarMsg"), b = document.getElementById("probar");
+  if (!inp.value.trim()) return;
+  b.disabled = true; msg.className = "msg"; msg.textContent = "Pensando…"; const t = inp.value; inp.value = "";
+  setTimeout(refrescar, 300);
+  try { await api("/api/probar", { texto: t }); msg.textContent = ""; } catch (e) { msg.className = "msg error"; msg.textContent = e.message; inp.value = t; }
+  b.disabled = false; refrescar();
+};
+document.getElementById("probar").addEventListener("click", enviar);
+document.getElementById("probarTxt").addEventListener("keydown", (e) => { if (e.key === "Enter") enviar(); });
+refrescar(); setInterval(refrescar, 3000);
+</script>
+</body>
+</html>

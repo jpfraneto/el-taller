@@ -1,0 +1,82 @@
+{
+  "_nota": "Solo lo que Campo & Mar tiene público (posts + historias destacadas, visto el 2026-11-13). null = no está público: se muestra como hueco, no se inventa. precio: siempre null hasta que ellos lo pongan.",
+  "tiendas": [
+    { "ciudad": "Ancud", "direccion": "Pudeto 386", "fuente": "post del 4 may 2026" },
+    { "ciudad": "Castro", "direccion": "Thompson 285", "duda": "¿285 o 385? Su post dice 285; el de @datitosdelajose, 385.", "fuente": "post del 4 may 2026" }
+  ],
+  "puntos": [
+    { "ig": "manduca.pv", "ciudad": "Nueva Braunau" },
+    { "ig": "cafe.estacionpv", "ciudad": "Puerto Varas" },
+    { "ig": "esquinabo", "ciudad": "Puerto Varas y Osorno" },
+    { "ig": "layuntagranel", "ciudad": "Puerto Varas" },
+    { "ig": "heladerialasilvestre", "ciudad": "Puerto Varas" },
+    { "ig": "laden.market", "ciudad": "Puerto Varas" },
+    { "ig": "pucara.cl", "ciudad": "Llanquihue" },
+    { "ig": "coffeedahlias", "ciudad": "Quellón" },
+    { "ig": null, "nombre": "Amalgamar Cocinería", "ciudad": "Chonchi" }
+  ],
+  "productos": [
+    {
+      "id": "queque-chocolate", "nombre": "Queque de chocolate", "tipo": "queque", "foto": "img/posts/queque-chocolate.jpg",
+      "lleva": ["100% harina de almendra", "chips de chocolate 60%", "ganache de chocolate suizo y crema de coco"],
+      "sin_gluten": true, "vegano": null, "endulzado": "azúcar de coco",
+      "fuente": "post del 4 nov 2026"
+    },
+    {
+      "id": "torta-garza", "nombre": "Torta garza", "tipo": "torta", "foto": null,
+      "lleva": ["bizcocho de zanahoria", "murta"],
+      "sin_gluten": null, "vegano": null, "endulzado": "libre de azúcar (¿con qué endulza?)",
+      "fuente": "historia destacada «Pastelería»"
+    },
+    {
+      "id": "torta-pudu", "nombre": "Torta pudú", "tipo": "torta", "foto": null,
+      "lleva": ["bizcocho de chocolate", "manjar de dátiles", "frosting de maní"],
+      "sin_gluten": null, "vegano": null, "endulzado": null,
+      "fuente": "historia destacada «Pastelería»"
+    },
+    {
+      "id": "rollitos", "nombre": "Rollitos de canela", "tipo": "trozo", "foto": "img/posts/rollitos.jpg",
+      "lleva": ["los favoritos, según sus clientes"],
+      "sin_gluten": null, "vegano": null, "endulzado": null,
+      "nota": "El 20 oct preguntaron: «¿Les gustaría que hiciéramos una versión sin azúcar?»",
+      "fuente": "post del 20 oct 2026"
+    },
+    {
+      "id": "alfajor-coco", "nombre": "Alfajor de coco", "tipo": "trozo", "foto": null,
+      "lleva": ["manjar de coco"],
+      "sin_gluten": null, "vegano": true, "aplv": true, "endulzado": null,
+      "fuente": "historia destacada «Pastelería»"
+    },
+    {
+      "id": "queque-zanahoria", "nombre": "Queque de zanahoria", "tipo": "queque", "foto": null,
+      "lleva": ["frosting de queso crema"],
+      "sin_gluten": null, "vegano": false, "endulzado": null,
+      "fuente": "historia destacada «Pastelería»"
+    },
+    {
+      "id": "barra-toffee", "nombre": "Barra toffee", "tipo": "trozo", "foto": null,
+      "lleva": ["galleta de mantequilla", "caluga", "chocolate 72%"],
+      "sin_gluten": null, "vegano": false, "endulzado": null,
+      "fuente": "historia destacada «Pastelería»"
+    },
+    {
+      "id": "trufas", "nombre": "Trufas de chocolate y naranja", "tipo": "regalo", "foto": null,
+      "lleva": ["naranja confitada"],
+      "sin_gluten": null, "vegano": null, "endulzado": null,
+      "fuente": "historia destacada «Pastelería»"
+    },
+    {
+      "id": "cajitas", "nombre": "Cajitas dulces y bombones", "tipo": "regalo", "foto": "img/posts/cajitas.jpg",
+      "lleva": ["bombones artesanales", "galletas"],
+      "sin_gluten": null, "vegano": null, "endulzado": null,
+      "fuente": "post del 4 may 2026"
+    },
+    {
+      "id": "muffins", "nombre": "Muffins veganos de arándano", "tipo": "trozo", "foto": "img/posts/muffins.jpg",
+      "lleva": ["arándanos"],
+      "sin_gluten": null, "vegano": true, "endulzado": null, "prueba": true,
+      "nota": "En prueba: el 18 oct preguntaron si los quieren en las tiendas.",
+      "fuente": "post del 18 oct 2026"
+    }
+  ]
+}

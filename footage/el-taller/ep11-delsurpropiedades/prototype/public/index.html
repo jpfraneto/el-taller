@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Del Sur Propiedades · Puerto Varas</title>
+  <meta name="description" content="Las propiedades de Del Sur Propiedades en fotos y en el mapa. 30 años en Puerto Varas.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#004469">
+  <meta property="og:title" content="Del Sur Propiedades · Puerto Varas">
+  <meta property="og:description" content="¿Buscando un pedacito de sur? Míralo en fotos y en el mapa.">
+  <link rel="icon" href="/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="barra">
+    <a class="marca" href="/" aria-label="Inicio">
+      <img src="/img/logo.jpg" alt="Del Sur Propiedades">
+      <span><b>Del Sur</b> Propiedades</span>
+    </a>
+    <form class="codigo" id="codigo" autocomplete="off">
+      <label for="cod">Código</label>
+      <input id="cod" inputmode="numeric" pattern="[0-9]*" placeholder="3257" maxlength="5">
+      <button aria-label="Abrir">→</button>
+    </form>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="kicker">★ 30 años en Puerto Varas</p>
+      <h1>¿Buscando un<br><em>pedacito de sur?</em></h1>
+      <p class="sub">Alejandra, Francisca y su equipo. Mira todo lo que tienen, en fotos y en el mapa.</p>
+      <div class="operacion" role="tablist">
+        <button class="on" data-op="venta" role="tab">Comprar</button>
+        <button data-op="arriendo" role="tab">Arrendar</button>
+      </div>
+    </section>
+
+    <section class="cuenta">
+      <form id="busca">
+        <label for="texto">Cuéntanos cómo quieres vivir</label>
+        <div class="campo">
+          <textarea id="texto" rows="2" placeholder="Una casa con vista al lago, 3 dormitorios, hasta UF 9.000…"></textarea>
+          <button id="buscaBtn">Buscar</button>
+        </div>
+        <div class="ejemplos" id="ejemplos"></div>
+      </form>
+      <div id="respuesta" class="respuesta" hidden></div>
+    </section>
+
+    <section class="filtros">
+      <h2>¿Qué buscas?</h2>
+      <div class="tipos" id="tipos"></div>
+      <h2 id="cuanto">¿Cuánto?</h2>
+      <div class="precios" id="precios"></div>
+      <h2>¿Dónde?</h2>
+      <div class="comunas" id="comunas"></div>
+    </section>
+
+    <section class="resultados">
+      <div class="cabeza">
+        <p id="cuantas"></p>
+        <div class="vista" role="tablist">
+          <button class="on" data-vista="fotos">Fotos</button>
+          <button data-vista="mapa">Mapa</button>
+        </div>
+      </div>
+      <div id="mapa" class="mapa" hidden></div>
+      <div id="grilla" class="grilla"></div>
+      <button id="mas" class="mas" hidden>Ver más</button>
+    </section>
+
+    <section class="red">
+      <p class="kicker">★ Club Del Sur</p>
+      <h2>Llegas al sur con red</h2>
+      <p class="sub">Las marcas de la zona con las que trabajan, y sus descuentos para clientes Del Sur.</p>
+      <div class="club" id="club"></div>
+      <div class="hueco">
+        <b>Aquí va el Mapa Del Sur.</b>
+        Sus lugares favoritos de Puerto Varas, al lado de cada propiedad: el café, la playa, el colegio. Hoy lo regalan
+        por mail; es de ellas, por eso no lo inventamos.
+      </div>
+    </section>
+
+    <section class="nosotras">
+      <img src="/img/logo.jpg" alt="">
+      <div>
+        <h2>Somos Alejandra y Francisca</h2>
+        <p>"Nos gusta considerarnos como un puente entre personas." Un equipo de siete mujeres, desde el año 2000 en
+          Puerto Varas. Más de 2.000 clientes han confiado en ellas.</p>
+        <p class="dir">San José 308, oficina 6 (piso 2) · Lunes a viernes 09.00–18.00 · Sábado 10.15–13.30</p>
+        <a class="wa" id="waGeneral" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Prototipo de <a href="https://jpfraneto.com" target="_blank">El Taller con JP</a> para Del Sur Propiedades.
+      Las propiedades, fotos y textos son los que publican en <a href="https://www.delsurpropiedades.cl" target="_blank">delsurpropiedades.cl</a>
+      (leídos el <span id="leido"></span>). Ubicación referencial. Valor en pesos referencial.</p>
+  </footer>
+
+  <div class="ficha" id="ficha" hidden aria-modal="true" role="dialog">
+    <div class="ficha-in" id="fichaIn"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="/js/app.js" type="module"></script>
+</body>
+</html>

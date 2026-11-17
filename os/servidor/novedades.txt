@@ -1,0 +1,1 @@
+La quest de tu dominio, con los pasos exactos: qué botón apretar en Cloudflare (y cuál no) y dónde se cambian los servidores en NIC.cl. Se llama El Taller de Rubén, y si otro programa usaba el puerto del panel, elige otro solo.

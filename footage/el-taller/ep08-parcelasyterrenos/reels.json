@@ -1,0 +1,547 @@
+{
+ "ep": "08",
+ "name": "Parcelas y Terrenos",
+ "take": "IMG_4715",
+ "accent": "#B9DC8C",
+ "accent_ink": "#1D3528",
+ "endcard": "EPISODIO 8",
+ "fixes": [
+  [
+   "chat gtp",
+   "ChatGPT"
+  ],
+  [
+   "cloud",
+   "Claude"
+  ],
+  [
+   "parcelas y terrenos.cl",
+   "parcelasyterrenos.cl"
+  ],
+  [
+   "terrenos.cl",
+   "terrenos.cl"
+  ],
+  [
+   "whatsapp",
+   "WhatsApp"
+  ],
+  [
+   "instagram",
+   "Instagram"
+  ],
+  [
+   "google",
+   "Google"
+  ],
+  [
+   "chile",
+   "Chile"
+  ],
+  [
+   "aprende el perfil",
+   "apreté el perfil"
+  ],
+  [
+   "parcelas y terrenos punto cl",
+   "parcelasyterrenos.cl"
+  ],
+  [
+   "en un momento",
+   "en este momento"
+  ],
+  [
+   "en el momento",
+   "en este momento"
+  ],
+  [
+   "el chatgpt",
+   "y ChatGPT"
+  ]
+ ],
+ "reels": [
+  {
+   "id": "01-el-activo",
+   "act": "1/3",
+   "nombre": "EL ACTIVO",
+   "idea": "un dominio que trae gente gratis hace años es un activo, aunque la página no tenga nada",
+   "cta": [
+    "Sigue en 2/3:",
+    "*El nudo →*"
+   ],
+   "pieces": [
+    {
+     "t": 713.7,
+     "say": "el dominio es tan bueno, tan único y tan preciso que la gente llega sola"
+    },
+    {
+     "t": 657.0,
+     "say": "hoy día fui al gimnasio, después del gimnasio me quedé conversando con un personaje"
+    },
+    {
+     "t": 683.5,
+     "say": "y me habló de que tenía una página web"
+    },
+    {
+     "t": 691.5,
+     "say": "que lleva años recibiendo búsquedas orgánicas, porque la página web es parcelas y terrenos.cl"
+    },
+    {
+     "t": 702.0,
+     "say": "entonces la gente buscaba parcelas en Google y le aparecía esta página web"
+    },
+    {
+     "t": 709.0,
+     "say": "independiente de que este personaje nunca hizo ningún tipo de optimización para poder aparecer ahí"
+    },
+    {
+     "t": 722.0,
+     "say": "y el chat GTP se lo recomienda a la gente y es algo que está en el inconsciente colectivo de Internet"
+    },
+    {
+     "t": 731.0,
+     "say": "entonces es un activo que en este momento no está siendo utilizado"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "LA GENTE",
+      "*LLEGA SOLA*"
+     ],
+     "until": "hoy día fui",
+     "y": 380
+    },
+    {
+     "type": "image",
+     "at": "me habló de que",
+     "until": "independiente de que",
+     "src": "assets/sitio/home.png",
+     "width": 700,
+     "label": "PARCELASYTERRENOS.CL",
+     "view_h": 760,
+     "y": 920
+    },
+    {
+     "type": "callout",
+     "at": "la gente buscaba",
+     "through": "esta página web",
+     "lines": [
+      "LA BUSCAS EN",
+      "*GOOGLE*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "nunca hizo",
+     "through": "aparecer ahí",
+     "lines": [
+      "CERO",
+      "*OPTIMIZACIÓN*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "chat gtp",
+     "through": "a la gente",
+     "lines": [
+      "CHATGPT",
+      "*LA RECOMIENDA*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "inconsciente",
+     "through": "internet",
+     "lines": [
+      "EL INCONSCIENTE",
+      "*DE INTERNET*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "es un activo",
+     "through": "utilizado",
+     "lines": [
+      "UN ACTIVO",
+      "*SIN USAR*"
+     ],
+     "y": 380
+    }
+   ]
+  },
+  {
+   "id": "02-el-nudo",
+   "act": "2/3",
+   "nombre": "EL NUDO",
+   "idea": "la gente llega con ganas de comprar y no hay cómo: ni oferta, ni respuesta, solo un mensaje estándar una hora después",
+   "cta": [
+    "Sigue en 3/3:",
+    "*La propuesta →*"
+   ],
+   "pieces": [
+    {
+     "t": 393.5,
+     "say": "me salió una publicidad en Instagram de un loteo acá"
+    },
+    {
+     "t": 398.0,
+     "say": "apreté el perfil y tenían una publicación en el perfil y no tenían una página web"
+    },
+    {
+     "t": 404.5,
+     "say": "y el botoncito en la publicación de Instagram me decía que mandara un WhatsApp"
+    },
+    {
+     "t": 409.0,
+     "say": "mandé un WhatsApp y media hora después o una hora después me respondió"
+    },
+    {
+     "t": 417.5,
+     "say": "un mensaje que le responde a todo el mundo, era un mensaje completamente estandarizado"
+    },
+    {
+     "t": 422.6,
+     "say": "entonces ese proceso podría estar automatizado"
+    },
+    {
+     "t": 431.0,
+     "say": "para que el cliente tenga información más directa, ya es como muy básico que eso debería estar en pie"
+    },
+    {
+     "t": 736.7,
+     "say": "si tú vas a la página web de parcelas y terrenos.cl"
+    },
+    {
+     "t": 743.5,
+     "say": "no tiene ninguna forma para comprar, no tiene ninguna forma para hacer nada"
+    },
+    {
+     "t": 752.0,
+     "say": "entonces aquí volvemos a lo que he dicho siempre, de qué es lo que le ofrecemos a la gente y de qué forma pueden comprarnos"
+    },
+    {
+     "t": 766.0,
+     "say": "en este momento no hay ninguna oferta"
+    },
+    {
+     "t": 770.5,
+     "say": "pero hay un activo que es todo el tráfico orgánico que llega a la página por ser tan bueno el dominio"
+    },
+    {
+     "t": 779.4,
+     "say": "entonces tenemos un problema muy interesante"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "UNA HORA PARA UN",
+      "*MENSAJE ESTÁNDAR*"
+     ],
+     "until": "apreté",
+     "y": 380,
+     "size": 86
+    },
+    {
+     "type": "callout",
+     "at": "no tenían una página",
+     "through": "página web",
+     "lines": [
+      "SIN",
+      "*PÁGINA WEB*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "button",
+     "at": "mandara un",
+     "for": 1.8,
+     "text": "ENVIAR WHATSAPP"
+    },
+    {
+     "type": "stamp",
+     "at": "una hora después",
+     "for": 2.2,
+     "text": "1 HORA"
+    },
+    {
+     "type": "callout",
+     "at": "un mensaje que le responde",
+     "through": "estandarizado",
+     "lines": [
+      "EL MISMO MENSAJE",
+      "*PARA TODOS*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "ese proceso",
+     "through": "automatizado",
+     "lines": [
+      "ESO SE PUEDE",
+      "*AUTOMATIZAR*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "muy básico",
+     "through": "en pie",
+     "lines": [
+      "ES LO",
+      "*MÁS BÁSICO*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "image",
+     "at": "si tú vas",
+     "until": "entonces aquí volvemos",
+     "src": "assets/sitio/parcela.png",
+     "width": 900,
+     "label": "PARCELASYTERRENOS.CL · HOY",
+     "y": 900
+    },
+    {
+     "type": "callout",
+     "at": "ninguna forma para comprar",
+     "through": "hacer nada",
+     "lines": [
+      "NINGUNA FORMA",
+      "*DE COMPRAR*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "qué es lo que le ofrecemos",
+     "through": "comprarnos",
+     "lines": [
+      "¿QUÉ OFRECES?",
+      "*¿CÓMO TE COMPRO?*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "image",
+     "at": "no hay ninguna oferta",
+     "until": "pero hay un activo",
+     "src": "assets/sitio/plano.png",
+     "width": 520,
+     "label": "PARCELASYTERRENOS.CL · PLANO",
+     "view_h": 760,
+     "y": 920
+    },
+    {
+     "type": "callout",
+     "at": "todo el tráfico",
+     "through": "el dominio",
+     "lines": [
+      "TODO EL",
+      "*TRÁFICO ORGÁNICO*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "un problema",
+     "through": "interesante",
+     "lines": [
+      "UN PROBLEMA",
+      "*MUY INTERESANTE*"
+     ],
+     "y": 380
+    }
+   ]
+  },
+  {
+   "id": "03-la-propuesta",
+   "act": "3/3",
+   "nombre": "LA PROPUESTA",
+   "idea": "no ganas plata vendiendo parcelas: la ganas con el tráfico de un marketplace que no cobra comisión",
+   "cta": [
+    "¿Qué tráfico ya tienes",
+    "*y no estás usando?*",
+    "Coméntalo abajo"
+   ],
+   "pieces": [
+    {
+     "t": 966.0,
+     "say": "no tenemos forma de ganar plata a través de la venta de parcelas"
+    },
+    {
+     "t": 970.0,
+     "say": "pero sí tenemos forma de ganar plata a partir del tráfico que produce tener un marketplace que no cobra comisión"
+    },
+    {
+     "t": 780.5,
+     "say": "la propuesta que yo traigo hoy día es reconocer ese tráfico, ocupar ese tráfico para ganar plata de una de las formas más simples que se ha ganado plata en la historia, que es a través de advertisement"
+    },
+    {
+     "t": 812.0,
+     "say": "y transformamos esta página web en un marketplace de parcelas en Chile"
+    },
+    {
+     "t": 820.0,
+     "say": "en este momento yo tengo a Cloud corriendo, buscando parcelas en Chile que estén a la venta"
+    },
+    {
+     "t": 830.8,
+     "say": "para poder publicarla en la página si es legal, le dije que ese era un límite, que era importante, que fuera legal hacer esto"
+    },
+    {
+     "t": 988.0,
+     "say": "cualquier persona que tiene la idea de comprarse una parcela, o que incluso quiere vitrinear parcelas, se tiene que meter a esta página web"
+    },
+    {
+     "t": 998.2,
+     "say": "tiene que pasar por ahí, es un must"
+    },
+    {
+     "t": 1000.6,
+     "say": "y eso hace que la advertisement que estamos vendiendo, el espacio publicitario, sea más valioso"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "LA PLATA ESTÁ",
+      "*EN EL TRÁFICO*"
+     ],
+     "until": "un marketplace que no cobra",
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "un marketplace que no cobra",
+     "through": "comisión",
+     "lines": [
+      "UN MARKETPLACE",
+      "*SIN COMISIÓN*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "a través de advertisement",
+     "through": "advertisement",
+     "lines": [
+      "TU MARCA",
+      "*AQUÍ*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "marketplace de parcelas",
+     "through": "en chile",
+     "lines": [
+      "LAS PARCELAS",
+      "*DE CHILE*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "callout",
+     "at": "si es legal",
+     "through": "hacer esto",
+     "lines": [
+      "SOLO SI",
+      "*ES LEGAL*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "stamp",
+     "at": "es un must",
+     "for": 2.0,
+     "text": "UN MUST",
+     "y": 330
+    },
+    {
+     "type": "callout",
+     "at": "más valioso",
+     "through": "valioso",
+     "lines": [
+      "EL AVISO VALE",
+      "*MÁS*"
+     ],
+     "y": 380
+    },
+    {
+     "type": "phone",
+     "at": "la propuesta que yo traigo",
+     "until": "para poder publicarla",
+     "src": "assets/rec/portada.mp4",
+     "from": 0.0,
+     "keys": [
+      [
+       "más simples",
+       "bajando por Chile"
+      ],
+      [
+       "y transformamos",
+       "un pin"
+      ],
+      [
+       "buscando parcelas",
+       "Ver en Bienes"
+      ]
+     ],
+     "w": 420,
+     "y": 1070,
+     "label": "PARCELASYTERRENOS.CL"
+    },
+    {
+     "type": "phone",
+     "at": "para poder publicarla",
+     "until": "cualquier persona",
+     "src": "assets/rec/fuentes.mp4",
+     "from": 0.0,
+     "keys": [
+      [
+       "le dije que",
+       "Lo que copiamos"
+      ],
+      [
+       "fuera legal",
+       "Los sitios"
+      ]
+     ],
+     "w": 420,
+     "y": 1070,
+     "label": "DE DÓNDE VIENEN"
+    },
+    {
+     "type": "phone",
+     "at": "cualquier persona",
+     "until": "y eso hace",
+     "src": "assets/rec/filtros.mp4",
+     "from": 0.0,
+     "w": 420,
+     "y": 1070,
+     "label": "BUSCAR POR REGIÓN"
+    },
+    {
+     "type": "phone",
+     "at": "y eso hace",
+     "until": "más valioso",
+     "src": "assets/rec/panel.mp4",
+     "from": 6.11,
+     "w": 420,
+     "y": 1070,
+     "label": "LA PLATA"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,453 @@
+{
+  "ep": "00",
+  "name": "El Taller",
+  "tag": "EMPIEZA AQUÍ",
+  "endcard": "EMPIEZA AQUÍ",
+  "accent": "#FFD23F",
+  "accent_ink": "#111111",
+  "fixes": [
+    [
+      "habláis",
+      "hablái"
+    ],
+    [
+      "preguntáis",
+      "preguntái"
+    ],
+    [
+      "whatsapp",
+      "WhatsApp"
+    ],
+    [
+      "seba",
+      "Seba"
+    ],
+    [
+      "cubos",
+      "cupos"
+    ],
+    [
+      "estáis perdiendo",
+      "estás perdiendo"
+    ]
+  ],
+  "reels": [
+    {
+      "id": "01-quien-soy",
+      "act": "¿QUIÉN SOY?",
+      "pieces": [
+        {
+          "t": 646.0,
+          "say": "Soy Jorge. Construyo software."
+        },
+        {
+          "t": 130.9,
+          "say": "Soy programador, autodidacta."
+        },
+        {
+          "t": 135.5,
+          "say": "Cuando empezó la pandemia decidí aprender a programar y a meditar."
+        },
+        {
+          "t": 148.9,
+          "say": "Y esas dos prácticas se conectan en mi trabajo y en la forma en la que interactúo con el mundo."
+        },
+        {
+          "t": 1404.3,
+          "say": "Me encanta inventar cosas, me encantan las personas, me fascina la experiencia humana,"
+        },
+        {
+          "t": 1413.2,
+          "say": "estoy aburrido de cómo nos relacionamos hoy día,"
+        },
+        {
+          "t": 1418.6,
+          "say": "hay una cantidad de energía perdida en la humanidad que es brutal."
+        },
+        {
+          "t": 1426.1,
+          "say": "Y creo que el mal diseño de las herramientas a través de las cuales nos comunicamos"
+        },
+        {
+          "t": 1434.8,
+          "say": "es la raíz de ese problema."
+        },
+        {
+          "t": 654.1,
+          "say": "Y quiero poner mi capacidad de crear cosas al servicio de tu negocio."
+        },
+        {
+          "t": 597.1,
+          "say": "Yo puse un timer de 22 minutos."
+        },
+        {
+          "t": 603.7,
+          "say": "Tengo que ir a jugar con mi hija. Para mí es muy importante pasar tiempo con mi familia."
+        }
+      ],
+      "graphics": [
+        {
+          "type": "title",
+          "lines": [
+            "SOY JORGE.",
+            "*CONSTRUYO SOFTWARE*"
+          ],
+          "until": "soy programador",
+          "size": 78,
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "programar y a meditar",
+          "through": "con el mundo",
+          "lines": [
+            "PROGRAMAR",
+            "*Y MEDITAR*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "me encantan las personas",
+          "through": "experiencia humana",
+          "lines": [
+            "ME ENCANTAN",
+            "*LAS PERSONAS*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "energía perdida",
+          "through": "brutal",
+          "lines": [
+            "ENERGÍA",
+            "*PERDIDA*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "el mal diseño",
+          "through": "raíz de ese problema",
+          "lines": [
+            "HERRAMIENTAS",
+            "*MAL DISEÑADAS*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "image",
+          "at": "al servicio",
+          "until": "yo puse",
+          "src": "assets/grid-episodios.png",
+          "width": 860,
+          "y": 900,
+          "label": "@ELTALLERCONJP"
+        },
+        {
+          "type": "stamp",
+          "at": "timer",
+          "for": 2.6,
+          "text": "22 MIN",
+          "y": 440
+        },
+        {
+          "type": "callout",
+          "at": "jugar con mi hija",
+          "through": "familia",
+          "lines": [
+            "JUGAR CON",
+            "*MI HIJA*"
+          ],
+          "y": 375
+        }
+      ],
+      "cta": [
+        "Sigue:",
+        "*¿Qué hago? →*"
+      ]
+    },
+    {
+      "id": "02-que-hago",
+      "act": "¿QUÉ HAGO?",
+      "pieces": [
+        {
+          "t": 754.2,
+          "say": "¿Qué hago?"
+        },
+        {
+          "t": 756.1,
+          "say": "Busco una oportunidad en tu negocio. Construyo un software personalizado para ese negocio."
+        },
+        {
+          "t": 847.0,
+          "say": "lo que hago es pescar un negocio que ya existe, que tiene una página en Instagram."
+        },
+        {
+          "t": 1287.2,
+          "say": "siento que el WhatsApp es el mecanismo de identidad de nuestros tiempos."
+        },
+        {
+          "t": 1305.1,
+          "say": "Alguna gente no entiende cómo funciona el mail, pero la abuelita igual sabe cómo funciona el WhatsApp."
+        },
+        {
+          "t": 1330.5,
+          "say": "Pero si le habláis del correo, les preguntáis por su mail, los perdiste."
+        },
+        {
+          "t": 1353.2,
+          "say": "Estás perdiendo un mercado gigante."
+        },
+        {
+          "t": 904.7,
+          "say": "cuando digo, le hice una app a mi gimnasio, realmente construí un prototipo que le mostré al loco de mi gimnasio."
+        },
+        {
+          "t": 911.7,
+          "say": "Y le gustó y nos juntamos y tuvimos una reunión y quiere trabajar conmigo durante 30 días."
+        },
+        {
+          "t": 826.1,
+          "say": "al mirar conmigo el negocio de otro, puedes reconocer una oportunidad en tu negocio."
+        }
+      ],
+      "graphics": [
+        {
+          "type": "title",
+          "lines": [
+            "¿QUÉ",
+            "*HAGO?*"
+          ],
+          "until": "busco",
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "busco una oportunidad",
+          "through": "en tu negocio",
+          "lines": [
+            "BUSCO LA",
+            "*OPORTUNIDAD*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "software personalizado",
+          "through": "ese negocio",
+          "lines": [
+            "SOFTWARE",
+            "*PERSONALIZADO*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "image",
+          "at": "pescar",
+          "until": "siento que",
+          "src": "assets/negocios.png",
+          "width": 900,
+          "y": 880,
+          "label": "NEGOCIOS QUE YA EXISTEN"
+        },
+        {
+          "type": "callout",
+          "at": "whatsapp",
+          "through": "nuestros tiempos",
+          "lines": [
+            "WHATSAPP ES",
+            "*TU IDENTIDAD*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "la abuelita",
+          "through": "funciona el whatsapp",
+          "lines": [
+            "LA ABUELITA",
+            "*SABE WHATSAPP*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "button",
+          "at": "por su mail",
+          "for": 2.6,
+          "text": "DÉJANOS TU EMAIL",
+          "struck": "los perdiste",
+          "y": 1060
+        },
+        {
+          "type": "stamp",
+          "at": "mercado gigante",
+          "for": 2.0,
+          "text": "UN MERCADO GIGANTE",
+          "y": 440
+        },
+        {
+          "type": "image",
+          "at": "le hice una app",
+          "until": "realmente",
+          "src": "el-taller/ep04-endemico/cover/ep04-cover-3of3.jpg",
+          "width": 520,
+          "y": 900,
+          "label": "EP. 04 · ENDÉMICO"
+        },
+        {
+          "type": "phone",
+          "at": "realmente",
+          "until": "al mirar",
+          "src": "el-taller/ep04-endemico/assets/rec/inicio.mp4",
+          "from": 6.5,
+          "y": 980,
+          "label": "EL PROTOTIPO"
+        },
+        {
+          "type": "stamp",
+          "at": "durante 30 días",
+          "for": 2.2,
+          "text": "30 DÍAS",
+          "y": 440
+        },
+        {
+          "type": "callout",
+          "at": "al mirar",
+          "through": "en tu negocio#2",
+          "lines": [
+            "EL NEGOCIO DE OTRO:",
+            "*TU OPORTUNIDAD*"
+          ],
+          "y": 375,
+          "size": 74
+        }
+      ],
+      "cta": [
+        "Sigue:",
+        "*¿Cómo trabajamos? →*"
+      ]
+    },
+    {
+      "id": "03-como-trabajamos",
+      "act": "¿CÓMO TRABAJAMOS?",
+      "pieces": [
+        {
+          "t": 329.8,
+          "say": "Mi trabajo durante esos 30 días es hacer que tú estés convencida o convencido de que no me necesitas."
+        },
+        {
+          "t": 301.0,
+          "say": "Dura 30 días desde el primer día en el que empezamos a trabajar."
+        },
+        {
+          "t": 305.6,
+          "say": "Ese mismo día va a haber un link ya disponible, público en internet, que sea mi interpretación de la solución de tu problema."
+        },
+        {
+          "t": 767.0,
+          "say": "Te enseño a hacer eso mismo de una forma directa, clara y precisa"
+        },
+        {
+          "t": 1470.7,
+          "say": "quiero tener interacciones fuertes, poderosas, creativas, constructivas, sin la necesidad de estar encima, sin la necesidad de tener reuniones,"
+        },
+        {
+          "t": 1515.4,
+          "say": "tener que buscar espacio para juntarnos me parece que es un desperdicio de tiempo para todos."
+        },
+        {
+          "t": 1522.5,
+          "say": "Es parte de la fricción que estoy intentando eliminar de la vida."
+        },
+        {
+          "t": 1492.1,
+          "say": "el otro día estuve con el Seba y estuvimos dos horas tomando desayuno."
+        },
+        {
+          "t": 1497.2,
+          "say": "Me encantaría poder juntarme a tomar una cerveza contigo cuando empecemos a trabajar juntos."
+        }
+      ],
+      "graphics": [
+        {
+          "type": "title",
+          "lines": [
+            "QUE NO",
+            "*ME NECESITES*"
+          ],
+          "until": "dura",
+          "y": 375
+        },
+        {
+          "type": "stamp",
+          "at": "dura 30 días",
+          "for": 2.2,
+          "text": "30 DÍAS",
+          "y": 440
+        },
+        {
+          "type": "phone",
+          "at": "un link",
+          "until": "te enseño",
+          "src": "el-taller/ep05-umbral-sur/assets/rec/avance.mp4",
+          "from": 0.5,
+          "y": 980,
+          "label": "UMBRAL SUR · PROTOTIPO"
+        },
+        {
+          "type": "callout",
+          "at": "te enseño",
+          "through": "precisa",
+          "lines": [
+            "TE ENSEÑO",
+            "*A HACERLO*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "sin la necesidad de estar encima",
+          "through": "tener reuniones",
+          "lines": [
+            "SIN ESTAR",
+            "*ENCIMA*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "callout",
+          "at": "fricción",
+          "through": "de la vida",
+          "lines": [
+            "MENOS",
+            "*FRICCIÓN*"
+          ],
+          "y": 375
+        },
+        {
+          "type": "stamp",
+          "at": "dos horas",
+          "for": 2.2,
+          "text": "2 HORAS DE DESAYUNO",
+          "y": 440
+        },
+        {
+          "type": "callout",
+          "at": "una cerveza contigo",
+          "through": "trabajar juntos",
+          "lines": [
+            "UNA CERVEZA",
+            "*CONTIGO*"
+          ],
+          "y": 375
+        }
+      ],
+      "cta": [
+        "¿Trabajamos juntos?",
+        "*jpfraneto.com*"
+      ]
+    }
+  ]
+}

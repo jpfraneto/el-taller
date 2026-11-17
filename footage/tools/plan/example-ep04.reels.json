@@ -1,0 +1,119 @@
+{
+ "ep": "04",
+ "name": "Endémico",
+ "accent": "#4EF03E",
+ "accent_ink": "#070B16",
+ "fixes": [["beta", "veta"], ["alceba", "al Seba"], ["sea", "Seba"], ["excel", "Excel"], ["mercado pago", "Mercado Pago"],
+           ["podis", "podís"], ["podes", "podís"], ["tenias", "tenís"], ["tenes", "tenís"]],
+ "reels": [
+  {
+   "id": "01-el-caso",
+   "act": "1/3",
+   "hook": ["MI GIMNASIO", "VIVE EN UN", "<m>EXCEL</m>"],
+   "pieces": [
+    {"t": 112.8, "say": "Siempre me causa gracia que el SEBA maneja todo con una planilla Excel"},
+    {"t": 117.7, "say": "Y dice que está contento con la planilla Excel y que no necesita nada más"},
+    {"t": 64.1, "say": "Este es un gimnasio de un amigo mío de infancia, el SEBA"},
+    {"t": 91.0, "say": "El SEBA tiene un gimnasio muy completo Es muy profesional a la hora de desarrollar sus rutinas"},
+    {"t": 103.2, "say": "Hay un grupo muy bacán de gente que va recurrentemente"},
+    {"t": 134.0, "say": "Tiene que encargarse de que la planilla funcione"},
+    {"t": 138.4, "say": "es como su sistema"},
+    {"t": 140.8, "say": "depende mucho de"},
+    {"t": 144.6, "say": "su capacidad de anotar, de acordarse"},
+    {"t": 148.3, "say": "Hay mucha memoria de la cual depende su negocio"},
+    {"t": 322.1, "say": "él lleva todo el negocio en su cabeza"},
+    {"t": 325.8, "say": "eso no permite que el negocio se libere de él"}
+   ],
+   "graphics": [
+    {"type": "title", "lines": ["TODO UN GIMNASIO", "*EN UN EXCEL*"], "until": "planilla"},
+    {"type": "image", "at": "este es un gimnasio", "until": "amigo", "src": "assets/raw/ig-profile-2026-11-04.png", "label": "@ENDEMICO.FT", "view_h": 1000, "y": 760},
+    {"type": "broll", "at": "amigo", "through": "infancia el seba", "src": "raw/2026-10-21_endemico_clase-seba/IMG_4213.MOV", "from": 3.0, "label": ["SEBA", "KINESIÓLOGO Y ENTRENADOR"]},
+    {"type": "broll", "at": "profesional", "through": "sus rutinas", "src": "raw/2026-10-21_endemico_clase-seba/IMG_4225.MOV", "from": 1.0, "focus": [0.5, 0.4]},
+    {"type": "broll", "at": "grupo", "through": "recurrentemente", "src": "raw/2026-10-21_endemico_clase-seba/IMG_4234.MOV", "from": 8.0},
+    {"type": "callout", "at": "anotar", "through": "acordarse", "lines": ["ANOTAR,", "*ACORDARSE*"], "pop": ["anotar", "acordarse"]},
+    {"type": "broll", "at": "él lleva", "until": "eso", "src": "raw/2026-10-21_endemico_clase-seba/IMG_4223.MOV", "from": 9.0, "focus": [0.5, 0.3]},
+    {"type": "callout", "at": "todo el negocio", "until": "eso", "lines": ["TODO EL NEGOCIO", "*EN SU CABEZA*"], "pop": ["negocio", "cabeza"]},
+    {"type": "callout", "at": "se libere", "through": "de él", "lines": ["NO SE PUEDE", "*LIBERAR DE ÉL*"]}
+   ],
+   "cta": ["Sigue en 2/3:", "*El nudo →*"]
+  },
+  {
+   "id": "02-el-nudo",
+   "act": "2/3",
+   "hook": ["QUIERO PAGAR.", "<m>NO EXISTE</m>", "EL BOTÓN."],
+   "pieces": [
+    {"t": 203.4, "say": "aquí tenemos un link a Whatsapp"},
+    {"t": 218.1, "say": "Requiere de que le respondamos el Whatsapp Y le digamos cuánto cuesta el plan"},
+    {"t": 227.8, "say": "en el Whatsapp no hay ningún lugar donde yo pueda llegar y decir Ya, me voy a meter al gimnasio Te pago las 100 lucas"},
+    {"t": 234.1, "say": "No existe ese botón"},
+    {"t": 237.9, "say": "Los proyectos deberían tener un botón Que permita que la gente te pague Al toque"},
+    {"t": 260.5, "say": "eso es un desperdicio de energía"},
+    {"t": 343.8, "say": "tenemos la cuenta de Instagram"},
+    {"t": 364.0, "say": "tenemos una publicación al mes"},
+    {"t": 373.8, "say": "Aquí tenemos un gimnasio que funciona todos los días"},
+    {"t": 378.4, "say": "Gente que lleva hasta 5 años yendo al gimnasio"},
+    {"t": 381.6, "say": "tenemos activos que no están siendo ocupados"},
+    {"t": 807.1, "say": "El SEBA desarrolla Una rutina Los domingos Que está corriendo Durante toda la semana"},
+    {"t": 825.0, "say": "Esa rutina Es un activo Con el cual El SEBA ya cuenta"},
+    {"t": 977.5, "say": "nadie va a hacer eso Como lo hace el SEBA"}
+   ],
+   "graphics": [
+    {"type": "title", "lines": ["¿Y EL BOTÓN", "*PARA PAGAR?*"], "through": "whatsapp"},
+    {"type": "image", "at": "requiere", "until": "en el whatsapp", "src": "assets/raw/ig-profile-2026-11-04.png", "label": "SU ÚNICO LINK", "view_h": 560, "y": 820},
+    {"type": "button", "at": "no existe", "for": 1.4, "text": "PAGAR $100.000", "struck": "botón"},
+    {"type": "button", "at": "deberían tener un botón", "through": "al toque", "text": "PAGAR AL TOQUE"},
+    {"type": "callout", "at": "desperdicio", "through": "energía", "lines": ["UN DESPERDICIO", "*DE ENERGÍA*"]},
+    {"type": "callout", "at": "una publicación al mes", "until": "aquí tenemos", "lines": ["1 PUBLICACIÓN", "*AL MES*"]},
+    {"type": "stamp", "at": "5 años", "for": 2.2, "text": "5 AÑOS"},
+    {"type": "callout", "at": "activos", "through": "ocupados", "lines": ["*ACTIVOS*", "QUE NO SE USAN"]},
+    {"type": "broll", "at": "el seba desarrolla", "through": "toda la semana", "src": "raw/2026-10-21_endemico_clase-seba/IMG_4220.MOV", "from": 0.8, "focus": [0.5, 0.35], "label": ["LA PIZARRA", "EL PLAN DE LA SEMANA"]},
+    {"type": "stamp", "at": "es un activo", "through": "ya cuenta", "text": "UN ACTIVO", "y": 420, "size": 96},
+    {"type": "callout", "at": "nadie", "through": "como lo hace el seba", "lines": ["NADIE LO HACE", "*COMO EL SEBA*"], "pop": ["nadie", "como lo hace"]}
+   ],
+   "cta": ["Sigue en 3/3:", "*La propuesta →*"]
+  },
+  {
+   "id": "03-la-propuesta",
+   "act": "3/3",
+   "hook": ["LE HICE", "UNA <m>APP</m>", "A MI GIMNASIO"],
+   "pieces": [
+    {"t": 541.6, "say": "Check-in con un toque Escanea el QR de la puerta"},
+    {"t": 546.9, "say": "la persona viene Lo escanea Te lleva a la aplicación Pum Entré Vine"},
+    {"t": 695.1, "say": "Perfectamente Los pagos Se podrían hacer A través de la aplicación"},
+    {"t": 699.9, "say": "Se lleva un registro Completamente claro De quién pagó Y cuándo"},
+    {"t": 730.4, "say": "Le podría ayudar Alceba Salir del Excel"},
+    {"t": 918.4, "say": "¿Qué pasa si Se desarrolla una beta De negocio nueva? Que no te limita La cantidad de ingresos Que puedes tener?"},
+    {"t": 840.3, "say": "¿Cómo? Permitiendo que la gente Pueda entrenar Desde cualquier lugar Del mundo Siguiendo esa rutina Que diseñó el SEBA"},
+    {"t": 1149.5, "say": "el lunes"},
+    {"t": 1151.1, "say": "Podría ser gratis"},
+    {"t": 1157.0, "say": "el martes Miércoles Jueves y viernes Están bloqueados"},
+    {"t": 1162.7, "say": "¿Cómo paga? Mercado Pago Pum Listo"},
+    {"t": 1186.5, "say": "15 lucas al mes"},
+    {"t": 1299.6, "say": "Un cliente extra No te cuesta más"},
+    {"t": 1305.8, "say": "si tú tenés Un gimnasio Tenés una capacidad Máxima De 10 personas"},
+    {"t": 1310.3, "say": "Pero aquí"},
+    {"t": 1313.9, "say": "no tenés Una capacidad Máxima De persona"},
+    {"t": 1319.6, "say": "No te pone un límite A la cantidad Que podés ganar A partir de vender Estos planes semanales"}
+   ],
+   "graphics": [
+    {"type": "title", "lines": ["UN GIMNASIO", "*EN TU TELÉFONO*"], "until": "escanea"},
+    {"type": "image", "at": "escanea", "until": "la persona viene", "src": "assets/rec/puerta-card.png", "width": 700, "y": 820, "label": "EN LA PUERTA"},
+    {"type": "phone", "at": "la persona viene", "until": "perfectamente", "src": "assets/rec/checkin.mp4", "from": 1.0, "label": "EL ALUMNO", "keys": [["pum", "whatsapp code"], ["vine", "ADENTRO"]]},
+    {"type": "phone", "at": "perfectamente", "until": "se lleva un registro", "src": "assets/rec/planes.mp4", "from": 0, "label": "PAGAR AL TOQUE", "keys": [["aplicación", "mercado pago checkout"]]},
+    {"type": "laptop", "at": "se lleva un registro", "until": "qué pasa si", "src": "assets/rec/planilla.mp4", "from": 10.4, "crop": [30, 120, 1400, 920], "label": "LA PLANILLA SE LLENA SOLA", "url": "endemico.jpfraneto.com"},
+    {"type": "callout", "at": "una beta", "through": "nueva", "lines": ["UNA VETA", "DE NEGOCIO", "*NUEVA*"], "pop": ["beta", "negocio", "nueva"], "y": 430},
+    {"type": "phone", "at": "permitiendo", "until": "un cliente extra", "src": "assets/rec/semana.mp4", "from": 0, "label": "LA SEMANA, DONDE ESTÉS", "keys": [["el lunes", "equipo Mancuernas"], ["el martes", "dia 2 locked"], ["mercado pago", "pagar semana (logged in)"], ["listo", "mercado pago checkout"]]},
+    {"type": "stamp", "at": "15 lucas", "until": "un cliente extra", "text": "$15.000 / MES", "y": 1180},
+    {"type": "callout", "at": "un cliente extra", "through": "no te cuesta más", "lines": ["UN CLIENTE EXTRA", "*NO TE CUESTA MÁS*"], "pop": ["cliente", "cuesta"]},
+    {"type": "callout", "at": "10 personas", "until": "pero aquí", "lines": ["10 PERSONAS.", "*LLENO.*"]},
+    {"type": "callout", "at": "no te pone un límite", "through": "planes semanales", "lines": ["SIN TECHO"], "size": 130}
+   ],
+   "cta": ["¿Qué ya hace tu negocio", "*que podrías vender afuera?*", "Coméntalo abajo"]
+  }
+ ],
+ "captions": [
+  "Mi gimnasio vive en un Excel.\n\n…(the 1/3 caption: see el-taller/ep04-endemico/publish.json)",
+  "Quiero pagar. No existe el botón.\n\n…",
+  "Le hice una app a mi gimnasio.\n\n…"
+ ]
+}

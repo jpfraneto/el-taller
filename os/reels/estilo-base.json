@@ -1,0 +1,68 @@
+{
+ "_ayuda": "El estilo de TUS reels y portadas (lo arma Claude contigo con /reels formato). Cambiar algo aquí cambia los reels que vienen; los publicados no se tocan. Qué va dónde: este archivo = cómo se ven y los textos fijos · TASTE.md = tu criterio (qué contar, cómo cortar, cómo suenan tus títulos) · NARRATIVE.md = para quién hablas y con qué voz.",
+ "serie": {
+  "_ayuda": "nombre: arriba en cada reel y en la tarjeta final · color: tu color (subtítulos destacados, etiquetas, portadas) · handle y tagline: tarjeta final.",
+  "nombre": "TU NEGOCIO",
+  "handle": "@tu.instagram",
+  "tagline": "Tu frase",
+  "color": "#FFD23F"
+ },
+ "reels": {
+  "_ayuda": "segundos_de_voz: el largo que el planner apunta [mín, máx] · zooms: el encuadre de cada corte, en ciclo · muletillas: palabras que se cortan · sonidos: el efecto de cada tipo de gráfico (hit, pop, stamp, whoosh, swish, tick) · color_grade: filtro de ffmpeg sobre el video.",
+  "segundos_de_voz": [
+   30,
+   60
+  ],
+  "zooms": [
+   1.15,
+   1.6,
+   1.3,
+   1.6,
+   1.15,
+   1.45
+  ],
+  "muletillas": [
+   "eh",
+   "em",
+   "emm",
+   "mm",
+   "mmm",
+   "ehh",
+   "ah",
+   "ehm"
+  ],
+  "sonidos": {
+   "title": "hit",
+   "callout": "pop",
+   "stamp": "stamp",
+   "image": "whoosh",
+   "phone": "swish",
+   "laptop": "whoosh",
+   "broll": "swish",
+   "button": "pop"
+  },
+  "color_grade": "eq=contrast=1.07:saturation=1.14:gamma=0.97,colorbalance=rs=0.03:gs=0.0:bs=-0.04:rm=0.02:bm=-0.03:rh=0.02:bh=-0.02,vignette=angle=PI/5,noise=alls=5:allf=t"
+ },
+ "portadas": {
+  "_ayuda": "fondo: una foto de tu lugar, en esta carpeta (fondo.jpg); sin foto, negro · kicker: el texto chico de arriba ({ep} = número del día).",
+  "fondo": "fondo.jpg",
+  "kicker": "TU NEGOCIO · {ep}"
+ },
+ "cta": [
+  "Si te hizo sentido,",
+  "*escríbeme*",
+  "por interno"
+ ],
+ "_ayuda_cta": "cta: la tarjeta final de cada reel cuando no es parte de una fila de 3 (desde 2026-11-10: una toma → 1 a 5 reels).",
+ "publicacion": {
+  "_ayuda": "Una toma → 1 a max_reels reels, que salen uno por horario: cada día a cada una de las horas (zona). `episode.py <ep> publish` muestra la agenda y pregunta una vez; `episode.py watch` los publica a su hora. instagram_env: dónde están las credenciales de esta cuenta (fuera del repo).",
+  "max_reels": 3,
+  "horas": [
+   "19:00"
+  ],
+  "zona": "America/Santiago",
+  "instagram_env": "~/.config/eltaller/TU-CARPETA.instagram.env"
+ },
+ "fuentes": "inter",
+ "_ayuda_fuentes": "fuentes: \"inter\" (libre). Otra familia: {\"dir\": \"/ruta\", \"patron\": \"Familia-{peso}.otf\"} con los pesos Black, Heavy, Bold, Semibold, Medium."
+}

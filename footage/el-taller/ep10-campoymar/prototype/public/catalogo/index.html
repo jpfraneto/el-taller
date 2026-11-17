@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catálogo · Campo &amp; Mar</title>
+<meta name="description" content="El catálogo de Campo & Mar: pastelería sin gluten hecha en Chiloé. Muy pronto se compra aquí.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Campo & Mar">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Campo & Mar · catálogo">
+<meta property="og:description" content="Muy pronto: eliges, pagas aquí y retiras en Ancud o Castro.">
+<meta property="og:image" content="https://campoymar.jpfraneto.com/img/posts/queque-chocolate.jpg">
+<meta name="theme-color" content="#f7f1e8">
+<link rel="icon" href="../img/pfp.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/app.css?v=5">
+<style>
+  /* the catalog that's coming: the products, greyed a little, with "pronto" where the price and the buy button will be */
+  .pronto-sello { display: table; margin: 14px auto 0; padding: 7px 16px; border-radius: 0; background: var(--vino); color: var(--letra); box-shadow: inset 0 0 0 3px var(--vino), inset 0 0 0 4px rgba(243,230,207,.6);
+    font-size: 12px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+  .vitrina-cat { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+  .item-cat { background: var(--papel); overflow: hidden; display: grid; }
+  .item-cat .ft { aspect-ratio: 4 / 5; width: 100%; object-fit: cover; filter: saturate(.85); }
+  .item-cat .sinfoto { position: relative; aspect-ratio: 4 / 5; display: grid; place-items: center; text-align: center; padding: 18px; background: var(--vino);
+    color: var(--letra); font-family: var(--marca); font-weight: 600; font-size: 21px; letter-spacing: .1em; text-transform: uppercase; line-height: 1.15; }
+  .item-cat .sinfoto::before, .item-cat .sinfoto::after { content: ""; position: absolute; border: 1px solid currentColor; }
+  .item-cat .sinfoto::before { inset: 6px; } .item-cat .sinfoto::after { inset: 10px; opacity: .55; }
+  .item-cat .sinfoto.queque { background: var(--mar); } .item-cat .sinfoto.regalo { background: var(--cacao); } .item-cat .sinfoto.trozo { background: #9b6a3c; }
+  .item-cat .tx { padding: 10px 12px 12px; display: grid; gap: 6px; }
+  .item-cat .n { font-family: var(--marca); font-weight: 700; font-size: 19px; line-height: 1.05; }
+  .item-cat .pie { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+  .item-cat .px { font-size: 13px; color: var(--mute); }
+  .item-cat button { border: 0; border-radius: 2px; padding: 7px 12px; font-size: 12.5px; font-weight: 700; background: #e9e0d2; color: var(--mute); cursor: not-allowed; }
+  .mientras { margin-top: 26px; background: var(--vino); color: var(--letra); border-radius: 0; padding: 18px; display: grid; gap: 10px; }
+  .mientras b { font-family: var(--marca); font-size: 26px; font-weight: 600; line-height: 1.05; }
+  .mientras p { margin: 0; font-size: 14px; line-height: 1.45; opacity: .85; }
+  .mientras a { display: flex; justify-content: center; padding: 13px; background: var(--letra); color: var(--vino); font-weight: 800; text-decoration: none; }
+  .aviso-pronto { position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 20;
+    background: var(--cacao); color: var(--crema); padding: 10px 16px; border-radius: 999px; font-size: 14px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .aviso-pronto.on { opacity: 1; }
+</style>
+</head>
+<body>
+<main class="pide hoy">
+  <header class="marca">
+    <div class="letrero"><div class="logo">CAMPO <span class="amp">&amp;</span> MAR</div><div class="usuario">@campoymar_chiloe</div></div>
+    <div class="sub">pastelería · Chiloé</div>
+  </header>
+
+  <section>
+  <div class="rotulo">catálogo</div>
+  <h2>Muy pronto, se compra aquí</h2>
+  <p class="bajada">Eliges, pagas aquí mismo y retiras en Ancud o en Castro. Lo estamos horneando.</p>
+  </section>
+  <span class="pronto-sello">pronto</span>
+
+  <div class="vitrina-cat" id="vitrina"></div>
+
+  <div class="mientras letrero" style="text-align:left">
+    <b>Mientras, encárganos por WhatsApp</b>
+    <p>Eliges qué quieres, el día y dónde retiras, y te confirmamos.</p>
+    <a href="../hoy/#catalogo">Encargar ahora</a>
+  </div>
+
+  <p class="pie-pide"><a href="../hoy/">lo de hoy</a> · El Taller de Rubén</p>
+</main>
+<div class="aviso-pronto" id="aviso" role="status">Pronto vas a poder comprar aquí</div>
+
+<script>
+  (function () {
+    var esc = function (s) { return String(s == null ? "" : s).replace(/[<&"]/g, function (c) { return { "<": "&lt;", "&": "&amp;", '"': "&quot;" }[c]; }); };
+    fetch("../data/catalogo.json").then(function (r) { return r.json(); }).then(function (cat) {
+      document.getElementById("vitrina").innerHTML = cat.productos.filter(function (p) { return !p.prueba; }).map(function (p) {
+        var foto = p.foto ? '<img class="ft" src="../' + esc(p.foto) + '" alt="" loading="lazy">' : '<div class="sinfoto ' + esc(p.tipo) + '">' + esc(p.nombre) + '</div>';
+        return '<article class="item-cat">' + foto + '<div class="tx"><div class="n">' + esc(p.nombre) + '</div>' +
+          '<div class="pie"><span class="px">pronto</span><button type="button" data-pronto aria-disabled="true">Comprar</button></div></div></article>';
+      }).join("");
+    });
+    var t;
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest("[data-pronto]")) return;
+      var a = document.getElementById("aviso"); a.classList.add("on");
+      clearTimeout(t); t = setTimeout(function () { a.classList.remove("on"); }, 1800);
+    });
+  })();
+</script>
+</body>
+</html>

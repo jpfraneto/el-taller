@@ -1,0 +1,46 @@
+{
+ "Magallanes": [
+  {
+   "archivo": "/img/lugares/magallanes/01.jpg",
+   "que": "Cruzando el Estrecho de Magallanes",
+   "autor": "Gillermo Adolfo",
+   "licencia": "CC BY 3.0",
+   "titulo": "File:Transborders.Punta Arenas, Estrecho de Magallanes - panoramio.jpg",
+   "fuente": "https://commons.wikimedia.org/wiki/File:Transborders.Punta_Arenas,_Estrecho_de_Magallanes_-_panoramio.jpg"
+  }
+ ],
+ "Porvenir": [
+  {
+   "archivo": "/img/lugares/porvenir/01.jpg",
+   "que": "Pingüinos rey, cerca de Porvenir",
+   "autor": "Martin Cígler",
+   "licencia": "CC BY-SA 3.0",
+   "titulo": "File:Tučnáci královští u Porveniru - panoramio.jpg",
+   "fuente": "https://commons.wikimedia.org/wiki/File:Tu%C4%8Dn%C3%A1ci_kr%C3%A1lov%C5%A1t%C3%AD_u_Porveniru_-_panoramio.jpg"
+  },
+  {
+   "archivo": "/img/lugares/porvenir/02.jpg",
+   "que": "Porvenir frente a su bahía",
+   "autor": "Heretiq",
+   "licencia": "CC BY-SA 2.5",
+   "titulo": "File:Porvenir-View.jpg",
+   "fuente": "https://commons.wikimedia.org/wiki/File:Porvenir-View.jpg"
+  },
+  {
+   "archivo": "/img/lugares/porvenir/03.jpg",
+   "que": "Llegando a Porvenir",
+   "autor": "Gillermo Adolfo",
+   "licencia": "CC BY 3.0",
+   "titulo": "File:Calle de Porvenir Estrecho de Magallanes - panoramio.jpg",
+   "fuente": "https://commons.wikimedia.org/wiki/File:Calle_de_Porvenir_Estrecho_de_Magallanes_-_panoramio.jpg"
+  },
+  {
+   "archivo": "/img/lugares/porvenir/04.jpg",
+   "que": "La iglesia frente a la plaza",
+   "autor": "Gillermo Adolfo",
+   "licencia": "CC BY 3.0",
+   "titulo": "File:Iglesia pto porvenir frente plaza - panoramio.jpg",
+   "fuente": "https://commons.wikimedia.org/wiki/File:Iglesia_pto_porvenir_frente_plaza_-_panoramio.jpg"
+  }
+ ]
+}

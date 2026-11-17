@@ -1,0 +1,446 @@
+{
+ "ep": "11",
+ "name": "El Taller con JP",
+ "accent": "#FFD23F",
+ "accent_ink": "#070B16",
+ "fixes": [
+  [
+   "antropic",
+   "Anthropic"
+  ],
+  [
+   "chatgtp",
+   "ChatGPT"
+  ],
+  [
+   "güeyones",
+   "weones"
+  ],
+  [
+   "hueón",
+   "weón"
+  ],
+  [
+   "tenía un copiloto",
+   "tenís un copiloto"
+  ],
+  [
+   "podéis",
+   "podís"
+  ],
+  [
+   "tenés",
+   "tenís"
+  ],
+  [
+   "me estáis vendiendo",
+   "me estái vendiendo"
+  ]
+ ],
+ "reels": [
+  {
+   "id": "01-me-lo-merezco",
+   "act": "1/5",
+   "nombre": "ME LO MEREZCO",
+   "para": "El que trabaja bien pero se mira en menos y le cuesta cobrar lo que vale",
+   "idea": "Hay que aprender a decir me lo merezco: yo me miré en menos mucho tiempo y eso me tenía drenado.",
+   "hook": [
+    "APRENDE A",
+    "DECIR: ME LO",
+    "<m>MEREZCO</m>"
+   ],
+   "pieces": [
+    {
+     "t": 338.7,
+     "say": "llevábamos un minuto conversando Y sonó mi teléfono y me estaba llamando",
+     "en": "we'd been talking for a minute and my phone rang and it was"
+    },
+    {
+     "t": 344.1,
+     "say": "la primera persona con la que",
+     "en": "the first person i'm going"
+    },
+    {
+     "t": 346.5,
+     "say": "voy a trabajar Que me conoció a través de Instagram",
+     "en": "to work with, who found me on instagram"
+    },
+    {
+     "t": 363.5,
+     "say": "me llamó para formalizar que quería trabajar conmigo,",
+     "en": "calling to make it official that he wants to work with me"
+    },
+    {
+     "t": 403.8,
+     "say": "Una persona me dijo que cuando vio mi contenido,",
+     "en": "someone told me that when he saw my content"
+    },
+    {
+     "t": 408,
+     "say": "le dijo a su señora que yo era la persona con la que él quería trabajar.",
+     "en": "he told his wife i was the person he wanted to work with"
+    },
+    {
+     "t": 414.1,
+     "say": "Es una validación brutal, ¿cachai?",
+     "en": "that's a huge validation, you know?"
+    },
+    {
+     "t": 419.3,
+     "say": "es súper importante que aprendamos a decir me lo merezco,",
+     "en": "it's really important that we learn to say i deserve it"
+    },
+    {
+     "t": 435.9,
+     "say": "Yo personalmente llevo mucho rato trabajando",
+     "en": "personally i've been working for a long time"
+    },
+    {
+     "t": 439.7,
+     "say": "mirando en menos mis capacidades",
+     "en": "selling my abilities short"
+    },
+    {
+     "t": 456.8,
+     "say": "exigiéndome de una forma que me tenía drenado.",
+     "en": "demanding things of myself in a way that left me drained"
+    },
+    {
+     "t": 423.2,
+     "say": "me merezco lo que estoy proponiéndole al mundo, me merezco",
+     "en": "i deserve what i'm offering the world, i deserve"
+    },
+    {
+     "t": 427.7,
+     "say": "que gente confíe en mí, me merezco desarrollar para otra gente, me merezco tener abundancia y éxito por mi trabajo.",
+     "en": "people trusting me, i deserve to build for others, i deserve abundance and success for my work"
+    }
+   ],
+   "graphics": [],
+   "cta": [
+    "¿Qué te mereces",
+    "*por tu trabajo?*",
+    "Coméntalo abajo"
+   ]
+  },
+  {
+   "id": "02-el-tabu",
+   "act": "2/5",
+   "nombre": "EL TABÚ",
+   "para": "El que vende por Instagram y siente que eso no es un trabajo de verdad",
+   "idea": "Hacer negocio no es malo: es el punto de encuentro de dos personas que no se conocen, y los dos quedan felices.",
+   "hook": [
+    "EL QUE VENDE",
+    "NO ES",
+    "<m>MALO</m>"
+   ],
+   "pieces": [
+    {
+     "t": 847,
+     "say": "los negocios son cosas que nos ayudan, son cosas que nos desarrollan.",
+     "en": "businesses are things that help us, things that make us grow"
+    },
+    {
+     "t": 853.4,
+     "say": "Son",
+     "en": "they're"
+    },
+    {
+     "t": 854.5,
+     "say": "el punto de encuentro de dos personas que no se conocen en la sociedad.",
+     "en": "the meeting point of two people who don't know each other"
+    },
+    {
+     "t": 858.6,
+     "say": "Tú tienes algo que me vendes, que yo necesito, para lo cual yo te entrego el fruto de mi trabajo.",
+     "en": "you have something to sell me that i need, so i give you the fruit of my work"
+    },
+    {
+     "t": 871.9,
+     "say": "para poder satisfacer mi necesidad con lo que tú me estáis vendiendo.",
+     "en": "to meet my need with what you're selling me"
+    },
+    {
+     "t": 875.9,
+     "say": "Listo, los dos estamos felices.",
+     "en": "done, we're both happy"
+    },
+    {
+     "t": 878,
+     "say": "Hay que sacarle el tabú a este ruido",
+     "en": "we need to take the taboo out of this noise"
+    },
+    {
+     "t": 880.9,
+     "say": "de que el que hace negocio es malo o del que vende en Instagram está mal y que",
+     "en": "that doing business is bad, or that selling on instagram is wrong, and that"
+    },
+    {
+     "t": 886.9,
+     "say": "eso no es un trabajo",
+     "en": "it isn't a"
+    },
+    {
+     "t": 889.6,
+     "say": "adecuado",
+     "en": "proper job"
+    },
+    {
+     "t": 891.6,
+     "say": "y que consigan un trabajo formal y toda la",
+     "en": "and that they should get a formal job and all the"
+    },
+    {
+     "t": 894.8,
+     "say": "mierda que tiene en la cabeza la gente",
+     "en": "crap people carry in their heads"
+    },
+    {
+     "t": 898.4,
+     "say": "que no tiene la capacidad de pensar afuera de la caja.",
+     "en": "people who can't think outside the box"
+    },
+    {
+     "t": 902.6,
+     "say": "Y hay gente que le cuesta, y está bien que le cueste, viven en una caja y está bien.",
+     "en": "and some people find it hard, and that's okay, they live in a box and that's okay"
+    },
+    {
+     "t": 908.5,
+     "say": "Yo creo que es posible salir de esa caja, lo estoy haciendo.",
+     "en": "i believe it's possible to get out of that box, i'm doing it"
+    }
+   ],
+   "graphics": [],
+   "cta": [
+    "¿Qué vendes tú?",
+    "*Coméntalo abajo*"
+   ]
+  },
+  {
+   "id": "03-la-calle",
+   "act": "3/5",
+   "nombre": "LA CALLE",
+   "para": "El dueño o artista que no quiere estar en Instagram y cree que basta con su red de contactos",
+   "idea": "La reputación se construía en la calle y hoy se construye en la interacción directa, en lo digital.",
+   "hook": [
+    "LA CALLE",
+    "AHORA ES",
+    "<m>DIGITAL</m>"
+   ],
+   "pieces": [
+    {
+     "t": 913.1,
+     "say": "Mi papá cuando estábamos en la oficina me empezó a hablar de las redes de contacto y de",
+     "en": "my dad, when we were at the office, started telling me about networks and"
+    },
+    {
+     "t": 919.1,
+     "say": "lo importante que era tener las redes de contacto,",
+     "en": "how important it was to have a network"
+    },
+    {
+     "t": 922.3,
+     "say": "empecé este Instagram con cero seguidores, con mi teléfono grabándome hablándote.",
+     "en": "i started this instagram with zero followers, with my phone, filming myself talking to you"
+    },
+    {
+     "t": 929.5,
+     "say": "Y a partir de ese ejercicio, una persona encontró una resonancia tal en mí que está dispuesta a pagarme buenas lucas para",
+     "en": "and from that exercise, someone resonated with me so much that they're willing to pay me good money"
+    },
+    {
+     "t": 937.7,
+     "say": "que yo trabaje con esa persona,",
+     "en": "so i work with them"
+    },
+    {
+     "t": 939.8,
+     "say": "sin ningún tipo de garantía de qué es lo que yo le voy a entregar,",
+     "en": "with no guarantee at all of what i'll deliver"
+    },
+    {
+     "t": 944.8,
+     "say": "Porque la reputación hoy día se construye a partir de la interacción con la gente directa.",
+     "en": "because today reputation is built from direct interaction with people"
+    },
+    {
+     "t": 952.2,
+     "say": "Históricamente en la humanidad eso estaba en la calle.",
+     "en": "historically, for humanity, that happened in the street"
+    },
+    {
+     "t": 956.4,
+     "say": "La experiencia nos dice que eso se está transformando a lo digital.",
+     "en": "experience tells us that's turning digital"
+    },
+    {
+     "t": 959.8,
+     "say": "Si es que tú eres un artista y no tenés presencia en Instagram, lamentablemente va a ser mucho más difícil para ti.",
+     "en": "if you're an artist with no presence on instagram, sadly it's going to be much harder for you"
+    }
+   ],
+   "graphics": [],
+   "cta": [
+    "¿Dónde se construye",
+    "*tu reputación hoy?*",
+    "Coméntalo abajo"
+   ]
+  },
+  {
+   "id": "04-el-carton",
+   "act": "4/5",
+   "nombre": "EL CARTÓN",
+   "para": "El profesional que compite por un sueldo de mercado con todos los que salieron con su mismo título",
+   "idea": "Tu precio no lo pone un cartón: lo pone tu individualidad al servicio de algo que la gente quiere pagar, y la vara está baja.",
+   "hook": [
+    "TU PRECIO",
+    "NO ES TU",
+    "<m>CARTÓN</m>"
+   ],
+   "pieces": [
+    {
+     "t": 1172.3,
+     "say": "todo el sistema que existe en torno al colegio y después a la universidad",
+     "en": "the whole system around school and then university"
+    },
+    {
+     "t": 1198.1,
+     "say": "toda esa maquinaria que te lleva a poder pararte al frente de una persona y decirle, weón, me tenís que pagar un",
+     "en": "all that machinery that lets you stand in front of someone and say, dude, you have to pay me a"
+    },
+    {
+     "t": 1203.4,
+     "say": "millón de pesos al mes porque yo fui 10 años a la universidad",
+     "en": "million pesos a month because i went to university for ten years"
+    },
+    {
+     "t": 1212.4,
+     "say": "Y tenís un precio de mercado que es el precio de mercado que ganan todos los güeyones que salieron de la universidad",
+     "en": "and you have a market price, the price everyone who came out of university earns"
+    },
+    {
+     "t": 1225.9,
+     "say": "La respuesta a eso es ocupando tu individualidad y tu creatividad y tu capacidad de ser quien eres al servicio de la",
+     "en": "the answer is using your individuality, your creativity, your ability to be who you are in service of the"
+    },
+    {
+     "t": 1234.9,
+     "say": "economía, al servicio de ofrecernos un producto y un servicio para el cual estemos dispuestos a pagarte.",
+     "en": "economy, offering us a product or a service we're willing to pay you for"
+    },
+    {
+     "t": 1271.2,
+     "say": "Si hay un mercado que tiene",
+     "en": "if there's a market with"
+    },
+    {
+     "t": 1273.6,
+     "say": "mucha plata adentro, es porque la gente está dispuesta a pagar cosas en ese mercado.",
+     "en": "a lot of money in it, it's because people are willing to pay for things in it"
+    },
+    {
+     "t": 1278.4,
+     "say": "Y lo podéis ver como",
+     "en": "and you can see it as"
+    },
+    {
+     "t": 1279.9,
+     "say": "mucha competencia o como un potencial infinito de oportunidad porque ya hay gente que está dispuesta a pagar y la vara está",
+     "en": "lots of competition or as infinite opportunity, because people are already willing to pay and the bar is"
+    },
+    {
+     "t": 1287.3,
+     "say": "increíblemente baja.",
+     "en": "incredibly low"
+    }
+   ],
+   "graphics": [],
+   "cta": [
+    "¿Qué ofreces tú",
+    "*que nadie más?*",
+    "Coméntalo abajo"
+   ]
+  },
+  {
+   "id": "05-no-te-creo",
+   "act": "5/5",
+   "nombre": "NO TE CREO",
+   "para": "El que se siente perdido con la IA y con el ruido de opiniones sobre ella",
+   "idea": "Nadie sabe lo que está pasando: este momento se navega con curiosidad y ganas de aprender, no con certezas.",
+   "hook": [
+    "SI NO ESTÁS",
+    "<m>PERDIDO</m>,",
+    "NO TE CREO"
+   ],
+   "pieces": [
+    {
+     "t": 1122.2,
+     "say": "si hay alguien que te dice que no está perdido,",
+     "en": "if someone tells you they're not lost"
+    },
+    {
+     "t": 1126.1,
+     "say": "compadre, no te creo, no te quiero escuchar.",
+     "en": "dude, i don't believe you, i don't want to listen to you"
+    },
+    {
+     "t": 1106,
+     "say": "Está bien Antropic, ChatGTP, es ético, es algo que deberíamos usar.",
+     "en": "is anthropic okay, chatgpt, is it ethical, is it something we should use"
+    },
+    {
+     "t": 1112.3,
+     "say": "Bueno, no tengo la más puta idea,",
+     "en": "well, i have no fucking idea"
+    },
+    {
+     "t": 1115.2,
+     "say": "no tengo idea de nada, no sé qué chucha está pasando en el mundo.",
+     "en": "i have no idea about anything, i don't know what the hell is going on in the world"
+    },
+    {
+     "t": 1118.6,
+     "say": "Estoy igual de perdido que todos, en verdad.",
+     "en": "i'm as lost as everyone, honestly"
+    },
+    {
+     "t": 1128.7,
+     "say": "Si tú la tenís tan clara que no eres capaz de decir, bueno, estoy un poco desorientado,",
+     "en": "if you're so sure that you can't say, well, i'm a bit disoriented"
+    },
+    {
+     "t": 1134.1,
+     "say": "no te voy a escuchar, no me interesa escucharte.",
+     "en": "i won't listen to you, i'm not interested"
+    },
+    {
+     "t": 1136.9,
+     "say": "Porque",
+     "en": "because"
+    },
+    {
+     "t": 1138.9,
+     "say": "yo creo que es necesario navegar este momento de la humanidad con curiosidad,",
+     "en": "i believe we need to navigate this moment of humanity with curiosity"
+    },
+    {
+     "t": 1148.2,
+     "say": "con disposición a aprender",
+     "en": "with a willingness to learn"
+    },
+    {
+     "t": 1152,
+     "say": "y con una claridad de que en verdad no sabemos nada.",
+     "en": "and with the clarity that we really know nothing"
+    }
+   ],
+   "graphics": [],
+   "cta": [
+    "¿Cómo estás navegando",
+    "*este momento?*",
+    "Coméntalo abajo"
+   ]
+  }
+ ]
+}

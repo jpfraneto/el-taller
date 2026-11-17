@@ -1,0 +1,14 @@
+{
+  "name": "umbral-sur-app",
+  "version": "1.0.0",
+  "description": "Refugio Bruma: una casa, un precio, recórrela y habla con Iván (prototipo El Taller Ep. 05, Umbral Sur)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --ip 0.0.0.0 --port 8805",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}

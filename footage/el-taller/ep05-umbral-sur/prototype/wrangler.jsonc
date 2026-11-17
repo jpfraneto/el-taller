@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "umbral-sur-app",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  // jpfraneto.com is on Cloudflare: the Worker answers on this subdomain directly.
+  "routes": [{ "pattern": "umbralsur.jpfraneto.com", "custom_domain": true }],
+  "assets": { "directory": "./public", "binding": "ASSETS" }
+}

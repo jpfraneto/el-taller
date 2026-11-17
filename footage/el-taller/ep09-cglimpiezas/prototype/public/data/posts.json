@@ -1,0 +1,70 @@
+{
+ "posts": [
+  {
+   "id": "reel-1",
+   "tipo": "reel",
+   "img": "img/reels/cover-1.jpg",
+   "video": "video/reel-1.mp4",
+   "texto": "¿Hace cuánto no lavas tu alfombra? 💧\n\nEn este depto sacamos más de un año de suciedad de las alfombras muro a muro. Con inyección-extracción el agua entra a la alfombra y sale con lo que no se ve. Por eso el agua sale así.\n\nMás de 35 años de experiencia.\n\nMándanos la foto de tu alfombra por WhatsApp al +56 9 9230 8805 y te decimos el precio al tiro 📲\n\n#cglimpiezas #limpiezaalfombras #alfombrasmuroamuro #lavadoalfombras #limpiezadelhogar",
+   "fijado": true
+  },
+  {
+   "id": "reel-2",
+   "tipo": "reel",
+   "img": "img/reels/cover-2.jpg",
+   "video": "video/reel-2.mp4",
+   "texto": "Si se mancha tu sillón, alfombra o tapiz: no lo frotes ☝️\n\nNos pasó con un tapiz: antes de que llegara a nuestras manos, intentaron desmancharlo y eso fijó la mancha. Después cuesta mucho más sacarla, y a veces no sale entera.\n\nSi no sabes cómo, mejor no intentes desmancharlo. Una limpieza profesional a tiempo puede hacer la diferencia.\n\nMándanos la foto de la mancha por WhatsApp al +56 9 9230 8805 y te decimos el precio al tiro 📲\n\n#cglimpiezas #limpiezadetapices #tipsdelimpieza #sillón #antesydespués",
+   "fijado": true
+  },
+  {
+   "id": "reel-3",
+   "tipo": "reel",
+   "img": "img/reels/cover-3.jpg",
+   "video": "video/reel-3.mp4",
+   "texto": "Antes de cambiarte de depto ✨\n\nEste cliente quiso dejar todo impecable antes de cambiarse. Así estaban y así quedaron las alfombras de su nuevo departamento. El agua sucia que ves es lo que salió de ellas.\n\nMándanos la foto de tus alfombras por WhatsApp al +56 9 9230 8805 y te decimos el precio al tiro 📲\n\n#cglimpiezas #limpiezaalfombras #muroamuro #lavadoalfombras #antesydespués",
+   "fijado": true
+  },
+  {
+   "id": "agua-sillon",
+   "tipo": "foto",
+   "img": "img/posts/agua-sillon.jpg",
+   "texto": "Toda esta suciedad estaba escondida en el sillón. Si tienes mascotas, tus muebles acumulan más de lo que ves. Mándanos la foto de tu sillón y te decimos el precio al tiro."
+  },
+  {
+   "id": "pareja-patchwork",
+   "tipo": "foto",
+   "img": "img/posts/pareja-patchwork.jpg",
+   "texto": "Una alfombra de comedor que necesitaba urgente una limpieza. Antes, durante y después: sin filtros, con inyección-extracción. ¿La tuya cómo está? Mándanos la foto y te decimos el precio al tiro."
+  },
+  {
+   "id": "hueco-familia",
+   "tipo": "hueco",
+   "img": "img/posts/hueco-familia.jpg",
+   "texto": "Aquí va la familia CG. Son más de 35 años de oficio y en el perfil no aparece nadie: la gente deja entrar a su casa a una persona, no a un logo. Este post es una foto de ustedes (quién llega, la máquina, el auto) y una línea: desde cuándo y por qué."
+  },
+  {
+   "id": "guagua",
+   "tipo": "foto",
+   "img": "img/posts/guagua.jpg",
+   "texto": "Llegó llena de huellas del peludo de la casa y quedó lista para recibir a la nueva integrante de la familia. Mándanos la foto y te decimos el precio al tiro."
+  },
+  {
+   "id": "banqueta",
+   "tipo": "foto",
+   "img": "img/posts/banqueta.jpg",
+   "texto": "Le devolvimos la frescura a estas dos banquetas. ¿Tu sillón lo necesita también? Mándanos la foto y te decimos el precio al tiro."
+  },
+  {
+   "id": "pasillo",
+   "tipo": "foto",
+   "img": "img/posts/pasillo.jpg",
+   "texto": "Estas manchas de pipí de perro eran un reto. Las sacamos y sanitizamos. Mándanos la foto y te decimos el precio al tiro."
+  },
+  {
+   "id": "muro",
+   "tipo": "foto",
+   "img": "img/posts/muro.jpg",
+   "texto": "Renovando las alfombras muro a muro de este departamento: más de un año de suciedad, manchas y ácaros. Mándanos la foto y te decimos el precio al tiro."
+  }
+ ]
+}

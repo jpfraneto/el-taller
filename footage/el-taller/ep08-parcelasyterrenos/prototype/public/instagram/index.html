@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Parcelas y Terrenos en Instagram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Archivo+Narrow:wght@500;700&display=swap">
+<style>
+/* Before/after of the account. The reels are the prototype's cartoon map turned into a globe: paper land, dark outline,
+   Pacific blue, the yellow price tag. Each one flies from space to the parcel, as close as we know where it is. */
+:root {
+  --papel: #fbf9f4; --crema: #f2ede1; --tinta: #1a1e1a; --gris: #5d645c; --linea: #e2ddd0;
+  --verde: #1d3528; --amarillo: #ffd23f; --arena: #9a7a3c; --ig-borde: #dbdbdb; --telefono: #ffffff;
+  --display: "Fraunces", Georgia, serif;
+  --texto: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --papel: #141a16; --crema: #1c241f; --tinta: #ece8dd; --gris: #a3aa9f; --linea: #2c352f; --verde: #26453a;
+  --arena: #d6b878; --ig-borde: #363636; --telefono: #0c0f0d; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --papel: #141a16; --crema: #1c241f; --tinta: #ece8dd; --gris: #a3aa9f; --linea: #2c352f; --verde: #26453a;
+  --arena: #d6b878; --ig-borde: #363636; --telefono: #0c0f0d; color-scheme: dark }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 16px/1.55 var(--texto); }
+img { max-width: 100%; }
+.hoja { max-width: 1040px; margin: 0 auto; padding-block: 36px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 48px; }
+h1, h2 { font-family: var(--display); font-weight: 600; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 5.5vw, 2.8rem); }
+h2 { font-size: clamp(1.4rem, 4vw, 1.8rem); }
+p { margin: 0; max-width: 64ch; }
+.etiqueta { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--arena); }
+.intro { display: grid; gap: 14px; }
+.intro p { font-size: 1.1rem; }
+a { color: inherit; text-underline-offset: 3px; }
+button { font: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--amarillo); outline-offset: 2px; border-radius: 6px; }
+
+/* ── the two phones ── */
+.lado { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.col { display: grid; gap: 14px; justify-items: center; min-width: 0; }
+.col > .etiqueta { justify-self: center; }
+.telefono { width: 100%; max-width: 390px; background: var(--telefono); border: 10px solid var(--tinta); border-radius: 44px;
+  overflow: hidden; color: var(--tinta); font-size: 14px; line-height: 1.35; }
+.barra { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px 6px; font-weight: 700; font-size: 1.05rem; }
+.barra small { font-weight: 500; color: var(--gris); font-size: 0.8rem; }
+.perfil { display: grid; grid-template-columns: 86px minmax(0, 1fr); gap: 18px; align-items: center; padding: 8px 16px 0; }
+.foto { width: 86px; height: 86px; border-radius: 50%; overflow: hidden; background: var(--crema); border: 1px solid var(--ig-borde); display: block; }
+.foto canvas { width: 100%; height: 100%; display: block; }
+.numeros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; }
+.numeros b { display: block; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.numeros span { font-size: 0.72rem; display: block; }
+.bio { padding: 10px 16px 0; display: grid; gap: 1px; }
+.bio b { font-weight: 600; }
+.bio .cat { color: var(--gris); }
+.bio .link { color: #3d6fb5; font-weight: 600; }
+.botones { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 12px 16px 0; }
+.botones span { background: var(--crema); border-radius: 8px; text-align: center; padding: 7px; font-weight: 600; font-size: 0.85rem; }
+.botones .azul { background: #4a5df9; color: #fff; }
+.destacadas { display: flex; gap: 14px; padding: 14px 16px 6px; overflow-x: auto; scrollbar-width: none; }
+.destacadas div { display: grid; gap: 4px; justify-items: center; font-size: 0.72rem; flex: none; }
+.destacadas canvas { width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--ig-borde); padding: 2px; background: var(--telefono); }
+.pestanas { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ig-borde); margin-top: 8px; }
+.pestanas span { text-align: center; padding: 9px 0; color: var(--gris); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; }
+.pestanas .on { color: var(--tinta); box-shadow: inset 0 -1.5px 0 var(--tinta); }
+.grilla { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
+.cuadro { position: relative; aspect-ratio: 3 / 4; border: 0; padding: 0; background: #f6cf3a; cursor: pointer; overflow: hidden; display: block; width: 100%; }
+.cuadro canvas { width: 100%; height: 100%; display: block; }
+.cuadro .pl { position: absolute; top: 6px; right: 6px; width: 16px; height: 16px; fill: #161512; }
+.cuadro .px { position: absolute; left: 0; right: 0; bottom: 0; text-align: left; background: #161512; color: #f6cf3a; padding: 4px 6px 5px; display: grid; }
+.cuadro .px b { font: 700 0.95rem/1.1 "Archivo Narrow", var(--texto); letter-spacing: 0.02em; }
+.cuadro .px span { font: 500 0.66rem/1.2 "Archivo Narrow", var(--texto); color: #fbf9f4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cuadro:hover canvas { filter: brightness(1.08); }
+
+.antes .vacio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
+.antes .vacio i { aspect-ratio: 3 / 4; background: var(--crema); }
+.nota-antes { margin: 12px 16px 16px; padding: 12px; border-radius: 12px; background: var(--crema); font-size: 0.85rem; display: grid; gap: 6px; }
+.pie { font-size: 0.85rem; color: var(--gris); text-align: center; max-width: 40ch; }
+
+/* ── how each reel is made ── */
+.como { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; list-style: none; padding: 0; margin: 0; }
+.como li { padding: 4px 18px 4px 0; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.como li + li { padding-left: 18px; border-left: 1px solid var(--linea); }
+.como b { font-weight: 600; }
+.como span { color: var(--gris); font-size: 0.92rem; }
+.datos { font-size: 0.85rem; color: var(--gris); font-variant-numeric: tabular-nums; }
+
+/* ── handles ── */
+.nombres { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+.nombres ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.nombres li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--linea); min-width: 0; }
+.nombres li code { font: 500 0.95rem ui-monospace, "SF Mono", Menlo, monospace; overflow-wrap: anywhere; }
+.nombres li span { color: var(--gris); font-size: 0.85rem; text-align: right; }
+.libre code::before { content: "✓ "; color: #2f8a4a; }
+.recomendado { background: var(--amarillo); color: #1a1e1a; border-radius: 8px; padding-inline: 8px !important; border-bottom: 0 !important; }
+.recomendado span { color: #1a1e1a !important; font-weight: 600; }
+
+/* ── the reel player ── */
+.visor { position: fixed; inset: 0; z-index: 20; background: rgba(8, 12, 10, 0.92); display: grid; place-items: center;
+  padding: max(12px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) max(12px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); }
+.reel { position: relative; height: min(88vh, 760px); aspect-ratio: 9 / 16; max-width: 100%; border-radius: 18px; overflow: hidden; background: #f6cf3a; color: #fff; }
+.reel > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.reel .fotofin { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; }
+.reel .fotofin.on { opacity: 1; }
+.capa { position: absolute; inset: 0; pointer-events: none; display: grid; grid-template-rows: auto 1fr auto; padding: 18px 16px; }
+.tarjeta { pointer-events: auto; background: #f6cf3a; color: #161512; border-radius: 2px; padding: 0 14px 14px; display: grid; gap: 4px; font-family: "Archivo Narrow", var(--texto);
+  border: 3px solid #161512; box-shadow: 4px 4px 0 rgba(22,21,18,.35); opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; }
+.tarjeta.on { opacity: 1; transform: none; }
+.aviso-cab { margin: 0 -14px 6px; background: #161512; color: #f6cf3a; font: 700 0.85rem/1 "Archivo Narrow", sans-serif; letter-spacing: 0.12em; padding: 7px 14px; }
+.tarjeta .usd { font: 700 2.5rem/1 "Archivo Narrow", var(--texto); }
+.tarjeta .usd small { font-size: 0.95rem; font-weight: 500; margin-left: 6px; }
+.tarjeta .que { font-weight: 700; font-size: 1.05rem; }
+.tarjeta .quien { font-size: 0.85rem; }
+.tarjeta .acciones { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.tarjeta a { font-size: 0.85rem; font-weight: 700; text-decoration: none; padding: 7px 12px; border: 2px solid #161512; color: #161512; }
+.tarjeta a.si { background: #161512; color: #f6cf3a; }
+.cuenta { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; color: #161512; background: rgba(246,207,58,.88); padding: 3px 8px 3px 3px; }
+.cuenta canvas { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #161512; }
+.musica { pointer-events: auto; font-size: 0.74rem; font-weight: 500; margin: -4px 0 10px; color: #161512; background: rgba(246,207,58,.88); padding: 4px 8px; justify-self: start; display: inline-block; }
+.musica b { font-weight: 700; }
+.musica a { color: inherit; font-weight: 600; margin-left: 4px; }
+.credito { position: absolute; right: 8px; bottom: 4px; font-size: 0.6rem; color: rgba(255,255,255,.75); text-decoration: none; text-shadow: 0 1px 2px rgba(0,0,0,.8); z-index: 1; }
+.mandos { position: absolute; z-index: 2; top: 52px; right: 12px; display: flex; gap: 8px; }
+.mandos button, .flecha { pointer-events: auto; background: rgba(0,0,0,.45); color: #fff; border: 0; width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; line-height: 1; }
+.flecha { z-index: 2; position: absolute; top: 50%; transform: translateY(-50%); }
+.flecha.izq { left: 8px; } .flecha.der { right: 8px; }
+.progreso { position: absolute; z-index: 1; top: 4px; left: 12px; right: 12px; height: 3px; background: rgba(255,255,255,.3); border-radius: 2px; overflow: hidden; }
+.progreso i { display: block; height: 100%; width: 0; background: #161512; }
+
+@media (max-width: 760px) {
+  .lado { grid-template-columns: minmax(0, 1fr); }
+  .lado .antes { order: 2; }
+  .como { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .como li, .como li + li { padding: 0 0 0 14px; border-left: 2px solid var(--amarillo); }
+  .nombres { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .tarjeta, .reel .fotofin { transition: none; } }
+</style>
+</head>
+<body>
+<main class="hoja">
+  <header class="intro">
+    <span class="etiqueta">Parcelas y Terrenos · Instagram</span>
+    <h1>Cada reel, una parcela de Chile, buscada en las páginas amarillas.</h1>
+    <p>Las páginas corren una detrás de otra y cada una está más cerca: la Tierra, Chile, la región, la comuna, la parcela. Tan cerca como sabemos dónde está: el punto exacto, o la comuna si la publicación no dice más. Al final, su precio en dólares, y de fondo música chilena. Es una ventana a Chile, y la puerta a parcelasyterrenos.cl.</p>
+    <p><b>Toca cualquier reel para verlo, con sonido.</b> Son parcelas reales que están a la venta hoy.</p>
+  </header>
+
+  <section class="lado">
+    <div class="col antes">
+      <span class="etiqueta">Antes</span>
+      <div class="telefono" aria-label="Instagram hoy">
+        <div class="barra">parcelasyterrenos <small>no existe</small></div>
+        <div class="perfil">
+          <span class="foto"></span>
+          <div class="numeros"><div><b>0</b><span>publicaciones</span></div><div><b>0</b><span>seguidores</span></div><div><b>0</b><span>seguidos</span></div></div>
+        </div>
+        <div class="bio"><b>Parcelas y Terrenos</b><span class="cat">Hoy no tiene Instagram.</span></div>
+        <div class="pestanas"><span class="on">REELS</span><span>FOTOS</span><span>ETIQUETAS</span></div>
+        <div class="vacio"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="nota-antes">
+          <b>Lo que hay hoy</b>
+          <span>La página web, desde 2012, y nada en Instagram. Quien busca "parcelas y terrenos" ahí encuentra <b>@parcelasyterrenos.cl</b> (41 seguidores, 9 publicaciones), y no sabemos de quién es.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col despues">
+      <span class="etiqueta">Después</span>
+      <div class="telefono" aria-label="Instagram propuesto">
+        <div class="barra">parcelasyterrenos <small>bienes raíces</small></div>
+        <div class="perfil">
+          <span class="foto"><canvas id="pfp" width="172" height="172"></canvas></span>
+          <div class="numeros"><div><b id="n-pub">12</b><span>publicaciones</span></div><div><b>—</b><span>seguidores</span></div><div><b>—</b><span>seguidos</span></div></div>
+        </div>
+        <div class="bio">
+          <b>Parcelas y Terrenos</b>
+          <span class="cat">Bienes raíces</span>
+          <span>Cada parcela en venta en Chile, página por página.</span>
+          <span>Precio en dólares · directo con quien vende.</span>
+          <span class="link">parcelasyterrenos.cl</span>
+        </div>
+        <div class="botones"><span class="azul">Seguir</span><span>Mensaje</span></div>
+        <div class="destacadas" id="destacadas"></div>
+        <div class="pestanas"><span class="on">REELS</span><span>FOTOS</span><span>ETIQUETAS</span></div>
+        <div class="grilla" id="grilla"></div>
+      </div>
+      <p class="pie">Los seguidores quedan en blanco: es una cuenta nueva y no vamos a inventar números.</p>
+    </div>
+  </section>
+
+  <section class="intro">
+    <span class="etiqueta">Cómo se hace cada reel</span>
+    <ol class="como">
+      <li><b>Una parcela real</b><span>Del índice de parcelasyterrenos.cl: dónde está, cuánto mide, cuánto cuesta y quién la vende.</span></li>
+      <li><b>El precio en dólares</b><span>Pesos o UF al dólar del día. Para el que mira desde afuera, es el primer número que entiende.</span></li>
+      <li><b>Página por página</b><span>Cada página es un zoom, con su escala de verdad y las parcelas de esa zona en columnas. Si la publicación trae el punto, la última página es el punto; si solo dice la comuna, se queda una capa más arriba y marca la comuna.</span></li>
+      <li><b>A dónde ir</b><span>Al final, quién la vende y el link. El reel invita, la página cierra.</span></li>
+    </ol>
+    <p><b>Y de fondo, música chilena.</b> Cada reel suena con un artista de Chile, desde un segundo elegido de la canción, y abajo dice quién es, el disco y el año. En esta muestra suena el adelanto oficial de 30 segundos de Apple Music, con su link. Para publicar los reels de verdad, cada canción necesita el permiso del artista o de su sello.</p>
+    <p class="datos" id="datos"></p>
+  </section>
+
+  <section class="intro">
+    <span class="etiqueta">El nombre</span>
+    <h2>¿Qué nombres están libres en Instagram?</h2>
+    <p>Revisado el 13 de noviembre de 2026, perfil por perfil. "Libre" quiere decir que hoy no hay ninguna cuenta con ese nombre; se confirma al crear la cuenta.</p>
+    <div class="nombres">
+      <ul>
+        <li class="libre recomendado"><code>@parcelasyterrenos</code><span>libre · el que usaría</span></li>
+        <li class="libre"><code>@parcelasyterrenoschile</code><span>libre</span></li>
+        <li class="libre"><code>@parcelasyterrenos_cl</code><span>libre</span></li>
+        <li class="libre"><code>@parcelasyterrenoscl</code><span>libre</span></li>
+        <li class="libre"><code>@parcelas.y.terrenos</code><span>libre</span></li>
+        <li class="libre"><code>@parcelasyterrenos.chile</code><span>libre</span></li>
+        <li class="libre"><code>@parcelasdechile</code><span>libre</span></li>
+      </ul>
+      <ul>
+        <li><code>@parcelasyterrenos.cl</code><span>tomado · 41 seguidores, 9 publicaciones</span></li>
+        <li><code>@parcelaschile</code><span>tomado</span></li>
+        <li><code>@parcelas.chile</code><span>tomado</span></li>
+        <li><code>@parcelasenchile</code><span>tomado</span></li>
+        <li><code>@terrenoschile</code><span>tomado</span></li>
+        <li><code>@parcelasdelsur</code><span>tomado</span></li>
+        <li><code>@parcelaspuertovaras</code><span>tomado</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <p><a href="/propuesta/">← La propuesta</a> · <a href="/">El mapa</a></p>
+</main>
+
+<div class="visor" id="visor" hidden>
+  <div class="reel" id="reel">
+    <canvas id="lienzo"></canvas>
+    <img class="fotofin" id="fotofin" alt="">
+    <div class="progreso"><i id="barra"></i></div>
+    <a class="credito" href="https://s2maps.eu" target="_blank" rel="noopener">Sentinel-2 cloudless 2016 · EOX · datos Copernicus</a>
+    <audio id="audio" preload="none"></audio>
+    <div class="capa">
+      <div></div>
+      <div></div>
+      <div>
+        <div class="cuenta"><canvas id="pfp2" width="56" height="56"></canvas> parcelasyterrenos</div><br>
+        <div class="musica" id="musica"></div>
+        <div class="tarjeta" id="tarjeta"></div>
+      </div>
+    </div>
+    <div class="mandos"><button type="button" id="sonido" aria-label="Silenciar">🔊</button><button type="button" id="otra" aria-label="Ver de nuevo">↻</button><button type="button" id="cerrar" aria-label="Cerrar">✕</button></div>
+    <button type="button" class="flecha izq" id="ant" aria-label="Anterior">‹</button>
+    <button type="button" class="flecha der" id="sig" aria-label="Siguiente">›</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="paginas.js"></script>
+</body>
+</html>

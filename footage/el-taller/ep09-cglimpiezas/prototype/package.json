@@ -1,0 +1,14 @@
+{
+  "name": "cglimpiezas-app",
+  "version": "1.0.0",
+  "description": "CG Limpiezas: su Instagram rediseñado + cotiza con una foto (prototipo El Taller Ep. 09)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --ip 0.0.0.0 --port 8809 --remote",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}

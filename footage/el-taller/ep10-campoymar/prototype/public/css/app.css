@@ -1,0 +1,441 @@
+/* Campo & Mar · the colors of their own shops: the wine sign of Castro, the turquoise door of Ancud, cream letters. */
+:root {
+  --cacao: #3a2219; --crema: #f7f1e8; --vino: #7b1e24; --letra: #f3e6cf; --mar: #2a8784; --salvia: #8ea59b; --papel: #fffdf9;
+  --hueco: #f2b705; --linea: #e6dccd; --mute: #7a6658;
+  --ig-fg: #0c1014; --ig-mute: #737373; --ig-line: #dbdbdb; --ig-btn: #efefef; --ig-blue: #0095f6;
+  --sys: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --marca: "Cormorant Garamond", Georgia, serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body { background: var(--crema); color: var(--cacao); font-family: var(--sys); -webkit-font-smoothing: antialiased; }
+button { font: inherit; cursor: pointer; }
+img, video { display: block; max-width: 100%; }
+
+/* The gaps: what should be public and isn't. Yellow only when "huecos" is on. */
+.hueco { border-radius: 4px; padding: 0 3px; transition: background .2s; }
+.mostrar-huecos .hueco { background: var(--hueco); color: var(--cacao); }
+.mostrar-huecos .es-hueco { outline: 3px solid var(--hueco); outline-offset: -3px; }
+
+/* ── The proposal chrome (El Taller de Ruben) ───────────────────────── */
+.propuesta { position: sticky; top: 0; z-index: 20; background: var(--cacao); color: var(--crema);
+  display: flex; align-items: center; gap: 10px; padding: 10px 16px; }
+.propuesta .de { font-size: 12px; line-height: 1.2; flex: 1; min-width: 0; opacity: .9; }
+.propuesta .de b { display: block; font-family: var(--marca); font-size: 19px; font-weight: 600; opacity: 1; }
+.seg { display: flex; background: rgba(255,255,255,.12); border-radius: 999px; padding: 3px; }
+.seg button { border: 0; background: none; color: var(--crema); padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+.seg button[aria-pressed="true"] { background: var(--crema); color: var(--cacao); }
+.btn-huecos { border: 0; border-radius: 999px; background: var(--hueco); color: var(--cacao); font-weight: 700;
+  font-size: 13px; padding: 7px 11px; white-space: nowrap; }
+@media (max-width: 440px) { .propuesta .de { font-size: 0; } .propuesta .de b { font-size: 17px; } }
+
+.escena { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; padding: 0 0 40px; }
+.notas { display: none; }
+@media (min-width: 980px) {
+  .escena { grid-template-columns: 1fr 430px 1fr; gap: 48px; align-items: start; padding: 32px 32px 64px; }
+  .telefono { border-radius: 44px; overflow: hidden; box-shadow: 0 30px 80px rgba(58,34,25,.25), 0 0 0 10px #1b1410; }
+  .notas { display: block; max-width: 340px; padding-top: 24px; }
+  .notas h2 { font-family: var(--marca); font-weight: 600; font-size: 40px; line-height: 1; margin: 0 0 14px; }
+  .notas p, .notas li { font-size: 15px; line-height: 1.5; color: #5b4538; }
+  .notas b { color: var(--cacao); }
+  .notas ul { padding-left: 18px; }
+  .notas.izq { justify-self: end; }
+}
+.telefono { width: 100%; max-width: 430px; background: #fff; min-height: 100vh; position: relative; }
+@media (min-width: 980px) { .telefono { min-height: 860px; max-height: 880px; overflow-y: auto; scrollbar-width: none; } }
+
+/* ── "Hoy": what's public now ───────────────────────────────────────── */
+#hoy img { width: 100%; }
+#hoy .pie { padding: 14px 16px 24px; font-size: 14px; line-height: 1.5; color: #5b4538; background: var(--crema); }
+#hoy .pie b { color: var(--cacao); }
+
+/* ── Instagram, redesigned ──────────────────────────────────────────── */
+.ig { color: var(--ig-fg); font-size: 14px; }
+.ig-top { display: flex; align-items: center; justify-content: space-between; height: 48px; padding: 0 16px; }
+.ig-top .user { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 4px; }
+.ig-top .iconos { display: flex; gap: 22px; }
+.ig-head { display: flex; align-items: center; gap: 22px; padding: 6px 16px 10px; }
+.avatar { width: 86px; height: 86px; border-radius: 50%; padding: 3px; flex: none;
+  background: conic-gradient(from 200deg, var(--vino), var(--mar), var(--vino)); }
+.avatar img { width: 100%; height: 100%; border-radius: 50%; border: 3px solid #fff; object-fit: cover; }
+.stats { display: flex; flex: 1; justify-content: space-around; text-align: center; }
+.stats b { display: block; font-size: 17px; }
+.stats span { font-size: 13px; }
+.bio { padding: 0 16px; line-height: 1.38; }
+.bio .nombre { font-weight: 600; }
+.bio .cat { color: var(--ig-mute); }
+.bio .link { color: #00376b; font-weight: 600; display: inline-flex; gap: 4px; align-items: center; text-decoration: none; }
+.acciones { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 12px 16px; }
+.acciones a, .acciones button { border: 0; border-radius: 8px; background: var(--ig-btn); color: var(--ig-fg); font-weight: 600;
+  font-size: 14px; padding: 8px 0; text-align: center; text-decoration: none; }
+.acciones .seguir { background: var(--ig-blue); color: #fff; }
+.destacadas { display: flex; gap: 16px; padding: 4px 16px 14px; overflow-x: auto; scrollbar-width: none; }
+.destacada { flex: none; width: 66px; text-align: center; font-size: 12px; background: none; border: 0; padding: 0; color: var(--ig-fg); text-decoration: none; }
+.destacada .c { width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--ig-line); padding: 3px; margin-bottom: 5px; }
+.destacada .c > * { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.destacada .c .mono { display: grid; place-items: center; background: var(--vino); color: var(--crema);
+  font-family: var(--marca); font-weight: 700; font-size: 26px; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ig-line); }
+.tabs button { border: 0; background: none; padding: 10px 0; display: grid; place-items: center; color: var(--ig-mute);
+  border-bottom: 1px solid transparent; }
+.tabs button[aria-selected="true"] { color: var(--ig-fg); border-bottom-color: var(--ig-fg); }
+.grilla { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.tile { position: relative; border: 0; padding: 0; background: #eee; aspect-ratio: 3 / 4; overflow: hidden; }
+.tile img { width: 100%; height: 100%; object-fit: cover; }
+.tile .ico { position: absolute; top: 6px; right: 6px; color: #fff; filter: drop-shadow(0 1px 2px rgba(0,0,0,.5)); }
+
+dialog.post { width: min(430px, 100vw); max-height: 100dvh; padding: 0; border: 0; border-radius: 14px; overflow: auto; }
+dialog.post::backdrop { background: rgba(20,12,8,.75); }
+.post-top { display: flex; align-items: center; gap: 8px; padding: 10px 12px; font-weight: 600; }
+.post-top img { width: 30px; height: 30px; border-radius: 50%; }
+.post-top button { margin-left: auto; border: 0; background: none; font-size: 26px; line-height: 1; }
+.post-media img { width: 100%; max-height: 62vh; object-fit: cover; }
+.post-texto { padding: 12px 14px; font-size: 14px; line-height: 1.45; white-space: pre-line; }
+.post-cta { display: block; margin: 0 14px 14px; padding: 12px; border-radius: 10px; background: var(--vino); color: #fff;
+  text-align: center; font-weight: 700; text-decoration: none; }
+
+/* ── /pide/: the link in the bio ────────────────────────────────────── */
+.pide { max-width: 560px; margin: 0 auto; padding: 0 16px 56px; }
+.marca { text-align: center; padding: 28px 0 8px; }
+.marca .logo { font-family: var(--marca); font-weight: 500; font-size: 40px; letter-spacing: .12em; line-height: 1; }
+.marca .sub { font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--mute); margin-top: 6px; }
+.marca .promesa { font-family: var(--marca); font-style: italic; font-size: 22px; margin: 16px 0 0; }
+.puertas { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: #efe5d6; border-radius: 999px; padding: 4px; margin: 20px 0 6px;
+  position: sticky; top: 8px; z-index: 5; }
+.puertas button { border: 0; border-radius: 999px; background: none; padding: 11px 6px; font-weight: 700; font-size: 15px; color: var(--cacao); }
+.puertas button[aria-pressed="true"] { background: var(--cacao); color: var(--crema); }
+.pide h2 { font-family: var(--marca); font-weight: 600; font-size: 32px; line-height: 1.05; margin: 34px 0 6px; }
+.pide h2 + p, .pide .bajada { color: #5b4538; font-size: 15px; line-height: 1.5; margin: 0 0 14px; }
+
+.tiendas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tienda { background: var(--papel); border: 1px solid var(--linea); border-radius: 16px; padding: 14px; }
+.tienda .ciudad { font-family: var(--marca); font-weight: 700; font-size: 24px; }
+.tienda .dir { font-size: 15px; margin-top: 2px; }
+.tienda .duda { font-size: 12px; color: var(--mute); margin-top: 6px; line-height: 1.35; }
+.tienda .mapa { display: inline-block; margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--mar); }
+.leyenda { display: flex; flex-wrap: wrap; gap: 6px 12px; font-size: 12px; color: var(--mute); margin: 4px 0 12px; }
+.filtros { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 12px; padding: 0 16px; }
+.filtros button { flex: none; border: 1px solid var(--linea); background: var(--papel); border-radius: 999px; padding: 7px 12px; font-size: 14px; color: var(--cacao); }
+.filtros button[aria-pressed="true"] { background: var(--mar); border-color: var(--mar); color: #fff; }
+
+.productos { display: grid; gap: 12px; }
+.prod { display: grid; grid-template-columns: 96px 1fr; gap: 12px; background: var(--papel); border: 1px solid var(--linea);
+  border-radius: 18px; padding: 10px; }
+.prod .foto { width: 96px; height: 120px; border-radius: 12px; object-fit: cover; }
+.prod .sinfoto { width: 96px; height: 120px; border-radius: 12px; display: grid; place-items: center; text-align: center; padding: 8px;
+  background: var(--vino); color: var(--crema); font-family: var(--marca); font-weight: 600; font-size: 19px; line-height: 1.05; }
+.prod .sinfoto.queque { background: var(--mar); } .prod .sinfoto.regalo { background: var(--cacao); } .prod .sinfoto.trozo { background: #9b6a3c; }
+.prod .n { font-family: var(--marca); font-weight: 700; font-size: 22px; line-height: 1.05; }
+.prod .lleva { font-size: 13px; color: #5b4538; line-height: 1.4; margin: 4px 0 8px; }
+.prod .nota { font-size: 12px; color: var(--mute); line-height: 1.35; margin: 6px 0 0; font-style: italic; }
+.prod .pie { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+.prod .precio { font-weight: 700; font-size: 15px; }
+.prod .fuente { font-size: 11px; color: #a08c7c; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip { font-size: 11.5px; font-weight: 600; border-radius: 999px; padding: 3px 8px; background: #e7efe9; color: #2d5a4a; }
+.chip.no { background: #f1e6e0; color: #8a4a35; }
+.chip.nose { background: #f3eee6; color: #9b8572; border: 1px dashed #cdbba6; }
+.mostrar-huecos .chip.nose { background: var(--hueco); color: var(--cacao); border-color: transparent; }
+.chip.prueba { background: #fde9c8; color: #8a5a00; }
+.mas { border: 0; background: var(--cacao); color: var(--crema); border-radius: 999px; padding: 7px 12px; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.mas.puesto { background: var(--mar); }
+
+.form { background: var(--papel); border: 1px solid var(--linea); border-radius: 20px; padding: 16px; display: grid; gap: 12px; }
+.form label { display: grid; gap: 5px; font-size: 13px; font-weight: 600; color: #5b4538; }
+.form input, .form select, .form textarea { font: inherit; font-size: 16px; padding: 11px 12px; border-radius: 12px; border: 1px solid #dccfbd;
+  background: #fff; color: var(--cacao); width: 100%; }
+.form .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.opciones { display: flex; gap: 8px; flex-wrap: wrap; }
+.opciones label { display: flex; align-items: center; gap: 6px; font-weight: 500; font-size: 15px; color: var(--cacao);
+  border: 1px solid #dccfbd; border-radius: 12px; padding: 9px 12px; background: #fff; }
+.carrito { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.carrito li { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; font-size: 15px; }
+.cant { display: flex; align-items: center; gap: 6px; }
+.cant button { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #dccfbd; background: #fff; font-size: 18px; line-height: 1; color: var(--cacao); }
+.cant span { min-width: 22px; text-align: center; font-weight: 700; }
+.vacio { font-size: 14px; color: var(--mute); }
+.wa { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 15px; border: 0; border-radius: 14px;
+  background: #25d366; color: #fff; font-weight: 700; font-size: 17px; text-decoration: none; }
+.wa[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.aviso { font-size: 12px; color: var(--mute); line-height: 1.4; text-align: center; margin: 0; }
+
+.puntos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.punto { background: var(--papel); border: 1px solid var(--linea); border-radius: 14px; padding: 10px 12px; text-decoration: none; color: var(--cacao); }
+.punto b { display: block; font-size: 14px; }
+.punto span { font-size: 12px; color: var(--mute); }
+.cifra { font-family: var(--marca); font-weight: 700; font-size: 64px; line-height: .9; color: var(--vino); }
+.porque { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.porque li { background: var(--papel); border-left: 4px solid var(--mar); border-radius: 10px; padding: 10px 12px; font-size: 14px; line-height: 1.45; }
+.porque b { display: block; font-size: 15px; }
+
+.pie-pide { text-align: center; font-size: 12px; color: var(--mute); margin-top: 40px; line-height: 1.6; }
+.pie-pide a { color: var(--mute); }
+.huecos-pide { position: fixed; right: 12px; bottom: 12px; z-index: 30; box-shadow: 0 6px 20px rgba(0,0,0,.18); }
+
+/* ── /hoy/: la hornada ──────────────────────────────────────────────── */
+.marca .fecha { font-family: var(--marca); font-style: italic; font-size: 20px; margin: 12px 0 0; text-transform: lowercase; }
+.indice { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; position: sticky; top: 0; z-index: 5;
+  background: var(--crema); padding: 10px 0; border-bottom: 1px solid var(--linea); margin: 8px -16px 0; }
+.indice a { font-family: var(--marca); font-weight: 600; font-size: 18px; color: var(--cacao); text-decoration: none;
+  padding: 3px 12px; border-radius: 999px; border: 1px solid var(--linea); background: var(--papel); }
+.hoy section { scroll-margin-top: 60px; }
+.rotulo { display: inline-block; margin-top: 36px; font-size: 11px; font-weight: 800; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--vino); border-top: 2px solid var(--vino); padding-top: 6px; }
+.rotulo + h2 { margin-top: 6px; }
+.vitrinas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.vitrina { background: var(--papel); border: 1px solid var(--linea); border-radius: 16px; padding: 14px; }
+.vitrina .ciudad { font-family: var(--marca); font-weight: 700; font-size: 24px; }
+.vitrina ul { margin: 6px 0 0; padding-left: 18px; font-size: 15px; line-height: 1.5; }
+.vitrina.vacia p { margin: 0 0 8px; }
+.vitrina .vacio { color: var(--mute); list-style: none; margin-left: -18px; }
+.pruebas { display: grid; gap: 14px; }
+.prueba { display: grid; grid-template-columns: 120px 1fr; background: var(--papel); border: 1px solid var(--linea); border-radius: 20px; overflow: hidden; }
+.prueba img { width: 120px; height: 100%; min-height: 200px; object-fit: cover; }
+.prueba .cuerpo { padding: 14px; display: grid; gap: 8px; align-content: start; }
+.prueba .n { font-family: var(--marca); font-weight: 700; font-size: 24px; line-height: 1.05; }
+.prueba p { margin: 0; font-size: 14px; line-height: 1.45; color: #5b4538; }
+.prueba .fuente { font-size: 11px; color: #a08c7c; line-height: 1.35; }
+.prueba.sale { border-color: var(--mar); }
+.sello { justify-self: start; background: var(--mar); color: #fff; font-weight: 800; font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  padding: 4px 9px; border-radius: 6px; }
+.contador { font-size: 14px; }
+.contador b { font-family: var(--marca); font-size: 30px; line-height: 1; color: var(--vino); margin-right: 2px; }
+.contador .ult { color: var(--mute); font-size: 12px; }
+.progreso { height: 8px; background: #efe5d6; border-radius: 99px; overflow: hidden; }
+.progreso i { display: block; height: 100%; background: var(--vino); border-radius: 99px; transition: width .4s; }
+.quiero { justify-self: start; border: 0; border-radius: 999px; background: var(--vino); color: #fff; font-weight: 800; font-size: 16px; padding: 11px 22px; }
+.llegadas { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; }
+.llegadas li { background: var(--papel); border-left: 4px solid var(--mar); border-radius: 10px; padding: 10px 12px; font-size: 15px; line-height: 1.4; }
+.llegadas span { display: block; font-size: 12px; color: var(--mute); }
+.ver-todo { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--mar); text-decoration: none; }
+.dos-puertas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 36px; }
+.puerta-g { display: grid; gap: 4px; padding: 18px 14px; border-radius: 18px; background: var(--vino); color: #fff; text-decoration: none; }
+.puerta-g.cafe { background: var(--mar); }
+.puerta-g b { font-family: var(--marca); font-size: 24px; line-height: 1.05; }
+.puerta-g span { font-size: 13px; opacity: .9; }
+.ciclo { margin-top: 40px; background: var(--cacao); color: var(--crema); border-radius: 22px; padding: 6px 18px 18px; }
+.ciclo h2 { color: var(--crema); }
+.ciclo ol { margin: 0; padding-left: 22px; display: grid; gap: 6px; font-size: 15px; line-height: 1.45; }
+.ciclo b { font-family: var(--marca); font-size: 20px; }
+dialog.reserva { width: min(420px, 92vw); border: 0; border-radius: 20px; padding: 0; background: var(--crema); }
+dialog.reserva::backdrop { background: rgba(20,12,8,.6); }
+.r-titulo { font-family: var(--marca); font-weight: 700; font-size: 26px; }
+.otra { width: 100%; padding: 10px; border: 0; background: none; color: var(--cacao); text-decoration: underline; }
+.error { color: #b42318; font-size: 14px; margin: 0; }
+.mostrar-huecos .vitrina.vacia { outline: 3px solid var(--hueco); }
+.contador b, .cifra { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.nota { font-size: 12.5px; color: var(--mute); line-height: 1.4; margin: 0; }
+
+/* the catalog button on /hoy: comes soon */
+.catalogo-g { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 36px; padding: 18px; border-radius: 18px;
+  background: var(--papel); border: 2px solid var(--cacao); color: var(--cacao); text-decoration: none; }
+.catalogo-g b { display: block; font-family: var(--marca); font-size: 28px; line-height: 1; }
+.catalogo-g small { font-size: 13px; color: var(--mute); }
+.catalogo-g i { font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; background: var(--cacao); color: var(--crema);
+  padding: 6px 12px; border-radius: 999px; }
+.catalogo-g + .dos-puertas { margin-top: 10px; }
+
+/* ── the proposed posts (perfil): the editorial line drawn on their photos; sizes follow the tile (cqw), small or big ── */
+.tile.disenado { position: relative; display: block; color: #fff; text-align: left; container-type: inline-size; }
+.tile.disenado img { position: absolute; inset: 0; }
+.tile .velo { position: absolute; inset: 0; background: rgba(28,16,10,.5); }
+.tile .velo.abajo { background: linear-gradient(180deg, rgba(0,0,0,0) 38%, rgba(20,12,8,.88) 100%); }
+.tile .sello { position: absolute; left: 6cqw; top: 6cqw; padding: 1.6cqw 3.6cqw; border-radius: 999px; font: 800 6.4cqw/1 var(--sys);
+  letter-spacing: .12em; text-transform: uppercase; background: var(--crema); color: var(--cacao); }
+.tile .s-prueba { background: var(--vino); color: #fff; } .tile .s-llego { background: var(--mar); color: #fff; }
+.tile .s-salio { background: var(--crema); color: var(--cacao); } .tile .s-lleva { background: #e9dcc2; color: var(--cacao); }
+.tile .tt { position: absolute; left: 6cqw; right: 6cqw; bottom: 6cqw; display: grid; gap: 1.2cqw; }
+.tile .tt b { font: 700 12.5cqw/1.02 var(--marca); }
+.tile .tt small { font: 500 6cqw/1.2 var(--sys); opacity: .9; }
+.tile .frase { position: absolute; left: 8cqw; right: 8cqw; top: 50%; transform: translateY(-55%); text-align: center;
+  font: italic 600 12cqw/1.06 var(--marca); text-shadow: 0 2px 14px rgba(0,0,0,.4); }
+.tile .firma-cm { position: absolute; left: 0; right: 0; bottom: 7cqw; text-align: center; font: 500 5.4cqw/1 var(--marca); letter-spacing: .3em; opacity: .9; }
+.tile.disenado.grande { aspect-ratio: 4 / 5; width: 100%; }
+.post-media .tile.disenado.grande img { max-height: none; height: 100%; }
+
+/* ── /hoy: who they are, before anything else: the sea, the family, their words ── */
+.portada-cm { position: relative; margin: 0 -16px; height: min(78svh, 620px); overflow: hidden; color: #fff; }
+.portada-cm img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.portada-cm::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,12,8,.15) 0, rgba(20,12,8,.05) 40%, rgba(20,12,8,.75) 100%); }
+.portada-cm .sobre { position: absolute; left: 20px; right: 20px; bottom: 28px; z-index: 1; text-align: center; }
+.portada-cm .logo { font-family: var(--marca); font-weight: 500; font-size: clamp(40px, 11vw, 56px); letter-spacing: .12em; line-height: 1; }
+.portada-cm .sub { margin-top: 8px; font-size: 11px; letter-spacing: .28em; text-transform: uppercase; opacity: .9; }
+.portada-cm .somos { margin: 18px 0 0; font-family: var(--marca); font-style: italic; font-size: 24px; }
+.portada-cm .fecha { margin: 6px 0 0; font-family: var(--marca); font-style: italic; font-size: 17px; opacity: .85; text-transform: lowercase; }
+.cocina { position: relative; margin: 0 -16px; }
+.cocina img { width: 100%; height: 340px; object-fit: cover; object-position: center 40%; }
+.cocina figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 20px 18px; color: #fff;
+  background: linear-gradient(180deg, rgba(20,12,8,0), rgba(20,12,8,.85)); font-family: var(--marca); font-style: italic; font-size: 24px; line-height: 1.1; }
+.cocina figcaption span { display: block; margin-top: 6px; font-family: var(--sys); font-style: normal; font-size: 12px; letter-spacing: .04em; opacity: .85; }
+.hoy .indice { margin-top: 0; }
+
+
+/* ── Identity: their sign. A wine plate, cream letters, a double fillet; tracked caps; the & small and italic ── */
+.amp { font-style: italic; font-weight: 500; font-size: .6em; letter-spacing: 0; vertical-align: .14em; margin: 0 .06em; }
+.letrero { position: relative; background: var(--vino); color: var(--letra); text-align: center; }
+.letrero::before, .letrero::after { content: ""; position: absolute; pointer-events: none; border: 1px solid currentColor; }
+.letrero::before { inset: 5px; opacity: .9; } .letrero::after { inset: 9px; opacity: .55; }
+.marco { border: 1px solid var(--vino); border-radius: 2px; box-shadow: inset 0 0 0 3px var(--papel), inset 0 0 0 4px rgba(123,30,36,.3); }
+
+.portada-cm .sobre { bottom: 30px; }
+.portada-cm .letrero { display: inline-block; max-width: 100%; padding: 18px 22px 15px; box-shadow: 0 18px 40px rgba(0,0,0,.35); }
+.portada-cm .letrero .logo { font-weight: 600; font-size: clamp(30px, 8.6vw, 48px); letter-spacing: .1em; white-space: nowrap; }
+.letrero .usuario { margin-top: 6px; font-family: var(--marca); font-size: 15px; font-style: italic; letter-spacing: .04em; opacity: .9; }
+.portada-cm .sub { margin-top: 18px; }
+
+.indice { gap: 0; background: var(--crema); border-bottom: 3px double var(--vino); padding: 12px 0 10px; }
+.indice a { border: 0; background: none; border-radius: 0; padding: 2px 9px; font: 800 11px/1 var(--sys); letter-spacing: .2em;
+  text-transform: uppercase; color: var(--vino); }
+.indice a + a { border-left: 1px solid rgba(123,30,36,.35); }
+
+.hoy section > h2, .hoy section > .bajada, .hoy section > .rotulo { text-align: center; }
+.rotulo { display: flex; align-items: center; gap: 12px; margin-top: 46px; border: 0; padding: 0; color: var(--vino); letter-spacing: .32em; }
+.rotulo::before, .rotulo::after { content: ""; flex: 1; height: 4px; border-top: 1px solid; border-bottom: 1px solid; opacity: .7; }
+.pide h2 { font-weight: 600; letter-spacing: .01em; }
+
+.vitrina, .prueba, .prod, .punto, .item-cat { border: 1px solid var(--vino); border-radius: 2px;
+  box-shadow: inset 0 0 0 3px var(--papel), inset 0 0 0 4px rgba(123,30,36,.3); }
+.prueba { overflow: hidden; } .prueba img, .prod .foto { border-radius: 0; }
+.sello { border-radius: 0; background: var(--mar); }
+.quiero, .puerta-g, .catalogo-g i, .mientras a, .post-cta { border-radius: 2px; letter-spacing: .06em; }
+.quiero { background: var(--vino); color: var(--letra); box-shadow: inset 0 0 0 3px var(--vino), inset 0 0 0 4px rgba(243,230,207,.6); }
+.puerta-g { color: var(--letra); box-shadow: inset 0 0 0 4px var(--vino), inset 0 0 0 5px rgba(243,230,207,.55); }
+.puerta-g.cafe { box-shadow: inset 0 0 0 4px var(--mar), inset 0 0 0 5px rgba(255,255,255,.55); }
+.catalogo-g { border-radius: 2px; border: 1px solid var(--vino); box-shadow: inset 0 0 0 4px var(--papel), inset 0 0 0 5px var(--vino); }
+.catalogo-g i { background: var(--vino); color: var(--letra); }
+.ciclo { border-radius: 0; padding: 14px 26px 26px; background: var(--vino); color: var(--letra); }
+.ciclo h2 { color: var(--letra); text-align: center; }
+.contador b { color: var(--vino); }
+.progreso { border-radius: 0; } .progreso i { border-radius: 0; }
+
+/* the two shops: two little signs */
+.tiendas .tienda { border: 0; border-radius: 0; padding: 18px 14px 16px; }
+.tiendas .tienda.letrero .ciudad { letter-spacing: .14em; font-weight: 600; }
+.tiendas .tienda.letrero .dir { color: var(--letra); }
+.tiendas .tienda.letrero .mapa { color: var(--letra); text-decoration: underline; text-underline-offset: 3px; position: relative; z-index: 1; }
+
+/* ── the map: where they are, drawn like the sign ── */
+.mapa-cm { margin: 18px 0 0; padding: 7px; background: var(--papel); border: 1px solid var(--vino);
+  box-shadow: inset 0 0 0 4px var(--papel), inset 0 0 0 5px rgba(123,30,36,.45); }
+.mapa-svg { display: block; width: 100%; height: auto; }
+.mapa-svg .mar { fill: #e7efe9; }
+.mapa-svg .anillo { fill: none; stroke-linejoin: round; }
+.mapa-svg .a1 { stroke: #c9ddd4; stroke-width: 20; } .mapa-svg .a2 { stroke: #e7efe9; stroke-width: 13; } .mapa-svg .a3 { stroke: #d3e4dc; stroke-width: 6; }
+.mapa-svg .tierra { fill: #fbf6ec; stroke: var(--vino); stroke-width: 1; stroke-linejoin: round; }
+.mapa-svg .lago { fill: #e7efe9; stroke: var(--vino); stroke-width: .8; }
+.mapa-svg text { font-family: var(--marca); }
+.mapa-svg .agua { font-size: 16px; font-style: italic; letter-spacing: .24em; fill: var(--mar); }
+.mapa-svg .rio { font-size: 12px; font-style: italic; fill: #6d5a4c; }
+.mapa-svg .isla { font-size: 13px; font-style: italic; letter-spacing: .22em; fill: var(--vino); opacity: .75; }
+.mapa-svg .ruta { fill: none; stroke: var(--vino); stroke-width: 1.3; stroke-dasharray: 4 4; stroke-linejoin: round; opacity: .75; }
+.mapa-svg .nota-ruta { font-size: 13px; font-style: italic; fill: var(--vino); }
+.mapa-svg .volcan .cono { fill: #efe4d2; stroke: var(--vino); stroke-width: 1; stroke-linejoin: round; }
+.mapa-svg .volcan .nieve { fill: #fff; stroke: var(--vino); stroke-width: .7; stroke-linejoin: round; }
+.mapa-svg .cafe circle { fill: var(--vino); stroke: var(--papel); stroke-width: 2; }
+.mapa-svg .cafe .n { font: 800 11px var(--sys); fill: var(--letra); }
+.mapa-svg .cafe .ciudad { font: 800 9.5px var(--sys); letter-spacing: .16em; fill: var(--cacao); paint-order: stroke; stroke: #fbf6ec; stroke-width: 3px; }
+.mapa-svg .cafe line { stroke: var(--vino); stroke-width: 1; } .mapa-svg .cafe .aqui { fill: var(--vino); stroke: none; }
+.mapa-svg .cafe:hover circle, .mapa-svg .cafe:focus circle { fill: var(--mar); }
+.mapa-svg .tienda-m line { stroke: var(--vino); stroke-width: 1; }
+.mapa-svg .tienda-m circle { fill: var(--vino); stroke: var(--papel); stroke-width: 2; }
+.mapa-svg .placa { fill: var(--vino); } .mapa-svg .filete { fill: none; stroke: var(--letra); stroke-width: .8; }
+.mapa-svg .tienda-m .t { font-size: 15px; font-weight: 600; letter-spacing: .14em; fill: var(--letra); }
+.mapa-svg .tienda-m .d { font: 600 8.5px var(--sys); letter-spacing: .06em; fill: var(--letra); opacity: .9; }
+.mapa-svg .rosa circle { fill: none; stroke: var(--vino); stroke-width: .8; }
+.mapa-svg .rosa path { fill: var(--vino); } .mapa-svg .rosa .sur { fill: none; stroke: var(--vino); stroke-width: .8; }
+.mapa-svg .rosa text { font-size: 14px; font-weight: 700; fill: var(--vino); }
+.leyenda-cm { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 0; }
+.leyenda-cm li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: baseline; padding: 10px 2px; border-bottom: 1px solid rgba(123,30,36,.2);
+  scroll-margin-top: 70px; }
+.leyenda-cm li:target { background: rgba(42,135,132,.08); }
+.leyenda-cm .n { width: 22px; height: 22px; border-radius: 50%; background: var(--vino); color: var(--letra); display: grid; place-items: center;
+  font: 800 11px var(--sys); align-self: center; }
+.leyenda-cm b { display: block; font: 800 11px var(--sys); letter-spacing: .2em; color: var(--vino); }
+.leyenda-cm span { font-size: 14px; line-height: 1.6; }
+.leyenda-cm a { color: var(--cacao); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(58,34,25,.25); }
+.marca .letrero { display: inline-block; max-width: 100%; padding: 16px 20px 13px; }
+.marca .letrero .logo { font-weight: 600; font-size: clamp(28px, 8vw, 40px); letter-spacing: .1em; white-space: nowrap; }
+.marca .sub { margin-top: 14px; }
+
+/* ── /hoy as one shop: catalog → order → tests → where → your café ── */
+.hoy section { padding-bottom: 6px; }
+.hoy-linea { margin: 0 0 14px; padding: 12px 14px; font-size: 14px; line-height: 1.5; border-left: 3px double var(--vino); background: var(--papel); }
+.hoy-linea b { font: 800 11px var(--sys); letter-spacing: .2em; text-transform: uppercase; color: var(--vino); }
+.hoy-linea .nota { display: block; margin-top: 2px; }
+.vitrina-g { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pieza { display: grid; grid-template-rows: auto 1fr; background: var(--papel); border: 1px solid var(--vino); border-radius: 2px; overflow: hidden; }
+.pieza .ft { position: relative; aspect-ratio: 4 / 5; }
+.pieza .ft img { width: 100%; height: 100%; object-fit: cover; }
+.pieza .placa { position: relative; height: 100%; display: grid; place-items: center; text-align: center; padding: 18px; background: var(--vino);
+  color: var(--letra); font: 600 19px/1.15 var(--marca); letter-spacing: .1em; text-transform: uppercase; }
+.pieza .placa.queque { background: var(--mar); } .pieza .placa.regalo { background: var(--cacao); }
+.pieza .placa::before, .pieza .placa::after { content: ""; position: absolute; border: 1px solid currentColor; }
+.pieza .placa::before { inset: 6px; } .pieza .placa::after { inset: 10px; opacity: .55; }
+.salio-sello { position: absolute; left: 8px; bottom: 8px; background: var(--mar); color: #fff; font: 800 10px var(--sys); letter-spacing: .12em;
+  text-transform: uppercase; padding: 5px 8px; }
+.pieza .tx { padding: 10px 10px 12px; display: grid; gap: 6px; align-content: start; }
+.pieza .n { font: 700 19px/1.05 var(--marca); }
+.pieza .lleva { font-size: 12px; line-height: 1.35; color: #5b4538; }
+.pieza .chips { gap: 3px; } .pieza .chip { font-size: 10.5px; padding: 2px 6px; }
+.pieza .mas { align-self: end; margin-top: 4px; border-radius: 2px; padding: 9px 8px; font-size: 13px; background: var(--vino); color: var(--letra); }
+.pieza .mas.puesto { background: var(--mar); color: #fff; }
+.pronto-linea { display: flex; gap: 10px; align-items: center; margin: 14px 0 0; font-size: 13.5px; line-height: 1.4; color: #5b4538; }
+.pronto-linea i { flex: none; font: 800 10.5px var(--sys); font-style: normal; letter-spacing: .2em; text-transform: uppercase; padding: 6px 10px;
+  background: var(--vino); color: var(--letra); box-shadow: inset 0 0 0 2px var(--vino), inset 0 0 0 3px rgba(243,230,207,.6); }
+
+.pedido { border: 1px solid var(--vino); border-radius: 2px; box-shadow: inset 0 0 0 4px var(--papel), inset 0 0 0 5px rgba(123,30,36,.3); padding: 18px; }
+.pedido .vacio a { color: var(--vino); font-weight: 700; }
+.retiro { border: 0; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.retiro legend { font-size: 13px; font-weight: 600; color: #5b4538; margin-bottom: 6px; padding: 0; }
+.form .retiro label { position: relative; display: grid; gap: 2px; align-content: start; padding: 10px 8px; border: 1px solid #dccfbd; background: #fff;
+  border-radius: 2px; cursor: pointer; font-weight: 500; }
+.retiro input { position: absolute; opacity: 0; pointer-events: none; }
+.retiro b { font: 700 18px/1.05 var(--marca); color: var(--cacao); }
+.retiro span { font-size: 11.5px; color: var(--mute); }
+.form .retiro label:has(input:checked) { border-color: var(--vino); background: var(--vino); box-shadow: inset 0 0 0 3px var(--vino), inset 0 0 0 4px rgba(243,230,207,.6); }
+.retiro label:has(input:checked) b, .retiro label:has(input:checked) span { color: var(--letra); }
+.retiro label:has(input:focus-visible) { outline: 2px solid var(--mar); outline-offset: 2px; }
+.pedido .wa { border-radius: 2px; }
+.form .opciones label { display: flex; }
+
+.cafe-g { display: grid; gap: 4px; padding: 22px 20px; text-decoration: none; background: var(--mar); }
+.cafe-g b { font: 600 26px/1.05 var(--marca); }
+.cafe-g span { font-size: 13px; opacity: .9; }
+
+.barra-pedido { position: fixed; left: 12px; right: 92px; bottom: 12px; z-index: 25; display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  max-width: 460px; padding: 12px 16px; background: var(--vino); color: var(--letra); text-decoration: none; font-size: 14px;
+  box-shadow: inset 0 0 0 3px var(--vino), inset 0 0 0 4px rgba(243,230,207,.6), 0 10px 30px rgba(0,0,0,.25); }
+.barra-pedido b { font: 800 11px var(--sys); letter-spacing: .16em; text-transform: uppercase; }
+.pieza .ft { aspect-ratio: 1 / 1; }
+.pieza .placa { font-size: 17px; }
+.carrito li.vacio { display: block; }
+.retiro.cuatro { grid-template-columns: repeat(3, 1fr); }
+.retiro.cuatro b { font-size: 16px; }
+.porque li { border-left: 3px double var(--vino); border-radius: 0; }
+
+/* the order: editable in place (each line: photo, name, quitar, − n +), and the rest of the catalog one tap away */
+.carrito li.item { grid-template-columns: 44px 1fr auto; gap: 10px; }
+.carrito li.item img, .mini { width: 44px; height: 44px; object-fit: cover; border-radius: 2px; }
+.mini { display: grid; place-items: center; background: var(--vino); color: var(--letra); font: 600 20px var(--marca); }
+.mini.queque { background: var(--mar); } .mini.regalo { background: var(--cacao); }
+.carrito .nom { display: grid; gap: 1px; line-height: 1.2; }
+.quitar { justify-self: start; border: 0; background: none; padding: 0; font-size: 12px; color: var(--mute); text-decoration: underline; }
+.sumar-t { font-size: 13px; font-weight: 600; color: #5b4538; margin-bottom: 6px; }
+.sumar-t:empty { display: none; }
+.sumar-fila { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 -4px; padding: 0 4px 2px; }
+.sumar-fila button { flex: none; display: flex; align-items: center; gap: 8px; padding: 4px 12px 4px 4px; border: 1px solid #dccfbd; background: #fff;
+  border-radius: 2px; font-size: 13px; font-weight: 600; color: var(--cacao); }
+.sumar-fila .mini, .sumar-fila img { width: 34px; height: 34px; font-size: 16px; object-fit: cover; }
+
+dialog.hoja { margin: auto auto 0; width: min(560px, 100vw); max-width: 100vw; max-height: 92dvh; padding: 0; border: 0; border-radius: 0;
+  background: var(--crema); color: var(--cacao); box-shadow: 0 -10px 40px rgba(0,0,0,.3); }
+dialog.hoja::backdrop { background: rgba(20,12,8,.6); }
+.hoja-top { position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; align-items: center; padding: 14px 18px;
+  background: var(--vino); color: var(--letra); }
+.hoja-top b { font: 600 24px var(--marca); letter-spacing: .06em; }
+.hoja-top button { border: 0; background: none; color: var(--letra); font-size: 30px; line-height: 1; }
+.hoja-cuerpo { padding: 14px 14px calc(18px + env(safe-area-inset-bottom)); }
+.barra-pedido { border: 0; font: inherit; cursor: pointer; }
+.form.pedido { grid-template-columns: minmax(0, 1fr); }
+.hoja-cuerpo { overflow-x: hidden; }

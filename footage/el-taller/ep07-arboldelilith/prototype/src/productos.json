@@ -1,0 +1,18 @@
+[
+  {
+    "id": "jp-01",
+    "nombre": "La próxima luna",
+    "autor": "JP + Claude",
+    "fecha": "2026-11-10",
+    "cree_que": "Su energía se va en inscribir a mano. La portada es su próximo círculo: pagar asegura el lugar, inscribirse sin pagar también se puede.",
+    "padre": null
+  },
+  {
+    "id": "jp-02",
+    "nombre": "Te leo",
+    "autor": "JP + Claude",
+    "fecha": "2026-11-10",
+    "cree_que": "La gente llega por ella y por la conversación. La portada es la pregunta de esta luna; el círculo viene después de responder.",
+    "padre": "jp-01"
+  }
+]

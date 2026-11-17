@@ -1,0 +1,5964 @@
+{
+ "generado": "2026-11-08",
+ "metodo": "Precios de publicación (lo que piden los vendedores, no precio de venta final) de avisos de autos usados activos el 2026-11-08 en MercadoLibre Chile (autos.mercadolibre.cl: listado por marca/modelo con filtro 'usado' + búsqueda por palabra clave, hasta ~240 avisos por modelo) y Yapo.cl (hasta 160 avisos por modelo). Se excluyeron: autos 0 km / con menos de 1.000 km, avisos de Yapo publicados antes de ~mediados de 2026 (IDs < 32.000.000; se comprobó que piden en promedio ~11% más que el resto del mercado, señal de precios no actualizados), duplicados entre portales (mismo año, precio y km), y outliers por año (fuera de 0,55×–1,8× la mediana del año, p.ej. precios mal tipeados o montos de 'pie'). Cada punto es la MEDIANA de los avisos de ese año-modelo (redondeada a $10.000); 'n' es cuántos avisos la sostienen; 'km_tipico' es el rango intercuartil (P25–P75) de km; 'rango_p25_p75' (campo extra) es el rango intercuartil de precio, útil para decir 'entre $X y $Y'. 'fuentes' = un aviso cercano a la mediana + la búsqueda del año en MercadoLibre (los avisos individuales caducan). Total: 78 entradas, 381 puntos, ~6958 avisos usados en los puntos. Caveats: (1) son precios pedidos; la venta real suele cerrar algo más abajo y la tasación de un comprador (retoma) bastante más abajo. (2) Muchas automotoras publican el precio 'con financiamiento', $300.000–$1.000.000 menor que el precio contado. (3) No se separa por versión/motor/transmisión salvo en pickups (4x4 vs 4x2 según lo que dice el título; además hay una entrada general por pickup), así que versiones top o bases mueven el precio ±15–25%. (4) El mercado es mayoritariamente de Santiago; no se filtró por región (Temuco/Araucanía es una fracción pequeña). (5) chileautos.cl (el portal más grande) bloquea el acceso automatizado (HTTP 403) y la API pública de MercadoLibre exige autenticación (403), así que no están incluidos. Validación cruzada: de 21 autos del stock publicado de TuAuto (automotriztuauto.cl, 2026-11) que coinciden con un modelo-año de la tabla, 14 caen dentro del rango P25–P75 y los otros 7 a menos de 10% de ese rango; ninguno fuera. Los años sin punto deben interpolarse entre puntos vecinos.",
+ "modelos": [
+  {
+   "marca": "Suzuki",
+   "modelo": "Swift",
+   "segmento": "hatchback",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 6300000,
+     "km_tipico": "95.000–152.000",
+     "n": 19,
+     "rango_p25_p75": [
+      5990000,
+      7280000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4555082818-suzuki-swift-12-at-gls-ac-_JM",
+      "https://autos.mercadolibre.cl/suzuki/swift/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 7890000,
+     "km_tipico": "71.000–121.000",
+     "n": 21,
+     "rango_p25_p75": [
+      7000000,
+      8490000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/suzuki-swift-gls-hb-1-2-mt-ano-2018/33217088",
+      "https://autos.mercadolibre.cl/suzuki/swift/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 8990000,
+     "km_tipico": "79.000–135.000",
+     "n": 7,
+     "rango_p25_p75": [
+      8150000,
+      9540000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/suzuki-swift-gl-1-2-mt-2019/33019250",
+      "https://autos.mercadolibre.cl/suzuki/swift/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 9540000,
+     "km_tipico": "45.000–89.000",
+     "n": 20,
+     "rango_p25_p75": [
+      8840000,
+      10220000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2274086351-suzuki-swift-12-gl-sport-ac-_JM",
+      "https://autos.mercadolibre.cl/suzuki/swift/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 9990000,
+     "km_tipico": "38.000–63.000",
+     "n": 35,
+     "rango_p25_p75": [
+      9490000,
+      10980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2392232499-suzuki-swift-12-gl-mt-2023-_JM",
+      "https://autos.mercadolibre.cl/suzuki/swift/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 10480000,
+     "km_tipico": "32.000–66.000",
+     "n": 35,
+     "rango_p25_p75": [
+      9690000,
+      10980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2403595381-suzuki-swift-12-gl-ac-_JM",
+      "https://autos.mercadolibre.cl/suzuki/swift/2024/"
+     ]
+    }
+   ],
+   "nota": "Excluye Swift Sport 1.4T (más caro) y Dzire. Base: 200 avisos usados únicos (MercadoLibre 171, Yapo 29)."
+  },
+  {
+   "marca": "Suzuki",
+   "modelo": "Baleno",
+   "segmento": "hatchback",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 8000000,
+     "km_tipico": "80.000–163.000",
+     "n": 15,
+     "rango_p25_p75": [
+      7390000,
+      8500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2356245077-suzuki-baleno-14-gls-at-_JM",
+      "https://autos.mercadolibre.cl/suzuki/baleno/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 8500000,
+     "km_tipico": "57.000–116.000",
+     "n": 26,
+     "rango_p25_p75": [
+      8140000,
+      8700000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2308586407-suzuki-baleno-14-gls-2019-4947-_JM",
+      "https://autos.mercadolibre.cl/suzuki/baleno/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 9140000,
+     "km_tipico": "55.000–99.000",
+     "n": 24,
+     "rango_p25_p75": [
+      8570000,
+      9960000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2309620845-suzuki-baleno-14-glx-_JM",
+      "https://autos.mercadolibre.cl/suzuki/baleno/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 11600000,
+     "km_tipico": "38.000–72.000",
+     "n": 33,
+     "rango_p25_p75": [
+      10680000,
+      11990000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/suzuki-baleno-gls-2024-full/32879394",
+      "https://autos.mercadolibre.cl/suzuki/baleno/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 12550000,
+     "km_tipico": "19.000–45.000",
+     "n": 32,
+     "rango_p25_p75": [
+      12140000,
+      13480000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2264207839-suzuki-baleno-gls-hb-2025-_JM",
+      "https://autos.mercadolibre.cl/suzuki/baleno/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 198 avisos usados únicos (MercadoLibre 166, Yapo 32)."
+  },
+  {
+   "marca": "Suzuki",
+   "modelo": "Vitara",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 8790000,
+     "km_tipico": "121.000–150.000",
+     "n": 3,
+     "rango_p25_p75": [
+      8290000,
+      9700000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4385500342-suzuki-vitara-gl-16-2016-_JM",
+      "https://autos.mercadolibre.cl/suzuki/vitara/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 9000000,
+     "km_tipico": "73.000–200.000",
+     "n": 7,
+     "rango_p25_p75": [
+      8800000,
+      9600000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4616019984-suzuki-vitara-16-gls-_JM",
+      "https://autos.mercadolibre.cl/suzuki/vitara/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 11080000,
+     "km_tipico": "78.000–117.000",
+     "n": 12,
+     "rango_p25_p75": [
+      10050000,
+      12600000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2382573069-suzuki-vitara-16-limited-4wd-_JM",
+      "https://autos.mercadolibre.cl/suzuki/vitara/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 12850000,
+     "km_tipico": "32.000–106.000",
+     "n": 6,
+     "rango_p25_p75": [
+      11810000,
+      13340000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2380031299-suzuki-vitara-16-gls-_JM",
+      "https://autos.mercadolibre.cl/suzuki/vitara/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 14270000,
+     "km_tipico": "11.000–50.000",
+     "n": 4,
+     "rango_p25_p75": [
+      13010000,
+      16320000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4335436444-suzuki-xl7-15-_JM",
+      "https://autos.mercadolibre.cl/suzuki/vitara/2023/"
+     ]
+    }
+   ],
+   "nota": "Vitara (2015+). No incluye Grand Vitara. Puntos con n<5 (2016, 2023): referencia débil. Base: 57 avisos usados únicos (MercadoLibre 52, Yapo 5)."
+  },
+  {
+   "marca": "Suzuki",
+   "modelo": "Grand Vitara",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 9740000,
+     "km_tipico": "78.000–140.000",
+     "n": 10,
+     "rango_p25_p75": [
+      9140000,
+      10060000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/suzuki-grand-vitara-glx-sport-4x4-2-4-2016/33128225",
+      "https://autos.mercadolibre.cl/suzuki/grand-vitara/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 9210000,
+     "km_tipico": "80.000–120.000",
+     "n": 6,
+     "rango_p25_p75": [
+      8940000,
+      10620000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/vendo-jeep-suzuki-grand-vitara-3-puertas-km/33184572",
+      "https://autos.mercadolibre.cl/suzuki/grand-vitara/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 12800000,
+     "km_tipico": "36.000–137.000",
+     "n": 7,
+     "rango_p25_p75": [
+      11190000,
+      13500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4409960666-suzuki-grand-vitara-24-g-glx-nav-3p-mt-4x4-2019-_JM",
+      "https://autos.mercadolibre.cl/suzuki/grand-vitara/2019/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 15480000,
+     "km_tipico": "38.000–88.000",
+     "n": 9,
+     "rango_p25_p75": [
+      14990000,
+      16040000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2288283919-suzuki-grand-vitara-15-glx-mt-4x2-hibrido-_JM",
+      "https://autos.mercadolibre.cl/suzuki/grand-vitara/2023/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 17990000,
+     "km_tipico": "8.000–30.000",
+     "n": 11,
+     "rango_p25_p75": [
+      16990000,
+      18490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4342853228-suzuki-grand-vitara-2025-_JM",
+      "https://autos.mercadolibre.cl/suzuki/grand-vitara/2025/"
+     ]
+    }
+   ],
+   "nota": "Ojo: hasta ~2019 es el Grand Vitara clásico (SZ/J3); desde 2023 es el nuevo Grand Vitara híbrido, otro auto y más caro. Base: 96 avisos usados únicos (MercadoLibre 76, Yapo 20)."
+  },
+  {
+   "marca": "Chevrolet",
+   "modelo": "Sail",
+   "segmento": "sedan",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 4940000,
+     "km_tipico": "96.000–186.000",
+     "n": 14,
+     "rango_p25_p75": [
+      4300000,
+      5250000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4533920940-chevrolet-sail-classic-nb-14l-ls-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/sail/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 5890000,
+     "km_tipico": "97.000–165.000",
+     "n": 20,
+     "rango_p25_p75": [
+      5410000,
+      6200000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4614201772-chevrolet-sail-nb-15l-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/sail/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 5990000,
+     "km_tipico": "89.000–148.000",
+     "n": 19,
+     "rango_p25_p75": [
+      5500000,
+      6990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4646339062-chevrolet-sail-2019-usado-159613km-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/sail/2019/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 7040000,
+     "km_tipico": "59.000–131.000",
+     "n": 20,
+     "rango_p25_p75": [
+      6680000,
+      7460000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2337507537-chevrolet-sail-nb-15l-lt-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/sail/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 9850000,
+     "km_tipico": "20.000–40.000",
+     "n": 19,
+     "rango_p25_p75": [
+      8990000,
+      9990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4667675198-chevrolet-sail-15-ltz-cvt-r-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/sail/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 9890000,
+     "km_tipico": "14.000–28.000",
+     "n": 11,
+     "rango_p25_p75": [
+      9590000,
+      10500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2337440343-chevrolet-sail-15-ltz-r-4x2-hb-mt-5p-2025-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/sail/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 199 avisos usados únicos (MercadoLibre 172, Yapo 27)."
+  },
+  {
+   "marca": "Chevrolet",
+   "modelo": "Spark / Spark GT",
+   "segmento": "citycar",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 4780000,
+     "km_tipico": "46.000–109.000",
+     "n": 8,
+     "rango_p25_p75": [
+      4590000,
+      5100000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/chevrolet-spart-2016-gt-1-2-full-con-aire/33199660",
+      "https://autos.mercadolibre.cl/chevrolet/spark/2016/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 6540000,
+     "km_tipico": "62.000–108.000",
+     "n": 10,
+     "rango_p25_p75": [
+      5870000,
+      6980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2394061603-chevrolet-spark-dohc-12cc-ano-2018-nico-dueno-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/spark/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 6650000,
+     "km_tipico": "58.000–107.000",
+     "n": 13,
+     "rango_p25_p75": [
+      6390000,
+      7100000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2231908939-chevrolet-spark-gt-12-lt-mt-de-ac-full-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/spark/2021/"
+     ]
+    }
+   ],
+   "nota": "Spark GT (hasta ~2019) y Spark (2020+, otro modelo) mezclados por año; excluye Spark EUV eléctrico. Base: 103 avisos usados únicos (MercadoLibre 84, Yapo 19)."
+  },
+  {
+   "marca": "Chevrolet",
+   "modelo": "Groove",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2021,
+     "precio": 8990000,
+     "km_tipico": "49.000–86.000",
+     "n": 28,
+     "rango_p25_p75": [
+      8830000,
+      9840000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2377651443-chevrolet-groove-15-premier-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/groove/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 10690000,
+     "km_tipico": "28.000–52.000",
+     "n": 60,
+     "rango_p25_p75": [
+      10320000,
+      11080000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2403599199-chevrolet-groove-2024-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/groove/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 11540000,
+     "km_tipico": "13.000–27.000",
+     "n": 16,
+     "rango_p25_p75": [
+      10990000,
+      11990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4555208768-chevrolet-groove-15-ltz-mt-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/groove/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 179 avisos usados únicos (MercadoLibre 145, Yapo 34)."
+  },
+  {
+   "marca": "Chevrolet",
+   "modelo": "Tracker",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 5900000,
+     "km_tipico": "112.000–162.000",
+     "n": 5,
+     "rango_p25_p75": [
+      5490000,
+      7740000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2384942037-chevrolet-tracker-18-awd-e5-lt-at-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/tracker/2015/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 7750000,
+     "km_tipico": "53.000–126.000",
+     "n": 8,
+     "rango_p25_p75": [
+      7000000,
+      8620000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2235076053--trax-version-americana-de-tracker-comoda-suv-familiar-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/tracker/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 7890000,
+     "km_tipico": "79.000–134.000",
+     "n": 15,
+     "rango_p25_p75": [
+      7490000,
+      8500000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/chevrolet-tracker-2019/32909894",
+      "https://autos.mercadolibre.cl/chevrolet/tracker/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 10390000,
+     "km_tipico": "49.000–79.000",
+     "n": 47,
+     "rango_p25_p75": [
+      9790000,
+      11290000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4536720028-chevrolet-tracker-12t-ltz-fwd-mt-5p-2022-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/tracker/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 10490000,
+     "km_tipico": "27.000–78.000",
+     "n": 36,
+     "rango_p25_p75": [
+      9990000,
+      11490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4533920628-chevrolet-tracker-12t-ltz-fwd-mt-5p-2023-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/tracker/2023/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 13490000,
+     "km_tipico": "25.000–40.000",
+     "n": 32,
+     "rango_p25_p75": [
+      13490000,
+      13990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2394115629-chevrolet-tracker-12t-ltz-r-4x2-at-5p-2025-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/tracker/2025/"
+     ]
+    }
+   ],
+   "nota": "Tracker 2014–2019 (1.8) y 2020+ (1.2T) son generaciones distintas. Base: 229 avisos usados únicos (MercadoLibre 193, Yapo 36)."
+  },
+  {
+   "marca": "Chevrolet",
+   "modelo": "D-Max",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 11300000,
+     "km_tipico": "132.000–236.000",
+     "n": 7,
+     "rango_p25_p75": [
+      9000000,
+      11500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2297688301-chevrolet-d-max-25-cc-dab-abs-mt-diesel-2018-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/d-max/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 11150000,
+     "km_tipico": "118.000–192.000",
+     "n": 6,
+     "rango_p25_p75": [
+      10990000,
+      11920000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4555514190-chevrolet-d-max-en-excelente-estado-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/d-max/2019/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 12400000,
+     "km_tipico": "90.000–149.000",
+     "n": 5,
+     "rango_p25_p75": [
+      10550000,
+      12740000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2286388205-chevrolet-d-max-e4-cc-25d-4wd-dab-abs-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/d-max/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 14190000,
+     "km_tipico": "61.000–143.000",
+     "n": 5,
+     "rango_p25_p75": [
+      12950000,
+      15900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4643743394-chevrolet-d-max-25-diesel-4x4-dob-cab-cc-abs-dab-mt-4p-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/d-max/2022/"
+     ]
+    }
+   ],
+   "nota": "Todas las versiones juntas (4x2 y 4x4; muchos avisos no indican tracción). Solo ~9 avisos dicen 4x2 explícitamente, muy pocos para un punto 4x2 separado. Base: 44 avisos usados únicos (MercadoLibre 29, Yapo 15)."
+  },
+  {
+   "marca": "Chevrolet",
+   "modelo": "D-Max 4x4",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2017,
+     "precio": 7800000,
+     "km_tipico": "107.000–230.000",
+     "n": 3,
+     "rango_p25_p75": [
+      7500000,
+      10990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2387817625-vendo-camioneta-dmax-ano-2017-7800000-25-petrolera-4x4-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/d-max/2017/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 12400000,
+     "km_tipico": "87.000–159.000",
+     "n": 3,
+     "rango_p25_p75": [
+      10300000,
+      13000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2286388205-chevrolet-d-max-e4-cc-25d-4wd-dab-abs-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/d-max/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 14290000,
+     "km_tipico": "59.000–107.000",
+     "n": 4,
+     "rango_p25_p75": [
+      13300000,
+      16650000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4643743394-chevrolet-d-max-25-diesel-4x4-dob-cab-cc-abs-dab-mt-4p-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/d-max/2022/"
+     ]
+    }
+   ],
+   "nota": "Solo avisos que dicen 4x4 en el título (mayoría diésel). Puntos con n<5 (2017, 2020, 2022): referencia débil. Base: 21 avisos usados únicos (MercadoLibre 16, Yapo 5)."
+  },
+  {
+   "marca": "Chevrolet",
+   "modelo": "Silverado",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 16900000,
+     "km_tipico": "170.000–208.000",
+     "n": 3,
+     "rango_p25_p75": [
+      13990000,
+      18000000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/vendo-camioneta/32858780",
+      "https://autos.mercadolibre.cl/chevrolet/silverado/2015/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 22500000,
+     "km_tipico": "124.000–178.000",
+     "n": 19,
+     "rango_p25_p75": [
+      18990000,
+      23800000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4574293064-chevrolet-silverado-ltz-cc-53l-4wd-z71-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/silverado/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 25540000,
+     "km_tipico": "100.000–138.000",
+     "n": 16,
+     "rango_p25_p75": [
+      23860000,
+      29990000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/chevrolet-silverado-4wd-5-3-2019/33193738",
+      "https://autos.mercadolibre.cl/chevrolet/silverado/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 32940000,
+     "km_tipico": "59.000–103.000",
+     "n": 38,
+     "rango_p25_p75": [
+      29500000,
+      35190000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2350821375-chevrolet-silverado-ltz-at-4x4-2022-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/silverado/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 38990000,
+     "km_tipico": "42.000–90.000",
+     "n": 69,
+     "rango_p25_p75": [
+      35500000,
+      42000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2270947767-chevrolet-silverado-silverado-4x4-62-aut-2023-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/silverado/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 40240000,
+     "km_tipico": "32.000–74.000",
+     "n": 48,
+     "rango_p25_p75": [
+      36920000,
+      47420000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2196901079-chevrolet-silverado-2024-_JM",
+      "https://autos.mercadolibre.cl/chevrolet/silverado/2024/"
+     ]
+    }
+   ],
+   "nota": "Mercado muy disperso por versión (LT, High Country, 1500 vs 2500/3500, motor). Rango ancho. Puntos con n<5 (2015): referencia débil. Base: 274 avisos usados únicos (MercadoLibre 218, Yapo 56)."
+  },
+  {
+   "marca": "Kia",
+   "modelo": "Morning",
+   "segmento": "citycar",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 5990000,
+     "km_tipico": "108.000–152.000",
+     "n": 9,
+     "rango_p25_p75": [
+      5340000,
+      6000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4585785134-kia-morning-ex-12-mt-_JM",
+      "https://autos.mercadolibre.cl/kia/morning/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 6700000,
+     "km_tipico": "90.000–158.000",
+     "n": 25,
+     "rango_p25_p75": [
+      6100000,
+      7480000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/kia-morning-1-2-2018/32827442",
+      "https://autos.mercadolibre.cl/kia/morning/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 7080000,
+     "km_tipico": "54.000–126.000",
+     "n": 14,
+     "rango_p25_p75": [
+      6370000,
+      7520000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/kia-morning-2019-full-equipo-1-2/33216923",
+      "https://autos.mercadolibre.cl/kia/morning/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 7900000,
+     "km_tipico": "56.000–93.000",
+     "n": 19,
+     "rango_p25_p75": [
+      7680000,
+      8490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4474584952-kia-morning-12-ex-abs-ac-mt-2022-_JM",
+      "https://autos.mercadolibre.cl/kia/morning/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 8900000,
+     "km_tipico": "43.000–86.000",
+     "n": 15,
+     "rango_p25_p75": [
+      8490000,
+      9500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4522134288-kia-morning-12-ex-full-mt-_JM",
+      "https://autos.mercadolibre.cl/kia/morning/2023/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 10840000,
+     "km_tipico": "9.000–24.000",
+     "n": 18,
+     "rango_p25_p75": [
+      10220000,
+      11460000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397592909-kia-morning-2025-_JM",
+      "https://autos.mercadolibre.cl/kia/morning/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 172 avisos usados únicos (MercadoLibre 144, Yapo 28)."
+  },
+  {
+   "marca": "Kia",
+   "modelo": "Rio",
+   "segmento": "sedan",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 6900000,
+     "km_tipico": "125.000–164.000",
+     "n": 19,
+     "rango_p25_p75": [
+      6460000,
+      7480000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2265325299-kia-rio-4-ex-12l-5mt-dab-_JM",
+      "https://autos.mercadolibre.cl/kia/rio/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 6990000,
+     "km_tipico": "95.000–153.000",
+     "n": 13,
+     "rango_p25_p75": [
+      6790000,
+      7360000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4551487162-kia-rio-4-ex-14l-6mt-full-_JM",
+      "https://autos.mercadolibre.cl/kia/rio/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 8540000,
+     "km_tipico": "100.000–143.000",
+     "n": 16,
+     "rango_p25_p75": [
+      7650000,
+      9360000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4569399768-kia-rio-5-ex-14l-6mt-ac-_JM",
+      "https://autos.mercadolibre.cl/kia/rio/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 11490000,
+     "km_tipico": "48.000–94.000",
+     "n": 25,
+     "rango_p25_p75": [
+      10500000,
+      12000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4434842702-kia-rio-5-14-lx-mt-_JM",
+      "https://autos.mercadolibre.cl/kia/rio/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 13300000,
+     "km_tipico": "25.000–62.000",
+     "n": 10,
+     "rango_p25_p75": [
+      12940000,
+      13920000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400589549-kia-rio4-14-ex-full-4x2-ri-6at-4p-2024-_JM",
+      "https://autos.mercadolibre.cl/kia/rio/2024/"
+     ]
+    }
+   ],
+   "nota": "Rio 4 (sedán) y Rio 5 (hatch) juntos; diferencia de precio menor. Base: 174 avisos usados únicos (MercadoLibre 153, Yapo 21)."
+  },
+  {
+   "marca": "Kia",
+   "modelo": "Sportage",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 11190000,
+     "km_tipico": "84.000–167.000",
+     "n": 9,
+     "rango_p25_p75": [
+      10540000,
+      11940000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400589567-kia-sportage-20-lx-diesel-4x2-6mt-5p-2016-_JM",
+      "https://autos.mercadolibre.cl/kia/sportage/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 11940000,
+     "km_tipico": "94.000–162.000",
+     "n": 20,
+     "rango_p25_p75": [
+      11120000,
+      12240000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4595080056-kia-sportage-lx-20l-gsl-6at-2wd-_JM",
+      "https://autos.mercadolibre.cl/kia/sportage/2018/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 14990000,
+     "km_tipico": "69.000–106.000",
+     "n": 15,
+     "rango_p25_p75": [
+      13990000,
+      16200000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4569400126-kia-sportage-2020-_JM",
+      "https://autos.mercadolibre.cl/kia/sportage/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 19490000,
+     "km_tipico": "43.000–86.000",
+     "n": 25,
+     "rango_p25_p75": [
+      18340000,
+      20240000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2316078101-kia-sportage-2022-_JM",
+      "https://autos.mercadolibre.cl/kia/sportage/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 19490000,
+     "km_tipico": "43.000–77.000",
+     "n": 47,
+     "rango_p25_p75": [
+      18590000,
+      21500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2181839465-kia-sportage-2023-_JM",
+      "https://autos.mercadolibre.cl/kia/sportage/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 22000000,
+     "km_tipico": "35.000–62.000",
+     "n": 29,
+     "rango_p25_p75": [
+      20780000,
+      23940000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/kia-sportage-diesel-ex-dsl2-0-at/32842557",
+      "https://autos.mercadolibre.cl/kia/sportage/2024/"
+     ]
+    }
+   ],
+   "nota": "Mezcla gasolina/diésel y 4x2/4x4. Base: 241 avisos usados únicos (MercadoLibre 212, Yapo 29)."
+  },
+  {
+   "marca": "Kia",
+   "modelo": "Sorento",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 13390000,
+     "km_tipico": "119.000–209.000",
+     "n": 11,
+     "rango_p25_p75": [
+      12290000,
+      16190000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2340686805-kia-sorento-sorento-ex-full-4x4-22-at-2016-_JM",
+      "https://autos.mercadolibre.cl/kia/sorento/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 14740000,
+     "km_tipico": "105.000–151.000",
+     "n": 12,
+     "rango_p25_p75": [
+      12670000,
+      15990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397535035-kia-sorento-24l-ex-4x4-at-_JM",
+      "https://autos.mercadolibre.cl/kia/sorento/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 16000000,
+     "km_tipico": "92.000–155.000",
+     "n": 15,
+     "rango_p25_p75": [
+      14990000,
+      20500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2202079121-kia-sorento-24-2019-_JM",
+      "https://autos.mercadolibre.cl/kia/sorento/2019/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 17950000,
+     "km_tipico": "59.000–151.000",
+     "n": 9,
+     "rango_p25_p75": [
+      16990000,
+      23840000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4595359908-kia-sorento-24l-ex-6mt-2wd-_JM",
+      "https://autos.mercadolibre.cl/kia/sorento/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 31490000,
+     "km_tipico": "30.000–50.000",
+     "n": 11,
+     "rango_p25_p75": [
+      28500000,
+      33490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4635266002-kia-motors-sorento-8dct-4wd-22-aut-2024-_JM",
+      "https://autos.mercadolibre.cl/kia/sorento/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 36140000,
+     "km_tipico": "16.000–38.000",
+     "n": 4,
+     "rango_p25_p75": [
+      35610000,
+      36820000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4452112668-kia-sorento-22-ex-diesel-4wd-dct-at8-5p-2025-_JM",
+      "https://autos.mercadolibre.cl/kia/sorento/2025/"
+     ]
+    }
+   ],
+   "nota": "Mezcla gasolina/diésel y 4x2/4x4. Puntos con n<5 (2025): referencia débil. Base: 144 avisos usados únicos (MercadoLibre 123, Yapo 21)."
+  },
+  {
+   "marca": "Kia",
+   "modelo": "Soluto",
+   "segmento": "sedan",
+   "puntos": [
+    {
+     "ano": 2020,
+     "precio": 7020000,
+     "km_tipico": "26.000–116.000",
+     "n": 4,
+     "rango_p25_p75": [
+      6090000,
+      7840000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4449873468-kia-soluto-14-ex-mt-srf-full-_JM",
+      "https://autos.mercadolibre.cl/kia/soluto/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 7700000,
+     "km_tipico": "72.000–110.000",
+     "n": 11,
+     "rango_p25_p75": [
+      7200000,
+      8490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4367377232-kia-soluto-14-lx-mt-g-ll-_JM",
+      "https://autos.mercadolibre.cl/kia/soluto/2021/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 8590000,
+     "km_tipico": "32.000–97.000",
+     "n": 26,
+     "rango_p25_p75": [
+      8170000,
+      8980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4636898180-kia-soluto-14-lx-ac-4x2-mt-4p-2023-_JM",
+      "https://autos.mercadolibre.cl/kia/soluto/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 9500000,
+     "km_tipico": "26.000–70.000",
+     "n": 25,
+     "rango_p25_p75": [
+      8950000,
+      9990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2176950295-kia-soluto-14-lx-mt-g-ll-_JM",
+      "https://autos.mercadolibre.cl/kia/soluto/2024/"
+     ]
+    }
+   ],
+   "nota": "Modelo desde 2019. Puntos con n<5 (2020): referencia débil. Base: 92 avisos usados únicos (MercadoLibre 73, Yapo 19)."
+  },
+  {
+   "marca": "Hyundai",
+   "modelo": "Accent",
+   "segmento": "sedan",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 7000000,
+     "km_tipico": "103.000–208.000",
+     "n": 17,
+     "rango_p25_p75": [
+      6250000,
+      7370000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4485732912-hyundai-accent-14-rb-sdn-gl-ac-2ab-mt-2016-_JM",
+      "https://autos.mercadolibre.cl/hyundai/accent/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 7300000,
+     "km_tipico": "98.000–209.000",
+     "n": 20,
+     "rango_p25_p75": [
+      6710000,
+      7800000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2354667419-hyundai-accent-14-rb-sdn-gl-2ab-acl-mt-2017-_JM",
+      "https://autos.mercadolibre.cl/hyundai/accent/2017/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 7740000,
+     "km_tipico": "94.000–192.000",
+     "n": 12,
+     "rango_p25_p75": [
+      7420000,
+      8300000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2340710049-hyundai-accent-rb-gl-14-2018-_JM",
+      "https://autos.mercadolibre.cl/hyundai/accent/2018/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 10630000,
+     "km_tipico": "29.000–70.000",
+     "n": 14,
+     "rango_p25_p75": [
+      9990000,
+      11000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2288295193-hyundai-accent-14-plus-_JM",
+      "https://autos.mercadolibre.cl/hyundai/accent/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 12990000,
+     "km_tipico": "28.000–62.000",
+     "n": 13,
+     "rango_p25_p75": [
+      11810000,
+      13880000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4304437884-hyundai-accent-bn7i-mpi-cvt-15-2024-_JM",
+      "https://autos.mercadolibre.cl/hyundai/accent/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 173 avisos usados únicos (MercadoLibre 153, Yapo 20)."
+  },
+  {
+   "marca": "Hyundai",
+   "modelo": "Grand i10",
+   "segmento": "citycar",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 5900000,
+     "km_tipico": "78.000–147.000",
+     "n": 7,
+     "rango_p25_p75": [
+      4800000,
+      6700000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2303305151-hyundai-grand-i10-2016-10-unico-dueno-77500-km-aprox-_JM",
+      "https://autos.mercadolibre.cl/hyundai/grand-i10/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 5800000,
+     "km_tipico": "80.000–154.000",
+     "n": 11,
+     "rango_p25_p75": [
+      5180000,
+      6500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2376660609-hyundai-grand-i-10-12-sdn-mt-gls-2ab-ac-abs-full-pe-2018-_JM",
+      "https://autos.mercadolibre.cl/hyundai/grand-i10/2018/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 6700000,
+     "km_tipico": "84.000–161.000",
+     "n": 11,
+     "rango_p25_p75": [
+      6390000,
+      7290000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/unico-dueno/33146846",
+      "https://autos.mercadolibre.cl/hyundai/grand-i10/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 8750000,
+     "km_tipico": "43.000–94.000",
+     "n": 11,
+     "rango_p25_p75": [
+      8100000,
+      8900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4447964590-hyundai-grand-i-10-ba-5dr-12-5mt-gls-2ab-ac-abs-pe-_JM",
+      "https://autos.mercadolibre.cl/hyundai/grand-i10/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 8740000,
+     "km_tipico": "30.000–78.000",
+     "n": 19,
+     "rango_p25_p75": [
+      8490000,
+      9590000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2275655109-hyundai-grand-i10-hb-12-plus-_JM",
+      "https://autos.mercadolibre.cl/hyundai/grand-i10/2023/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 10440000,
+     "km_tipico": "17.000–34.000",
+     "n": 18,
+     "rango_p25_p75": [
+      9990000,
+      11030000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2276121927-hyundai-grand-i10-12-auto-plus-fl-_JM",
+      "https://autos.mercadolibre.cl/hyundai/grand-i10/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 141 avisos usados únicos (MercadoLibre 110, Yapo 31)."
+  },
+  {
+   "marca": "Hyundai",
+   "modelo": "Tucson",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 10340000,
+     "km_tipico": "111.000–155.000",
+     "n": 10,
+     "rango_p25_p75": [
+      9500000,
+      11870000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4414854664-hyundai-tucson-tl-6at-gl-advance-_JM",
+      "https://autos.mercadolibre.cl/hyundai/tucson/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 12060000,
+     "km_tipico": "97.000–144.000",
+     "n": 15,
+     "rango_p25_p75": [
+      11610000,
+      13480000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4534665940-hyundai-tucson-20-auto-gl-advance-nav-_JM",
+      "https://autos.mercadolibre.cl/hyundai/tucson/2017/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 13240000,
+     "km_tipico": "62.000–127.000",
+     "n": 16,
+     "rango_p25_p75": [
+      12520000,
+      14900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4460677692-hyundai-tucson-20-crdi-e6-tl-limited-fl-at-4x4-diesel-2020-_JM",
+      "https://autos.mercadolibre.cl/hyundai/tucson/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 15500000,
+     "km_tipico": "66.000–111.000",
+     "n": 21,
+     "rango_p25_p75": [
+      14240000,
+      16940000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/hyundai-tucson/32827822",
+      "https://autos.mercadolibre.cl/hyundai/tucson/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 19490000,
+     "km_tipico": "28.000–66.000",
+     "n": 25,
+     "rango_p25_p75": [
+      18420000,
+      21350000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2275678063-hyundai-tucson-16-nx4-plus-2wd-at-5p-2024-_JM",
+      "https://autos.mercadolibre.cl/hyundai/tucson/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 22000000,
+     "km_tipico": "22.000–45.000",
+     "n": 21,
+     "rango_p25_p75": [
+      19990000,
+      25490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4377616954-hyundai-tucson-nx4-20-plus-2wd-at-_JM",
+      "https://autos.mercadolibre.cl/hyundai/tucson/2025/"
+     ]
+    }
+   ],
+   "nota": "Mezcla gasolina/diésel y 4x2/4x4. Base: 221 avisos usados únicos (MercadoLibre 191, Yapo 30)."
+  },
+  {
+   "marca": "Hyundai",
+   "modelo": "Creta",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2017,
+     "precio": 8890000,
+     "km_tipico": "88.000–135.000",
+     "n": 8,
+     "rango_p25_p75": [
+      8530000,
+      9720000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2183981095-hyundai-creta-gs-16-mt-gls-2ab-abs-_JM",
+      "https://autos.mercadolibre.cl/hyundai/creta/2017/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 11520000,
+     "km_tipico": "67.000–126.000",
+     "n": 11,
+     "rango_p25_p75": [
+      11300000,
+      12500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4366671872-hyundai-creta-16-plus-fl-mt-2020-_JM",
+      "https://autos.mercadolibre.cl/hyundai/creta/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 13500000,
+     "km_tipico": "52.000–80.000",
+     "n": 14,
+     "rango_p25_p75": [
+      12720000,
+      13990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2390925843-hyundai-creta-gs-16-at-value-fl-_JM",
+      "https://autos.mercadolibre.cl/hyundai/creta/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 15390000,
+     "km_tipico": "28.000–64.000",
+     "n": 22,
+     "rango_p25_p75": [
+      14630000,
+      16330000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2378892913-hyundai-creta-2024-_JM",
+      "https://autos.mercadolibre.cl/hyundai/creta/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 16240000,
+     "km_tipico": "12.000–50.000",
+     "n": 18,
+     "rango_p25_p75": [
+      15520000,
+      16990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4620305534-se-vende-hyundai-creta-plus-2025-automatica-la-serena-_JM",
+      "https://autos.mercadolibre.cl/hyundai/creta/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 114 avisos usados únicos (MercadoLibre 93, Yapo 21)."
+  },
+  {
+   "marca": "Hyundai",
+   "modelo": "Santa Fe",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 11240000,
+     "km_tipico": "127.000–220.000",
+     "n": 8,
+     "rango_p25_p75": [
+      9870000,
+      11870000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4152910844-hyundai-santa-fe-gls-24-at-2015-unico-dueno-98900-km-_JM",
+      "https://autos.mercadolibre.cl/hyundai/santa-fe/2015/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 14680000,
+     "km_tipico": "97.000–173.000",
+     "n": 12,
+     "rango_p25_p75": [
+      13240000,
+      17120000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2150095789-hyundai-santa-fe-dm-wgn-24-4wd-gls-at-_JM",
+      "https://autos.mercadolibre.cl/hyundai/santa-fe/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 16480000,
+     "km_tipico": "59.000–122.000",
+     "n": 15,
+     "rango_p25_p75": [
+      15490000,
+      17490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4640250526-hyundai-santa-fe-2019-4x4-_JM",
+      "https://autos.mercadolibre.cl/hyundai/santa-fe/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 18990000,
+     "km_tipico": "59.000–103.000",
+     "n": 18,
+     "rango_p25_p75": [
+      17740000,
+      21240000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2376763883-hyundai-santa-fe-2022-_JM",
+      "https://autos.mercadolibre.cl/hyundai/santa-fe/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 25490000,
+     "km_tipico": "24.000–58.000",
+     "n": 17,
+     "rango_p25_p75": [
+      23140000,
+      27140000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4344757430-hyundai-santa-fe-2024-_JM",
+      "https://autos.mercadolibre.cl/hyundai/santa-fe/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 28580000,
+     "km_tipico": "12.000–35.000",
+     "n": 9,
+     "rango_p25_p75": [
+      28530000,
+      41040000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2312794117-hyundai-santa-fe-mx5-25-at-4wd-design-2025-_JM",
+      "https://autos.mercadolibre.cl/hyundai/santa-fe/2025/"
+     ]
+    }
+   ],
+   "nota": "Mezcla gasolina/diésel y 4x2/4x4. Base: 192 avisos usados únicos (MercadoLibre 164, Yapo 28)."
+  },
+  {
+   "marca": "Toyota",
+   "modelo": "Yaris",
+   "segmento": "sedan",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 6500000,
+     "km_tipico": "164.000–282.000",
+     "n": 10,
+     "rango_p25_p75": [
+      5650000,
+      6820000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2390816331-toyota-yaris-15-sedan-gli-mt-2015-_JM",
+      "https://autos.mercadolibre.cl/toyota/yaris/2015/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 7890000,
+     "km_tipico": "70.000–199.000",
+     "n": 12,
+     "rango_p25_p75": [
+      7490000,
+      9620000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2290651777-toyota-yaris-gli-151me1-_JM",
+      "https://autos.mercadolibre.cl/toyota/yaris/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 9450000,
+     "km_tipico": "68.000–153.000",
+     "n": 16,
+     "rango_p25_p75": [
+      8520000,
+      9900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4530713574-toyota-yaris-gli-151me1-_JM",
+      "https://autos.mercadolibre.cl/toyota/yaris/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 11580000,
+     "km_tipico": "40.000–69.000",
+     "n": 24,
+     "rango_p25_p75": [
+      10990000,
+      12070000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4548758016-toyota-yaris-15-sport-gle-mt-yaris-_JM",
+      "https://autos.mercadolibre.cl/toyota/yaris/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 14140000,
+     "km_tipico": "11.000–56.000",
+     "n": 14,
+     "rango_p25_p75": [
+      12500000,
+      16800000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2276112263-toyota-yaris-sd-15-2024-_JM",
+      "https://autos.mercadolibre.cl/toyota/yaris/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 18990000,
+     "km_tipico": "5.000–28.000",
+     "n": 9,
+     "rango_p25_p75": [
+      16490000,
+      19990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2285770063-toyota-yaris-cross-15-xi-4x2-cvt-at-5p-2025-_JM",
+      "https://autos.mercadolibre.cl/toyota/yaris/2025/"
+     ]
+    }
+   ],
+   "nota": "Sedán y hatch juntos; excluye Yaris Cross. Base: 176 avisos usados únicos (MercadoLibre 146, Yapo 30)."
+  },
+  {
+   "marca": "Toyota",
+   "modelo": "Corolla",
+   "segmento": "sedan",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 8290000,
+     "km_tipico": "87.000–199.000",
+     "n": 7,
+     "rango_p25_p75": [
+      7500000,
+      8500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4509230524-toyota-corolla-2015-gl-18-2015-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla/2015/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 9440000,
+     "km_tipico": "101.000–205.000",
+     "n": 12,
+     "rango_p25_p75": [
+      8520000,
+      9870000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2091481181-toyota-corolla-2017-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla/2017/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 10950000,
+     "km_tipico": "73.000–168.000",
+     "n": 9,
+     "rango_p25_p75": [
+      8600000,
+      12000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4599774290-toyota-corolla-18-xli-cvt-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla/2018/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 14990000,
+     "km_tipico": "29.000–76.000",
+     "n": 21,
+     "rango_p25_p75": [
+      14180000,
+      16500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2306024709-toyota-corolla-20-xei-4x2-cvt-at-4p-2022-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 16240000,
+     "km_tipico": "37.000–83.000",
+     "n": 12,
+     "rango_p25_p75": [
+      15650000,
+      18960000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2376770507-toyota-corolla-2023-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla/2023/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 23980000,
+     "km_tipico": "19.000–45.000",
+     "n": 7,
+     "rango_p25_p75": [
+      22990000,
+      26900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2317954985-toyota-corolla-18-seg-at-hibrido-2025-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla/2025/"
+     ]
+    }
+   ],
+   "nota": "Excluye Corolla Cross. Incluye híbridos. Base: 111 avisos usados únicos (MercadoLibre 89, Yapo 22)."
+  },
+  {
+   "marca": "Toyota",
+   "modelo": "Corolla Cross",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 16490000,
+     "km_tipico": "55.000–85.000",
+     "n": 11,
+     "rango_p25_p75": [
+      15490000,
+      17990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400059201-toyota-corolla-cross-cvt-20-2022-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla-cross/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 17190000,
+     "km_tipico": "28.000–106.000",
+     "n": 17,
+     "rango_p25_p75": [
+      16300000,
+      18740000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4649366760-toyota-corolla-cross-20-gr-s-cvt-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla-cross/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 19990000,
+     "km_tipico": "40.000–82.000",
+     "n": 17,
+     "rango_p25_p75": [
+      17800000,
+      22680000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4528545948-toyota-corolla-cross-2024-_JM",
+      "https://autos.mercadolibre.cl/toyota/corolla-cross/2024/"
+     ]
+    }
+   ],
+   "nota": "Modelo desde 2021; incluye híbridos. Base: 63 avisos usados únicos (MercadoLibre 55, Yapo 8)."
+  },
+  {
+   "marca": "Toyota",
+   "modelo": "RAV4",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 11600000,
+     "km_tipico": "98.000–177.000",
+     "n": 8,
+     "rango_p25_p75": [
+      10350000,
+      12290000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2247595173-toyota-rav4-20-super-lujo-4x4-724ml2-_JM",
+      "https://autos.mercadolibre.cl/toyota/rav4/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 12000000,
+     "km_tipico": "98.000–140.000",
+     "n": 17,
+     "rango_p25_p75": [
+      11820000,
+      13000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4514081558-toyota-rav4-20-super-lujo-722ch2-_JM",
+      "https://autos.mercadolibre.cl/toyota/rav4/2018/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 16590000,
+     "km_tipico": "78.000–112.000",
+     "n": 25,
+     "rango_p25_p75": [
+      15990000,
+      17640000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2274563047-toyota-rav-4-2020-_JM",
+      "https://autos.mercadolibre.cl/toyota/rav4/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 18090000,
+     "km_tipico": "52.000–96.000",
+     "n": 43,
+     "rango_p25_p75": [
+      17380000,
+      19000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2402285039-toyota-rav-4-2022-_JM",
+      "https://autos.mercadolibre.cl/toyota/rav4/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 19000000,
+     "km_tipico": "37.000–67.000",
+     "n": 26,
+     "rango_p25_p75": [
+      18420000,
+      20220000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4602603330-toyota-rav4-20-std-4x2-722cl0-_JM",
+      "https://autos.mercadolibre.cl/toyota/rav4/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 20940000,
+     "km_tipico": "21.000–51.000",
+     "n": 20,
+     "rango_p25_p75": [
+      20340000,
+      25790000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2333087515-toyota-rav-4-20-le-4x2-mt-5p-2024-_JM",
+      "https://autos.mercadolibre.cl/toyota/rav4/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 260 avisos usados únicos (MercadoLibre 227, Yapo 33)."
+  },
+  {
+   "marca": "Toyota",
+   "modelo": "Hilux",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 13830000,
+     "km_tipico": "166.000–207.000",
+     "n": 5,
+     "rango_p25_p75": [
+      13550000,
+      14990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2403617305-toyota-hilux-24-sr-mt-4x2-diesel-2016-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 12980000,
+     "km_tipico": "190.000–254.000",
+     "n": 10,
+     "rango_p25_p75": [
+      12370000,
+      16250000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2344400265-toyota-hilux-2017-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 16990000,
+     "km_tipico": "100.000–204.000",
+     "n": 13,
+     "rango_p25_p75": [
+      14720000,
+      19890000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4581259654-toyota-hilux-b-dp00-dx-bhl10-dx-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 17740000,
+     "km_tipico": "87.000–133.000",
+     "n": 38,
+     "rango_p25_p75": [
+      15240000,
+      19910000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4509223856-toyota-hilux-4x2-manual-diesel-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 18590000,
+     "km_tipico": "64.000–97.000",
+     "n": 53,
+     "rango_p25_p75": [
+      16940000,
+      19350000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2099532431-toyota-hilux-2023-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 20700000,
+     "km_tipico": "48.000–82.000",
+     "n": 45,
+     "rango_p25_p75": [
+      19800000,
+      27090000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4574265848-toyota-hilux-dc-4x4-24-d-dx-mt-2024-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2024/"
+     ]
+    }
+   ],
+   "nota": "Todas las versiones juntas (4x2/4x4, gasolina/diésel, DX a SRV/GR); muchos avisos no indican tracción. Usar si no se sabe la tracción. Base: 248 avisos usados únicos (MercadoLibre 211, Yapo 37)."
+  },
+  {
+   "marca": "Toyota",
+   "modelo": "Hilux 4x2",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 13600000,
+     "km_tipico": "175.000–225.000",
+     "n": 3,
+     "rango_p25_p75": [
+      13500000,
+      13830000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/toyota-hilux-2-7-dx-4x2-mt-4p-del-2016/33156550",
+      "https://autos.mercadolibre.cl/toyota/hilux/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 12700000,
+     "km_tipico": "171.000–200.000",
+     "n": 3,
+     "rango_p25_p75": [
+      12490000,
+      12950000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4513642502-toyota-hilux-2017-24-diesel-4x2-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2017/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 12900000,
+     "km_tipico": "66.000–123.000",
+     "n": 16,
+     "rango_p25_p75": [
+      12360000,
+      14600000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2196882079-toyota-hilux-hilux-tss-24-diesel-4x2-tm-2021-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2021/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 18420000,
+     "km_tipico": "64.000–95.000",
+     "n": 18,
+     "rango_p25_p75": [
+      14990000,
+      20450000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4546561698-toyota-hilux-dx-tss-4x2-mt-2023-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 22750000,
+     "km_tipico": "71.000–131.000",
+     "n": 3,
+     "rango_p25_p75": [
+      19800000,
+      24690000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4601805008-toyota-hilux-2024-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2024/"
+     ]
+    }
+   ],
+   "nota": "Solo avisos cuyo título dice 4x2 explícitamente. Gasolina 2.7 y diésel 2.4 mezclados. Puntos con n<5 (2016, 2017, 2024): referencia débil. Base: 65 avisos usados únicos (MercadoLibre 56, Yapo 9)."
+  },
+  {
+   "marca": "Toyota",
+   "modelo": "Hilux 4x4",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 16490000,
+     "km_tipico": "140.000–245.000",
+     "n": 3,
+     "rango_p25_p75": [
+      15990000,
+      19490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4542669726-toyota-hilux-4x4-2018-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 13500000,
+     "km_tipico": "200.000–211.000",
+     "n": 3,
+     "rango_p25_p75": [
+      13000000,
+      19790000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/toyota-hilux-2-4-4x4-2019/32741561",
+      "https://autos.mercadolibre.cl/toyota/hilux/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 18200000,
+     "km_tipico": "92.000–150.000",
+     "n": 21,
+     "rango_p25_p75": [
+      16900000,
+      20240000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2351296217-toyota-hilux-dx-4x4-llantas-de-aleacion-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 20200000,
+     "km_tipico": "52.000–87.000",
+     "n": 34,
+     "rango_p25_p75": [
+      19290000,
+      23040000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4615441394-toyota-hilux-hilux-dc-4x4-24-d-dx-mt-2024-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 26490000,
+     "km_tipico": "24.000–78.000",
+     "n": 3,
+     "rango_p25_p75": [
+      26490000,
+      35990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4615708604-toyota-hilux-4x4-24-dx-_JM",
+      "https://autos.mercadolibre.cl/toyota/hilux/2025/"
+     ]
+    }
+   ],
+   "nota": "Solo avisos con 4x4 en el título (casi todos diésel 2.4/2.8). Puntos con n<5 (2018, 2019, 2025): referencia débil. Base: 118 avisos usados únicos (MercadoLibre 100, Yapo 18)."
+  },
+  {
+   "marca": "Toyota",
+   "modelo": "4Runner",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 22240000,
+     "km_tipico": "133.000–217.000",
+     "n": 8,
+     "rango_p25_p75": [
+      20260000,
+      23750000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2312851815-toyota-4runner-2018-_JM",
+      "https://autos.mercadolibre.cl/toyota/4runner/2018/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 29940000,
+     "km_tipico": "43.000–89.000",
+     "n": 8,
+     "rango_p25_p75": [
+      25980000,
+      30490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4637847566-toyota-4runner-2022-_JM",
+      "https://autos.mercadolibre.cl/toyota/4runner/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 33590000,
+     "km_tipico": "67.000–92.000",
+     "n": 6,
+     "rango_p25_p75": [
+      32720000,
+      34690000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2079122045-toyota-4runner-40-limited-connected-at-4x4-2023-_JM",
+      "https://autos.mercadolibre.cl/toyota/4runner/2023/"
+     ]
+    }
+   ],
+   "nota": "Base: 62 avisos usados únicos (MercadoLibre 55, Yapo 7)."
+  },
+  {
+   "marca": "Nissan",
+   "modelo": "Versa",
+   "segmento": "sedan",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 6140000,
+     "km_tipico": "123.000–200.000",
+     "n": 12,
+     "rango_p25_p75": [
+      5240000,
+      6650000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2403622927-nissan-versa-sense-4at-_JM",
+      "https://autos.mercadolibre.cl/nissan/versa/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 6680000,
+     "km_tipico": "91.000–136.000",
+     "n": 12,
+     "rango_p25_p75": [
+      6020000,
+      7000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4597818724-se-vende-por-no-uso-_JM",
+      "https://autos.mercadolibre.cl/nissan/versa/2018/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 9190000,
+     "km_tipico": "55.000–130.000",
+     "n": 11,
+     "rango_p25_p75": [
+      7480000,
+      10990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397525705-nissan-versa-16-advance-4x2-at-4p-2020-_JM",
+      "https://autos.mercadolibre.cl/nissan/versa/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 8940000,
+     "km_tipico": "82.000–118.000",
+     "n": 30,
+     "rango_p25_p75": [
+      8190000,
+      9320000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2367554885-nissan-versa-no-se-la-version-2021-_JM",
+      "https://autos.mercadolibre.cl/nissan/versa/2021/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 11390000,
+     "km_tipico": "56.000–89.000",
+     "n": 36,
+     "rango_p25_p75": [
+      10730000,
+      12060000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2312825787-nissan-versa-2023-_JM",
+      "https://autos.mercadolibre.cl/nissan/versa/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 11990000,
+     "km_tipico": "22.000–60.000",
+     "n": 25,
+     "rango_p25_p75": [
+      11680000,
+      12290000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2337110535-nissan-versa-2024-_JM",
+      "https://autos.mercadolibre.cl/nissan/versa/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 200 avisos usados únicos (MercadoLibre 179, Yapo 21)."
+  },
+  {
+   "marca": "Nissan",
+   "modelo": "Kicks",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 9500000,
+     "km_tipico": "72.000–131.000",
+     "n": 18,
+     "rango_p25_p75": [
+      8740000,
+      10570000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400113489-nissan-kicks-sense-16-mt-2018-_JM",
+      "https://autos.mercadolibre.cl/nissan/kicks/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 10590000,
+     "km_tipico": "60.000–117.000",
+     "n": 15,
+     "rango_p25_p75": [
+      9800000,
+      11000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2354683069-nissan-kicks-2019-_JM",
+      "https://autos.mercadolibre.cl/nissan/kicks/2019/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 11980000,
+     "km_tipico": "43.000–92.000",
+     "n": 27,
+     "rango_p25_p75": [
+      10990000,
+      12490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2344352791-nissan-16-advance-mt-kicks-_JM",
+      "https://autos.mercadolibre.cl/nissan/kicks/2021/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 13240000,
+     "km_tipico": "47.000–81.000",
+     "n": 28,
+     "rango_p25_p75": [
+      12690000,
+      14410000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2275948709-nissan-kicks-16-sense-mt-_JM",
+      "https://autos.mercadolibre.cl/nissan/kicks/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 14320000,
+     "km_tipico": "19.000–59.000",
+     "n": 24,
+     "rango_p25_p75": [
+      13520000,
+      14850000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2208667053-nissan-kicks-2024-_JM",
+      "https://autos.mercadolibre.cl/nissan/kicks/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 162 avisos usados únicos (MercadoLibre 147, Yapo 15)."
+  },
+  {
+   "marca": "Nissan",
+   "modelo": "Qashqai",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 7800000,
+     "km_tipico": "96.000–180.000",
+     "n": 14,
+     "rango_p25_p75": [
+      7410000,
+      8490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4622197752-nissan-qashqai-2015-_JM",
+      "https://autos.mercadolibre.cl/nissan/qashqai/2015/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 9300000,
+     "km_tipico": "100.000–140.000",
+     "n": 21,
+     "rango_p25_p75": [
+      8600000,
+      9990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2081856775-nissan-qashqai-20-advance-cvt-ac-at-4x2-2017-_JM",
+      "https://autos.mercadolibre.cl/nissan/qashqai/2017/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 10350000,
+     "km_tipico": "72.000–119.000",
+     "n": 16,
+     "rango_p25_p75": [
+      9820000,
+      11000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2295831203-nissan-qashqai-sense-mt-_JM",
+      "https://autos.mercadolibre.cl/nissan/qashqai/2018/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 14300000,
+     "km_tipico": "34.000–75.000",
+     "n": 15,
+     "rango_p25_p75": [
+      13090000,
+      14790000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2366628287-nissan-qashqai-advance-cvt-_JM",
+      "https://autos.mercadolibre.cl/nissan/qashqai/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 19290000,
+     "km_tipico": "7.000–38.000",
+     "n": 11,
+     "rango_p25_p75": [
+      18240000,
+      20290000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4635266012-nissan-qashqai-turbo-13-2024-_JM",
+      "https://autos.mercadolibre.cl/nissan/qashqai/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 21590000,
+     "km_tipico": "9.000–25.000",
+     "n": 6,
+     "rango_p25_p75": [
+      20750000,
+      22240000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2402337161-nissan-qashqai-2025-_JM",
+      "https://autos.mercadolibre.cl/nissan/qashqai/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 156 avisos usados únicos (MercadoLibre 138, Yapo 18)."
+  },
+  {
+   "marca": "Nissan",
+   "modelo": "X-Trail",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 9840000,
+     "km_tipico": "83.000–160.000",
+     "n": 12,
+     "rango_p25_p75": [
+      8640000,
+      10780000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4362200214-nissan-x-trail-advance-25-4x2-at-_JM",
+      "https://autos.mercadolibre.cl/nissan/x-trail/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 11390000,
+     "km_tipico": "87.000–128.000",
+     "n": 25,
+     "rango_p25_p75": [
+      10490000,
+      11990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2290654669-nissan-x-trail-2018-_JM",
+      "https://autos.mercadolibre.cl/nissan/x-trail/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 11090000,
+     "km_tipico": "94.000–139.000",
+     "n": 21,
+     "rango_p25_p75": [
+      10580000,
+      11690000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4298398244-nissan-x-trail-25-sense-4x2-3row-cvt-at-5p-2019-_JM",
+      "https://autos.mercadolibre.cl/nissan/x-trail/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 13690000,
+     "km_tipico": "64.000–106.000",
+     "n": 33,
+     "rango_p25_p75": [
+      12990000,
+      15400000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2346127457-nissan-x-trail-2022-_JM",
+      "https://autos.mercadolibre.cl/nissan/x-trail/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 19290000,
+     "km_tipico": "36.000–73.000",
+     "n": 53,
+     "rango_p25_p75": [
+      17470000,
+      20640000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4630767352-nissan-x-trail-2023-_JM",
+      "https://autos.mercadolibre.cl/nissan/x-trail/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 23980000,
+     "km_tipico": "37.000–51.000",
+     "n": 29,
+     "rango_p25_p75": [
+      20940000,
+      27440000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2354619097-nissan-25-exclusive-3row-at-4x4-x-trail-_JM",
+      "https://autos.mercadolibre.cl/nissan/x-trail/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 264 avisos usados únicos (MercadoLibre 230, Yapo 34)."
+  },
+  {
+   "marca": "Nissan",
+   "modelo": "Navara",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 9050000,
+     "km_tipico": "202.000–326.000",
+     "n": 10,
+     "rango_p25_p75": [
+      7180000,
+      10980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2267457715-nissan-navara-25-se-4-x-4-_JM",
+      "https://autos.mercadolibre.cl/nissan/navara/2015/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 13670000,
+     "km_tipico": "79.000–161.000",
+     "n": 6,
+     "rango_p25_p75": [
+      11870000,
+      15840000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4646518052-nissan-navara-2020-_JM",
+      "https://autos.mercadolibre.cl/nissan/navara/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 16950000,
+     "km_tipico": "73.000–144.000",
+     "n": 34,
+     "rango_p25_p75": [
+      15060000,
+      19020000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-3806935054-nissan-navara-2021-_JM",
+      "https://autos.mercadolibre.cl/nissan/navara/2021/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 17450000,
+     "km_tipico": "59.000–120.000",
+     "n": 121,
+     "rango_p25_p75": [
+      15800000,
+      19950000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-3968073046-nissan-navara-2023-_JM",
+      "https://autos.mercadolibre.cl/nissan/navara/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 20450000,
+     "km_tipico": "49.000–79.000",
+     "n": 31,
+     "rango_p25_p75": [
+      18990000,
+      22800000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4601949740-nissan-navara-2024-_JM",
+      "https://autos.mercadolibre.cl/nissan/navara/2024/"
+     ]
+    }
+   ],
+   "nota": "Mezcla 4x2/4x4; la mayoría de avisos son 4x4 diésel. Base: 263 avisos usados únicos (MercadoLibre 218, Yapo 45)."
+  },
+  {
+   "marca": "Mitsubishi",
+   "modelo": "L200",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 9000000,
+     "km_tipico": "134.000–272.000",
+     "n": 5,
+     "rango_p25_p75": [
+      7350000,
+      9940000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2240579585-mitsubishi-l200-25-dc-td-work-cr-mt-4x2-diesel-2015-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2015/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 14990000,
+     "km_tipico": "129.000–208.000",
+     "n": 7,
+     "rango_p25_p75": [
+      12690000,
+      16890000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2340711537-mitsubishi-l200-24-dakar-at-hp-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2018/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 13990000,
+     "km_tipico": "126.000–174.000",
+     "n": 15,
+     "rango_p25_p75": [
+      12720000,
+      14590000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/mitsubishi-l200-katana-cr-4x2-mecanica-diesel/33195779",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 15900000,
+     "km_tipico": "77.000–133.000",
+     "n": 60,
+     "rango_p25_p75": [
+      14990000,
+      17000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2196885639-mitsubishi-l200-cr-katana-4x2-2022-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 16990000,
+     "km_tipico": "69.000–114.000",
+     "n": 65,
+     "rango_p25_p75": [
+      15940000,
+      18220000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2176949181-mitsubishi-l200-katana-crt-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 20990000,
+     "km_tipico": "51.000–75.000",
+     "n": 36,
+     "rango_p25_p75": [
+      19500000,
+      21980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4650537242-mitsubishi-l200-24-td-katana-cr-mt-4x2-2024-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2024/"
+     ]
+    }
+   ],
+   "nota": "Todas las versiones juntas (4x2/4x4). Usar si no se sabe la tracción. Base: 260 avisos usados únicos (MercadoLibre 219, Yapo 41)."
+  },
+  {
+   "marca": "Mitsubishi",
+   "modelo": "L200 4x2",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 9000000,
+     "km_tipico": "120.000–228.000",
+     "n": 3,
+     "rango_p25_p75": [
+      6200000,
+      9880000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2240579585-mitsubishi-l200-25-dc-td-work-cr-mt-4x2-diesel-2015-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2015/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 13990000,
+     "km_tipico": "62.000–178.000",
+     "n": 3,
+     "rango_p25_p75": [
+      12990000,
+      14590000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/mitsubishi-l200-katana-cr-4x2-mecanica-diesel/33195779",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 15140000,
+     "km_tipico": "79.000–146.000",
+     "n": 20,
+     "rango_p25_p75": [
+      14150000,
+      15900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397570045-mitsubishi-l200-2022-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 15800000,
+     "km_tipico": "49.000–93.000",
+     "n": 6,
+     "rango_p25_p75": [
+      14960000,
+      15820000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4373689864-work-cr-4x2-spvk84-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 19990000,
+     "km_tipico": "27.000–62.000",
+     "n": 3,
+     "rango_p25_p75": [
+      18990000,
+      20990000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/mitsubishi-l200-2-4-td-katana-cr-mt-4x2-diesel/33137691",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2024/"
+     ]
+    }
+   ],
+   "nota": "Solo avisos cuyo título dice 4x2 explícitamente. Puntos con n<5 (2015, 2020, 2024): referencia débil. Base: 53 avisos usados únicos (MercadoLibre 49, Yapo 4)."
+  },
+  {
+   "marca": "Mitsubishi",
+   "modelo": "L200 4x4",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 16440000,
+     "km_tipico": "96.000–202.000",
+     "n": 4,
+     "rango_p25_p75": [
+      14120000,
+      17720000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4591476020-mitsubishi-l200-24td-dc-dakar-crs-4x4-mt-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 12500000,
+     "km_tipico": "138.000–308.000",
+     "n": 3,
+     "rango_p25_p75": [
+      10000000,
+      13000000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/camioneta-mitsubishi-l200-4x4-katana/33222445",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 16800000,
+     "km_tipico": "70.000–130.000",
+     "n": 23,
+     "rango_p25_p75": [
+      15800000,
+      17850000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4646462298-katana-crt-4x4-sdgw10-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 16990000,
+     "km_tipico": "74.000–110.000",
+     "n": 39,
+     "rango_p25_p75": [
+      16450000,
+      18900000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/mitsubishi-l200-katana-4x4-2023/33087460",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 20990000,
+     "km_tipico": "54.000–76.000",
+     "n": 28,
+     "rango_p25_p75": [
+      19690000,
+      21840000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2351298669-mitsubishi-l200-2024-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/l200/2024/"
+     ]
+    }
+   ],
+   "nota": "Solo avisos con 4x4 en el título. Puntos con n<5 (2018, 2019): referencia débil. Base: 124 avisos usados únicos (MercadoLibre 104, Yapo 20)."
+  },
+  {
+   "marca": "Mitsubishi",
+   "modelo": "Outlander",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2017,
+     "precio": 10800000,
+     "km_tipico": "86.000–143.000",
+     "n": 11,
+     "rango_p25_p75": [
+      9970000,
+      11000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2282583721-mitsubishi-outlander-24-gls-4x4-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/outlander/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 12100000,
+     "km_tipico": "71.000–100.000",
+     "n": 18,
+     "rango_p25_p75": [
+      10900000,
+      12610000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4342889260-mitsubishi-outlander-24-gls-cvt-4wd-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/outlander/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 15690000,
+     "km_tipico": "49.000–80.000",
+     "n": 22,
+     "rango_p25_p75": [
+      14370000,
+      17110000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2290632651-mitsubishi-outlander-20-glx-4x2-at-5p-2022-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/outlander/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 17990000,
+     "km_tipico": "42.000–69.000",
+     "n": 27,
+     "rango_p25_p75": [
+      15580000,
+      20660000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4656245194-mitsubishi-new-outlander-glx-25-aut-2023-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/outlander/2023/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 20790000,
+     "km_tipico": "17.000–27.000",
+     "n": 9,
+     "rango_p25_p75": [
+      18910000,
+      26270000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397563247-mitsubishi-outlander-25-gl-p-4x2-at-5p-2025-_JM",
+      "https://autos.mercadolibre.cl/mitsubishi/outlander/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 140 avisos usados únicos (MercadoLibre 126, Yapo 14)."
+  },
+  {
+   "marca": "Peugeot",
+   "modelo": "208",
+   "segmento": "hatchback",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 6500000,
+     "km_tipico": "105.000–180.000",
+     "n": 8,
+     "rango_p25_p75": [
+      6080000,
+      6940000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4396263122-peugeot-208-14-allure-hdi-mt-diesel-2016-_JM",
+      "https://autos.mercadolibre.cl/peugeot/208/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 6800000,
+     "km_tipico": "99.000–150.000",
+     "n": 14,
+     "rango_p25_p75": [
+      6080000,
+      7270000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2378845929-peugeot-208-active-pack-12-pure-mt-e6-_JM",
+      "https://autos.mercadolibre.cl/peugeot/208/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 7500000,
+     "km_tipico": "99.000–145.000",
+     "n": 17,
+     "rango_p25_p75": [
+      6800000,
+      7990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2384628125-peugeot-208-allure-pack-bluehdi-100hp-_JM",
+      "https://autos.mercadolibre.cl/peugeot/208/2019/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 8390000,
+     "km_tipico": "50.000–87.000",
+     "n": 29,
+     "rango_p25_p75": [
+      7990000,
+      10400000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400643117-peugeot-208-2021-_JM",
+      "https://autos.mercadolibre.cl/peugeot/208/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 9890000,
+     "km_tipico": "26.000–45.000",
+     "n": 45,
+     "rango_p25_p75": [
+      8890000,
+      10800000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2166948009-peugeot-208-12-active-pack-puretech-75-mt-2024-_JM",
+      "https://autos.mercadolibre.cl/peugeot/208/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 11490000,
+     "km_tipico": "16.000–40.000",
+     "n": 17,
+     "rango_p25_p75": [
+      10740000,
+      12690000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4483665904-peugeot-208-12-puretech-active-75hp-_JM",
+      "https://autos.mercadolibre.cl/peugeot/208/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 237 avisos usados únicos (MercadoLibre 214, Yapo 23)."
+  },
+  {
+   "marca": "Peugeot",
+   "modelo": "2008",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 8540000,
+     "km_tipico": "78.000–175.000",
+     "n": 12,
+     "rango_p25_p75": [
+      8190000,
+      9290000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4354066124-peugeot-2008-12-allure-pack-puretech-4x2-110hp-eat6-5p-2018-_JM",
+      "https://autos.mercadolibre.cl/peugeot/2008/2018/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 9340000,
+     "km_tipico": "55.000–144.000",
+     "n": 10,
+     "rango_p25_p75": [
+      8610000,
+      11760000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4454120316-peugeot-2008-mec-6-velocidades-bencina-full-aire-carplay-_JM",
+      "https://autos.mercadolibre.cl/peugeot/2008/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 11480000,
+     "km_tipico": "59.000–96.000",
+     "n": 40,
+     "rango_p25_p75": [
+      10590000,
+      12460000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2367775997-peugeot-2008-_JM",
+      "https://autos.mercadolibre.cl/peugeot/2008/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 13790000,
+     "km_tipico": "31.000–44.000",
+     "n": 57,
+     "rango_p25_p75": [
+      13040000,
+      16440000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4591472966-peugeot-2008-12-allure-pack-puretech-130hp-4x2-eat8-5p-2024-_JM",
+      "https://autos.mercadolibre.cl/peugeot/2008/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 15990000,
+     "km_tipico": "12.000–37.000",
+     "n": 49,
+     "rango_p25_p75": [
+      14340000,
+      16980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397590461-peugeot-2008-2025-_JM",
+      "https://autos.mercadolibre.cl/peugeot/2008/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 255 avisos usados únicos (MercadoLibre 227, Yapo 28)."
+  },
+  {
+   "marca": "Peugeot",
+   "modelo": "3008",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 12500000,
+     "km_tipico": "84.000–132.000",
+     "n": 20,
+     "rango_p25_p75": [
+      11990000,
+      13340000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/vendo-peugeot-3008-1-6-aut/33147646",
+      "https://autos.mercadolibre.cl/peugeot/3008/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 12550000,
+     "km_tipico": "72.000–125.000",
+     "n": 30,
+     "rango_p25_p75": [
+      11760000,
+      14770000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4447976574-peugeot-3008-15-bluehdi-130-active-2019-_JM",
+      "https://autos.mercadolibre.cl/peugeot/3008/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 15190000,
+     "km_tipico": "46.000–81.000",
+     "n": 47,
+     "rango_p25_p75": [
+      13310000,
+      16580000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4247387316-peugeot-3008-2022-_JM",
+      "https://autos.mercadolibre.cl/peugeot/3008/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 16500000,
+     "km_tipico": "35.000–56.000",
+     "n": 39,
+     "rango_p25_p75": [
+      15300000,
+      18000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4649023350-peugeot-3008-16-thp-allure-pack-eat6-165hp-_JM",
+      "https://autos.mercadolibre.cl/peugeot/3008/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 22590000,
+     "km_tipico": "8.000–37.000",
+     "n": 32,
+     "rango_p25_p75": [
+      21490000,
+      24360000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2344428327-2025-peugeot-3008-12-allure-premier-hybrid-at-_JM",
+      "https://autos.mercadolibre.cl/peugeot/3008/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 275 avisos usados únicos (MercadoLibre 229, Yapo 46)."
+  },
+  {
+   "marca": "Peugeot",
+   "modelo": "Partner",
+   "segmento": "comercial",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 6000000,
+     "km_tipico": "150.000–194.000",
+     "n": 3,
+     "rango_p25_p75": [
+      5990000,
+      7000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2155656373-peugeot-partner-16-hdi-aa-e5-_JM",
+      "https://autos.mercadolibre.cl/peugeot/partner/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 6200000,
+     "km_tipico": "178.000–222.000",
+     "n": 10,
+     "rango_p25_p75": [
+      5640000,
+      7410000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/vendo-peugeot-partner/33135327",
+      "https://autos.mercadolibre.cl/peugeot/partner/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 7980000,
+     "km_tipico": "142.000–197.000",
+     "n": 13,
+     "rango_p25_p75": [
+      7340000,
+      9640000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4663116298-peugeot-partner-l1-2019-5425-_JM",
+      "https://autos.mercadolibre.cl/peugeot/partner/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 10900000,
+     "km_tipico": "76.000–137.000",
+     "n": 20,
+     "rango_p25_p75": [
+      9820000,
+      12340000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/peugeot-partner-2022/32523284",
+      "https://autos.mercadolibre.cl/peugeot/partner/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 12900000,
+     "km_tipico": "56.000–98.000",
+     "n": 65,
+     "rango_p25_p75": [
+      11970000,
+      13420000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4486977832-peugeot-partner-partner-l1-bluehdi-100-2023-4646-_JM",
+      "https://autos.mercadolibre.cl/peugeot/partner/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 12900000,
+     "km_tipico": "51.000–80.000",
+     "n": 48,
+     "rango_p25_p75": [
+      12120000,
+      12990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4658995266-peugeot-partner-l1-blue-hdi-2024-_JM",
+      "https://autos.mercadolibre.cl/peugeot/partner/2024/"
+     ]
+    }
+   ],
+   "nota": "Furgón; mezcla versiones carga/pasajeros. Puntos con n<5 (2016): referencia débil. Base: 235 avisos usados únicos (MercadoLibre 197, Yapo 38)."
+  },
+  {
+   "marca": "Citroën",
+   "modelo": "C3",
+   "segmento": "hatchback",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 5100000,
+     "km_tipico": "46.000–150.000",
+     "n": 4,
+     "rango_p25_p75": [
+      4550000,
+      5420000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4563754148-citron-c3-14-hdi-70-bvm-comfort-_JM",
+      "https://autos.mercadolibre.cl/citroen/c3/2015/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 8300000,
+     "km_tipico": "99.000–151.000",
+     "n": 9,
+     "rango_p25_p75": [
+      7790000,
+      9490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4343920868-citron-c3-15-bluehdi-100ss-bvmshi-ccam-_JM",
+      "https://autos.mercadolibre.cl/citroen/c3/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 7990000,
+     "km_tipico": "56.000–130.000",
+     "n": 11,
+     "rango_p25_p75": [
+      7490000,
+      9000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4545934260-citron-c3-bleu-hdi-_JM",
+      "https://autos.mercadolibre.cl/citroen/c3/2019/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 8840000,
+     "km_tipico": "36.000–83.000",
+     "n": 14,
+     "rango_p25_p75": [
+      8450000,
+      9520000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4536913002-citron-c3-15-bluehdi-100ss-bvmshi-ccam-_JM",
+      "https://autos.mercadolibre.cl/citroen/c3/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 8500000,
+     "km_tipico": "29.000–67.000",
+     "n": 25,
+     "rango_p25_p75": [
+      8220000,
+      10800000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4390147292-citron-c3-12-puretech-82-feel-pack-_JM",
+      "https://autos.mercadolibre.cl/citroen/c3/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 9440000,
+     "km_tipico": "9.000–47.000",
+     "n": 10,
+     "rango_p25_p75": [
+      7990000,
+      11060000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2208669557-citron-c3-12-feel-pack-_JM",
+      "https://autos.mercadolibre.cl/citroen/c3/2025/"
+     ]
+    }
+   ],
+   "nota": "Excluye C3 Aircross. Puntos con n<5 (2015): referencia débil. Base: 149 avisos usados únicos (MercadoLibre 136, Yapo 13)."
+  },
+  {
+   "marca": "Citroën",
+   "modelo": "Berlingo",
+   "segmento": "comercial",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 7940000,
+     "km_tipico": "96.000–236.000",
+     "n": 4,
+     "rango_p25_p75": [
+      6470000,
+      8150000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4552189034-citron-berlingo-hdi-diesel-full-ac-2018-_JM",
+      "https://autos.mercadolibre.cl/citroen/berlingo/2018/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 11980000,
+     "km_tipico": "88.000–135.000",
+     "n": 16,
+     "rango_p25_p75": [
+      9570000,
+      14450000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4601308900-citroen-berlingo-2022-_JM",
+      "https://autos.mercadolibre.cl/citroen/berlingo/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 12680000,
+     "km_tipico": "32.000–58.000",
+     "n": 39,
+     "rango_p25_p75": [
+      11480000,
+      13480000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2201516801-citroen-berlingo-berlingo-15-2024-4045-_JM",
+      "https://autos.mercadolibre.cl/citroen/berlingo/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 14980000,
+     "km_tipico": "25.000–55.000",
+     "n": 5,
+     "rango_p25_p75": [
+      14240000,
+      16490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4259915844-citron-berlingo-15-m-bluehdi-100-bvm6-mt-diesel-berlingo-_JM",
+      "https://autos.mercadolibre.cl/citroen/berlingo/2025/"
+     ]
+    }
+   ],
+   "nota": "Furgón; mezcla versiones. Puntos con n<5 (2018): referencia débil. Base: 109 avisos usados únicos (MercadoLibre 98, Yapo 11)."
+  },
+  {
+   "marca": "MG",
+   "modelo": "ZS",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 6340000,
+     "km_tipico": "89.000–195.000",
+     "n": 4,
+     "rango_p25_p75": [
+      5770000,
+      7140000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2380042299-mg-zs-15-2018-_JM",
+      "https://autos.mercadolibre.cl/mg/zs/2018/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 7880000,
+     "km_tipico": "67.000–110.000",
+     "n": 17,
+     "rango_p25_p75": [
+      7100000,
+      8490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4635064928-mg-zs-15-std-mt-zs-_JM",
+      "https://autos.mercadolibre.cl/mg/zs/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 7980000,
+     "km_tipico": "46.000–102.000",
+     "n": 55,
+     "rango_p25_p75": [
+      7250000,
+      8500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4259915870-mg-zs-15-std-mt-zs-_JM",
+      "https://autos.mercadolibre.cl/mg/zs/2021/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 8000000,
+     "km_tipico": "32.000–76.000",
+     "n": 48,
+     "rango_p25_p75": [
+      7490000,
+      8560000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4663092162-mg-zs-15-std-cvt-_JM",
+      "https://autos.mercadolibre.cl/mg/zs/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 9190000,
+     "km_tipico": "22.000–52.000",
+     "n": 25,
+     "rango_p25_p75": [
+      8290000,
+      9780000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4191108256-mg-zs-15-aut-com-2024-_JM",
+      "https://autos.mercadolibre.cl/mg/zs/2024/"
+     ]
+    }
+   ],
+   "nota": "Excluye ZS EV eléctrico. Puntos con n<5 (2018): referencia débil. Base: 236 avisos usados únicos (MercadoLibre 211, Yapo 25)."
+  },
+  {
+   "marca": "MG",
+   "modelo": "3",
+   "segmento": "hatchback",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 3850000,
+     "km_tipico": "79.000–160.000",
+     "n": 4,
+     "rango_p25_p75": [
+      3350000,
+      4800000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4572348036-mg-mg3-15-comfort-mt-_JM",
+      "https://autos.mercadolibre.cl/mg/3/2015/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 5780000,
+     "km_tipico": "98.000–190.000",
+     "n": 3,
+     "rango_p25_p75": [
+      4500000,
+      6190000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400586523-mg-3-_JM",
+      "https://autos.mercadolibre.cl/mg/3/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 6300000,
+     "km_tipico": "32.000–105.000",
+     "n": 9,
+     "rango_p25_p75": [
+      5300000,
+      6840000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4444434370-mg-mg3-15-comfort-mt-_JM",
+      "https://autos.mercadolibre.cl/mg/3/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 6990000,
+     "km_tipico": "36.000–55.000",
+     "n": 41,
+     "rango_p25_p75": [
+      6640000,
+      7540000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2181865661-mg-3-2022-_JM",
+      "https://autos.mercadolibre.cl/mg/3/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 7990000,
+     "km_tipico": "12.000–32.000",
+     "n": 39,
+     "rango_p25_p75": [
+      7500000,
+      8190000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2387604685-mg-3-2024-_JM",
+      "https://autos.mercadolibre.cl/mg/3/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 8690000,
+     "km_tipico": "8.000–22.000",
+     "n": 13,
+     "rango_p25_p75": [
+      7770000,
+      9270000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4409948534-mg-3-std-plus-15-mt-2025-_JM",
+      "https://autos.mercadolibre.cl/mg/3/2025/"
+     ]
+    }
+   ],
+   "nota": "Puntos con n<5 (2015, 2017): referencia débil. Base: 196 avisos usados únicos (MercadoLibre 168, Yapo 28)."
+  },
+  {
+   "marca": "MG",
+   "modelo": "ZX",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 7990000,
+     "km_tipico": "37.000–74.000",
+     "n": 34,
+     "rango_p25_p75": [
+      7720000,
+      8500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4659005976-mg-zx-zx-15-2022-_JM",
+      "https://autos.mercadolibre.cl/mg/zx/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 9000000,
+     "km_tipico": "31.000–55.000",
+     "n": 24,
+     "rango_p25_p75": [
+      8330000,
+      9780000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2211366223-mg-zx-15-dlx-at-2023-_JM",
+      "https://autos.mercadolibre.cl/mg/zx/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 9750000,
+     "km_tipico": "19.000–44.000",
+     "n": 23,
+     "rango_p25_p75": [
+      8790000,
+      10490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4505432772-mg-zx-15-dlx-mt-_JM",
+      "https://autos.mercadolibre.cl/mg/zx/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 96 avisos usados únicos (MercadoLibre 82, Yapo 14)."
+  },
+  {
+   "marca": "Chery",
+   "modelo": "Tiggo 2",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 5980000,
+     "km_tipico": "48.000–99.000",
+     "n": 9,
+     "rango_p25_p75": [
+      5250000,
+      6520000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4460676936-chery-tiggo-2-gls-15-2018-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-2/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 6230000,
+     "km_tipico": "76.000–131.000",
+     "n": 10,
+     "rango_p25_p75": [
+      5980000,
+      6480000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4619926596-chery-tiggo-2-glx-mt-2019-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-2/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 7090000,
+     "km_tipico": "51.000–80.000",
+     "n": 49,
+     "rango_p25_p75": [
+      6990000,
+      7500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4656257580-chery-tiggo-2-gls-15-cvt-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-2/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 7690000,
+     "km_tipico": "32.000–75.000",
+     "n": 17,
+     "rango_p25_p75": [
+      7200000,
+      8440000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2120258497-chery-tiggo-2-15-gls-mt-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-2/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 8380000,
+     "km_tipico": "23.000–51.000",
+     "n": 10,
+     "rango_p25_p75": [
+      7860000,
+      8990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2387822149-chery-tiggo-2-pro-15-gls-4x2-mt-5p-2024-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-2/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 155 avisos usados únicos (MercadoLibre 130, Yapo 25)."
+  },
+  {
+   "marca": "Chery",
+   "modelo": "Tiggo 3",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 6000000,
+     "km_tipico": "74.000–77.000",
+     "n": 3,
+     "rango_p25_p75": [
+      5600000,
+      6300000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2215985655-chery-tiggo-3-16-glx-mt-2018-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-3/2018/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 7230000,
+     "km_tipico": "48.000–137.000",
+     "n": 3,
+     "rango_p25_p75": [
+      6990000,
+      7381900
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2378891243-chery-tiggo-3-15-gls-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-3/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 8090000,
+     "km_tipico": "40.000–69.000",
+     "n": 20,
+     "rango_p25_p75": [
+      7720000,
+      8690000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2358419937-chery-tiggo-3-2022-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-3/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 8990000,
+     "km_tipico": "29.000–90.000",
+     "n": 23,
+     "rango_p25_p75": [
+      8490000,
+      9490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2250549131-chery-tiggo-3-15-gl-mt-2023-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-3/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 10490000,
+     "km_tipico": "14.000–48.000",
+     "n": 11,
+     "rango_p25_p75": [
+      9560000,
+      11000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2293286957-chery-tiggo-3-pro-2024-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-3/2024/"
+     ]
+    }
+   ],
+   "nota": "Puntos con n<5 (2018, 2020): referencia débil. Base: 90 avisos usados únicos (MercadoLibre 79, Yapo 11)."
+  },
+  {
+   "marca": "Chery",
+   "modelo": "Tiggo 7",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2019,
+     "precio": 7850000,
+     "km_tipico": "76.000–103.000",
+     "n": 7,
+     "rango_p25_p75": [
+      7490000,
+      8590000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/chery-tiggo-7-2019/33178525",
+      "https://autos.mercadolibre.cl/chery/tiggo-7/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 10880000,
+     "km_tipico": "46.000–78.000",
+     "n": 22,
+     "rango_p25_p75": [
+      10490000,
+      11080000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2403623151-chery-tiggo-7-pro-2022-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-7/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 11890000,
+     "km_tipico": "42.000–73.000",
+     "n": 28,
+     "rango_p25_p75": [
+      11070000,
+      12570000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2250549381-tiggo-7-pro-szwz33-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-7/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 11800000,
+     "km_tipico": "25.000–50.000",
+     "n": 23,
+     "rango_p25_p75": [
+      11490000,
+      12900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4366665020-chery-tiggo-7-pro-15t-glx-cvt-_JM",
+      "https://autos.mercadolibre.cl/chery/tiggo-7/2024/"
+     ]
+    }
+   ],
+   "nota": "Tiggo 7 y Tiggo 7 Pro juntos. Base: 103 avisos usados únicos (MercadoLibre 92, Yapo 11)."
+  },
+  {
+   "marca": "Haval",
+   "modelo": "Jolion",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 10740000,
+     "km_tipico": "41.000–77.000",
+     "n": 20,
+     "rango_p25_p75": [
+      9990000,
+      11270000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2378810747-haval-jolion-2022-_JM",
+      "https://autos.mercadolibre.cl/haval-jolion"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 11980000,
+     "km_tipico": "39.000–62.000",
+     "n": 29,
+     "rango_p25_p75": [
+      11100000,
+      12640000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/haval-jolion-elite/33220526",
+      "https://autos.mercadolibre.cl/haval-jolion"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 13690000,
+     "km_tipico": "16.000–37.000",
+     "n": 24,
+     "rango_p25_p75": [
+      12500000,
+      14870000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2204215045-haval-jolion-2025-_JM",
+      "https://autos.mercadolibre.cl/haval-jolion"
+     ]
+    }
+   ],
+   "nota": "Modelo desde 2021; incluye híbridos. Base: 105 avisos usados únicos (MercadoLibre 78, Yapo 27)."
+  },
+  {
+   "marca": "Haval",
+   "modelo": "H6",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 7750000,
+     "km_tipico": "70.000–118.000",
+     "n": 8,
+     "rango_p25_p75": [
+      7460000,
+      8700000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4479033750-haval-h6-15-t-_JM",
+      "https://autos.mercadolibre.cl/haval-h6"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 9490000,
+     "km_tipico": "56.000–109.000",
+     "n": 11,
+     "rango_p25_p75": [
+      7890000,
+      9950000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2095180561-haval-h6-elite-20-at-2019-_JM",
+      "https://autos.mercadolibre.cl/haval-h6"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 13990000,
+     "km_tipico": "48.000–86.000",
+     "n": 34,
+     "rango_p25_p75": [
+      13000000,
+      14720000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2367785947-haval-h6-2022-_JM",
+      "https://autos.mercadolibre.cl/haval-h6"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 16890000,
+     "km_tipico": "22.000–49.000",
+     "n": 45,
+     "rango_p25_p75": [
+      15690000,
+      18150000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400602105-haval-h6-15t-deluxe-hibrido-4x2-at-5p-2024-_JM",
+      "https://autos.mercadolibre.cl/haval-h6"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 17990000,
+     "km_tipico": "11.000–43.000",
+     "n": 23,
+     "rango_p25_p75": [
+      16990000,
+      19990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-3955913872-haval-h6-2025-_JM",
+      "https://autos.mercadolibre.cl/haval-h6"
+     ]
+    }
+   ],
+   "nota": "Base: 201 avisos usados únicos (MercadoLibre 165, Yapo 36)."
+  },
+  {
+   "marca": "Haval",
+   "modelo": "Dargo",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2023,
+     "precio": 15990000,
+     "km_tipico": "29.000–63.000",
+     "n": 6,
+     "rango_p25_p75": [
+      15220000,
+      16870000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/haval-dargo-deluxe-4x4-2-0-aut/33208879",
+      "https://autos.mercadolibre.cl/haval-dargo"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 17220000,
+     "km_tipico": "20.000–62.000",
+     "n": 10,
+     "rango_p25_p75": [
+      15990000,
+      19380000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4323307756-haval-dargo-20t-deluxe-dct-4wd-_JM",
+      "https://autos.mercadolibre.cl/haval-dargo"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 18990000,
+     "km_tipico": "7.000–38.000",
+     "n": 6,
+     "rango_p25_p75": [
+      17590000,
+      20590000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4586195500-gwm-haval-dargo-20-deluxe-4x4-at-_JM",
+      "https://autos.mercadolibre.cl/haval-dargo"
+     ]
+    }
+   ],
+   "nota": "Modelo desde 2022. Base: 24 avisos usados únicos (MercadoLibre 19, Yapo 5)."
+  },
+  {
+   "marca": "Great Wall",
+   "modelo": "Poer",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 13500000,
+     "km_tipico": "59.000–113.000",
+     "n": 56,
+     "rango_p25_p75": [
+      12330000,
+      15260000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4441917358-gwm-poer-20-elite-4x4-mt-_JM",
+      "https://autos.mercadolibre.cl/greatwall/poer/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 16690000,
+     "km_tipico": "48.000–83.000",
+     "n": 73,
+     "rango_p25_p75": [
+      14930000,
+      18940000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397568547-great-wall-poer-plus-4x4-at-2024-_JM",
+      "https://autos.mercadolibre.cl/greatwall/poer/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 19980000,
+     "km_tipico": "22.000–50.000",
+     "n": 27,
+     "rango_p25_p75": [
+      16890000,
+      21990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4234260932-great-wall-poer-2026-_JM",
+      "https://autos.mercadolibre.cl/greatwall/poer/2025/"
+     ]
+    }
+   ],
+   "nota": "Mezcla 4x2/4x4. Base: 252 avisos usados únicos (MercadoLibre 175, Yapo 77)."
+  },
+  {
+   "marca": "Great Wall",
+   "modelo": "Wingle",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 5690000,
+     "km_tipico": "153.000–238.000",
+     "n": 4,
+     "rango_p25_p75": [
+      4380000,
+      6870000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/great-wall-wingle-5-en-venta/33212846",
+      "https://autos.mercadolibre.cl/greatwall/wingle/2015/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 7990000,
+     "km_tipico": "103.000–119.000",
+     "n": 4,
+     "rango_p25_p75": [
+      7100000,
+      8370000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2122807345-great-wall-wingle-20-deluxe-f2-mt-4x4-diesel-2017-_JM",
+      "https://autos.mercadolibre.cl/greatwall/wingle/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 6580000,
+     "km_tipico": "86.000–187.000",
+     "n": 6,
+     "rango_p25_p75": [
+      5810000,
+      7300000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4533919572-great-wall-wingle-2019-_JM",
+      "https://autos.mercadolibre.cl/greatwall/wingle/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 8900000,
+     "km_tipico": "39.000–80.000",
+     "n": 18,
+     "rango_p25_p75": [
+      8700000,
+      9500000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/wingle-5-2022-55-000-km/33045901",
+      "https://autos.mercadolibre.cl/greatwall/wingle/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 9900000,
+     "km_tipico": "51.000–81.000",
+     "n": 29,
+     "rango_p25_p75": [
+      8990000,
+      10000000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/great-wall-wingle-5-2023/33223802",
+      "https://autos.mercadolibre.cl/greatwall/wingle/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 11500000,
+     "km_tipico": "20.000–30.000",
+     "n": 3,
+     "rango_p25_p75": [
+      10390000,
+      12500000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/se-vende-camioneta-great-wall-wingle-7-2024/33120828",
+      "https://autos.mercadolibre.cl/greatwall/wingle/2024/"
+     ]
+    }
+   ],
+   "nota": "Mezcla 4x2/4x4, gasolina/diésel. Puntos con n<5 (2015, 2017, 2024): referencia débil. Base: 90 avisos usados únicos (MercadoLibre 51, Yapo 39)."
+  },
+  {
+   "marca": "Ford",
+   "modelo": "Ranger",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 11850000,
+     "km_tipico": "159.000–208.000",
+     "n": 6,
+     "rango_p25_p75": [
+      10480000,
+      12150000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/oportunidad-ford-ranger-xlt-3-2-4x2-2016-facturable-solo-traslados/33156549",
+      "https://autos.mercadolibre.cl/ford/ranger/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 12690000,
+     "km_tipico": "111.000–246.000",
+     "n": 6,
+     "rango_p25_p75": [
+      10000000,
+      14920000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/ford-ranger-doble-cabina-2-5-xlt-bencinera-muy-buen-estado/33233715",
+      "https://autos.mercadolibre.cl/ford/ranger/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 14000000,
+     "km_tipico": "91.000–155.000",
+     "n": 13,
+     "rango_p25_p75": [
+      12000000,
+      17540000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4624195324-ford-ranger-22l-dsl-xl-4x2-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2019/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 19840000,
+     "km_tipico": "99.000–146.000",
+     "n": 22,
+     "rango_p25_p75": [
+      16990000,
+      21600000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4454844544-ford-ranger-32-diesel-xlt-4x4-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 26590000,
+     "km_tipico": "47.000–91.000",
+     "n": 55,
+     "rango_p25_p75": [
+      24490000,
+      31490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4625279688-ford-ranger-xlt-2024-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 32590000,
+     "km_tipico": "25.000–44.000",
+     "n": 39,
+     "rango_p25_p75": [
+      29790000,
+      37200000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400589609-ford-ranger-20-xlt-diesel-4x4-dob-cab-mt-4p-2025-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2025/"
+     ]
+    }
+   ],
+   "nota": "Todas las versiones juntas (4x2/4x4, excluye Raptor); muchos avisos no indican tracción. Usar si no se sabe la tracción. Base: 261 avisos usados únicos (MercadoLibre 215, Yapo 46)."
+  },
+  {
+   "marca": "Ford",
+   "modelo": "Ranger 4x2",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 10480000,
+     "km_tipico": "158.000–190.000",
+     "n": 3,
+     "rango_p25_p75": [
+      10480000,
+      11800000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4522142834-ford-ranger-32-diesel-xlt-4x2-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2016/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 16500000,
+     "km_tipico": "73.000–105.000",
+     "n": 3,
+     "rango_p25_p75": [
+      14000000,
+      18890000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2207055581-ford-ranger-32-dsl-xlt-4x2-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 19880000,
+     "km_tipico": "65.000–96.000",
+     "n": 3,
+     "rango_p25_p75": [
+      17980000,
+      20990000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/ford-ranger-xlt-3-2-mt-dsl-4x2-ano-2022-unico-dueno/32255083",
+      "https://autos.mercadolibre.cl/ford/ranger/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 24290000,
+     "km_tipico": "37.000–71.000",
+     "n": 11,
+     "rango_p25_p75": [
+      22700000,
+      26250000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400640503-ford-ranger-20-xls-diesel-4x2-dob-cab-mt-4p-2024-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2024/"
+     ]
+    }
+   ],
+   "nota": "Solo avisos cuyo título dice 4x2 explícitamente. Puntos con n<5 (2016, 2019, 2022): referencia débil. Base: 38 avisos usados únicos (MercadoLibre 33, Yapo 5)."
+  },
+  {
+   "marca": "Ford",
+   "modelo": "Ranger 4x4",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 11900000,
+     "km_tipico": "170.000–260.000",
+     "n": 3,
+     "rango_p25_p75": [
+      11900000,
+      12900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4427640192-ford-ranger-32-diesel-xlt-4x4-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 13900000,
+     "km_tipico": "120.000–240.000",
+     "n": 3,
+     "rango_p25_p75": [
+      10500000,
+      17980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2324133585-ford-ranger-32l-dsl-limited-4x4-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2017/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 19190000,
+     "km_tipico": "68.000–136.000",
+     "n": 6,
+     "rango_p25_p75": [
+      18140000,
+      21180000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4510770936-ford-ranger-dcab-4x4-32-aut-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 20490000,
+     "km_tipico": "94.000–133.000",
+     "n": 14,
+     "rango_p25_p75": [
+      17600000,
+      22140000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/ford-ranger-limited-4x4-at-3-2l-2021/33229538",
+      "https://autos.mercadolibre.cl/ford/ranger/2021/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 27990000,
+     "km_tipico": "58.000–98.000",
+     "n": 27,
+     "rango_p25_p75": [
+      25690000,
+      33490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2378847717-ford-ranger-20-dsl-auto-xlt-4wd-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 34190000,
+     "km_tipico": "25.000–54.000",
+     "n": 25,
+     "rango_p25_p75": [
+      30440000,
+      37740000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4655026698-ford-ranger-20-xlt-diesel-4x4-dob-cab-mt-4p-2025-_JM",
+      "https://autos.mercadolibre.cl/ford/ranger/2025/"
+     ]
+    }
+   ],
+   "nota": "Solo avisos con 4x4 en el título; excluye Raptor. Puntos con n<5 (2016, 2017): referencia débil. Base: 132 avisos usados únicos (MercadoLibre 110, Yapo 22)."
+  },
+  {
+   "marca": "Ford",
+   "modelo": "EcoSport",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 7000000,
+     "km_tipico": "84.000–147.000",
+     "n": 9,
+     "rango_p25_p75": [
+      6690000,
+      7270000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400062249-ford-ecosport-16l-titanium-_JM",
+      "https://autos.mercadolibre.cl/ford/ecosport/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 7640000,
+     "km_tipico": "78.000–113.000",
+     "n": 26,
+     "rango_p25_p75": [
+      7140000,
+      8600000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2288283773-ford-ecosport-15-ls-_JM",
+      "https://autos.mercadolibre.cl/ford/ecosport/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 8380000,
+     "km_tipico": "65.000–101.000",
+     "n": 22,
+     "rango_p25_p75": [
+      7490000,
+      8680000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2384611623-ford-15-se-mt-ecosport-_JM",
+      "https://autos.mercadolibre.cl/ford/ecosport/2019/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 9000000,
+     "km_tipico": "48.000–95.000",
+     "n": 21,
+     "rango_p25_p75": [
+      8240000,
+      9670000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2366627865-ford-ecosport-15-s-mt-2020-_JM",
+      "https://autos.mercadolibre.cl/ford/ecosport/2020/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 9890000,
+     "km_tipico": "45.000–82.000",
+     "n": 17,
+     "rango_p25_p75": [
+      9340000,
+      10990000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/ford-ecosport-2022-1-5-trend-4x2-at-5p-unico-dueno/33083837",
+      "https://autos.mercadolibre.cl/ford/ecosport/2022/"
+     ]
+    }
+   ],
+   "nota": "Base: 149 avisos usados únicos (MercadoLibre 135, Yapo 14)."
+  },
+  {
+   "marca": "Ford",
+   "modelo": "Territory",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 11090000,
+     "km_tipico": "38.000–64.000",
+     "n": 59,
+     "rango_p25_p75": [
+      10500000,
+      12000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400643151-ford-territory-2022-_JM",
+      "https://autos.mercadolibre.cl/ford/territory/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 15000000,
+     "km_tipico": "22.000–40.000",
+     "n": 43,
+     "rango_p25_p75": [
+      14280000,
+      16000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4430389658-ford-territory-15-gtdi-trend-_JM",
+      "https://autos.mercadolibre.cl/ford/territory/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 15990000,
+     "km_tipico": "13.000–33.000",
+     "n": 34,
+     "rango_p25_p75": [
+      15460000,
+      16990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4655026664-ford-territory-15-trend-4x2-at-5p-2025-_JM",
+      "https://autos.mercadolibre.cl/ford/territory/2025/"
+     ]
+    }
+   ],
+   "nota": "Modelo desde 2020. Base: 211 avisos usados únicos (MercadoLibre 187, Yapo 24)."
+  },
+  {
+   "marca": "Ford",
+   "modelo": "Mustang",
+   "segmento": "deportivo",
+   "puntos": [
+    {
+     "ano": 2019,
+     "precio": 32990000,
+     "km_tipico": "41.000–102.000",
+     "n": 5,
+     "rango_p25_p75": [
+      30440000,
+      33490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2391560011-ford-mustang-gt-50-_JM",
+      "https://autos.mercadolibre.cl/ford/mustang/2019/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 39500000,
+     "km_tipico": "19.000–40.000",
+     "n": 5,
+     "rango_p25_p75": [
+      36740000,
+      44240000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4342895132-ford-mustang-50-v8-gt-premium-at-_JM",
+      "https://autos.mercadolibre.cl/ford/mustang/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 42980000,
+     "km_tipico": "9.000–46.000",
+     "n": 5,
+     "rango_p25_p75": [
+      41500000,
+      48240000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4646335896-ford-mustang-gt-premium-coupe-2024-4711-_JM",
+      "https://autos.mercadolibre.cl/ford/mustang/2024/"
+     ]
+    }
+   ],
+   "nota": "Mezcla EcoBoost 2.3 y GT V8 (este último bastante más caro). Excluye Mach-E. Base: 37 avisos usados únicos (MercadoLibre 27, Yapo 10)."
+  },
+  {
+   "marca": "Mazda",
+   "modelo": "3",
+   "segmento": "sedan",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 8800000,
+     "km_tipico": "80.000–172.000",
+     "n": 9,
+     "rango_p25_p75": [
+      8400000,
+      12400000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4414845004-mazda-mazda3-sport-25-gt-6eat-bose-_JM",
+      "https://autos.mercadolibre.cl/mazda/3/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 11480000,
+     "km_tipico": "76.000–141.000",
+     "n": 23,
+     "rango_p25_p75": [
+      10590000,
+      12950000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4526124646-mazda-3-mt-20-_JM",
+      "https://autos.mercadolibre.cl/mazda/3/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 11840000,
+     "km_tipico": "70.000–104.000",
+     "n": 25,
+     "rango_p25_p75": [
+      11000000,
+      13340000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397103835-mazda-mazda3-20l-v-mt-2019-_JM",
+      "https://autos.mercadolibre.cl/mazda/3/2019/"
+     ]
+    },
+    {
+     "ano": 2020,
+     "precio": 15040000,
+     "km_tipico": "56.000–115.000",
+     "n": 20,
+     "rango_p25_p75": [
+      12890000,
+      15720000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4555520468-mazda-3-20-skyactiv-g-auto-v-_JM",
+      "https://autos.mercadolibre.cl/mazda/3/2020/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 18240000,
+     "km_tipico": "22.000–60.000",
+     "n": 14,
+     "rango_p25_p75": [
+      17500000,
+      19590000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4313536060-mazda-3-sport-2023-_JM",
+      "https://autos.mercadolibre.cl/mazda/3/2023/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 20990000,
+     "km_tipico": "11.000–27.000",
+     "n": 9,
+     "rango_p25_p75": [
+      18980000,
+      22940000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4443911980-mazda-mazda3-20-sport-entry-mt-2025-_JM",
+      "https://autos.mercadolibre.cl/mazda/3/2025/"
+     ]
+    }
+   ],
+   "nota": "Sedán y hatch (Sport) juntos. Base: 200 avisos usados únicos (MercadoLibre 175, Yapo 25)."
+  },
+  {
+   "marca": "Mazda",
+   "modelo": "CX-5",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 11690000,
+     "km_tipico": "91.000–172.000",
+     "n": 18,
+     "rango_p25_p75": [
+      10780000,
+      13040000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2150348139-mazda-cx-5-r-20-i-stop-2016-_JM",
+      "https://autos.mercadolibre.cl/mazda/cx-5/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 14880000,
+     "km_tipico": "93.000–151.000",
+     "n": 26,
+     "rango_p25_p75": [
+      13860000,
+      16390000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2364516853-mazda-cx5-20-2wd-aut-2018-_JM",
+      "https://autos.mercadolibre.cl/mazda/cx-5/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 14900000,
+     "km_tipico": "86.000–143.000",
+     "n": 17,
+     "rango_p25_p75": [
+      14200000,
+      16710000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4325511228-mazda-cx-5-20-r-awd-6mt-i-stop-_JM",
+      "https://autos.mercadolibre.cl/mazda/cx-5/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 19050000,
+     "km_tipico": "46.000–83.000",
+     "n": 24,
+     "rango_p25_p75": [
+      17740000,
+      22200000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-3883594986-mazda-cx-5-2022-25-gt-awd-car-audio-bose-6at-5p-_JM",
+      "https://autos.mercadolibre.cl/mazda/cx-5/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 20480000,
+     "km_tipico": "36.000–76.000",
+     "n": 39,
+     "rango_p25_p75": [
+      18990000,
+      22900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2092297969-mazda-cx5-core-20-2wd-6at-2023-2629-_JM",
+      "https://autos.mercadolibre.cl/mazda/cx-5/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 20980000,
+     "km_tipico": "26.000–47.000",
+     "n": 19,
+     "rango_p25_p75": [
+      19890000,
+      23500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400075081-mazda-cx5-automatica-_JM",
+      "https://autos.mercadolibre.cl/mazda/cx-5/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 251 avisos usados únicos (MercadoLibre 224, Yapo 27)."
+  },
+  {
+   "marca": "Mazda",
+   "modelo": "BT-50",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 13950000,
+     "km_tipico": "128.000–225.000",
+     "n": 5,
+     "rango_p25_p75": [
+      12450000,
+      14480000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4548757366-mazda-bt-50-sdx-32-2016-_JM",
+      "https://autos.mercadolibre.cl/mazda/bt-50/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 14500000,
+     "km_tipico": "145.000–202.000",
+     "n": 7,
+     "rango_p25_p75": [
+      12980000,
+      14990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2217013869-mazda-bt50-dc-22l-4x4-sdx-6mt-_JM",
+      "https://autos.mercadolibre.cl/mazda/bt-50/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 14500000,
+     "km_tipico": "124.000–180.000",
+     "n": 13,
+     "rango_p25_p75": [
+      12900000,
+      16780000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4576349586-mazda-bt-50-32l-dsl-dc-sdx-4x4-6at-_JM",
+      "https://autos.mercadolibre.cl/mazda/bt-50/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 22990000,
+     "km_tipico": "68.000–112.000",
+     "n": 18,
+     "rango_p25_p75": [
+      20570000,
+      23690000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4654530296-mazda-bt-50-30-diesel-4x4-dobcab-6at-4p-2022-_JM",
+      "https://autos.mercadolibre.cl/mazda/bt-50/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 24150000,
+     "km_tipico": "60.000–136.000",
+     "n": 31,
+     "rango_p25_p75": [
+      20990000,
+      25990000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/mazda-bt-50-4x4-automatica-2023/33191124",
+      "https://autos.mercadolibre.cl/mazda/bt-50/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 26090000,
+     "km_tipico": "54.000–85.000",
+     "n": 18,
+     "rango_p25_p75": [
+      25000000,
+      27590000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4469202138-mazda-bt-50-bt-50-4wd-30-2024-_JM",
+      "https://autos.mercadolibre.cl/mazda/bt-50/2024/"
+     ]
+    }
+   ],
+   "nota": "Mezcla 4x2/4x4; mayoría 4x4 diésel. Base: 143 avisos usados únicos (MercadoLibre 121, Yapo 22)."
+  },
+  {
+   "marca": "Subaru",
+   "modelo": "XV / Crosstrek",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 10390000,
+     "km_tipico": "92.000–226.000",
+     "n": 11,
+     "rango_p25_p75": [
+      8990000,
+      11390000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2403601129-subaru-xv-20i-cvt-4wd-_JM",
+      "https://autos.mercadolibre.cl/subaru/xv/2016/"
+     ]
+    },
+    {
+     "ano": 2017,
+     "precio": 12250000,
+     "km_tipico": "92.000–122.000",
+     "n": 10,
+     "rango_p25_p75": [
+      10500000,
+      13380000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2373917485-subaru-xv-20-mt-4x4-2017-_JM",
+      "https://autos.mercadolibre.cl/subaru/xv/2017/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 14990000,
+     "km_tipico": "73.000–108.000",
+     "n": 13,
+     "rango_p25_p75": [
+      14240000,
+      15490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2387824295-subaru-xv-2019-_JM",
+      "https://autos.mercadolibre.cl/subaru/xv/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 18690000,
+     "km_tipico": "39.000–89.000",
+     "n": 13,
+     "rango_p25_p75": [
+      17240000,
+      19230000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2400115151-subaru-xv-2022-_JM",
+      "https://autos.mercadolibre.cl/subaru/xv/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 19890000,
+     "km_tipico": "33.000–66.000",
+     "n": 20,
+     "rango_p25_p75": [
+      19090000,
+      21720000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/subaru-crosstrek-2024/33198007",
+      "https://autos.mercadolibre.cl/subaru/xv/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 21740000,
+     "km_tipico": "8.000–76.000",
+     "n": 6,
+     "rango_p25_p75": [
+      17860000,
+      26830000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/subaru-crosstrek-2-0i-awd-cvt-dynamic-es-2025-4424/33045996",
+      "https://autos.mercadolibre.cl/subaru/xv/2025/"
+     ]
+    }
+   ],
+   "nota": "XV y Crosstrek (nombre desde 2024) juntos. Base: 153 avisos usados únicos (MercadoLibre 113, Yapo 40)."
+  },
+  {
+   "marca": "Subaru",
+   "modelo": "Forester",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 11490000,
+     "km_tipico": "116.000–174.000",
+     "n": 9,
+     "rango_p25_p75": [
+      9240000,
+      12240000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4585239692-subaru-forester-20-_JM",
+      "https://autos.mercadolibre.cl/subaru/forester/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 12960000,
+     "km_tipico": "98.000–163.000",
+     "n": 12,
+     "rango_p25_p75": [
+      11830000,
+      15250000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2332282791-subaru-forester-20i-awd-cvt-x-2018-_JM",
+      "https://autos.mercadolibre.cl/subaru/forester/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 16490000,
+     "km_tipico": "90.000–123.000",
+     "n": 24,
+     "rango_p25_p75": [
+      14700000,
+      16990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4641760298-subaru-forester-2019-_JM",
+      "https://autos.mercadolibre.cl/subaru/forester/2019/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 17640000,
+     "km_tipico": "62.000–99.000",
+     "n": 19,
+     "rango_p25_p75": [
+      16980000,
+      20500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2364545511-subaru-forester-cvt-4x4-25-2021-_JM",
+      "https://autos.mercadolibre.cl/subaru/forester/2021/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 22490000,
+     "km_tipico": "47.000–70.000",
+     "n": 39,
+     "rango_p25_p75": [
+      20900000,
+      24120000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4581927942-subaru-forester-forester-4x4-20-at-2023-_JM",
+      "https://autos.mercadolibre.cl/subaru/forester/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 22000000,
+     "km_tipico": "40.000–67.000",
+     "n": 33,
+     "rango_p25_p75": [
+      21490000,
+      24140000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2384635095-subaru-forester-20-at-4x4-2024-_JM",
+      "https://autos.mercadolibre.cl/subaru/forester/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 218 avisos usados únicos (MercadoLibre 200, Yapo 18)."
+  },
+  {
+   "marca": "Renault",
+   "modelo": "Duster",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 6490000,
+     "km_tipico": "98.000–164.000",
+     "n": 5,
+     "rango_p25_p75": [
+      5650000,
+      7040000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/renault-duster-4x4-dinamique-2-0-2016/33190146",
+      "https://autos.mercadolibre.cl/renault/duster/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 6600000,
+     "km_tipico": "92.000–126.000",
+     "n": 13,
+     "rango_p25_p75": [
+      6050000,
+      7100000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2369379293-renault-duster-16-zen-_JM",
+      "https://autos.mercadolibre.cl/renault/duster/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 7350000,
+     "km_tipico": "82.000–122.000",
+     "n": 6,
+     "rango_p25_p75": [
+      6820000,
+      7720000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2223323905-renault-duster-20-zen-mt-4x4-2019-_JM",
+      "https://autos.mercadolibre.cl/renault/duster/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 9990000,
+     "km_tipico": "55.000–80.000",
+     "n": 14,
+     "rango_p25_p75": [
+      9870000,
+      10410000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4273993444-renault-duster-16-life-mt-2022-_JM",
+      "https://autos.mercadolibre.cl/renault/duster/2022/"
+     ]
+    }
+   ],
+   "nota": "Base: 73 avisos usados únicos (MercadoLibre 51, Yapo 22)."
+  },
+  {
+   "marca": "Renault",
+   "modelo": "Kwid",
+   "segmento": "citycar",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 6400000,
+     "km_tipico": "31.000–86.000",
+     "n": 12,
+     "rango_p25_p75": [
+      6000000,
+      6900000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2354684653-renault-kwid-10-outsider-_JM",
+      "https://autos.mercadolibre.cl/renault/kwid/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 7290000,
+     "km_tipico": "38.000–50.000",
+     "n": 11,
+     "rango_p25_p75": [
+      6780000,
+      7490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4610664708-renault-kwid-2024-_JM",
+      "https://autos.mercadolibre.cl/renault/kwid/2024/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 10480000,
+     "km_tipico": "14.000–23.000",
+     "n": 7,
+     "rango_p25_p75": [
+      7490000,
+      11500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2235117773-renault-kwid-2025-_JM",
+      "https://autos.mercadolibre.cl/renault/kwid/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 42 avisos usados únicos (MercadoLibre 37, Yapo 5)."
+  },
+  {
+   "marca": "Volkswagen",
+   "modelo": "Gol",
+   "segmento": "hatchback",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 5940000,
+     "km_tipico": "86.000–130.000",
+     "n": 6,
+     "rango_p25_p75": [
+      5700000,
+      6520000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/volkswagen-goll-2016-motor-1-6cc-mt/32483527",
+      "https://autos.mercadolibre.cl/volkswagen/gol/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 6900000,
+     "km_tipico": "62.000–163.000",
+     "n": 8,
+     "rango_p25_p75": [
+      5780000,
+      7180000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/se-vende-volkswagen-gol-2018/33136299",
+      "https://autos.mercadolibre.cl/volkswagen/gol/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 6900000,
+     "km_tipico": "60.000–118.000",
+     "n": 12,
+     "rango_p25_p75": [
+      6550000,
+      7200000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4581927070-volkswagen-gol-2019-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/gol/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 7790000,
+     "km_tipico": "40.000–76.000",
+     "n": 31,
+     "rango_p25_p75": [
+      7450000,
+      8390000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4531687468-volkswagen-gol-2022-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/gol/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 8490000,
+     "km_tipico": "31.000–52.000",
+     "n": 5,
+     "rango_p25_p75": [
+      8130000,
+      9170000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2389721011-volkswagen-gol-hb-16-2023-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/gol/2023/"
+     ]
+    }
+   ],
+   "nota": "Base: 114 avisos usados únicos (MercadoLibre 102, Yapo 12)."
+  },
+  {
+   "marca": "Volkswagen",
+   "modelo": "T-Cross",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2020,
+     "precio": 10940000,
+     "km_tipico": "59.000–124.000",
+     "n": 8,
+     "rango_p25_p75": [
+      9960000,
+      11950000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2382566331-volkswagen-t-cross-16-auto-highline-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/t-cross/2020/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 11190000,
+     "km_tipico": "61.000–122.000",
+     "n": 16,
+     "rango_p25_p75": [
+      10840000,
+      12870000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4536732492-volkswagen-t-cross-16-msi-comfortline-4x2-at6-5p-2021-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/t-cross/2021/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 12990000,
+     "km_tipico": "60.000–91.000",
+     "n": 15,
+     "rango_p25_p75": [
+      10790000,
+      13490000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4531651134-volkswagen-t-cross-2022-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/t-cross/2022/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 14900000,
+     "km_tipico": "24.000–44.000",
+     "n": 15,
+     "rango_p25_p75": [
+      14190000,
+      16820000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4614200906-volkswagen-t-cross-tsi-comfortline-10-aut-2025-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/t-cross/2025/"
+     ]
+    }
+   ],
+   "nota": "Base: 82 avisos usados únicos (MercadoLibre 80, Yapo 2)."
+  },
+  {
+   "marca": "Volkswagen",
+   "modelo": "Amarok",
+   "segmento": "pickup",
+   "puntos": [
+    {
+     "ano": 2016,
+     "precio": 12240000,
+     "km_tipico": "169.000–259.000",
+     "n": 12,
+     "rango_p25_p75": [
+      10590000,
+      13940000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2369125989-volkswagen-amarok-power-plus-20-aut-4x2-2016-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/amarok/2016/"
+     ]
+    },
+    {
+     "ano": 2018,
+     "precio": 14990000,
+     "km_tipico": "136.000–210.000",
+     "n": 19,
+     "rango_p25_p75": [
+      11900000,
+      17000000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4574278416-volkswagen-amarok-highline-4x4-at-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/amarok/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 17240000,
+     "km_tipico": "115.000–150.000",
+     "n": 14,
+     "rango_p25_p75": [
+      15660000,
+      18200000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4526094088-volkswagen-amarok-20-comfortline-4x4-at-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/amarok/2019/"
+     ]
+    },
+    {
+     "ano": 2021,
+     "precio": 20990000,
+     "km_tipico": "91.000–163.000",
+     "n": 25,
+     "rango_p25_p75": [
+      16500000,
+      24500000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/volkswagen-amarok-highline-4x4-2-0-aut-pie-desde-7-500-000/33100896",
+      "https://autos.mercadolibre.cl/volkswagen/amarok/2021/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 20700000,
+     "km_tipico": "90.000–138.000",
+     "n": 60,
+     "rango_p25_p75": [
+      17900000,
+      23700000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2308541535-volkswagen-amarok-comfortline-4x4at-_JM",
+      "https://autos.mercadolibre.cl/volkswagen/amarok/2023/"
+     ]
+    }
+   ],
+   "nota": "Mezcla 4x2/4x4 y 2.0/V6; la generación 2023+ (base Ranger) es más cara. Base: 209 avisos usados únicos (MercadoLibre 179, Yapo 30)."
+  },
+  {
+   "marca": "Jeep",
+   "modelo": "Renegade",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 8880000,
+     "km_tipico": "75.000–128.000",
+     "n": 18,
+     "rango_p25_p75": [
+      8350000,
+      9340000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4646960622-jeep-renegade-18-sport-at-2018-_JM",
+      "https://autos.mercadolibre.cl/jeep/renegade/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 9240000,
+     "km_tipico": "68.000–134.000",
+     "n": 20,
+     "rango_p25_p75": [
+      8980000,
+      10280000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2371433977-jeep-renegade-sport-_JM",
+      "https://autos.mercadolibre.cl/jeep/renegade/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 11380000,
+     "km_tipico": "48.000–70.000",
+     "n": 29,
+     "rango_p25_p75": [
+      10500000,
+      11990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4656202320-jeep-renegade-18-sport-lx-mt-2022-_JM",
+      "https://autos.mercadolibre.cl/jeep/renegade/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 13200000,
+     "km_tipico": "30.000–50.000",
+     "n": 13,
+     "rango_p25_p75": [
+      12740000,
+      13940000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4555520304-jeep-renegade-renegade-sport-lx-18-aut-2023-_JM",
+      "https://autos.mercadolibre.cl/jeep/renegade/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 18290000,
+     "km_tipico": "22.000–64.000",
+     "n": 3,
+     "rango_p25_p75": [
+      14790000,
+      18980000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4606080928-jeep-renegade-13t-longitude-x-4x2-at-5p-2024-_JM",
+      "https://autos.mercadolibre.cl/jeep/renegade/2024/"
+     ]
+    }
+   ],
+   "nota": "Puntos con n<5 (2024): referencia débil. Base: 110 avisos usados únicos (MercadoLibre 104, Yapo 6)."
+  },
+  {
+   "marca": "Opel",
+   "modelo": "Mokka",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 12100000,
+     "km_tipico": "33.000–72.000",
+     "n": 12,
+     "rango_p25_p75": [
+      11060000,
+      12990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4456988764-opel-mokka-15-td-mt-elegance-_JM",
+      "https://autos.mercadolibre.cl/opel/mokka/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 12990000,
+     "km_tipico": "36.000–68.000",
+     "n": 31,
+     "rango_p25_p75": [
+      11990000,
+      13390000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2366627837-opel-mokka-2023-_JM",
+      "https://autos.mercadolibre.cl/opel/mokka/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 12990000,
+     "km_tipico": "18.000–48.000",
+     "n": 15,
+     "rango_p25_p75": [
+      12780000,
+      13990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2327740949-opel-mokka-12-elegance-mt6-_JM",
+      "https://autos.mercadolibre.cl/opel/mokka/2024/"
+     ]
+    }
+   ],
+   "nota": "Mokka 2021+ (Stellantis) principalmente. Base: 75 avisos usados únicos (MercadoLibre 66, Yapo 9)."
+  },
+  {
+   "marca": "Honda",
+   "modelo": "CR-V",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2015,
+     "precio": 9520000,
+     "km_tipico": "118.000–208.000",
+     "n": 6,
+     "rango_p25_p75": [
+      8500000,
+      10110000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/honda-crv-2015-4wd/33124258",
+      "https://autos.mercadolibre.cl/honda/cr-v/2015/"
+     ]
+    },
+    {
+     "ano": 2016,
+     "precio": 10900000,
+     "km_tipico": "134.000–181.000",
+     "n": 3,
+     "rango_p25_p75": [
+      9900000,
+      10990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4644054592-honda-cr-v-_JM",
+      "https://autos.mercadolibre.cl/honda/cr-v/2016/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 16490000,
+     "km_tipico": "69.000–91.000",
+     "n": 7,
+     "rango_p25_p75": [
+      14690000,
+      18480000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2390816819-honda-cr-v-lx-24-at-2019-_JM",
+      "https://autos.mercadolibre.cl/honda/cr-v/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 21090000,
+     "km_tipico": "48.000–89.000",
+     "n": 10,
+     "rango_p25_p75": [
+      19310000,
+      22540000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397592851-honda-cr-v-2022-_JM",
+      "https://autos.mercadolibre.cl/honda/cr-v/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 28490000,
+     "km_tipico": "7.000–87.000",
+     "n": 5,
+     "rango_p25_p75": [
+      27300000,
+      29500000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2404963555-honda-cr-v-ext-2024-_JM",
+      "https://autos.mercadolibre.cl/honda/cr-v/2024/"
+     ]
+    }
+   ],
+   "nota": "Puntos con n<5 (2016): referencia débil. Base: 69 avisos usados únicos (MercadoLibre 58, Yapo 11)."
+  },
+  {
+   "marca": "JAC",
+   "modelo": "JS2",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 7240000,
+     "km_tipico": "44.000–81.000",
+     "n": 10,
+     "rango_p25_p75": [
+      6880000,
+      7500000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/jac-js2-unica-duena-solo-44-000-kilometros/33206394",
+      "https://autos.mercadolibre.cl/jac/js2/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 7590000,
+     "km_tipico": "15.000–43.000",
+     "n": 10,
+     "rango_p25_p75": [
+      7410000,
+      8060000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4650540014-jac-js2-js2-hb-15-2023-_JM",
+      "https://autos.mercadolibre.cl/jac/js2/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 8040000,
+     "km_tipico": "18.000–53.000",
+     "n": 6,
+     "rango_p25_p75": [
+      7850000,
+      8890000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2342046103-jac-js2-js2-hatchback-15-2024-_JM",
+      "https://autos.mercadolibre.cl/jac/js2/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 46 avisos usados únicos (MercadoLibre 34, Yapo 12)."
+  },
+  {
+   "marca": "JAC",
+   "modelo": "JS3",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2022,
+     "precio": 7980000,
+     "km_tipico": "37.000–73.000",
+     "n": 7,
+     "rango_p25_p75": [
+      7590000,
+      8680000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4447121344-jac-js3-16-luxury-cvt-_JM",
+      "https://autos.mercadolibre.cl/jac/js3/2022/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 9140000,
+     "km_tipico": "10.000–55.000",
+     "n": 6,
+     "rango_p25_p75": [
+      7860000,
+      10450000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4297846226-jac-js3-2024-_JM",
+      "https://autos.mercadolibre.cl/jac/js3/2024/"
+     ]
+    }
+   ],
+   "nota": "Base: 17 avisos usados únicos (MercadoLibre 12, Yapo 5)."
+  },
+  {
+   "marca": "Changan",
+   "modelo": "CS15",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 6000000,
+     "km_tipico": "45.000–156.000",
+     "n": 3,
+     "rango_p25_p75": [
+      3700000,
+      6280000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2378879533-changan-cs15-15-mt-2018-_JM",
+      "https://autos.mercadolibre.cl/changan/cs15/2018/"
+     ]
+    },
+    {
+     "ano": 2019,
+     "precio": 6940000,
+     "km_tipico": "38.000–76.000",
+     "n": 4,
+     "rango_p25_p75": [
+      6220000,
+      8420000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4501923002-changan-cs15-luxury-plus-nav-_JM",
+      "https://autos.mercadolibre.cl/changan/cs15/2019/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 7740000,
+     "km_tipico": "46.000–70.000",
+     "n": 16,
+     "rango_p25_p75": [
+      7260000,
+      8210000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4591480726-changan-cs15-cs15-hatch-back-15-2022-_JM",
+      "https://autos.mercadolibre.cl/changan/cs15/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 7500000,
+     "km_tipico": "35.000–83.000",
+     "n": 13,
+     "rango_p25_p75": [
+      7000000,
+      8140000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4563763478-changan-cs-15-15-comfort-_JM",
+      "https://autos.mercadolibre.cl/changan/cs15/2023/"
+     ]
+    },
+    {
+     "ano": 2025,
+     "precio": 8440000,
+     "km_tipico": "10.000–40.000",
+     "n": 10,
+     "rango_p25_p75": [
+      8160000,
+      8990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2397568935-changan-cs15-cs15-hb-4x2-15-2025-_JM",
+      "https://autos.mercadolibre.cl/changan/cs15/2025/"
+     ]
+    }
+   ],
+   "nota": "Puntos con n<5 (2018, 2019): referencia débil. Base: 68 avisos usados únicos (MercadoLibre 48, Yapo 20)."
+  },
+  {
+   "marca": "Changan",
+   "modelo": "CS35",
+   "segmento": "suv",
+   "puntos": [
+    {
+     "ano": 2018,
+     "precio": 7050000,
+     "km_tipico": "76.000–120.000",
+     "n": 3,
+     "rango_p25_p75": [
+      6390000,
+      7499990
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4589716836-changan-cs35-16-luxury-_JM",
+      "https://autos.mercadolibre.cl/changan/cs35/2018/"
+     ]
+    },
+    {
+     "ano": 2022,
+     "precio": 8580000,
+     "km_tipico": "57.000–83.000",
+     "n": 7,
+     "rango_p25_p75": [
+      8410000,
+      9590000
+     ],
+     "fuentes": [
+      "https://www.yapo.cl/autos-usados/changan-cs35-luxury-ano-2022/32895297",
+      "https://autos.mercadolibre.cl/changan/cs35/2022/"
+     ]
+    },
+    {
+     "ano": 2023,
+     "precio": 11280000,
+     "km_tipico": "22.000–54.000",
+     "n": 18,
+     "rango_p25_p75": [
+      10880000,
+      12200000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-4259915662-changan-cs35-14-plus-luxury-at-cs35-_JM",
+      "https://autos.mercadolibre.cl/changan/cs35/2023/"
+     ]
+    },
+    {
+     "ano": 2024,
+     "precio": 11290000,
+     "km_tipico": "21.000–38.000",
+     "n": 7,
+     "rango_p25_p75": [
+      10490000,
+      11990000
+     ],
+     "fuentes": [
+      "https://auto.mercadolibre.cl/MLC-2290643877-changan-cs35-2024-_JM",
+      "https://autos.mercadolibre.cl/changan/cs35/2024/"
+     ]
+    }
+   ],
+   "nota": "CS35 y CS35 Plus juntos. Puntos con n<5 (2018): referencia débil. Base: 53 avisos usados únicos (MercadoLibre 46, Yapo 7)."
+  }
+ ]
+}

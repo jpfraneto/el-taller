@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS junta_members;
+DROP TABLE IF EXISTS juntas;
+DROP TABLE IF EXISTS socios;
+DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS login_requests;
+DROP TABLE IF EXISTS users;

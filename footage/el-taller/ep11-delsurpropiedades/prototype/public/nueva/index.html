@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Del Sur Propiedades · Compra, arrienda o vende en Puerto Varas</title>
+  <meta name="description" content="Corredora de propiedades en Puerto Varas desde el año 2000. Compra, arrienda o vende con Alejandra, Francisca y su equipo.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#004469">
+  <meta property="og:title" content="Del Sur Propiedades · Puerto Varas">
+  <meta property="og:description" content="Compra, arrienda o vende en Puerto Varas. Desde el año 2000, más de 2.000 clientes.">
+  <meta property="og:image" content="/img/equipo.webp">
+  <link rel="icon" href="/img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/nueva.css">
+</head>
+<body data-base="/nueva/">
+  <header class="barra">
+    <a class="marca" href="/nueva/" data-ruta="" aria-label="Inicio">
+      <img src="/img/logo.jpg" alt="Del Sur Propiedades">
+      <span><b>Del Sur</b> Propiedades</span>
+    </a>
+    <form class="codigo" id="codigo" autocomplete="off">
+      <label for="cod">Código</label>
+      <input id="cod" inputmode="numeric" pattern="[0-9]*" placeholder="3257" maxlength="5">
+      <button aria-label="Abrir">→</button>
+    </form>
+  </header>
+
+  <main>
+    <div class="v-inicio" data-ver="inicio">
+    <section class="portada">
+      <div class="equipo"><img src="/img/equipo.webp" alt="El equipo de Del Sur Propiedades: siete mujeres sentadas en la escalera de una casa de tejuelas"></div>
+      <div class="portada-txt">
+        <p class="kicker">★ Corredora de propiedades · desde el año 2000</p>
+        <h1>Compra, arrienda o vende <em>en Puerto Varas</em></h1>
+        <p class="sub">Somos Alejandra y Francisca, y un equipo de siete mujeres. Más de 2.000 clientes han confiado en
+          nosotras en Puerto Varas, Frutillar, Llanquihue y alrededores.</p>
+      </div>
+      <nav class="puertas" aria-label="¿Qué quieres hacer?">
+        <a class="puerta" href="/nueva/comprar" data-ruta="comprar">
+          <img id="fotoCompra" alt=""><span><b>Comprar</b><small id="nCompra">propiedades en venta</small></span>
+        </a>
+        <a class="puerta" href="/nueva/arrendar" data-ruta="arrendar">
+          <img id="fotoArriendo" alt=""><span><b>Arrendar</b><small id="nArriendo">en arriendo</small></span>
+        </a>
+        <a class="puerta vende" href="/nueva/vender" data-ruta="vender">
+          <img src="/img/caminando.webp" alt=""><span><b>Vender</b><small>o arrendar la tuya</small></span>
+        </a>
+      </nav>
+    </section>
+
+    <section class="nosotras">
+      <img src="/img/logo.jpg" alt="">
+      <div>
+        <h2>Somos Alejandra y Francisca</h2>
+        <p>"Puerto Varinas de corazón, llegamos desde Santiago hace más de 30 y 10 años respectivamente, en busca de una vida
+          más tranquila para nuestras familias… ¡Y aquí nos quedamos!" Hoy somos un equipo de siete mujeres. Nos gusta
+          considerarnos como un puente entre personas.</p>
+        <p class="dir">San José 308, oficina 6 (piso 2) · Lunes a viernes 09.00–18.00 · Sábado 10.15–13.30</p>
+        <a class="wa" id="waGeneral" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      </div>
+    </section>
+
+    <section class="red">
+      <p class="kicker">★ Club Del Sur</p>
+      <h2>Llegas al sur con red</h2>
+      <p class="sub">Las marcas de la zona con las que trabajamos, y sus descuentos para clientes Del Sur.</p>
+      <div class="club" id="club"></div>
+    </section>
+  </div>
+
+    <section class="buscar v-buscar" id="buscar" data-ver="buscar" hidden>
+      <div class="buscar-cabeza">
+        <a class="volver" href="/nueva/" data-ruta="">← Inicio</a>
+        <h1 class="titulo" id="buscarTitulo">Comprar</h1>
+        <div class="operacion" role="tablist">
+          <button class="on" data-op="venta" data-ruta="comprar" role="tab">Comprar</button>
+          <button data-op="arriendo" data-ruta="arrendar" role="tab">Arrendar</button>
+        </div>
+      </div>
+
+      <button class="mes" id="mes" data-historia="0" hidden>
+        <img id="mesFoto" alt="">
+        <span class="mes-txt"><small>★ Elegidas por nosotras</small><b id="mesTitulo">Oportunidades de noviembre</b><span id="mesSub"></span></span>
+        <span class="mes-ver">Ver ▶</span>
+      </button>
+
+      <div id="respuesta" class="respuesta" hidden></div>
+
+      <div class="filtros">
+        <h2>¿Qué buscas?</h2>
+        <div class="tipos" id="tipos"></div>
+        <h2 id="cuanto">¿Cuánto?</h2>
+        <div class="precios" id="precios"></div>
+        <h2>¿Dónde?</h2>
+        <div class="comunas" id="comunas"></div>
+      </div>
+
+      <div class="resultados">
+        <div class="cabeza">
+          <p id="cuantas"></p>
+          <div class="vista" role="tablist">
+            <button class="on" data-vista="fotos">Fotos</button>
+            <button data-vista="mapa">Mapa</button>
+          </div>
+        </div>
+        <div id="mapa" class="mapa" hidden></div>
+        <div id="grilla" class="grilla"></div>
+        <button id="mas" class="mas" hidden>Ver más</button>
+      </div>
+    </section>
+
+    <section class="vender v-vender" id="vender" data-ver="vender" hidden>
+      <a class="volver" href="/nueva/" data-ruta="">← Inicio</a>
+      <p class="kicker">★ ¿Vendes o arriendas?</p>
+      <h1>Aquí nos hacemos cargo</h1>
+      <p class="sub">Pastelero a tus pasteles: deja en nuestras manos lo que mejor sabemos hacer.</p>
+
+      <ol class="pasos">
+        <li><b>Nos cuentas</b> qué propiedad tienes y qué quieres hacer.</li>
+        <li><b>Te llamamos</b> y te enviamos la orden de venta o arriendo.</li>
+        <li><b>Vamos a verla</b>: te asesoramos con el precio y sacamos las fotos.</li>
+        <li><b>La publicamos</b> y te acompañamos en todo el proceso.</li>
+      </ol>
+
+      <dl class="claro">
+        <div><dt>Comisión por venta</dt><dd>2% + IVA del valor de venta</dd></div>
+        <div><dt>Comisión por arriendo</dt><dd>50% + IVA de un mes, una sola vez</dd></div>
+        <div><dt>Exclusividad</dt><dd>No la pedimos (si vendes en exclusiva, hay beneficios)</dd></div>
+        <div><dt>¿Cuánto demora?</dt><dd>Una venta, entre 3 y 6 meses aprox.</dd></div>
+      </dl>
+
+      <button class="ejemplo-ficha" data-id="3257">
+        <img src="/fotos/3257.webp" alt="" loading="lazy">
+        <span><small>Así se ve una propiedad publicada con nosotras</small><b>Casa Torre, Sector La Laja</b><i>Ver la ficha →</i></span>
+      </button>
+
+      <form class="tuya" id="tuya" autocomplete="off">
+        <h3>Cuéntanos de tu propiedad</h3>
+        <fieldset><legend>Quiero</legend>
+          <div class="chips" data-campo="quiero"><button type="button" class="on">vender</button><button type="button">arrendar</button></div>
+        </fieldset>
+        <fieldset><legend>Es</legend>
+          <div class="chips" data-campo="es"><button type="button" class="on">una casa</button><button type="button">un departamento</button><button type="button">una parcela</button><button type="button">un terreno</button><button type="button">un campo</button><button type="button">un local o comercial</button></div>
+        </fieldset>
+        <label>¿Dónde está?<input id="tuyaDonde" placeholder="Puerto Varas, sector Los Colonos…"></label>
+        <label>Algo más<textarea id="tuyaMas" rows="3" placeholder="m², dormitorios, lo que más te gusta de ella…"></textarea></label>
+        <label>Tu nombre<input id="tuyaNombre" placeholder="Para saber a quién llamamos"></label>
+        <button class="wa enviar">Enviar por WhatsApp</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>Prototipo de <a href="https://jpfraneto.com" target="_blank">El Taller con JP</a> para Del Sur Propiedades.
+      Las propiedades, fotos y textos son los que publican en <a href="https://www.delsurpropiedades.cl" target="_blank">delsurpropiedades.cl</a>
+      (leídos el <span id="leido"></span>) y en su Instagram. Ubicación referencial. Valor en pesos referencial.</p>
+  </footer>
+
+  <button class="flota" id="flota" aria-label="Cuéntanos qué buscas">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z" fill="currentColor"/></svg>
+    <span>¿Qué buscas?</span>
+  </button>
+
+  <div class="hoja" id="hoja" hidden>
+    <div class="hoja-in" role="dialog" aria-modal="true" aria-labelledby="hojaTitulo">
+      <button class="hoja-cerrar" id="hojaCerrar" aria-label="Cerrar">✕</button>
+      <form id="busca">
+        <label for="texto" id="hojaTitulo">Cuéntanos qué buscas</label>
+        <p class="hoja-sub">Escríbelo con tus palabras y te mostramos las que calzan.</p>
+        <div class="campo">
+          <textarea id="texto" rows="3" placeholder="Una casa con vista al lago, 3 dormitorios, hasta UF 9.000…"></textarea>
+          <button id="buscaBtn">Buscar</button>
+        </div>
+        <div class="ejemplos" id="ejemplos"></div>
+      </form>
+      <p class="hoja-o">¿Prefieres hablar con nosotras?</p>
+      <a class="wa" id="waHoja" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="ficha" id="ficha" hidden aria-modal="true" role="dialog">
+    <div class="ficha-in" id="fichaIn"></div>
+  </div>
+
+  <div class="historia" id="historia" hidden aria-modal="true" role="dialog">
+    <div class="barras" id="hBarras"></div>
+    <button class="h-cerrar" id="hCerrar" aria-label="Cerrar">✕</button>
+    <div class="h-escena" id="hEscena"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="/js/nueva.js" type="module"></script>
+</body>
+</html>

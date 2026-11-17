@@ -1,0 +1,346 @@
+{
+ "ep": "10",
+ "name": "Campo & Mar",
+ "take": "IMG_4767",
+ "accent": "#D9405E",
+ "accent_ink": "#FFFFFF",
+ "zooms": [
+  1.55,
+  1.85,
+  1.65,
+  1.95
+ ],
+ "fixes": [
+  [
+   "campo y mar",
+   "Campo & Mar"
+  ],
+  [
+   "campo mar",
+   "Campo & Mar"
+  ],
+  [
+   "chiloe",
+   "Chiloé"
+  ],
+  [
+   "la silvestre",
+   "La Silvestre"
+  ],
+  [
+   "piñadas",
+   "pineadas"
+  ],
+  [
+   "instagram",
+   "Instagram"
+  ],
+  [
+   "tenéis",
+   "tenís"
+  ],
+  [
+   "una lucas",
+   "una luca"
+  ]
+ ],
+ "reels": [
+  {
+   "id": "01-mira-mama",
+   "act": "1/3",
+   "nombre": "MIRA MAMÁ",
+   "para": "Quien tiene una marca y la cuenta desde sí mismo (su familia, su historia) en vez de desde lo que busca quien le compra",
+   "idea": "Tu marca es lo que dice de ti un desconocido frente al estante: escúchalo y háblale a él.",
+   "hook": [
+    "MIRA MAMÁ,",
+    "NO TIENEN",
+    "<m>AZÚCAR</m>"
+   ],
+   "pieces": [
+    {
+     "t": 976,
+     "say": "estaba en una tienda que venden cosas a granel",
+     "en": "i was in a bulk food store"
+    },
+    {
+     "t": 985,
+     "say": "de repente llegó una niña con su mamá y vieron los alfajores que estaban al lado del mostrador y la niña le dijo a su mamá",
+     "en": "a little girl walks in with her mom, sees the cookies by the register, and says"
+    },
+    {
+     "t": 995,
+     "say": "mira mamá no tienen azúcar",
+     "en": "look mom, no sugar"
+    },
+    {
+     "t": 1000,
+     "say": "no fue como oye mira son los de la familia de Chiloé",
+     "en": "not: look, it's that family from chiloé"
+    },
+    {
+     "t": 1003,
+     "say": "no fue como oye son los de campo y mar",
+     "en": "not the brand name"
+    },
+    {
+     "t": 1005,
+     "say": "no mira mamá no tienen azúcar",
+     "en": "just: look mom, no sugar"
+    },
+    {
+     "t": 1010,
+     "say": "entonces el punto de entrada para la gente que compra estos productos en cualquier lugar generalmente es el hecho de que no tienen azúcar",
+     "en": "that's the way in. people pick it up because it has no sugar"
+    },
+    {
+     "t": 1019,
+     "say": "no el hecho de que los hizo una familia en Chiloé",
+     "en": "not because a family in chiloé made it"
+    },
+    {
+     "t": 560,
+     "say": "nos metemos al perfil de ellos y vemos tres publicaciones que están piñadas acá",
+     "en": "now open their instagram. three pinned posts"
+    },
+    {
+     "t": 565,
+     "say": "en la primera veo el mar en la segunda veo la familia y en la tercera vuelvo a ver el mar",
+     "en": "the sea. the family. the sea again"
+    },
+    {
+     "t": 900,
+     "say": "yo me pregunto qué pasaría si ese foco se transformara en otras familias",
+     "en": "what if the focus moved to other families"
+    },
+    {
+     "t": 913,
+     "say": "familias que consumen los productos de campo y mar",
+     "en": "the ones who eat what they make"
+    },
+    {
+     "t": 1128,
+     "say": "es importante hablarle a ese grupo de gente decirles te veo creo productos para ti",
+     "en": "talk to them. tell them: i see you. i make this for you"
+    }
+   ],
+   "cta": [
+    "¿Qué dice de ti",
+    "*quien te compra?*",
+    "~what do your customers say about you?"
+   ]
+  },
+  {
+   "id": "02-una-luca",
+   "act": "2/3",
+   "nombre": "UNA LUCA",
+   "para": "Quien vende un producto bueno y caro, y le cuesta que alguien lo pruebe por primera vez",
+   "idea": "Si tu producto es caro, crea una puerta barata: algo de una luca que te ponga en el radar, para que después te compren la torta.",
+   "hook": [
+    "LA PUERTA",
+    "DE UNA",
+    "<m>LUCA</m>"
+   ],
+   "pieces": [
+    {
+     "t": 1384,
+     "say": "fui a la silvestre que es nuestra heladería favorita del mundo",
+     "en": "i went to la silvestre, our favorite ice cream place in the world"
+    },
+    {
+     "t": 1401,
+     "say": "fui a buscar dos potes de helado para llevarme a la casa",
+     "en": "grabbed two tubs to take home"
+    },
+    {
+     "t": 1412,
+     "say": "iba a pagar y veo los pastelitos de campo y mar",
+     "en": "at the register i see campo & mar"
+    },
+    {
+     "t": 1416,
+     "say": "eran unas galletitas unos chocolates",
+     "en": "chocolates"
+    },
+    {
+     "t": 1419,
+     "say": "y le dije a la niña si es que no voy a llevar los helados voy a llevar los chocolates",
+     "en": "so i tell her: forget the ice cream, i'll take these"
+    },
+    {
+     "t": 1423,
+     "say": "los dos helados costaban nueve lucas",
+     "en": "two tubs of ice cream: 9,000 pesos"
+    },
+    {
+     "t": 1426,
+     "say": "los chocolates costaban nueve lucas también y eran ocho piecitas de chocolate en una bolsa",
+     "en": "the chocolates: also 9,000. eight little pieces in a bag"
+    },
+    {
+     "t": 1449,
+     "say": "el helado lo hubiéramos podido comer todo los chocolates hubieran sido como dos para cada uno",
+     "en": "ice cream for the whole family. or two chocolates each"
+    },
+    {
+     "t": 1466,
+     "say": "dije ya son los chiquillos cómo no los voy a apoyar",
+     "en": "but they're my friends. of course i support them"
+    },
+    {
+     "t": 1472,
+     "say": "pero me costó tomar esa decisión porque no son productos baratos",
+     "en": "still, it was a hard call. it's not cheap"
+    },
+    {
+     "t": 1476,
+     "say": "entonces siento que el hecho de que la gente los descubra tiene una barrera de entrada que igual está alta",
+     "en": "for a stranger, the door is set high"
+    },
+    {
+     "t": 1529,
+     "say": "desarrollar algún producto que sea como una bombita",
+     "en": "so make something small. a little bomb"
+    },
+    {
+     "t": 1553,
+     "say": "el producto de entrada",
+     "en": "an entry product"
+    },
+    {
+     "t": 1564,
+     "say": "que costara ojalá una luca",
+     "en": "one dollar"
+    },
+    {
+     "t": 1569,
+     "say": "que tuvieran un pote largo y que la persona los toma",
+     "en": "a jar on the counter. you grab them"
+    },
+    {
+     "t": 1574,
+     "say": "me quiero llevar cinco te pago cinco lucas",
+     "en": "i'll take five. here's five"
+    },
+    {
+     "t": 1676,
+     "say": "lo importante de un producto así sería que la persona entrara en el radar de campo y mar",
+     "en": "the point is getting on their radar"
+    },
+    {
+     "t": 1685,
+     "say": "si eventualmente tienen un cumpleaños y quieren comprar una torta digan ya ellos les puedo comprar la torta",
+     "en": "so when there's a birthday and they need a cake, they think of you"
+    },
+    {
+     "t": 1695,
+     "say": "y ahí tenéis como un ticket más grande",
+     "en": "that's the bigger sale"
+    }
+   ],
+   "cta": [
+    "¿Cuál es la puerta",
+    "*de tu negocio?*",
+    "~what's the one-dollar door to your business?"
+   ]
+  },
+  {
+   "id": "03-la-torta",
+   "act": "3/3",
+   "nombre": "LA TORTA",
+   "para": "Quien vende algo que es una postura (sin azúcar, local, hecho a mano) y lo esconde como si fuera un detalle",
+   "idea": "Una torta sin azúcar es una decisión política: si tu producto es una postura, conviértete en el que la representa.",
+   "hook": [
+    "UNA TORTA",
+    "SIN AZÚCAR",
+    "ES <m>POLÍTICA</m>"
+   ],
+   "pieces": [
+    {
+     "t": 1205,
+     "say": "fuimos al colegio de mi hija a una fiesta de la primavera",
+     "en": "we went to my daughter's school. a spring party"
+    },
+    {
+     "t": 1212,
+     "say": "estaba conversando con unos papás y de repente llegó la niña",
+     "en": "i'm talking with some parents, a little girl runs up"
+    },
+    {
+     "t": 1216,
+     "say": "y le preguntó a mamá me puedo comer un pedazo de torta",
+     "en": "and asks her mom: can i have some cake?"
+    },
+    {
+     "t": 1220,
+     "say": "percibí que en la mamá había una resistencia",
+     "en": "and i could feel the mom resist"
+    },
+    {
+     "t": 1233,
+     "say": "la mamá dudaba de si ella podía comer eso porque tenía azúcar",
+     "en": "not sure she should. because of the sugar"
+    },
+    {
+     "t": 1245,
+     "say": "entonces la niña le dijo que están todos comiendo y la mamá le dijo si están todos comiendo come tú también",
+     "en": "the girl says: everyone's eating it. and the mom: fine. go ahead"
+    },
+    {
+     "t": 2249,
+     "say": "el hecho de que el niño quiera comer la torta que tiene más azúcar",
+     "en": "kids want the sugary cake"
+    },
+    {
+     "t": 2255,
+     "say": "es porque esa es la torta que está",
+     "en": "because that's the cake that's there"
+    },
+    {
+     "t": 2258,
+     "say": "es porque no le hemos enseñado nada mejor",
+     "en": "we haven't shown them anything better"
+    },
+    {
+     "t": 2399,
+     "say": "traer la decisión de traer una torta sin azúcar es una decisión política",
+     "en": "bringing a sugar-free cake is a political act"
+    },
+    {
+     "t": 2407,
+     "say": "la política es la decisión que tú tomas a la hora de entregarle tu plata a alguna idea algún producto alguna empresa",
+     "en": "politics is where your money goes. which idea, which product, which company"
+    },
+    {
+     "t": 2471,
+     "say": "entonces transfórmate en el loco que vende sin azúcar",
+     "en": "so become the ones who do no sugar"
+    },
+    {
+     "t": 2476,
+     "say": "y que la gente que quiere comer sin azúcar reconoce como ah es una torta de campo y mar",
+     "en": "so people see it and go: oh, it's a campo & mar cake"
+    },
+    {
+     "t": 2481,
+     "say": "buenísimo que mi hija se coma tres pedazos",
+     "en": "great. let my kid have three slices"
+    },
+    {
+     "t": 2494,
+     "say": "qué pasa si la torta fuera la hueá más nutritiva del mundo",
+     "en": "what if cake was the most nourishing thing in the world?"
+    },
+    {
+     "t": 2506,
+     "say": "desde Chiloé a todo Chile las tortas que no tienen azúcar",
+     "en": "from chiloé to all of chile: the cakes with no sugar"
+    }
+   ],
+   "cta": [
+    "¿Qué postura",
+    "*vende tu negocio?*",
+    "~what does your business stand for?"
+   ]
+  }
+ ]
+}

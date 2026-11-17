@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Tu espacio · El Taller</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0c0b0a" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0b0a'/%3E%3Ctext x='31' y='43' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff'%3Ejp%3C/text%3E%3Ccircle cx='50' cy='42' r='3.5' fill='%23FFD23F'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800;900&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/app.css" />
+<style>
+  .wrap { display: grid; gap: 18px; }
+  .hello { display: grid; gap: 12px; padding: 8px 0 10px; }
+  .hello h1 { font-size: clamp(2.3rem, 10vw, 4rem); }
+  .card { display: grid; gap: 16px; }
+  .card > header { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .n { font: 900 13px var(--head); color: var(--y); letter-spacing: .08em; }
+
+  /* el prototipo, en un teléfono */
+  .tel { justify-self: center; width: min(100%, 360px); height: min(580px, 64dvh); border-radius: 30px; overflow: hidden;
+    border: 8px solid #000; box-shadow: 0 0 0 1px var(--line), 0 30px 70px -30px rgba(0,0,0,.9); background: #000; }
+  .tel iframe { width: 100%; height: 100%; border: 0; display: block; background: #fff; }
+  .proto header .ghost { padding: 9px 14px; font-size: 13.5px; }
+
+  /* perfil */
+  .perfil { grid-template-columns: 1fr; }
+  .instalar { border-color: rgba(255,210,63,.35); }
+  .linea-cmd { display: flex; align-items: center; gap: 10px; padding: 10px 10px 10px 14px; border-radius: 14px; background: #000; border: 1px solid var(--line); }
+  .linea-cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font: 500 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--y); scrollbar-width: none; }
+  .instalar .listo { color: var(--wa); font-weight: 600; }
+  .perfil .row, .datos .row { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 560px) { .perfil .row, .datos .row { grid-template-columns: 1fr; } }
+  .datos { display: grid; gap: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  .datos[hidden] { display: none; }
+  .datos label[hidden] { display: none; }
+
+  /* contexto */
+  .drop { position: relative; display: grid; place-items: center; gap: 6px; text-align: center; padding: 30px 18px; border-radius: 18px;
+    border: 2px dashed rgba(255,210,63,.45); background: rgba(255,210,63,.04); cursor: pointer; transition: .15s ease; }
+  .drop:hover, .drop.over { border-color: var(--y); background: rgba(255,210,63,.1); }
+  .drop b { font: 900 1.15rem/1.1 var(--head); text-transform: uppercase; }
+  .drop span { color: var(--mute); font-size: 14px; }
+  .drop svg { width: 30px; height: 30px; color: var(--y); }
+  .drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  .escribir { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: end; }
+  .escribir .ghost { height: 52px; }
+  .lista { list-style: none; display: grid; gap: 8px; }
+  .it { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; padding: 8px; border-radius: 14px; background: var(--panel2); }
+  .it .ic { width: 44px; height: 44px; border-radius: 10px; background: #2a2724; display: grid; place-items: center; overflow: hidden;
+    font: 800 10.5px var(--head); letter-spacing: .04em; color: var(--y); text-transform: uppercase; }
+  .it .ic img { width: 100%; height: 100%; object-fit: cover; }
+  .it .tx { min-width: 0; }
+  .it .tx b { display: block; font-weight: 600; font-size: 14.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .it .tx p { font-size: 14.5px; color: var(--ink); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; white-space: pre-wrap; }
+  .it .tx small { color: var(--dim); font-size: 12.5px; }
+  .it .x { width: 36px; height: 36px; border-radius: 50%; color: var(--dim); font-size: 20px; line-height: 1; }
+  .it .x:hover { color: var(--ink); background: rgba(255,255,255,.06); }
+  .it .bar { height: 4px; border-radius: 4px; background: rgba(255,255,255,.1); margin-top: 6px; overflow: hidden; }
+  .it .bar i { display: block; height: 100%; width: 0; background: var(--y); transition: width .2s; }
+  .vacio { color: var(--dim); font-size: 14px; text-align: center; padding: 4px 0; }
+
+  /* el mes */
+  .dias { display: grid; grid-template-columns: repeat(30, 1fr); gap: 3px; }
+  .dias i { height: 14px; border-radius: 3px; background: rgba(255,255,255,.1); }
+  .dias i.on { background: var(--y); }
+  .dias i.uno { background: var(--y); box-shadow: 0 0 0 2px rgba(255,210,63,.35); }
+  .precio { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .precio b { font: 900 2rem/1 var(--head); }
+  .precio span { color: var(--mute); font-size: 14px; }
+  .linea { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 15px; }
+  .linea dt { color: var(--dim); font-weight: 600; font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; padding-top: 2px; }
+  .grande { font: 900 clamp(1.7rem, 6.5vw, 2.6rem)/1 var(--head); text-transform: uppercase; }
+
+  /* elegir el día 1 */
+  dialog { margin: auto auto 0; width: 100%; max-width: 560px; max-height: 92dvh; border: 1px solid var(--line); border-bottom: 0;
+    border-radius: 26px 26px 0 0; background: var(--panel); color: var(--ink); padding: 0; overflow: auto; }
+  @media (min-width: 700px) { dialog { margin: auto; border-radius: 26px; border-bottom: 1px solid var(--line); } }
+  dialog::backdrop { background: rgba(0,0,0,.7); backdrop-filter: blur(3px); }
+  .hoja { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 22px clamp(16px, 4vw, 26px) calc(22px + env(safe-area-inset-bottom)); }
+  .hoja header { display: flex; justify-content: space-between; align-items: center; }
+  .cerrar { width: 40px; height: 40px; border-radius: 50%; font-size: 24px; color: var(--mute); }
+  .mes h3 { font: 700 13px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--mute); margin-bottom: 8px; }
+  .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+  .cal .wd { text-align: center; font-size: 11.5px; color: var(--dim); font-weight: 600; padding-bottom: 2px; }
+  .cal button { aspect-ratio: 1; max-height: 50px; border-radius: 12px; font-weight: 600; font-size: 15px; background: var(--panel2); }
+  .cal button:disabled { background: none; color: rgba(255,255,255,.2); cursor: default; text-decoration: line-through; }
+  .cal button.en30 { background: rgba(255,210,63,.16); }
+  .cal button.sel { background: var(--y); color: #111; font-weight: 800; }
+  .cal button.fin { box-shadow: inset 0 0 0 2px var(--y); }
+  .meses { display: grid; gap: 18px; }
+  .horas { display: flex; gap: 8px; flex-wrap: wrap; }
+  .horas button { padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); font-weight: 600; font-size: 14.5px; }
+  .horas button.sel { background: var(--ink); color: #111; border-color: var(--ink); }
+  .resumen { padding: 14px 16px; border-radius: 16px; background: var(--panel2); display: grid; gap: 4px; font-size: 15px; }
+  .resumen b { font-weight: 700; }
+  /* al volver de pagar: el botón para avisarle a JP (JP, 2026-11-13: "oye jp acabo de pagar el mes. vamos con todo") */
+  .vamos { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 50;
+    width: min(440px, calc(100% - 32px)); display: grid; gap: 10px; padding: 16px; border-radius: 22px; background: #161513;
+    border: 1px solid rgba(255,255,255,.13); box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+  .vamos b { font-size: 16px; } .vamos p { margin: 0; font-size: 14px; color: rgba(255,255,255,.66); }
+  .vamos a { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 14px; border-radius: 14px; background: var(--wa, #25d366);
+    color: #0c0b0a; font-weight: 800; text-decoration: none; }
+  .vamos button { border: 0; background: none; color: rgba(255,255,255,.5); font: inherit; font-size: 13px; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><img src="/galpon.jpg" alt="" /></div>
+<header class="top">
+  <a class="brand" href="/" aria-label="El Taller">jp<b>.</b></a>
+  <button class="link" id="salir" type="button">Salir</button>
+</header>
+
+<main class="wrap" id="app" hidden>
+  <section class="hello">
+    <p class="kicker" id="kicker">Tu espacio</p>
+    <h1 id="hola">Hola</h1>
+    <p class="sub" id="bajada">Aquí dejas lo que quieras que sepa antes de empezar, y eliges cuándo partimos.</p>
+  </section>
+
+  <!-- lo que ya te mostré -->
+  <section class="card proto" id="proto" hidden>
+    <header><h2 id="proto-t">Tu prototipo</h2><a class="ghost" id="proto-a" href="#" target="_blank" rel="noopener">Abrir ↗</a></header>
+    <p class="sub">Lo que te mostré en El Taller, vivo. De aquí partimos: lo vamos a hacer de verdad, con lo que me cuentes.</p>
+    <div class="tel"><iframe id="proto-f" title="Tu prototipo" loading="lazy" referrerpolicy="no-referrer"></iframe></div>
+  </section>
+
+  <!-- quién eres (solo la primera vez) -->
+  <form class="card perfil" id="perfil" hidden>
+    <header><h2>Antes que nada</h2></header>
+    <div class="row">
+      <label class="f">Tu nombre<input type="text" name="nombre" autocomplete="given-name" required /></label>
+      <label class="f">Tu negocio<input type="text" name="negocio" autocomplete="organization" required /></label>
+    </div>
+    <label class="f">Su Instagram (si tiene)<input type="text" name="instagram" placeholder="@" autocapitalize="off" /></label>
+    <button class="btn" type="submit">Listo</button>
+  </form>
+
+  <!-- instalar: su línea, con su código adentro -->
+  <section class="card instalar" id="instalar" hidden>
+    <header><h2>Instala El Taller en tu Mac</h2><span class="n" id="inst-n"></span></header>
+    <p class="sub" id="inst-sub">Pega esta línea en la Terminal de tu Mac (⌘ + espacio, escribe Terminal, Enter). En segundos se abre El Taller en tu navegador, con tu negocio y todo lo que dejaste aquí.</p>
+    <div class="linea-cmd" id="inst-cmd"><code id="inst-code"></code><button class="ghost" type="button" id="inst-copiar">Copiar</button></div>
+    <p class="fine" id="inst-pie"></p>
+    <button class="ghost" type="button" id="inst-otro" hidden>Instalar en otro computador</button>
+  </section>
+
+  <!-- tu contexto -->
+  <section class="card" id="contexto">
+    <header><h2>Tu contexto</h2><span class="n" id="cuantos"></span></header>
+    <p class="sub">Todo lo que quieras que sepa de tu negocio: fotos, PDFs, audios, capturas, planillas, links. Lo leo antes del día 1.</p>
+    <label class="drop" id="drop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M6 10l6-6 6 6"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>
+      <b>Arrastra aquí</b>
+      <span>o toca para elegir</span>
+      <input type="file" id="archivos" multiple />
+    </label>
+    <div class="escribir">
+      <textarea id="nota" rows="1" placeholder="Escribe o pega un link"></textarea>
+      <button class="ghost" id="agregar" type="button">Agregar</button>
+    </div>
+    <ul class="lista" id="lista"></ul>
+  </section>
+
+  <!-- los 30 días -->
+  <section class="card" id="mes"></section>
+
+  <p class="fine" style="text-align:center">¿Algo no funciona? <a id="ayuda" href="#">Escríbeme</a>.</p>
+</main>
+
+<dialog id="hoja" aria-labelledby="hoja-t">
+  <div class="hoja">
+    <header><h2 id="hoja-t">¿Cuándo partimos?</h2><button class="cerrar" type="button" id="cerrar" aria-label="Cerrar">×</button></header>
+    <form class="datos" id="datos" hidden autocomplete="on">
+      <div class="row">
+        <label class="f">Tu nombre<input type="text" name="nombre" autocomplete="given-name" /></label>
+        <label class="f">Tu negocio<input type="text" name="negocio" autocomplete="organization" /></label>
+      </div>
+      <div class="row">
+        <label class="f">Tu WhatsApp<input type="text" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="+56 9 …" /></label>
+        <label class="f">Su Instagram (si tiene)<input type="text" name="instagram" placeholder="@" autocapitalize="off" /></label>
+      </div>
+      <p class="fine">Para escribirte por WhatsApp antes del día 1.</p>
+    </form>
+    <div class="meses" id="meses"></div>
+    <div>
+      <p class="fine" style="margin-bottom:8px">El día 1 es el kickoff: dos horas conmigo, enfocados en tu negocio.</p>
+      <div class="horas" id="horas"></div>
+    </div>
+    <div class="resumen" id="resumen"></div>
+    <button class="btn wide" id="pagar" type="button" disabled>Elige tu día 1</button>
+    <p class="fine" style="text-align:center">Al pagar, tu fecha queda fija y se abre tu espacio.</p>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var JP = "56985491126";
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  function api(path, opt) {
+    return fetch(path, Object.assign({ cache: "no-store", credentials: "same-origin" }, opt || {})).then(function (r) {
+      if (r.status === 401) { var e = new Error("entrar"); e.anon = true; throw e; }
+      return r.json().then(function (d) { if (!r.ok) throw new Error(d.error || "Algo falló"); return d; });
+    });
+  }
+  function post(path, body) { return api(path, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body || {}) }); }
+  var tt;
+  function toast(t, err) { var x = $("toast"); x.textContent = t; x.className = "toast on" + (err ? " err" : ""); clearTimeout(tt); tt = setTimeout(function () { x.className = "toast"; }, 3600); }
+
+  // fechas: siempre texto AAAA-MM-DD, leídas a mediodía UTC para que nunca se corran de día
+  function F(s) { return new Date(s + "T12:00:00Z"); }
+  function sumar(s, n) { var d = F(s); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
+  function fmt(s, o) { return new Intl.DateTimeFormat("es-CL", Object.assign({ timeZone: "UTC" }, o)).format(F(s)); }
+  function largo(s) { return fmt(s, { weekday: "long", day: "numeric", month: "long" }); }
+  function corto(s) { return fmt(s, { weekday: "short", day: "numeric", month: "short" }).replace(/\./g, ""); }
+  function entre(a, b) { return Math.round((F(b) - F(a)) / 864e5); }
+  function hasta(h) { var p = h.split(":"); return String(+p[0] + 2).padStart(2, "0") + ":" + p[1]; }
+  function peso(n) { return n > 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB"; }
+  var clp = function (n) { return "$" + n.toLocaleString("es-CL"); };
+
+  var S = null, elegido = null, hora = null;
+  $("ayuda").href = "https://wa.me/" + JP + "?text=" + encodeURIComponent("Hola JP, tengo un problema con mi espacio de El Taller.");
+
+  // ───────── cargar ─────────
+  function cargar() {
+    return api("/api/yo").catch(function (e) {
+      if (!e.anon) throw e;
+      // sin cuenta: la pared (lo que es, el precio, el calendario y pagar)
+      return api("/api/agenda").then(function (A) {
+        return { anon: true, cuenta: {}, contexto: [], prototipo: null, reserva: null, pagado: false, agenda: A, pago: { listo: A.listo } };
+      });
+    }).then(function (d) { S = d; pintar(); $("app").hidden = false; });
+  }
+  function pintar() {
+    var c = S.cuenta, nombre = (c.nombre || "").split(" ")[0];
+    var h = $("hola"); h.textContent = "";
+    $("salir").hidden = !!S.anon;
+    if (S.anon) {
+      h.append("30 días"); h.append(document.createElement("br")); h.append(el("mark", null, "conmigo"));
+      $("kicker").textContent = "El Taller";
+      $("bajada").textContent = "Construimos juntos el sistema de tu negocio: tu WhatsApp, tu contenido para Instagram, tu página web y tu app si conviene.";
+    } else {
+      h.append("Hola" + (nombre ? "," : ""));
+      if (nombre) { h.append(document.createElement("br")); h.append(el("mark", null, nombre)); }
+      $("kicker").textContent = c.negocio ? "Tu espacio · " + c.negocio : "Tu espacio";
+      $("bajada").textContent = S.pagado ? "Aquí dejas lo que quieras que sepa antes de empezar. Lo leo antes del día 1."
+        : "Elige cuándo partimos.";
+    }
+    $("perfil").hidden = true;
+    $("contexto").hidden = !S.pagado;
+    var pr = S.prototipo;
+    $("proto").hidden = !pr;
+    if (pr) {
+      $("proto-t").textContent = pr.titulo || "Tu prototipo";
+      $("proto-a").href = pr.url;
+      if ($("proto-f").getAttribute("src") !== pr.url) $("proto-f").setAttribute("src", pr.url);
+    }
+    if (S.pagado) pintarContexto();
+    pintarInstalar();
+    pintarMes();
+  }
+
+  // ───────── quién eres ─────────
+  $("perfil").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var f = e.target;
+    post("/api/yo", { nombre: f.nombre.value, negocio: f.negocio.value, instagram: f.instagram.value }).then(function (d) { S = d; pintar(); })
+      .catch(function (err) { toast(err.message, true); });
+  });
+
+  // ───────── contexto ─────────
+  function ext(i) { var m = (i.nombre || "").match(/\.([a-z0-9]{1,5})$/i); return m ? m[1] : (i.mime || "").split("/")[1] || "archivo"; }
+  function item(i, sub) {
+    var li = el("li", "it"); li.dataset.id = i.id || "";
+    var ic = el("div", "ic");
+    if (i.tipo === "archivo" && /^image\//.test(i.mime || "") && i.id) { var im = el("img"); im.loading = "lazy"; im.alt = ""; im.src = "/api/contexto/ver?id=" + i.id; ic.append(im); }
+    else ic.textContent = i.tipo === "nota" ? "Aa" : i.tipo === "link" ? "link" : ext(i);
+    var tx = el("div", "tx");
+    if (i.tipo === "archivo") {
+      var b = el("b"); if (i.id) { var a = el("a", null, i.nombre); a.href = "/api/contexto/ver?id=" + i.id; a.target = "_blank"; a.style.textDecoration = "none"; b.append(a); } else b.textContent = i.nombre;
+      tx.append(b, el("small", null, sub || peso(i.peso || 0)));
+    } else if (i.tipo === "link") {
+      var l = el("a", null, i.texto); l.href = i.texto; l.target = "_blank"; l.rel = "noopener"; var bb = el("b"); bb.append(l); tx.append(bb, el("small", null, "link"));
+    } else tx.append(el("p", null, i.texto));
+    var x = el("button", "x", "×"); x.type = "button"; x.setAttribute("aria-label", "Quitar");
+    x.addEventListener("click", function () {
+      if (!li.dataset.id) return;
+      li.style.opacity = .4;
+      api("/api/contexto?id=" + encodeURIComponent(li.dataset.id), { method: "DELETE" }).then(function () {
+        S.contexto = S.contexto.filter(function (k) { return k.id !== li.dataset.id; }); pintarContexto();
+      }).catch(function (e) { li.style.opacity = 1; toast(e.message, true); });
+    });
+    li.append(ic, tx, x);
+    return li;
+  }
+  function pintarContexto() {
+    var ul = $("lista"); ul.querySelectorAll(".it:not(.subiendo)").forEach(function (n) { n.remove(); });
+    var v = ul.querySelector(".vacio"); if (v) v.remove();
+    S.contexto.slice().reverse().forEach(function (i) { ul.append(item(i)); });
+    if (!S.contexto.length && !ul.querySelector(".subiendo")) ul.append(el("li", "vacio", "Todavía nada. Empieza por lo que tengas a mano."));
+    $("cuantos").textContent = S.contexto.length ? S.contexto.length + (S.contexto.length === 1 ? " cosa" : " cosas") : "";
+  }
+  var cola = [], subiendo = false;
+  function subir(files) {
+    [].forEach.call(files, function (f) {
+      var li = item({ tipo: "archivo", nombre: f.name, mime: f.type }, "subiendo…"); li.classList.add("subiendo");
+      var bar = el("div", "bar"), i = el("i"); bar.append(i); li.querySelector(".tx").append(bar);
+      var v = $("lista").querySelector(".vacio"); if (v) v.remove();
+      $("lista").prepend(li);
+      cola.push({ f: f, li: li, i: i });
+    });
+    siguiente();
+  }
+  function siguiente() {
+    if (subiendo || !cola.length) return;
+    subiendo = true;
+    var u = cola.shift();
+    var listo = function (d, err) {
+      u.li.remove();
+      if (err) toast(err + ": " + u.f.name, true);
+      else { S.contexto.push(d.item); pintarContexto(); }
+      subiendo = false; siguiente();
+    };
+    (u.f.size > GRANDE ? enPartes : deUna)(u, function (pct) { u.i.style.width = pct + "%"; }).then(function (d) { listo(d); }, function (e) { listo(null, e.message); });
+  }
+  var GRANDE = 90 * 1048576, PARTE = 50 * 1048576;
+  function xhr(metodo, url, cuerpo, headers, progreso) {
+    return new Promise(function (ok, mal) {
+      var x = new XMLHttpRequest(); x.open(metodo, url);
+      Object.keys(headers || {}).forEach(function (k) { x.setRequestHeader(k, headers[k]); });
+      if (progreso) x.upload.onprogress = function (e) { if (e.lengthComputable) progreso(e.loaded); };
+      x.onload = function () {
+        var d = {}; try { d = JSON.parse(x.responseText); } catch (e) {}
+        if (x.status === 401) { location.replace("/#entrar"); return; }
+        if (x.status >= 400) mal(new Error(d.error || "No se pudo subir")); else ok(d);
+      };
+      x.onerror = function () { mal(new Error("Se cortó la conexión")); };
+      x.send(cuerpo);
+    });
+  }
+  function deUna(u, pct) {
+    return xhr("POST", "/api/contexto/archivo", u.f, { "x-nombre": encodeURIComponent(u.f.name), "content-type": u.f.type || "application/octet-stream" },
+      function (n) { pct(100 * n / u.f.size); });
+  }
+  function enPartes(u, pct) {  // videos del teléfono: de a 50 MB, reintentando cada parte
+    var f = u.f, partes = [], total = Math.ceil(f.size / PARTE), sub;
+    return post("/api/contexto/subida/inicio", { nombre: f.name, mime: f.type, peso: f.size }).then(function (d) {
+      sub = d;
+      var n = 0;
+      function una(intento) {
+        n++;
+        if (n > total) return Promise.resolve();
+        var desde = (n - 1) * PARTE, trozo = f.slice(desde, Math.min(f.size, desde + PARTE));
+        var url = "/api/contexto/subida/parte?key=" + encodeURIComponent(sub.key) + "&uploadId=" + encodeURIComponent(sub.uploadId) + "&n=" + n;
+        return xhr("PUT", url, trozo, {}, function (k) { pct(100 * (desde + k) / f.size); })
+          .then(function (p) { partes.push(p); return una(0); },
+                function (e) { if (intento >= 3) throw e; n--; return new Promise(function (r) { setTimeout(r, 1500 * (intento + 1)); }).then(function () { return una(intento + 1); }); });
+      }
+      return una(0);
+    }).then(function () { return post("/api/contexto/subida/fin", { key: sub.key, uploadId: sub.uploadId, partes: partes }); });
+  }
+  $("archivos").addEventListener("change", function (e) { subir(e.target.files); e.target.value = ""; });
+  var drop = $("drop");
+  ["dragenter", "dragover"].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add("over"); }); });
+  ["dragleave", "drop"].forEach(function (t) { drop.addEventListener(t, function () { drop.classList.remove("over"); }); });
+  drop.addEventListener("drop", function (e) { e.preventDefault(); if (e.dataTransfer.files.length) subir(e.dataTransfer.files); });
+  // soltar en cualquier parte de la página también sirve
+  window.addEventListener("dragover", function (e) { e.preventDefault(); });
+  window.addEventListener("drop", function (e) { e.preventDefault(); if (e.dataTransfer && e.dataTransfer.files.length) subir(e.dataTransfer.files); });
+
+  var nota = $("nota");
+  nota.addEventListener("input", function () { nota.style.height = "auto"; nota.style.height = Math.min(nota.scrollHeight, 260) + "px"; });
+  function agregarNota() {
+    var t = nota.value.trim(); if (!t) { nota.focus(); return; }
+    $("agregar").disabled = true;
+    post("/api/contexto/nota", { texto: t }).then(function (d) { S.contexto.push(d.item); nota.value = ""; nota.style.height = ""; pintarContexto(); })
+      .catch(function (e) { toast(e.message, true); }).then(function () { $("agregar").disabled = false; });
+  }
+  $("agregar").addEventListener("click", agregarNota);
+  nota.addEventListener("keydown", function (e) { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) agregarNota(); });
+  document.addEventListener("paste", function (e) {  // pegar una captura en cualquier parte
+    if (e.target === nota && !(e.clipboardData && e.clipboardData.files.length)) return;
+    if (e.clipboardData && e.clipboardData.files.length) { e.preventDefault(); subir(e.clipboardData.files); }
+  });
+
+  // ───────── instalar: la línea con su código ─────────
+  function pintarInstalar() {
+    var box = $("instalar"), i = S.instalacion;
+    box.hidden = !S.pagado || !i;
+    if (box.hidden) return;
+    var linea = i.codigo ? "curl -fsSL https://jpfraneto.com/taller.sh | bash -s " + i.codigo : "";
+    $("inst-cmd").hidden = !linea; $("inst-sub").hidden = !linea; $("inst-otro").hidden = !i.usado;
+    $("inst-code").textContent = linea;
+    $("inst-n").textContent = i.usado ? "INSTALADO" : "TU CÓDIGO";
+    $("inst-pie").innerHTML = "";
+    if (i.usado) { var b = el("span", "listo", "Instalado el " + largo(new Date(i.usado).toISOString().slice(0, 10)) + "."); $("inst-pie").append(b, document.createTextNode(" Lo que dejes aquí llega solo a tu computador.")); }
+    else $("inst-pie").textContent = "Tu código " + i.codigo + " sirve una vez y vence el " + largo(new Date(i.vence).toISOString().slice(0, 10)) + ". Por ahora, solo Mac.";
+  }
+  $("inst-copiar").addEventListener("click", function () {
+    var t = $("inst-code").textContent, b = $("inst-copiar");
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { b.textContent = "Copiado"; },
+      function () { var r = document.createRange(); r.selectNodeContents($("inst-code")); getSelection().removeAllRanges(); getSelection().addRange(r); b.textContent = "Selecciónalo"; });
+    setTimeout(function () { b.textContent = "Copiar"; }, 2200);
+  });
+  $("inst-otro").addEventListener("click", function () {
+    post("/api/instalar/codigo", {}).then(function (d) { S = d; pintar(); toast("Listo: un código nuevo para el otro computador"); }).catch(function (e) { toast(e.message, true); });
+  });
+
+  // ───────── los 30 días ─────────
+  function barra(dia) {
+    var d = el("div", "dias");
+    for (var k = 1; k <= 30; k++) { var i = el("i"); if (dia && k <= dia) i.className = "on"; d.append(i); }
+    return d;
+  }
+  function pintarMes() {
+    var m = $("mes"); m.textContent = "";
+    var r = S.reserva, A = S.agenda;
+    if (r && r.estado === "pagada") {
+      var fin = sumar(r.inicio, 29), dia = entre(r.inicio, A.hoy) + 1;
+      var h = el("header"); h.append(el("h2", null, dia >= 1 ? "Tu mes" : "Tu fecha está fija"), el("span", "n", dia > 30 ? "TERMINADO" : dia >= 1 ? "DÍA " + dia + " DE 30" : "PAGADO"));
+      m.append(h);
+      if (dia < 1) m.append(el("p", "grande", "Partimos el " + largo(r.inicio)), el("p", "sub", dia === 0 ? "Mañana." : "Faltan " + (1 - dia) + " días."));
+      else if (dia <= 30) m.append(el("p", "grande", "Día " + dia + " de 30"));
+      else m.append(el("p", "grande", "Sigues tú"));
+      m.append(barra(Math.max(0, Math.min(30, dia))));
+      var dl = el("dl", "linea");
+      dl.append(el("dt", null, "Día 1"), el("dd", null, largo(r.inicio) + " · kickoff de " + r.hora + " a " + hasta(r.hora)));
+      dl.append(el("dt", null, "Día 30"), el("dd", null, largo(fin)));
+      m.append(dl);
+      if (dia < 1) {
+        var cal = el("button", "ghost", "Agregar el kickoff a mi calendario"); cal.type = "button";
+        cal.addEventListener("click", function () { ics(r); });
+        m.append(cal, el("p", "fine", "El kickoff es para conocernos: tu negocio, tu contexto, y yo preguntándote qué haces y por qué. Lo grabo; se publica solo si tú dices que sí."));
+      }
+      return;
+    }
+    var hh = el("header"); hh.append(el("h2", null, "Trabajar 1:1 con JP durante 30 días"));
+    m.append(hh, barra(0));
+    m.append(el("p", "sub", "Entro a tu repo el día 1 y salgo el día 30: tú te quedas con todo."));
+    var pr = el("div", "precio"); pr.append(el("b", null, clp(A.precio))); m.append(pr);
+    m.append(el("p", "fine", "Al pagar se abre tu espacio: me dejas fotos, videos, audios y notas de tu negocio, y los leo antes del día 1."));
+    if (r && r.estado === "pendiente") m.append(el("p", "fine", "Elegiste partir el " + largo(r.inicio) + ". Tu fecha queda fija cuando se apruebe el pago."));
+    var b = el("button", "btn wide", "Pagar"); b.type = "button";
+    if (!S.pago.listo) { b.disabled = true; b.textContent = "Pronto"; }
+    b.addEventListener("click", abrirHoja);
+    m.append(b);
+  }
+
+  // ───────── elegir el día 1 ─────────
+  function abrirHoja() {
+    var c = S.cuenta, f = $("datos");
+    f.hidden = !(S.anon || !c.nombre || !c.negocio || !c.telefono);
+    f.nombre.value = c.nombre || ""; f.negocio.value = c.negocio || "";
+    f.whatsapp.value = c.telefono || ""; f.whatsapp.closest("label").hidden = !!c.telefono;
+    f.instagram.value = c.instagram ? "@" + c.instagram : "";
+    var r = S.reserva;
+    var libres = S.agenda.dias.filter(function (d) { return d.libre; });
+    elegido = r && r.inicio && libres.some(function (d) { return d.fecha === r.inicio; }) ? r.inicio : null;
+    hora = (r && r.hora) || S.agenda.horas[0];
+    pintarHoja();
+    $("hoja").showModal();
+  }
+  function pintarHoja() {
+    var A = S.agenda, cont = $("meses"); cont.textContent = "";
+    var porMes = {};
+    A.dias.forEach(function (d) { var k = d.fecha.slice(0, 7); (porMes[k] = porMes[k] || []).push(d); });
+    var fin = elegido ? sumar(elegido, 29) : null;
+    Object.keys(porMes).forEach(function (k) {
+      var box = el("div", "mes"); box.append(el("h3", null, fmt(k + "-15", { month: "long", year: "numeric" })));
+      var g = el("div", "cal");
+      ["L", "M", "M", "J", "V", "S", "D"].forEach(function (w) { g.append(el("span", "wd", w)); });
+      var primero = porMes[k][0].fecha, dow = (F(primero).getUTCDay() + 6) % 7;
+      for (var i = 0; i < dow; i++) g.append(el("span"));
+      porMes[k].forEach(function (d) {
+        var b = el("button", null, String(+d.fecha.slice(8))); b.type = "button";
+        b.disabled = !d.libre;
+        b.setAttribute("aria-label", largo(d.fecha) + (d.libre ? "" : ", sin cupo"));
+        if (elegido) {
+          if (d.fecha === elegido) b.classList.add("sel");
+          else if (d.fecha > elegido && d.fecha < fin) b.classList.add("en30");
+          else if (d.fecha === fin) b.classList.add("fin");
+        }
+        b.addEventListener("click", function () { elegido = d.fecha; pintarHoja(); });
+        g.append(b);
+      });
+      box.append(g); cont.append(box);
+    });
+    // si el día 30 cae fuera de lo que se ve, igual queda claro en el resumen
+    var hs = $("horas"); hs.textContent = "";
+    A.horas.forEach(function (h) {
+      var b = el("button", h === hora ? "sel" : "", h + " a " + hasta(h)); b.type = "button";
+      b.addEventListener("click", function () { hora = h; pintarHoja(); });
+      hs.append(b);
+    });
+    var rs = $("resumen"); rs.textContent = "";
+    if (elegido) {
+      var a = el("div"); a.append(el("b", null, "Día 1 · "), document.createTextNode(largo(elegido) + ", kickoff " + hora + "–" + hasta(hora)));
+      var z = el("div"); z.append(el("b", null, "Día 30 · "), document.createTextNode(largo(fin)));
+      rs.append(a, z);
+    } else rs.append(el("div", "fine", "Toca el día en que quieres partir. Puede ser mañana."));
+    var p = $("pagar"); p.disabled = !elegido; p.textContent = elegido ? "Pagar " + clp(A.precio) : "Elige tu día 1";
+  }
+  $("cerrar").addEventListener("click", function () { $("hoja").close(); });
+  $("hoja").addEventListener("click", function (e) { if (e.target === e.currentTarget) e.currentTarget.close(); });
+  $("pagar").addEventListener("click", function () {
+    var f = $("datos"), cuerpo = { inicio: elegido, hora: hora };
+    if (!f.hidden) {
+      cuerpo.nombre = f.nombre.value.trim(); cuerpo.negocio = f.negocio.value.trim(); cuerpo.whatsapp = f.whatsapp.value; cuerpo.instagram = f.instagram.value.trim();
+      var falta = !cuerpo.nombre ? f.nombre : !cuerpo.negocio ? f.negocio : (!S.cuenta.telefono && cuerpo.whatsapp.replace(/\D/g, "").length < 8) ? f.whatsapp : null;
+      if (falta) { falta.focus(); toast(falta === f.whatsapp ? "Tu WhatsApp: con él entras después" : "Cuéntame tu nombre y el de tu negocio", true); return; }
+    }
+    if (S.anon) {  // el secreto de este navegador: al volver de Mercado Pago, con el pago aprobado, entras
+      var t = ""; crypto.getRandomValues(new Uint8Array(24)).forEach(function (x) { t += ("0" + x.toString(16)).slice(-2); });
+      try { localStorage.setItem("et-pago", t); } catch (e) {}
+      cuerpo.t = t;
+    }
+    var b = $("pagar"); b.disabled = true; b.textContent = "Abriendo Mercado Pago…";
+    post("/api/pagar", cuerpo).then(function (d) { location.href = d.url; })
+      .catch(function (e) { toast(e.message, true); b.disabled = false; pintarHoja(); });
+  });
+
+  function ics(r) {
+    var d = r.inicio.replace(/-/g, ""), h = r.hora.replace(":", "") + "00", h2 = hasta(r.hora).replace(":", "") + "00";
+    var txt = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//El Taller//ES", "BEGIN:VEVENT",
+      "UID:kickoff-" + d + "@eltallerconjp.jpfraneto.com", "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").slice(0, 15) + "Z",
+      "DTSTART;TZID=America/Santiago:" + d + "T" + h, "DTEND;TZID=America/Santiago:" + d + "T" + h2,
+      "SUMMARY:Kickoff · El Taller con JP", "DESCRIPTION:Día 1 de 30. Dos horas enfocados en tu negocio.", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+    var a = el("a"); a.href = URL.createObjectURL(new Blob([txt], { type: "text/calendar" })); a.download = "kickoff-el-taller.ics"; a.click();
+  }
+
+  $("salir").addEventListener("click", function () { api("/api/salir", { method: "POST" }).then(function () { location.replace("/"); }); });
+
+  // ───────── al volver de Mercado Pago ─────────
+  var q = new URLSearchParams(location.search), vuelta = q.get("pago");
+  var pagoId = q.get("payment_id") || q.get("collection_id");
+  history.replaceState(null, "", "/espacio/");
+  var secreto = ""; try { secreto = localStorage.getItem("et-pago") || ""; } catch (e) {}
+  var antes = vuelta === "ok" && pagoId ? post("/api/pago/verificar", { pago: pagoId, t: secreto }).then(function (d) {
+    if (d.adentro) { try { localStorage.removeItem("et-pago"); } catch (e) {} }
+  }).catch(function () {}) : Promise.resolve();
+  antes.then(cargar).then(function () {
+    if (vuelta === "ok") {
+      toast(S.pagado ? "Listo. Tu fecha está fija y tu espacio, abierto." : "Recibido. Tu espacio se abre cuando se apruebe el pago.");
+      var v = el("div", "vamos"), a = el("a", null, "Escribirle a JP");
+      a.href = "https://wa.me/" + JP + "?text=" + encodeURIComponent("oye jp acabo de pagar el mes. vamos con todo");
+      a.target = "_blank"; a.rel = "noopener";
+      var x = el("button", null, "después"); x.type = "button"; x.addEventListener("click", function () { v.remove(); });
+      v.append(el("b", null, "Pagaste. Vamos con todo."), el("p", null, "Avísame por WhatsApp y partimos: te escribo de vuelta para el kickoff."), a, x);
+      document.body.append(v);
+    }
+    else if (vuelta === "pendiente") toast("Tu pago está en proceso. Tu fecha queda fija cuando se apruebe.");
+    else if (vuelta === "no") toast("El pago no pasó. Puedes intentarlo de nuevo.", true);
+    else if (q.get("vencido")) toast("Ese enlace ya se usó o venció. Pídele uno nuevo a JP.", true);
+  }).catch(function () {});
+})();
+</script>
+</body>
+</html>

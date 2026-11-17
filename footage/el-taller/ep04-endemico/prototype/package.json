@@ -1,0 +1,23 @@
+{
+  "name": "endemico-app",
+  "version": "1.0.0",
+  "description": "Endémico: check-in con QR, historial, planilla y entrenamiento de la semana (prototipo El Taller Ep. 04)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --ip 0.0.0.0 --port 8800",
+    "db:init": "wrangler d1 execute endemico --local --file=schema.sql",
+    "db:seed": "node scripts/seed.mjs > .seed.sql && wrangler d1 execute endemico --local --file=.seed.sql",
+    "db:reset": "wrangler d1 execute endemico --local --file=scripts/drop.sql && npm run db:init && npm run db:seed",
+    "deploy": "wrangler deploy",
+    "db:reset:remote": "wrangler d1 execute endemico --remote --file=scripts/drop.sql -y && wrangler d1 execute endemico --remote --file=schema.sql -y && node scripts/seed.mjs > .seed.sql && wrangler d1 execute endemico --remote --file=.seed.sql -y"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.4.0",
+    "qrcode-generator": "^2.0.4",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}

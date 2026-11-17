@@ -1,0 +1,124 @@
+{
+  "_nota": "El marketplace (JP, 2026-11-11): publicar es gratis y sin comisión; se gana con el auspicio (los letreros del mapa; \"Destacar\" se sacó el 2026-11-16). Las parcelas de Sebastián son las primeras (todo lo que dice parcelasyterrenos.cl, sin inventar: 'texto' es su texto tal cual; qué foto va con qué parcela, por confirmar). Las que publican otros viven en KV (p:<id>). lat/lng: el centro de Puerto Varas (la ubicación exacta de cada parcela, por confirmar con él). Auspicio (JP en el take del 2026-11-11): 'podemos tener 5 espacios publicitarios y cobrar un palo por cada uno, o 10 y cobrar 500 lucas': 5 carteles en el mapa.",
+  "sitio": {
+    "nombre": "Parcelas y Terrenos",
+    "dominio": "parcelasyterrenos.cl",
+    "desde": 2012,
+    "dueno": "Sebastián",
+    "whatsapp": "56962368874",
+    "whatsapp_texto": "+56 9 6236 8874",
+    "mail": "sebleon16@gmail.com",
+    "precio_auspicio": 1000000,
+    "cupos_auspicio": 5,
+    "_venta_carteles": "false = los letreros dicen PRÓXIMAMENTE y el interesado escribe por WhatsApp (JP, 2026-11-16: mientras no esté el marco legal de cómo se factura el auspicio). true = se venden con Mercado Pago.",
+    "venta_carteles": false
+  },
+  "vendedores": {
+    "sebastian": {
+      "nombre": "Sebastián",
+      "quien": "Vende parcelas en Puerto Varas desde 2012. Las muestra él mismo y da crédito directo, sin banco.",
+      "lugar": "Puerto Varas",
+      "desde": 2012,
+      "whatsapp": "56962368874"
+    }
+  },
+  "parcelas": [
+    {
+      "id": "vista-volcanes",
+      "vendedor": "sebastian",
+      "titulo": "Parcela con vista a los volcanes",
+      "region": "Los Lagos",
+      "comuna": "Puerto Varas",
+      "sector": "Colonia Tres Puentes",
+      "m2": 5000,
+      "superficie": "5.000 m²",
+      "cantidad": "1 parcela",
+      "precio": null,
+      "credito": true,
+      "chips": [
+        "Plana",
+        "Vista a los volcanes",
+        "Bosque nativo",
+        "Rol propio",
+        "Luz",
+        "Agua potable rural (APR)",
+        "Camino asfaltado",
+        "Portón eléctrico"
+      ],
+      "texto": "Parcela plana 5000 mts2, rol propio, camino principal asfaltado, agua potable apr, luz, bosque nativo renoval (alerces, mañios, tepu, canelos….etc) vista volcanes, portón eléctrico de acceso, buena coneccion con Pto Varas y Pto Montt camino pavimentado, sector Colonia Tres Puentes. Crédito directo.",
+      "fotos": [
+        "/img/fotos/volcanes-1.jpg",
+        "/img/fotos/volcanes-2.jpg",
+        "/img/fotos/volcanes-3.jpg",
+        "/img/fotos/volcanes-4.jpg",
+        "/img/fotos/volcanes-5.jpg",
+        "/img/planos/satelital-parcela-33.jpg"
+      ],
+      "lat": -41.3195,
+      "lng": -72.9854
+    },
+    {
+      "id": "dos-campos",
+      "vendedor": "sebastian",
+      "titulo": "Dos campos de 2,39 hectáreas",
+      "region": "Los Lagos",
+      "comuna": "Puerto Varas",
+      "sector": "Colonia Tres Puentes / Metrenquen",
+      "m2": 23900,
+      "superficie": "2,39 ha cada uno",
+      "cantidad": "2 terrenos",
+      "precio": null,
+      "credito": true,
+      "chips": [
+        "Rol propio",
+        "Acceso pavimentado",
+        "Luz",
+        "Agua potable rural (APR)",
+        "Para turismo, mini campo o vivir"
+      ],
+      "texto": "2 terrenos de 2,39 hectareas cada uno sector Colonia 3 Puentes/ Metrenquen, rol propio, acceso pavimentado, luz y agua potable rural apr. Buen acceso desde Puerto Varas y Puerto Montt. Especial para proyecto turístico, mini campo o vivir. Facilidad de pago con credito directo.",
+      "fotos": [
+        "/img/fotos/campo-1.jpg",
+        "/img/fotos/campo-2.jpg",
+        "/img/fotos/campo-4.jpg",
+        "/img/fotos/campo-6.jpg",
+        "/img/fotos/campo-3.jpg",
+        "/img/fotos/campo-5.jpg",
+        "/img/fotos/campo-7.jpg",
+        "/img/planos/plano-4-78-ha.jpg"
+      ],
+      "lat": -41.3195,
+      "lng": -72.9854
+    },
+    {
+      "id": "las-marcas",
+      "vendedor": "sebastian",
+      "titulo": "Parcelas entre Puerto Varas y Puerto Montt",
+      "region": "Los Lagos",
+      "comuna": "Puerto Varas",
+      "sector": "Colonia Las Marcas",
+      "m2": 5000,
+      "superficie": "5.000 m² cada una",
+      "cantidad": "Varias parcelas",
+      "precio": null,
+      "credito": true,
+      "chips": [
+        "Planas",
+        "Estero",
+        "Bosque nativo",
+        "Rol propio",
+        "Luz",
+        "Agua potable rural (APR)",
+        "Acceso pavimentado"
+      ],
+      "texto": "Parcelas planas 5000 mts2, rol propio, acceso y camino principlal pavimentado, agua potable apr, luz, bosque nativo renoval (alerces, mañios, tepu, canelos….etc) estero de agua , buena coneccion con Pto Varas y Pto Montt, sector Colonia Las Marcas. Crédito directo.",
+      "fotos": [
+        "/img/planos/satelital-loteo.jpg",
+        "/img/planos/plano-lotes.jpg",
+        "/img/fotos/campo-8.jpg"
+      ],
+      "lat": -41.3195,
+      "lng": -72.9854
+    }
+  ]
+}

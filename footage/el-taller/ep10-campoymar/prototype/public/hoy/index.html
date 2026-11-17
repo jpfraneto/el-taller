@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hoy en Campo &amp; Mar</title>
+<meta name="description" content="Campo & Mar, pastelería sin gluten nacida frente al mar: el catálogo, tu pedido, lo que está en prueba y dónde encontrarnos.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Campo & Mar">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://campoymar.jpfraneto.com/hoy/">
+<meta property="og:title" content="Hoy en Campo & Mar">
+<meta property="og:description" content="Lo que salió hoy, lo que está en prueba y dónde llegó. Pastelería sin gluten, hecha en Chiloé.">
+<meta property="og:image" content="https://campoymar.jpfraneto.com/img/posts/rollitos.jpg">
+<meta name="theme-color" content="#f7f1e8">
+<link rel="icon" href="../img/pfp.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/app.css?v=9">
+</head>
+<body>
+<main class="pide hoy">
+  <header class="portada-cm">
+    <img src="../img/posts/historia.jpg" alt="El mar de Chiloé al atardecer, desde donde nació Campo & Mar">
+    <div class="sobre">
+      <div class="letrero"><div class="logo">CAMPO <span class="amp">&amp;</span> MAR</div><div class="usuario">@campoymar_chiloe</div></div>
+      <div class="sub">pastelería nacida frente al mar · Chiloé</div>
+      <p class="somos">Somos Francisca, Salvador y Mae.</p>
+      <p class="fecha" id="fecha"></p>
+    </div>
+  </header>
+  <figure class="cocina">
+    <img src="../img/posts/muffins.jpg" alt="En la cocina de la casa, probando muffins de arándano con los niños">
+    <figcaption>«Hacemos pequeños momentos para acompañar el día de alguien.»<span>— en la cocina de la casa, con los niños</span></figcaption>
+  </figure>
+
+  <nav class="indice" aria-label="Secciones">
+    <a href="#catalogo">catálogo</a><a href="#encarga">encarga</a><a href="#prueba">en prueba</a><a href="#donde">dónde</a><a href="#cafe">tu café</a>
+  </nav>
+
+  <!-- One shop, one walk: what we make → your order → what's being tested → where we are → for your café.
+       Every section: the rótulo, a title, one thing to do. -->
+  <section id="catalogo">
+    <div class="rotulo">catálogo</div>
+    <h2>Lo que sale de nuestro horno</h2>
+    <p class="bajada">Sin gluten, sin azúcar refinada, con opciones veganas. Elige y agrégalo a tu pedido.</p>
+    <div id="salio-cuerpo"></div>
+    <div class="vitrina-g" id="vitrina"></div>
+    <p class="pronto-linea"><i>pronto</i>Muy pronto pagas aquí mismo. Por ahora, tu pedido llega a nuestro WhatsApp y te confirmamos.</p>
+  </section>
+
+  <section id="encarga">
+    <div class="rotulo">encarga</div>
+    <h2>Tu pedido</h2>
+    <p class="bajada">Elige el día y dónde lo retiras. El precio te lo confirmamos por WhatsApp.</p>
+    <form class="form pedido" id="form-pedido">
+      <ul class="carrito" id="carrito"></ul>
+      <div class="sumar" id="sumar"></div>
+      <fieldset class="retiro">
+        <legend>Lo retiras en</legend>
+        <label><input type="radio" name="retiro" value="Ancud (Pudeto 386)" checked><b>Ancud</b><span>Pudeto 386</span></label>
+        <label><input type="radio" name="retiro" value="Castro (Thompson 285)"><b>Castro</b><span>Thompson <span class="hueco" title="Su post dice 285; el de @datitosdelajose, 385">285</span></span></label>
+        <label><input type="radio" name="retiro" value="Puerto Varas (coordinamos el punto)"><b>Puerto Varas</b><span class="hueco">¿en qué punto?</span></label>
+      </fieldset>
+      <div class="dos">
+        <label>Para el día<input type="date" name="dia" required></label>
+        <label>Tu nombre<input type="text" name="nombre" autocomplete="given-name" required maxlength="40"></label>
+      </div>
+      <label>¿Algo más? (opcional)<input type="text" name="nota" placeholder="Es para un cumpleaños, sin maní…" maxlength="140"></label>
+      <a class="wa" id="wa-pedido" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar pedido por WhatsApp</a>
+      <p class="aviso" id="falta">Agrega algo del catálogo, el día y tu nombre.</p>
+    </form>
+  </section>
+
+  <section id="prueba">
+    <div class="rotulo">en prueba</div>
+    <h2>Recetas que salen si las quieres</h2>
+    <p class="bajada">Las probamos en la cocina de la casa. Si la quieres, resérvala: cuando se junten las reservas, la
+      horneamos. Tu reserva es la respuesta.</p>
+    <div class="pruebas" id="pruebas"></div>
+  </section>
+
+  <section id="donde">
+    <div class="rotulo">dónde</div>
+    <h2>Dónde nos encuentras</h2>
+    <p class="bajada">Dos tiendas en Chiloé, y nuestras tortas viajan a 9 cafés y tiendas del sur. Toca un lugar.</p>
+    <div class="tiendas" id="tiendas"></div>
+    <figure class="mapa-cm" id="mapa"></figure>
+    <ul class="leyenda-cm" id="puntos"></ul>
+    <div id="llego-semana"></div>
+  </section>
+
+  <section id="cafe">
+    <div class="rotulo">tu café</div>
+    <h2>¿Tienes un café?</h2>
+    <p class="bajada">Pastelería sin gluten para tu vitrina, con su ficha: qué lleva y con qué se endulza. Ya estamos en 9
+      lugares, de Quellón a Osorno.</p>
+    <a class="cafe-g letrero" href="../pide/?para=cafe"><b>Ver el catálogo mayorista</b><span>precios, mínimo y días de despacho</span></a>
+  </section>
+
+  <p class="pie-pide">Campo &amp; Mar · Ancud · Castro · <a href="https://instagram.com/campoymar_chiloe">@campoymar_chiloe</a><br>
+    El Taller de Rubén · <a href="../perfil/">su Instagram, rediseñado</a></p>
+</main>
+<button type="button" class="barra-pedido" id="barra-pedido" hidden><span id="barra-n"></span><b>Ver mi pedido</b></button>
+<!-- The order as a sheet over the page: the same form moves in here while it's open, and back to #encarga when it closes. -->
+<dialog class="hoja" id="hoja" aria-labelledby="hoja-t">
+  <div class="hoja-top"><b id="hoja-t">Tu pedido</b><button type="button" data-cerrar-hoja aria-label="Cerrar">×</button></div>
+  <div class="hoja-cuerpo" id="hoja-cuerpo"></div>
+</dialog>
+<button type="button" class="btn-huecos huecos-pide" id="huecos" aria-pressed="false">huecos</button>
+
+<dialog class="reserva" id="reserva">
+  <form method="dialog" id="form-reserva" class="form">
+    <div class="r-titulo" id="r-titulo"></div>
+    <label>Tu nombre<input type="text" name="nombre" autocomplete="given-name" required maxlength="40"></label>
+    <div class="opciones" role="radiogroup" aria-label="Dónde la retiras">
+      <label><input type="radio" name="tienda" value="Ancud" checked> Ancud</label>
+      <label><input type="radio" name="tienda" value="Castro"> Castro</label>
+      <label><input type="radio" name="tienda" value="Puerto Varas"> Puerto Varas</label>
+    </div>
+    <button type="submit" class="wa" style="background:var(--vino);color:var(--letra)" value="ok">Reservar</button>
+    <p class="error" id="r-error" role="alert"></p>
+    <button type="button" class="otra" data-cerrar>Ahora no</button>
+    <p class="aviso">No pagas nada ahora. Cuando salga, la retiras y pagas ahí.</p>
+  </form>
+  <div id="r-listo" hidden class="form">
+    <div class="r-titulo">Listo 🌿</div>
+    <p id="r-texto" style="margin:0;line-height:1.5"></p>
+    <a class="wa" id="r-wa" href="#" target="_blank" rel="noopener">Avísame por WhatsApp cuando salga</a>
+    <button type="button" class="otra" data-cerrar>Cerrar</button>
+  </div>
+</dialog>
+
+<script type="module" src="../js/hoy.js?v=8"></script>
+</body>
+</html>

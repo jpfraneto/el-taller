@@ -1,0 +1,167 @@
+{
+ "fuente": "https://www.delsurpropiedades.cl/pages/clubdelsur",
+ "leido": "2026-11-16",
+ "alianzas": [
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/casaSur/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/casaSur/logo.png",
+   "link": "https://casasur-co.com/",
+   "beneficio": "10% dcto.",
+   "nombre": "casasur-co.com"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/manila/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/manila/logo.png",
+   "link": "https://www.instagram.com/manilacesteria/",
+   "beneficio": "10% dcto.",
+   "nombre": "@manilacesteria"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/floorcenter/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/floorcenter/logo.png",
+   "link": "https://floorcenter.cl/",
+   "beneficio": "en Cortinas y Revestimientos para pisos, baños y cocinas.",
+   "nombre": "floorcenter.cl"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/pazVial/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/pazVial/logo.png",
+   "link": "https://www.instagram.com/ceramicaspazvial.puertovaras/?hl=es-la",
+   "beneficio": "en toda la tienda.",
+   "nombre": "@ceramicaspazvial.puertovaras"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/nudo/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/nudo/logo.png",
+   "link": "https://nudomaderas.cl/",
+   "beneficio": "en nuestros productos unitarios, es decir solo 1 producto por pedido.",
+   "nombre": "nudomaderas.cl"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/casaDiseno/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/casaDiseno/logo.png",
+   "link": "https://www.instagram.com/casadisenordico/",
+   "beneficio": "en nuestros productos unitarios, es decir solo 1 producto por pedido.",
+   "nombre": "@casadisenordico"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/doMuebles/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/doMuebles/logo.png",
+   "link": "https://domuebles.cl/",
+   "beneficio": "con tope de ventas de $10.000.000.-",
+   "nombre": "domuebles.cl"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/casaBulka/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/casaBulka/logo.png",
+   "link": "https://www.casabulka.cl/",
+   "beneficio": "con tope de ventas de $10.000.000.-",
+   "nombre": "casabulka.cl"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/garuga/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/garuga/logo.png",
+   "link": "https://www.garuga.cl/",
+   "beneficio": "con tope de ventas de $10.000.000.-",
+   "nombre": "garuga.cl"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/floresPitu/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/floresPitu/logo.png",
+   "link": "https://floreslapitu.cl/",
+   "beneficio": "con tope de ventas de $10.000.000.-",
+   "nombre": "floreslapitu.cl"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/parentesis/image.png",
+   "logo": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/parentesis/logo.png",
+   "link": "https://www.parentesishome.cl/",
+   "beneficio": "con tope de ventas de $10.000.000.-",
+   "nombre": "parentesishome.cl"
+  },
+  {
+   "foto": "https://www.delsurpropiedades.cl/assets/img/new-web/club_del_sur/new_design/nudo/image.png",
+   "logo": "",
+   "link": "https://www.puertolino.cl/",
+   "beneficio": "5% dcto.",
+   "nombre": "puertolino.cl"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.instagram.com/popelkova_/?hl=es-la",
+   "beneficio": "10% dcto.",
+   "nombre": "@popelkova_"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://solechevarria.cl/talleres/",
+   "beneficio": "15% dcto.",
+   "nombre": "solechevarria.cl"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.instagram.com/maderamamuebles/?hl=es",
+   "beneficio": "8% dcto en juegos infantiles.",
+   "nombre": "@maderamamuebles"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.instagram.com/amfmtextiles/?hl=es",
+   "beneficio": "5% dcto.",
+   "nombre": "@amfmtextiles"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://decimamarket.cl/",
+   "beneficio": "15% dcto.",
+   "nombre": "decimamarket.cl"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.instagram.com/puntoynudo/?hl=es-la",
+   "beneficio": "10% dcto. en plantas de interior.",
+   "nombre": "@puntoynudo"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.instagram.com/lafabricataller/?hl=es",
+   "beneficio": "15% en taller de enmarcación y tienda de enmarcados.",
+   "nombre": "@lafabricataller"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.instagram.com/disenomoca/?hl=es",
+   "beneficio": "5% dcto.",
+   "nombre": "@disenomoca"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.marialacolorina.com/",
+   "beneficio": "15% dcto.",
+   "nombre": "marialacolorina.com"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.tiendaancestral.cl",
+   "beneficio": "10% en toda la tienda",
+   "nombre": "tiendaancestral.cl"
+  },
+  {
+   "foto": "",
+   "logo": "",
+   "link": "https://www.instagram.com/ecolimpv",
+   "beneficio": "10% dcto en aseo profundo",
+   "nombre": "@ecolimpv"
+  }
+ ]
+}

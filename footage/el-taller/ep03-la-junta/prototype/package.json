@@ -1,0 +1,21 @@
+{
+  "name": "la-junta-app",
+  "version": "1.0.0",
+  "description": "La Junta: plataforma web (prototipo El Taller Ep. 03)",
+  "scripts": {
+    "dev": "wrangler dev --ip 0.0.0.0 --port 8799",
+    "db:init": "wrangler d1 execute la-junta --local --file=schema.sql",
+    "db:seed": "node scripts/seed.mjs > .seed.sql && wrangler d1 execute la-junta --local --file=.seed.sql",
+    "db:reset": "wrangler d1 execute la-junta --local --file=scripts/drop.sql && npm run db:init && npm run db:seed",
+    "deploy": "wrangler deploy",
+    "db:init:remote": "wrangler d1 execute la-junta --remote --file=schema.sql",
+    "db:seed:remote": "node scripts/seed.mjs > .seed.sql && wrangler d1 execute la-junta --remote --file=.seed.sql -y",
+    "db:reset:remote": "wrangler d1 execute la-junta --remote --file=scripts/drop.sql -y && wrangler d1 execute la-junta --remote --file=schema.sql -y && npm run db:seed:remote"
+  },
+  "type": "module",
+  "dependencies": {
+    "qrcode-generator": "^1.4.4",
+    "three": "^0.170.0"
+  },
+  "private": true
+}

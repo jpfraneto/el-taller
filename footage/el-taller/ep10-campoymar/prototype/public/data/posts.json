@@ -1,0 +1,117 @@
+{
+ "_nota": "La grilla PROPUESTA (la línea editorial «la hornada»): publicaciones nuevas hechas con sus fotos públicas (30 abr → 4 nov 2026) y sus propias palabras. formato: prueba · salio · llego · lleva · frase. Nada inventado: los hechos salen de sus posts; los textos nuevos son la invitación (reserva, link).",
+ "posts": [
+  {
+   "id": "frase-sabor",
+   "img": "/img/posts/historia.jpg",
+   "formato": "frase",
+   "fijado": true,
+   "titulo": "Que nadie sienta que está renunciando al sabor.",
+   "texto": "Hecho en Chiloé. Entre el campo y el mar 🌿\n\nCreamos recetas pensando en algo simple: que nadie sienta que está «renunciando» al sabor.\n\nSomos Francisca, Salvador y Mae. Lo de hoy, en el link de la bio."
+  },
+  {
+   "id": "prueba-rollitos",
+   "img": "/img/posts/rollitos.jpg",
+   "formato": "prueba",
+   "fijado": true,
+   "titulo": "Rollitos de canela sin azúcar",
+   "sub": "¿los quieres? resérvalos",
+   "texto": "Nuestros rollitos de canela se ganaron un lugar entre sus favoritos 🤎\n\nLes preguntamos si querían una versión sin azúcar. Ahora la respuesta es una reserva: si se juntan, los horneamos y los retiras en Ancud o en Castro.\n\nReserva en el link de la bio 👀"
+  },
+  {
+   "id": "lleva-queque",
+   "img": "/img/posts/queque-chocolate.jpg",
+   "formato": "lleva",
+   "fijado": true,
+   "video": true,
+   "titulo": "Queque de chocolate",
+   "sub": "harina de almendra · azúcar de coco · chips 60%",
+   "texto": "Qué lleva 🌿\n\nSin gluten. Endulzado con azúcar de coco. 100% harina de almendra. Chips de chocolate 60%. Ganache de chocolate suizo y crema de coco.\n\nY sí, es tan rico como se ve. Qué lleva cada cosa: en el link de la bio."
+  },
+  {
+   "id": "prueba-muffins",
+   "img": "/img/posts/muffins.jpg",
+   "formato": "prueba",
+   "video": true,
+   "titulo": "Muffins veganos de arándano",
+   "sub": "nacieron en la cocina de la casa",
+   "texto": "Entre niños, juegos, regaloneos y uno que otro ingrediente… también van naciendo nuevas recetas para Campo y Mar 🤎\n\nEsta vez: muffins veganos de arándanos 🫐 ¿Los quieres en las tiendas? Resérvalos en el link de la bio."
+  },
+  {
+   "id": "llego-manduca",
+   "img": "/img/posts/manduca.jpg",
+   "formato": "llego",
+   "video": true,
+   "titulo": "@manduca.pv",
+   "sub": "Nueva Braunau",
+   "texto": "Llegó 🍰\n\nNuestras tortas sin gluten ni azúcar viajan desde Chiloé hasta @manduca.pv, en Nueva Braunau.\n\n¿Tienes un café? El catálogo mayorista está en el link de la bio.",
+   "foco": "50% 8%",
+   "zoom": 1.7
+  },
+  {
+   "id": "salio-tortas",
+   "img": "/img/posts/tortas.jpg",
+   "formato": "salio",
+   "titulo": "Lo de hoy",
+   "sub": "Ancud · Castro",
+   "texto": "Salió 🍰\n\nCada mañana contamos lo que sale del horno en Ancud (Pudeto 386) y en Castro. Así sabes antes de ir.\n\nLo de hoy, en el link de la bio."
+  },
+  {
+   "id": "frase-momentos",
+   "img": "/img/posts/momentos.jpg",
+   "formato": "frase",
+   "video": true,
+   "titulo": "Hacemos pequeños momentos para acompañar el día de alguien.",
+   "texto": "A veces pensamos que hacemos pastelería. Pero en realidad… hacemos pequeños momentos para acompañar el día de alguien ✨\n\nUn café mirando la lluvia. Una once en familia. Un trozo de torta compartido. Un regalo. Una pausa."
+  },
+  {
+   "id": "llego-letrero",
+   "img": "/img/posts/letrero.jpg",
+   "formato": "llego",
+   "video": true,
+   "titulo": "11 lugares del sur",
+   "sub": "Ancud · Castro · Puerto Varas · Osorno · Quellón",
+   "texto": "Dónde encontrarnos 📍\n\nNuestras tiendas en Ancud y Castro, y 9 cafés y tiendas del sur: Puerto Varas, Llanquihue, Nueva Braunau, Osorno, Quellón y Chonchi.\n\nLa lista completa, en el link de la bio.",
+   "foco": "50% 0%",
+   "zoom": 1.5
+  },
+  {
+   "id": "frase-casa",
+   "img": "/img/posts/como-empezamos.jpg",
+   "formato": "frase",
+   "titulo": "Mientras construíamos nuestra casa, también construíamos un sueño.",
+   "texto": "Campo y Mar nació junto con una etapa muy importante para nosotros. Mientras construíamos nuestra casa, también construíamos un sueño. Mientras crecía nuestra familia, crecía este proyecto.\n\nMuchas pruebas, errores, aprendizajes y personas bonitas. Y todavía nos queda muchísimo por aprender 🌿",
+   "foco": "50% 100%",
+   "zoom": 1.6
+  },
+  {
+   "id": "llego-cajitas",
+   "img": "/img/posts/cajitas.jpg",
+   "formato": "llego",
+   "titulo": "Cajitas dulces",
+   "sub": "Quellón · Puerto Varas · Osorno",
+   "texto": "Bombones artesanales y cajitas dulces, hechas con dedicación ❤️\n\nEn nuestras tiendas y en @coffeedahlias (Quellón), @manduca.pv, @cafe.estacionpv y @esquinabo (Puerto Varas y Osorno).",
+   "foco": "100% 100%",
+   "zoom": 1.7
+  },
+  {
+   "id": "lleva-sin-renunciar",
+   "img": "/img/posts/sin-renunciar.jpg",
+   "formato": "lleva",
+   "titulo": "¿Con o sin azúcar?",
+   "sub": "producto por producto, en el link",
+   "texto": "¿Qué postre te ha hecho dudar si era con o sin azúcar? 👇\n\nPor eso ahora contamos qué lleva cada cosa: sin gluten, vegano, con qué se endulza. Producto por producto, en el link de la bio.",
+   "foco": "100% 30%",
+   "zoom": 1.9
+  },
+  {
+   "id": "salio-granel",
+   "img": "/img/posts/granel.jpg",
+   "formato": "salio",
+   "video": true,
+   "titulo": "A granel",
+   "sub": "trae tu envase · $5.500 el litro",
+   "texto": "En nuestras tiendas también encuentras venta a granel ✨\n\nArtículos de limpieza ecológicos @Freemet: trae tu envase y rellénalo. Lavalozas a $5.500 el litro."
+  }
+ ]
+}

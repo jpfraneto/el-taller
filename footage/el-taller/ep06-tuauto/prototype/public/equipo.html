@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Autos por revisar · TuAuto</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1c2650">
+  <link rel="icon" href="/img/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <style>
+    /* app.css is the dark public site: this page is light, so it sets its own ink, header and controls */
+    body { background: #eceae3; color: var(--ink); color-scheme: light; }
+    body > .proto { margin: 0; padding: 6px 16px; background: var(--ink); color: rgba(255,255,255,.62); text-align: center; }
+    body > .top { position: sticky; display: flex; align-items: center; justify-content: space-between; height: 54px; padding: 0 16px;
+      background: var(--navy-d); }
+    body > .top nav a { color: #fff; text-decoration: none; font-size: .9rem; font-weight: 650; opacity: .85; }
+    .eq .kicker { font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 .5rem; }
+    .eq .chip { background: #fff; border-color: var(--line); color: var(--ink); }
+    .eq .chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .sol, .sol select, .estados button, .sol .demo { color: var(--ink); }
+    .login label { color: var(--muted); }
+    .login input { border-color: var(--line); background: #fff; color: var(--ink); }
+    .login .error { background: #fbe9e5; color: var(--bad); }
+    .eq { max-width: 980px; margin: 0 auto; padding: 22px 16px 60px; }
+    .eq-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    .eq-head h1 { font-size: clamp(2.2rem, 9vw, 3.4rem); }
+    .tabs { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 14px; scrollbar-width: none; }
+    .tabs .chip b { margin-left: 6px; }
+    .lista { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+    .sol { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 1px 0 var(--line), 0 6px 18px rgba(18,22,42,.06); display: flex; flex-direction: column; }
+    .sol .ph { position: relative; aspect-ratio: 4/3; background: #0f1322; }
+    .sol .ph img { width: 100%; height: 100%; object-fit: cover; }
+    .sol .cod { position: absolute; left: 10px; top: 10px; background: var(--tag); font-weight: 900; letter-spacing: .1em; padding: 3px 9px; border-radius: 8px; }
+    .sol .hace { position: absolute; right: 10px; top: 10px; background: rgba(10,13,28,.75); color: #fff; font-size: .78rem; padding: 3px 9px; border-radius: 999px; }
+    .sol .demo { position: absolute; right: 10px; bottom: 10px; background: rgba(255,255,255,.85); font-size: .7rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; }
+    .sol .tx { padding: 12px 14px 14px; display: grid; gap: 6px; }
+    .sol .ti { font-weight: 850; font-stretch: 82%; font-size: 1.25rem; text-transform: uppercase; line-height: 1.05; }
+    .sol .me { color: var(--muted); font-size: .9rem; }
+    .sol .rg { font-weight: 800; font-variant-numeric: tabular-nums; }
+    .sol .quiere { display: inline-block; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; padding: 3px 8px; border-radius: 6px; }
+    .quiere.hoy { background: #e4f5ec; color: var(--ok); }
+    .quiere.consigna { background: #e8ecfa; color: var(--navy); }
+    .sol .fila { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .sol select { border: 1.5px solid var(--line); border-radius: 10px; padding: 8px 10px; background: #fff; flex: 1; min-width: 0; }
+    .estados { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; margin-top: 4px; }
+    .estados button { border: 1.5px solid var(--line); background: #fff; border-radius: 8px; padding: 7px 2px; font-size: .74rem; font-weight: 750; cursor: pointer; }
+    .estados button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .login { max-width: 380px; margin: 12vh auto 0; background: #fff; border-radius: 18px; padding: 22px; }
+    .vacio-eq { text-align: center; color: var(--muted); padding: 40px 0; }
+    .resumen { display: flex; gap: 18px; color: var(--muted); font-size: .92rem; }
+    .resumen b { color: var(--ink); font-size: 1.3rem; display: block; font-stretch: 80%; }
+  </style>
+</head>
+<body>
+  <div class="proto">Prototipo de El Taller con JP para TuAuto · la bandeja del equipo</div>
+  <header class="top">
+    <a href="/" class="brand" aria-label="TuAuto"><img src="/img/logo-blanco.png" alt="tuauto"></a>
+    <nav><a href="/">Ver la web</a></nav>
+  </header>
+  <main class="eq" id="eq"></main>
+  <script type="module" src="/js/equipo.js"></script>
+</body>
+</html>

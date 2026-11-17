@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#1A1A1A">
+<title>La Junta · Recorre el gimnasio</title>
+<style>
+  @font-face { font-family: 'Space Grotesk'; src: url('/assets/SpaceGrotesk-VariableFont_wght.ttf') format('truetype'); font-weight: 300 700; font-display: swap; }
+  html, body { margin: 0; height: 100%; background: #1A1A1A; overflow: hidden; font-family: 'Space Grotesk', system-ui, sans-serif; }
+  #gym { position: fixed; inset: 0; --g3d-bottom: 92px; }
+  .chips { position: fixed; left: 0; right: 0; bottom: calc(18px + env(safe-area-inset-bottom)); display: flex; gap: 8px; overflow-x: auto; padding: 0 16px; scrollbar-width: none; z-index: 5; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { flex: none; border: 0; border-radius: 999px; padding: 11px 16px; font: 600 14px 'Space Grotesk', sans-serif; background: rgba(26,26,26,.78); color: #EAE5DC; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .chip.on { background: #C97C2A; color: #1A1A1A; }
+  .card { position: fixed; left: 16px; right: 16px; top: calc(16px + env(safe-area-inset-top)); z-index: 5; padding: 14px 16px; border-radius: 16px; background: rgba(26,26,26,.78); color: #EAE5DC; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: opacity .3s; opacity: 0; pointer-events: none; }
+  .card.show { opacity: 1; }
+  .card b { display: block; font-size: 17px; margin-bottom: 4px; }
+  .card span { font-size: 14px; opacity: .85; line-height: 1.35; }
+</style>
+</head>
+<body>
+<div id="gym"></div>
+<div class="card" id="card"><b></b><span></span></div>
+<div class="chips" id="chips"></div>
+<script type="module">
+  import { mountGym, POIS } from './js/gym3d.js';
+  const q = new URLSearchParams(location.search);
+  const lang = q.get('lang') === 'en' ? 'en' : 'es';
+  const names = q.has('names') ? q.get('names').split(',').filter(Boolean)
+    : ['Paul Behrens', 'Juan Rozas', 'Camila Soto', 'Diego Pérez', 'Fernanda Muñoz', 'Tomás Vidal', 'Antonia Reyes', 'Matías Fuentes', 'Josefa Araya', 'Benjamín Rojas', 'Catalina Díaz', 'Ignacio Castro'];
+  const card = document.getElementById('card'), chips = document.getElementById('chips');
+  let timer;
+  function show(p) {
+    card.querySelector('b').textContent = p.label[lang];
+    card.querySelector('span').textContent = p.blurb[lang];
+    card.classList.add('show'); clearTimeout(timer); timer = setTimeout(() => card.classList.remove('show'), 4200);
+    for (const c of chips.children) c.classList.toggle('on', c.dataset.id === p.id);
+  }
+  const gym = mountGym(document.getElementById('gym'), {
+    names, highlightName: q.get('hl') || '', startAt: q.get('poi') || undefined, lang,
+    intro: q.get('intro') !== '0',
+    onPoi: show,
+    onReady: () => { window.__gymReady = true; },
+  });
+  window.gym = gym;
+  for (const p of POIS) {
+    const b = document.createElement('button'); b.className = 'chip'; b.dataset.id = p.id; b.textContent = p.label[lang];
+    b.onclick = () => gym.goTo(p.id); chips.appendChild(b);
+  }
+</script>
+</body>
+</html>

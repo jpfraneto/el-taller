@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>El Taller de Rubén</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e0d0b'/%3E%3Ctext x='31' y='43' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff'%3Ejp%3C/text%3E%3Ccircle cx='50' cy='42' r='3.5' fill='%23FFD23F'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<style>
+  /* El panel de El Taller (localhost:4747). Lo que el dueño ve de su negocio: lo que falta, lo conectado, cómo trabajar
+     (por WhatsApp), lo que vende, lo que Rubén sabe y los ajustes. Un solo mundo, el del galpón: oscuro, amarillo. */
+  :root {
+    --bg: #0e0d0b; --panel: #171613; --panel2: #201e1a; --line: rgba(255,247,230,.10); --line2: rgba(255,247,230,.18);
+    --ink: #fbf8f1; --mute: rgba(251,248,241,.66); --dim: rgba(251,248,241,.42);
+    --y: #ffd23f; --y-ink: #141109; --ok: #3ccf7a; --warn: #ffb547; --bad: #ff7a6b; --wa: #25d366;
+    --head: "Inter Tight", "Inter", system-ui, sans-serif; --sans: "Inter", system-ui, -apple-system, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Menlo, monospace; --brand: "Fraunces", Georgia, serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+  button, input, textarea, select { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  button:disabled { cursor: default; opacity: .55; }
+  :focus-visible { outline: 2px solid var(--y); outline-offset: 2px; }
+  a { color: inherit; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+  .app { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100%; }
+  .side { border-right: 1px solid var(--line); padding: 18px 14px 18px max(14px, env(safe-area-inset-left, 0px)); display: flex; flex-direction: column; gap: 18px; position: sticky; top: 0; height: 100vh; }
+  .marca { display: flex; align-items: baseline; gap: 10px; padding: 0 8px; text-decoration: none; }
+  .marca b { font: italic 500 26px/1 var(--brand); }
+  .marca b i { color: var(--y); font-style: normal; }
+  .marca span { font: 600 11px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
+  .negocio { padding: 12px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); display: grid; gap: 10px; }
+  .quien { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .cara { width: 44px; height: 44px; border-radius: 50%; flex: none; display: grid; place-items: center; overflow: hidden; background: var(--panel2);
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--y); font: 900 18px var(--head); color: var(--y); }
+  .cara img { width: 100%; height: 100%; object-fit: cover; }
+  .quien span { min-width: 0; display: grid; }
+  .negocio strong { font: 800 17px/1.1 var(--head); text-transform: uppercase; letter-spacing: -.01em; overflow-wrap: anywhere; }
+  .negocio small.ig { color: var(--mute); font-size: 12.5px; }
+  .wa { display: flex; align-items: center; gap: 9px; padding: 8px 10px; border-radius: 10px; background: rgba(37,211,102,.08); box-shadow: inset 0 0 0 1px rgba(37,211,102,.25); text-decoration: none; }
+  .wa:hover { background: rgba(37,211,102,.14); }
+  .wa.no { background: rgba(255,181,71,.08); box-shadow: inset 0 0 0 1px rgba(255,181,71,.25); }
+  .wa svg { width: 18px; height: 18px; flex: none; }
+  .wa span { display: grid; min-width: 0; }
+  .wa b { font: 700 14px var(--sans); font-variant-numeric: tabular-nums; }
+  .wa small { color: var(--mute); font-size: 11.5px; }
+  .estado { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600; color: var(--ok); }
+  .estado i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 3px rgba(60,207,122,.2); }
+  .estado.off { color: var(--dim); }
+  .estado.off i { box-shadow: none; }
+  nav.tabs { display: grid; gap: 2px; }
+  nav.tabs a { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; text-decoration: none; color: var(--mute); font-weight: 600; }
+  nav.tabs a svg { width: 18px; height: 18px; flex: none; }
+  nav.tabs a:hover { background: var(--panel); color: var(--ink); }
+  nav.tabs a[aria-current="page"] { background: var(--panel2); color: var(--ink); box-shadow: inset 2px 0 0 var(--y); }
+  nav.tabs a .n { margin-left: auto; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px; background: var(--y); color: var(--y-ink); font: 800 11.5px/20px var(--sans); text-align: center; }
+  .side .pie { margin-top: auto; font-size: 12px; color: var(--dim); padding: 0 8px; display: grid; gap: 2px; }
+  .side .pie a { text-decoration: none; }
+  .side .pie a:hover { color: var(--ink); }
+
+  main { min-width: 0; padding: 22px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px)); }
+  .contenido { max-width: 1060px; margin: 0 auto; display: grid; gap: 22px; }
+  section[data-vista] { display: grid; gap: 22px; }
+  .bloque { display: grid; gap: 10px; }
+
+  .update { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 12px 14px 12px 16px; border-radius: 14px; background: var(--y); color: var(--y-ink); }
+  .update .t { flex: 1; min-width: 220px; }
+  .update b { font: 800 15px var(--head); }
+  .update p { margin: 2px 0 0; font-size: 13.5px; opacity: .8; }
+  .update .acc { display: flex; gap: 8px; }
+  .btn { border: 0; border-radius: 10px; padding: 9px 14px; font-weight: 700; font-size: 14px; background: var(--y); color: var(--y-ink); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .btn.dark { background: var(--y-ink); color: var(--y); }
+  .btn.ghost { background: none; color: inherit; box-shadow: inset 0 0 0 1.5px currentColor; opacity: .85; }
+  .btn.sec { background: var(--panel2); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line2); }
+
+  h1 { margin: 0; font: 900 clamp(26px, 3.2vw, 36px)/1 var(--head); text-transform: uppercase; letter-spacing: -.015em; text-wrap: balance; }
+  h2 { margin: 0; font: 800 13px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
+  .cab p { margin: 6px 0 0; color: var(--mute); max-width: 62ch; }
+
+  .item { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 14px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); }
+  .item .ic { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; background: rgba(255,181,71,.14); color: var(--warn); font: 800 14px var(--head); }
+  .item b { display: block; font-weight: 600; }
+  .item small { color: var(--mute); font-size: 13px; }
+  .item .extra { grid-column: 2 / -1; display: grid; gap: 10px; }
+  .quest ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; font-size: 14px; line-height: 1.45; }
+  .quest ol b { display: inline; color: var(--ink); }
+  .quest a { color: var(--y); }
+  .quest code { font: 12.5px ui-monospace, Menlo, monospace; background: var(--panel2); border-radius: 5px; padding: 1px 5px; }
+  .quest .ns { font: 12.5px ui-monospace, Menlo, monospace; color: var(--mute); }
+  .quest .bien { color: var(--ok); font-weight: 600; }
+  .listo { padding: 14px 16px; border-radius: 14px; background: rgba(60,207,122,.08); border: 1px solid rgba(60,207,122,.25); color: var(--ok); font-weight: 600; }
+
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .con { display: grid; gap: 12px; align-content: start; padding: 16px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); text-decoration: none; }
+  a.con:hover { border-color: var(--line2); }
+  .con header { display: flex; align-items: center; gap: 10px; }
+  .lg { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: var(--panel2); flex: none; }
+  .lg svg { width: 19px; height: 19px; }
+  .con header b { font-weight: 700; display: block; line-height: 1.2; }
+  .con header small { color: var(--dim); font-size: 12.5px; overflow-wrap: anywhere; }
+  .pill { margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; font: 700 11px var(--sans); letter-spacing: .06em; text-transform: uppercase; }
+  .pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .pill.ok { color: var(--ok); background: rgba(60,207,122,.12); }
+  .pill.warn { color: var(--warn); background: rgba(255,181,71,.12); }
+  .pill.off { color: var(--dim); background: rgba(255,247,230,.06); }
+  .metr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+  .metr div { display: grid; }
+  .metr strong { font: 800 22px/1.05 var(--head); font-variant-numeric: tabular-nums; }
+  .metr span { color: var(--dim); font-size: 12px; }
+  .con .nota { font-size: 12.5px; color: var(--mute); }
+
+  ul.act { margin: 0; padding: 0; display: grid; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); overflow: hidden; }
+  .act li { list-style: none; display: grid; grid-template-columns: 52px 10px minmax(0, 1fr); gap: 12px; padding: 11px 14px; border-top: 1px solid var(--line); align-items: start; }
+  .act li:first-child { border-top: 0; }
+  .act time { font: 500 12px var(--mono); color: var(--dim); padding-top: 2px; font-variant-numeric: tabular-nums; }
+  .act .d { width: 8px; height: 8px; border-radius: 50%; margin-top: 7px; background: var(--y); }
+  .act .d.aviso { background: var(--warn); } .act .d.error { background: var(--bad); }
+  .act p { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+  .act p small { display: block; color: var(--dim); font-size: 12.5px; }
+  .vacio { padding: 14px 16px; color: var(--dim); }
+
+  .trab { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 12px; }
+  .abrir, .que { padding: 20px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); display: grid; gap: 12px; align-content: start; }
+  .abrir { background: rgba(37,211,102,.06); border-color: rgba(37,211,102,.25); justify-items: start; }
+  .btn.grande { padding: 16px 22px; border-radius: 14px; background: var(--wa); color: #06210f; font: 900 18px var(--head); text-transform: uppercase; }
+  .btn.grande svg { width: 22px; height: 22px; }
+  .abrir .num { font: 800 24px var(--head); font-variant-numeric: tabular-nums; }
+  .abrir small { color: var(--mute); font-size: 13.5px; max-width: 46ch; }
+  .tipos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .tipos li { padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); display: grid; }
+  .tipos li.ya { border-color: rgba(37,211,102,.4); }
+  .tipos li.ya span { color: var(--ok); }
+  .tipos span { font-size: 12.5px; color: var(--dim); }
+  .ejemplos { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: var(--mute); }
+  details.probar { padding: 14px 16px; border-radius: 14px; border: 1px dashed var(--line2); }
+  details.probar summary { cursor: pointer; color: var(--mute); font-weight: 600; }
+  .fila-in { display: flex; gap: 8px; margin-top: 10px; }
+  input.txt, textarea.txt, select.txt { width: 100%; min-width: 0; background: var(--bg); border: 1px solid var(--line2); border-radius: 10px; padding: 10px 12px; }
+  input.txt:focus, textarea.txt:focus { outline: none; border-color: var(--y); }
+  textarea.txt { resize: vertical; min-height: 70px; }
+  .resp { margin-top: 10px; white-space: pre-wrap; color: var(--mute); font-size: 14px; }
+
+  .prods { display: grid; gap: 10px; }
+  .prod { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 16px; align-items: center; padding: 14px 16px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+  .prod.pausado { opacity: .55; }
+  .prod b { font: 800 17px var(--head); }
+  .prod .meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 4px; }
+  .tag { font: 700 11px var(--sans); letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; background: var(--panel2); color: var(--mute); }
+  .tag.rec { color: var(--y); background: rgba(255,210,63,.1); }
+  .prod p { margin: 6px 0 0; color: var(--mute); font-size: 13.5px; max-width: 60ch; }
+  .precio { text-align: right; }
+  .precio strong { font: 900 22px var(--head); font-variant-numeric: tabular-nums; }
+  .prod .acc { display: flex; gap: 6px; }
+  .mini { border: 1px solid var(--line2); background: none; border-radius: 8px; padding: 6px 10px; font-size: 13px; color: var(--mute); }
+  .mini:hover { color: var(--ink); border-color: var(--ink); }
+  .nuevo { padding: 16px; border-radius: 16px; border: 1.5px dashed var(--line2); display: grid; gap: 12px; }
+  .campos { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, .8fr) minmax(0, .8fr); gap: 10px; }
+  .nuevo label, .form label { display: grid; gap: 4px; font-size: 12.5px; color: var(--mute); font-weight: 600; }
+  .form { display: grid; gap: 10px; max-width: 640px; }
+  .form .dos-c { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .dos { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 12px; align-items: start; }
+  .archivos { display: grid; gap: 2px; padding: 8px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+  .archivos button { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; text-align: left; border: 0; background: none; padding: 9px 10px; border-radius: 10px; }
+  .archivos button:hover { background: var(--panel2); }
+  .archivos button[aria-pressed="true"] { background: var(--panel2); box-shadow: inset 2px 0 0 var(--y); }
+  .archivos b { font: 500 13.5px var(--mono); overflow-wrap: anywhere; }
+  .archivos small { color: var(--dim); font-size: 12px; white-space: nowrap; }
+  .archivos .sep { font: 700 11px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--dim); padding: 12px 10px 4px; }
+  .doc { padding: 20px 22px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); min-width: 0; }
+  .doc .ruta { font: 500 12px var(--mono); color: var(--dim); }
+  .doc pre { margin: 10px 0 0; white-space: pre-wrap; font: 14px/1.6 var(--sans); color: var(--mute); overflow-wrap: anywhere; }
+  .drop { display: grid; place-items: center; gap: 4px; padding: 22px; border-radius: 14px; border: 1.5px dashed var(--line2); color: var(--mute); text-align: center; font-size: 13.5px; cursor: pointer; }
+  .drop.over { border-color: var(--y); color: var(--ink); }
+  .drop b { color: var(--ink); }
+  .subiendo { font-size: 13px; color: var(--mute); }
+
+  .conex { display: grid; gap: 12px; }
+  .cl-det { display: grid; gap: 12px; min-width: 0; align-content: start; }
+  .archivos .cli { grid-template-columns: minmax(0, 1fr) auto; }
+  .archivos .cli b { font: 700 14px var(--sans); }
+  .archivos .cli small.e { color: var(--ok); }
+  .ctx { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .ctx li { display: flex; gap: 10px; align-items: center; justify-content: space-between; padding: 8px 10px; border-radius: 10px; background: var(--panel2); font-size: 14px; }
+  .ctx li span { min-width: 0; overflow-wrap: anywhere; }
+  .ctx li small { color: var(--dim); flex: none; }
+  .peligro { justify-self: start; }
+  .peligro.si { background: var(--bad); color: #fff; }
+  .det { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 18px; padding: 18px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+  .det .izq { display: grid; gap: 10px; align-content: start; }
+  .det h3 { margin: 0; display: flex; align-items: center; gap: 10px; font: 800 19px var(--head); }
+  .det h3 svg { width: 20px; height: 20px; }
+  .det p { margin: 0; color: var(--mute); font-size: 14px; }
+  dl.datos { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 16px; font-size: 14px; align-content: start; }
+  dl.datos dt { color: var(--dim); padding-block: 2px; }
+  dl.datos dd { margin: 0; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  dl.datos dd > span { min-width: 0; }
+  dl.datos .pill { margin: 0; }
+  .sutil { flex: none; border: 0; background: none; padding: 2px 0; color: var(--dim); font: 600 12.5px var(--sans); text-decoration: none; border-bottom: 1px solid var(--line2); }
+  .sutil:hover { color: var(--y); border-color: var(--y); }
+
+  .ajustes { display: grid; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+  .fila { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 16px 18px; border-top: 1px solid var(--line); }
+  .fila:first-child { border-top: 0; }
+  .fila b { display: block; font-weight: 600; }
+  .fila small { color: var(--mute); font-size: 13px; }
+  .sw { position: relative; width: 44px; height: 26px; border-radius: 13px; border: 0; background: var(--panel2); box-shadow: inset 0 0 0 1px var(--line2); flex: none; }
+  .sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--mute); transition: transform .18s ease, background .18s; }
+  .sw[aria-checked="true"] { background: var(--ok); box-shadow: none; }
+  .sw[aria-checked="true"]::after { transform: translateX(18px); background: #fff; }
+
+  .qrbox { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .qr { width: 176px; height: 176px; padding: 8px; border-radius: 14px; background: #fff; flex: none; }
+  .qr img, .qr canvas { width: 100% !important; height: 100% !important; }
+  .codigo { font: 900 26px var(--head); letter-spacing: .06em; }
+
+  .toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 16px); opacity: 0; pointer-events: none; transition: .2s ease;
+    background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 12px; font-weight: 600; font-size: 14px; max-width: calc(100% - 32px); z-index: 20; }
+  .toast.on { opacity: 1; transform: translate(-50%, 0); }
+  .toast.err { background: var(--bad); }
+  .caido { padding: 10px 14px; border-radius: 12px; background: rgba(255,122,107,.12); border: 1px solid rgba(255,122,107,.35); }
+
+  @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .det { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 760px) {
+    .app { grid-template-columns: minmax(0, 1fr); }
+    .side { position: sticky; top: 0; z-index: 5; height: auto; border-right: 0; border-bottom: 1px solid var(--line); background: var(--bg);
+      flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
+    .side .pie, .negocio .estado, .negocio .wa small, .negocio small.ig, .negocio strong { display: none; }
+    .negocio { order: 2; margin-left: auto; padding: 0; border: 0; background: none; display: flex; align-items: center; gap: 8px; }
+    .cara { width: 30px; height: 30px; font-size: 14px; }
+    .wa { padding: 6px 9px; } .wa b { font-size: 13px; }
+    .marca { padding: 0; }
+    nav.tabs { order: 3; flex-basis: 100%; display: flex; overflow-x: auto; gap: 4px; padding-bottom: 8px; scrollbar-width: none; }
+    nav.tabs a { flex: none; padding: 8px 12px; }
+    nav.tabs a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--y); }
+    nav.tabs a svg { display: none; }
+    .grid, .dos, .trab, .campos, .form .dos-c { grid-template-columns: minmax(0, 1fr); }
+    .prod { grid-template-columns: minmax(0, 1fr) auto; }
+    .prod .acc { grid-column: 1 / -1; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <a class="marca" href="#hoy"><span>El Taller de</span><b>Rubén<i>.</i></b></a>
+    <div class="negocio">
+      <div class="quien"><div class="cara" id="cara">·</div><span><strong id="nom">Tu negocio</strong><small class="ig" id="ig"></small></span></div>
+      <a class="wa no" id="wa" href="#ajustes">
+        <svg viewBox="0 0 24 24" fill="#25d366" aria-hidden="true"><path d="M12.05 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.05 2z"/></svg>
+        <span><b id="wa-num">Sin WhatsApp</b><small id="wa-txt">conéctalo en Ajustes</small></span>
+      </a>
+      <span class="estado off" id="estado"><i></i><span>Cargando…</span></span>
+    </div>
+    <nav class="tabs" aria-label="Partes del panel">
+      <a href="#hoy" data-v="hoy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Hoy<span class="n" id="n-falta" hidden></span></a>
+      <a href="#trabajar" data-v="trabajar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12.05 3a8.9 8.9 0 0 0-7.6 13.5L3.2 21l4.6-1.2A8.9 8.9 0 1 0 12.05 3z"/></svg>Trabajar</a>
+      <a href="#ventas" data-v="ventas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18l-2 11H5z"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>Ventas</a>
+      <a href="#contexto" data-v="contexto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h6l2 2h8v13H4z"/></svg>Contexto</a>
+      <a href="#clientes" data-v="clientes" id="tab-clientes" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c3 .2 5.5 2.6 5.5 5.8"/></svg>Clientes</a>
+      <a href="#ajustes" data-v="ajustes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>Ajustes</a>
+    </nav>
+    <div class="pie"><span id="version">El Taller</span><a href="/avanzado">Ajustes avanzados</a></div>
+  </aside>
+
+  <main>
+    <div class="contenido">
+      <p class="caido" id="caido" hidden>No me puedo comunicar con el programa de El Taller en este computador. Si sigue así, reinicia el computador.</p>
+
+      <div class="update" id="update" role="status" hidden>
+        <div class="t"><b id="up-t">Hay una versión nueva de El Taller</b><p id="up-txt"></p></div>
+        <div class="acc" id="up-acc"><button class="btn dark" type="button" id="up-si">Actualizar ahora</button><button class="btn ghost" type="button" id="up-no">Después</button></div>
+      </div>
+
+      <!-- ───────── HOY ───────── -->
+      <section data-vista="hoy">
+        <div class="cab"><h1 id="fecha">Hoy</h1><p>Lo que pasa en tu negocio, lo que está conectado y lo que falta.</p></div>
+        <div class="bloque"><h2 id="falta-t">Lo que falta</h2><div class="bloque" id="falta" style="gap:8px"></div></div>
+        <div class="bloque"><h2>Tu negocio</h2><div class="grid" id="cards"></div></div>
+        <div class="bloque"><h2>Lo último que pasó</h2><ul class="act" id="actividad"></ul></div>
+      </section>
+
+      <!-- ───────── TRABAJAR ───────── -->
+      <section data-vista="trabajar" hidden>
+        <div class="cab"><h1>Trabajar</h1><p>Se trabaja por WhatsApp. Le escribes a Rubén al número de tu negocio, desde tu teléfono, como le escribirías a alguien que trabaja contigo. Rubén hace el trabajo en este computador y te contesta ahí mismo.</p></div>
+        <div class="trab">
+          <div class="abrir" id="abrir"></div>
+          <div class="que">
+            <h2>Qué le puedes mandar</h2>
+            <ul class="tipos">
+              <li class="ya"><b>Texto</b><span>Funciona hoy</span></li>
+              <li><b>Audios</b><span>Pronto: los escucha y los transcribe</span></li>
+              <li><b>Fotos y capturas</b><span>Pronto</span></li>
+              <li><b>PDFs, planillas, videos</b><span>Pronto. Mientras, déjalos en Contexto</span></li>
+            </ul>
+            <h2 style="margin-top:6px">Cosas que le puedes pedir</h2>
+            <ul class="ejemplos">
+              <li>"Hagamos el día cero: pregúntame por mi negocio."</li>
+              <li>"Te mando mi plan para diciembre."</li>
+              <li>"A los clientes diles que atiendo de 10 a 19, y que el envío es gratis sobre $30.000."</li>
+              <li>"Agrega un servicio nuevo: mantención mensual, $90.000."</li>
+              <li>"Anota esta decisión: no hago descuentos, porque…"</li>
+            </ul>
+          </div>
+        </div>
+        <details class="probar" id="probar">
+          <summary>Escribirle desde aquí (si todavía no conectas WhatsApp)</summary>
+          <div class="fila-in"><input class="txt" id="p-txt" placeholder="Hola, hagamos el día cero" /><button class="btn" type="button" id="p-ir">Enviar</button></div>
+          <div class="resp" id="p-resp"></div>
+        </details>
+        <div class="bloque"><h2>Lo último que hablaron</h2><ul class="act" id="conversacion"></ul></div>
+      </section>
+
+      <!-- ───────── VENTAS ───────── -->
+      <section data-vista="ventas" hidden>
+        <div class="cab"><h1>Ventas</h1><p>Lo que ofreces, concreto: qué es, cuánto cuesta y cuántos hay. Rubén lo lee de aquí para contestarle a tus clientes y armar tu página.</p></div>
+        <p class="vacio" style="padding:0" id="v-mp">Lo vendido aparece aquí cuando conectes Mercado Pago (pronto).</p>
+        <div class="prods" id="prods"></div>
+        <form class="nuevo" id="nuevo">
+          <h2>Agregar algo que vendes</h2>
+          <div class="campos">
+            <label>Nombre<input class="txt" id="n-nombre" placeholder="Ej: Mantención mensual" required /></label>
+            <label>Tipo<select class="txt" id="n-tipo"><option value="producto">Producto (una vez)</option><option value="servicio">Servicio (una vez)</option><option value="mensual">Recurrente · mensual</option><option value="anual">Recurrente · anual</option></select></label>
+            <label>Precio (CLP)<input class="txt" id="n-precio" inputmode="numeric" placeholder="90000" /></label>
+            <label>Cupos o stock<input class="txt" id="n-cupos" placeholder="vacío = sin límite" /></label>
+          </div>
+          <label>Qué incluye<textarea class="txt" id="n-desc" placeholder="Una o dos líneas: lo que el cliente recibe."></textarea></label>
+          <div><button class="btn" type="submit">Agregar</button></div>
+        </form>
+      </section>
+
+      <!-- ───────── CONTEXTO ───────── -->
+      <section data-vista="contexto" hidden>
+        <div class="cab"><h1>Contexto</h1><p>Lo que Rubén sabe de tu negocio. Son archivos de texto en tu carpeta: los lees aquí, y Rubén los usa. Para cambiarlos, díselo a Rubén por WhatsApp.</p></div>
+        <div class="dos">
+          <div class="archivos" id="archivos"></div>
+          <div style="display:grid;gap:10px;min-width:0">
+            <article class="doc" id="doc"><div class="ruta">Elige un archivo</div></article>
+            <label class="drop" id="drop"><b>Arrastra aquí fotos, PDFs, audios, videos</b>Van al contexto general y Rubén los lee.<input type="file" id="archivo" multiple hidden /></label>
+            <div class="subiendo" id="subiendo"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────── CLIENTES (solo El Taller) ───────── -->
+      <section data-vista="clientes" hidden>
+        <div class="cab" style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap">
+          <div><h1>Clientes</h1><p>Los negocios que trabajan contigo. Su espacio, su contexto, su código para instalar: todo aquí.</p></div>
+          <button class="btn" type="button" id="cl-nuevo-b">Nuevo cliente</button>
+        </div>
+        <form class="nuevo" id="cl-nuevo" hidden>
+          <h2>Nuevo cliente</h2>
+          <div class="campos">
+            <label>Su negocio<input class="txt" id="cl-negocio" required placeholder="Umbral Sur" /></label>
+            <label>Su nombre<input class="txt" id="cl-nombre" placeholder="Iván" /></label>
+            <label>Instagram<input class="txt" id="cl-ig" placeholder="@refugiosumbralsur" /></label>
+            <label>WhatsApp<input class="txt" id="cl-tel" inputmode="tel" placeholder="+56 9 …" /></label>
+          </div>
+          <div class="form dos-c" style="max-width:none">
+            <label>Prototipo que le mostraste (link)<input class="txt" id="cl-proto" placeholder="https://umbralsur.jpfraneto.com" /></label>
+            <label>Nombre del prototipo<input class="txt" id="cl-proto-t" placeholder="Refugio Bruma" /></label>
+          </div>
+          <div style="display:flex;gap:8px"><button class="btn" type="submit">Crear y copiar su enlace</button><button class="btn sec" type="button" id="cl-nuevo-x">Cancelar</button></div>
+        </form>
+        <div class="dos" id="cl-dos">
+          <div class="archivos" id="cl-lista"><p class="vacio">Cargando…</p></div>
+          <div class="cl-det" id="cl-det"></div>
+        </div>
+      </section>
+
+      <!-- ───────── AJUSTES ───────── -->
+      <section data-vista="ajustes" hidden>
+        <div class="cab"><h1>Ajustes</h1><p>Lo que está conectado, qué hace Rubén sin preguntarte, y cómo se mantiene El Taller al día. Todo está a tu nombre: tus cuentas, tu número, tu computador.</p></div>
+        <h2 id="conexiones">Conexiones</h2>
+        <div class="conex" id="conex"></div>
+        <h2 style="margin-top:8px">Qué hace Rubén</h2>
+        <div class="ajustes" id="prefs"></div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function () {
+  var CLAVE = "{{CLAVE}}";
+  var E = null, P = null, abierto = {};  // abierto: qué "lo que falta" tiene su caja abierta
+  function $(id) { return document.getElementById(id); }
+  function el(tag, attrs, kids) {
+    var e = document.createElement(tag);
+    for (var k in attrs || {}) {
+      if (k === "text") e.textContent = attrs[k]; else if (k === "html") e.innerHTML = attrs[k];
+      else if (k.slice(0, 2) === "on") e.addEventListener(k.slice(2), attrs[k]); else if (attrs[k] != null && attrs[k] !== false) e.setAttribute(k, attrs[k]);
+    }
+    [].concat(kids || []).forEach(function (x) { if (x != null) e.append(x); });
+    return e;
+  }
+  var tt;
+  function toast(t, err) { var x = $("toast"); x.textContent = t; x.className = "toast on" + (err ? " err" : ""); clearTimeout(tt); tt = setTimeout(function () { x.className = "toast"; }, 3200); }
+  function api(ruta, datos) {
+    return fetch(ruta, { method: datos === undefined ? "GET" : "POST", headers: { "X-Taller-Clave": CLAVE, "Content-Type": "application/json" },
+      body: datos === undefined ? undefined : JSON.stringify(datos), cache: "no-store" })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || "No resultó"); return j; }); });
+  }
+  function accion(ruta, datos, ok) { return api(ruta, datos || {}).then(function (j) { if (ok) toast(ok); refrescar(); return j; }).catch(function (e) { toast(e.message, true); }); }
+  function clp(n) { return n ? "$" + Number(n).toLocaleString("es-CL") : "Gratis"; }
+  function hora(f) { return (f || "").slice(11, 16); }
+  function waLink(n, t) { return "https://wa.me/" + String(n || "").replace(/\D/g, "") + (t ? "?text=" + encodeURIComponent(t) : ""); }
+  function qr(cont, texto) { if (cont._t === texto) return; cont._t = texto; cont.innerHTML = ""; if (window.QRCode) new QRCode(cont, { text: texto, width: 320, height: 320, correctLevel: QRCode.CorrectLevel.M }); }
+  var IC = {
+    claude: '<svg viewBox="0 0 24 24" fill="#ffd23f"><path d="M12 2l2.2 6.8H21l-5.5 4 2.1 6.8L12 15.5l-5.6 4.1 2.1-6.8L3 8.8h6.8z"/></svg>',
+    wa: '<svg viewBox="0 0 24 24" fill="#25d366"><path d="M12.05 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A9.9 9.9 0 1 0 12.05 2z"/></svg>',
+    ig: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>',
+    mp: '<svg viewBox="0 0 24 24" fill="none" stroke="#5fb6ff" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="3"/><path d="M2.5 10h19"/></svg>',
+    web: '<svg viewBox="0 0 24 24" fill="none" stroke="#ffd23f" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>',
+    app: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>',
+    pc: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>'
+  };
+  function pill(clase, t) { return el("span", { class: "pill " + clase, text: t }); }
+
+  // ───────── vistas por #hash ─────────
+  var VISTAS = ["hoy", "trabajar", "ventas", "contexto", "clientes", "ajustes"];
+  function ver() {
+    var v = location.hash.slice(1);
+    if (v === "conexiones") { v = "ajustes"; setTimeout(function () { $("conexiones").scrollIntoView(); }, 0); }
+    if (VISTAS.indexOf(v) < 0) v = "hoy";
+    document.querySelectorAll("[data-vista]").forEach(function (s) { s.hidden = s.dataset.vista !== v; });
+    document.querySelectorAll("nav.tabs a").forEach(function (a) { if (a.dataset.v === v) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+    var act = document.querySelector('nav.tabs a[aria-current="page"]'), nav = document.querySelector("nav.tabs");
+    if (act && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = act.offsetLeft - (nav.clientWidth - act.offsetWidth) / 2;
+    if (v === "clientes" && !tocando && (!CL || Date.now() - (ver.cl || 0) > 20000)) { ver.cl = Date.now(); cargarClientes(); }
+    if (v === "contexto" && P && !$("doc").dataset.ruta) { var pr = (P.contexto.memoria[0] || {}).ruta; if (pr) abrirDoc(pr); }
+  }
+  window.addEventListener("hashchange", ver);
+
+  // ───────── barra lateral ─────────
+  function pintarLado() {
+    var n = P.negocio, cara = $("cara");
+    $("nom").textContent = n.nombre || "Tu negocio";
+    document.title = n.nombre ? "El Taller de Rubén · " + n.nombre : "El Taller de Rubén";
+    $("ig").textContent = P.instagram.usuario ? "@" + P.instagram.usuario : (n.dueno || "");
+    if (P.foto) { if (!cara.querySelector("img")) { cara.textContent = ""; cara.append(el("img", { src: "/foto?v=" + Date.now(), alt: "" })); } }
+    else cara.textContent = (n.nombre || "·").charAt(0).toUpperCase();
+    var wa = $("wa");
+    if (P.whatsapp.conectado) {
+      wa.className = "wa"; wa.href = waLink(P.whatsapp.numero); wa.target = "_blank"; wa.rel = "noopener";
+      $("wa-num").textContent = P.whatsapp.numero; $("wa-txt").textContent = "WhatsApp del negocio · conectado";
+    } else { wa.className = "wa no"; wa.href = "#ajustes"; wa.removeAttribute("target"); $("wa-num").textContent = "Sin WhatsApp"; $("wa-txt").textContent = "conéctalo en Ajustes"; }
+    var es = $("estado"), listo = P.claude.sesion && P.negocio.nombre;
+    es.className = "estado" + (listo && P.encendido ? "" : " off");
+    es.lastElementChild.textContent = !P.claude.instalado ? "Falta instalar Claude" : !P.claude.sesion ? "Falta entrar a Claude" : !P.negocio.nombre ? "Falta tu negocio" : P.encendido ? "Rubén está trabajando" : "Rubén está apagado";
+    $("version").textContent = "Versión " + P.version + (P.computador.enchufado === false ? " · sin enchufar" : "");
+    var nf = $("n-falta"); nf.hidden = !P.falta.length; nf.textContent = P.falta.length;
+    $("tab-clientes").hidden = !P.admin;
+  }
+
+  // ───────── actualización ─────────
+  function pintarUpdate() {
+    var u = P.nueva, saltada = ""; try { saltada = localStorage.getItem("taller-saltada") || ""; } catch (e) {}
+    var corriendo = (P.trabajos.actualizar || {}).estado === "corriendo";
+    $("update").hidden = !u || (u.version === saltada && !corriendo);
+    if (!u) return;
+    $("up-t").textContent = "Hay una versión nueva de El Taller: " + u.version;
+    $("up-txt").textContent = corriendo ? "Actualizando… tu carpeta no se toca. Esta página se recarga sola." : (u.notas || "");
+    $("up-acc").hidden = corriendo;
+  }
+  $("up-no").addEventListener("click", function () { try { localStorage.setItem("taller-saltada", P.nueva.version); } catch (e) {} $("update").hidden = true; });
+  $("up-si").addEventListener("click", function () {
+    var antes = P.version; accion("/api/actualizar");
+    var n = 0, t = setInterval(function () { n++; api("/api/estado").then(function (j) { if (j.version !== antes) { clearInterval(t); location.reload(); } }).catch(function () {}); if (n > 60) clearInterval(t); }, 2000);
+  });
+
+  // ───────── HOY ───────── lo que falta (cada uno con su botón y, si hace falta, su caja)
+  var FALTA = {
+    "claude-instalar": function (it, x) { return accion("/api/claude/instalar", {}, "Instalando Claude…"); },
+    "claude-entrar": function () { abierto["claude-entrar"] = true; return accion("/api/claude/entrar", {}, "Se abrió tu navegador: entra con tu cuenta de Claude"); },
+    "codigo": function () { abierto.codigo = true; pintarHoy(); var i = document.querySelector("#falta input.codigo-in"); if (i) i.focus(); },
+    "negocio": function () { abierto.negocio = true; pintarHoy(); },
+    "meta": function () { abierto.meta = true; return accion("/api/conectar-meta", {}); },
+    "dueno": function () { abierto.dueno = true; return accion("/api/nuevo-codigo", {}); },
+    "apple": function () { return accion("/api/apple", {}, "Se abrió una ventana de Apple: aprieta Instalar"); },
+    "publico": function () { location.hash = "trabajar"; toast("Escríbele a Rubén: \"a los clientes diles que…\""); },
+    "autologin": function () { return accion("/api/abrir-usuarios", {}, "Activa \"Iniciar sesión automáticamente\""); },
+    "dominio": function () { abierto.dominio = true; pintarHoy(); var i = document.querySelector("#falta input.dominio-in"); if (i) i.focus(); }
+  };
+  var cajas = {};  // las cajas con formularios se guardan: el refresco cada 4 s no borra lo que el dueño está escribiendo
+  function extra(id) {  // la caja que se abre bajo un "lo que falta"
+    var T = P.trabajos;
+    if (cajas[id] && (id === "negocio" ? abierto.negocio : id === "codigo" ? abierto.codigo : true) && id !== "meta" && id !== "dueno") return cajas[id];
+    if (id === "claude-instalar" && (T.claude || {}).estado === "corriendo") return el("small", { text: "Instalando… toma un par de minutos." });
+    if (id === "claude-instalar" && (T.claude || {}).estado === "error") return el("small", { class: "caido", text: "No resultó: " + T.claude.texto });
+    if (id === "claude-entrar" && (abierto["claude-entrar"] || (T.entrar || {}).estado === "corriendo")) {
+      var inp = el("input", { class: "txt", placeholder: "Si Claude te muestra un código, pégalo aquí" });
+      return cajas[id] = el("div", { class: "bloque" }, [
+        el("small", { text: "Se abrió tu navegador. Entra con tu cuenta de Claude y autoriza. Si no se abrió, aprieta Entrar de nuevo." }),
+        el("div", { class: "fila-in", style: "margin:0" }, [inp, el("button", { class: "btn sec", type: "button", text: "Listo", onclick: function () { if (inp.value.trim()) accion("/api/claude/codigo", { codigo: inp.value.trim() }, "Revisando…"); } })])]);
+    }
+    if (id === "dominio" && abierto.dominio) return cajas.dominio || (cajas.dominio = questDominio());
+    if (id === "codigo" && (T.codigo || {}).estado === "corriendo") return el("small", { text: "Bajando tu negocio y todo lo que dejaste en tu espacio…" });
+    if (id === "codigo" && ((T.codigo || {}).estado === "error" || abierto.codigo)) {
+      var ci = el("input", { class: "txt codigo-in", placeholder: "K7P2-QX9M", autocomplete: "off", style: "text-transform:uppercase;letter-spacing:.12em;font-weight:700;max-width:220px" });
+      var err = (T.codigo || {}).estado === "error" ? el("small", { class: "caido", text: T.codigo.texto }) : null;
+      var fc = el("form", { class: "fila-in", style: "margin:0" }, [ci, el("button", { class: "btn", type: "submit", text: "Usar" })]);
+      fc.addEventListener("submit", function (e) { e.preventDefault(); if (ci.value.trim()) { abierto.codigo = false; delete cajas.codigo; accion("/api/codigo", { codigo: ci.value }, "Bajando tu negocio…"); } });
+      return cajas.codigo = el("div", { class: "bloque" }, [el("small", { text: "Está en tu espacio de El Taller (eltallerconjp.jpfraneto.com), en \"Instala El Taller en tu Mac\"." }), fc, err]);
+    }
+    if (id === "negocio" && abierto.negocio) {
+      var f = el("form", { class: "form" }), nom = el("input", { class: "txt", required: "", placeholder: "Ej: Café Caro" }), due = el("input", { class: "txt", placeholder: "Tu nombre" }),
+        ig = el("input", { class: "txt", placeholder: "@tunegocio" }), ctx = el("textarea", { class: "txt", placeholder: "Qué vendes, a quién, cómo vendes hoy. Lo que quieras: Rubén te pregunta el resto." });
+      f.append(el("div", { class: "dos-c" }, [el("label", { text: "Tu negocio" }, nom), el("label", { text: "Tú" }, due)]), el("label", { text: "Su Instagram (si tiene)" }, ig),
+        el("label", { text: "Cuéntale algo de tu negocio (opcional)" }, ctx), el("div", {}, el("button", { class: "btn", type: "submit", text: "Crear" })));
+      cajas.negocio = f;
+      f.addEventListener("submit", function (e) { e.preventDefault(); abierto.negocio = false; delete cajas.negocio;
+        accion("/api/negocio", { nombre: nom.value, dueno: due.value, instagram: ig.value.replace(/^@/, ""), contexto: ctx.value }, "Listo: nació la carpeta de tu negocio"); });
+      return f;
+    }
+    if (id === "meta" && P.conectar_link) {
+      var q = el("div", { class: "qr" }); qr(q, P.conectar_link);
+      return el("div", { class: "qrbox" }, [q, el("div", { class: "bloque" }, [
+        el("small", { html: "Escanéalo con la cámara de <b>tu teléfono</b>. Se abre una página: <b>Conectar WhatsApp</b> (ten a mano el teléfono de la pega: llega un SMS al chip) y, si quieres, <b>Entrar con Instagram</b>. Vence en 30 minutos." }),
+        el("a", { class: "sutil", href: P.conectar_link, target: "_blank", rel: "noopener", text: "Abrir en este computador" })])]);
+    }
+    if (id === "dueno" && P.codigo_pareo) {
+      var link = waLink(P.whatsapp.numero, P.codigo_pareo), q2 = el("div", { class: "qr" }); qr(q2, link);
+      return el("div", { class: "qrbox" }, [q2, el("div", { class: "bloque" }, [el("span", { class: "codigo", text: P.codigo_pareo }),
+        el("small", { html: "Escanéalo con <b>tu teléfono personal</b>: se abre WhatsApp con el código escrito, al número de tu negocio. Aprieta Enviar. Sirve una vez, por 30 minutos." })])]);
+    }
+    return null;
+  }
+  // La quest del dominio: comprarlo en NIC.cl, agregarlo a Cloudflare, pegar los nameservers, comprobar (el panel mira el DNS)
+  function resultadoDominio(D) {
+    if (!D || !D.nombre || !D.estado) return null;
+    if (D.cloudflare) return el("small", { class: "bien", html: "✓ " + D.nombre + " ya apunta a Cloudflare. Rubén puede publicar tu página ahí." });
+    if (D.estado === "no_existe") return el("small", { text: D.nombre + " todavía no existe en internet. ¿Terminaste de comprarlo? NIC.cl puede tardar un rato." });
+    if (D.estado === "otro") return el("small", {}, [el("span", { text: "Todavía apunta a otro lado: " }), el("span", { class: "ns", text: D.ns.join(" · ") }),
+      el("span", { text: ". Si ya pegaste los de Cloudflare, espera un rato y vuelve a comprobar." })]);
+    return el("small", { text: "No encontré sus servidores todavía. Espera un rato y vuelve a comprobar." });
+  }
+  function questDominio() {
+    var D = P.dominio || {};
+    var inp = el("input", { class: "txt dominio-in", placeholder: "tumarca.cl", value: D.nombre || "", autocomplete: "off", autocapitalize: "none", spellcheck: "false" });
+    var res = el("div", {}, resultadoDominio(D));
+    var f = el("form", { class: "fila-in", style: "margin:0" }, [inp, el("button", { class: "btn", type: "submit", text: "Comprobar" })]);
+    f.addEventListener("submit", function (e) {
+      e.preventDefault(); if (!inp.value.trim()) return;
+      res.textContent = ""; res.append(el("small", { text: "Mirando…" }));
+      api("/api/dominio", { nombre: inp.value }).then(function (j) {
+        res.textContent = ""; res.append(resultadoDominio(j.dominio));
+        if (j.dominio.cloudflare) { toast("Tu dominio quedó conectado"); abierto.dominio = false; delete cajas.dominio; refrescar(); }
+      }).catch(function (err) { res.textContent = ""; res.append(el("small", { class: "caido", text: err.message })); });
+    });
+    var pasos = el("ol", {});
+    pasos.innerHTML =
+      '<li><b>Compra tu dominio</b> en <a href="https://www.nic.cl" target="_blank" rel="noopener">nic.cl</a>, a tu nombre ($9.990 el año). Corto y fácil de decir.</li>' +
+      '<li><b>Agrégalo a Cloudflare</b> (cuenta gratis en <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">cloudflare.com</a>): <b>Domains</b> → botón azul <b>Add domain</b> → <b>Connect a domain</b> → escribe tu dominio, deja lo demás como viene → <b>Continue</b> → plan <b>Free ($0)</b>, el botón blanco (no el Pro azul). Si aparece <code>www → urlfwd1.nic.cl</code>, bórralo: es la página de espera de NIC.cl. → <b>Continue to activation</b> → copia los 2 nameservers (<code>…ns.cloudflare.com</code>).</li>' +
+      '<li><b>Cámbialos en NIC.cl</b>: entra a <a href="https://clientes.nic.cl" target="_blank" rel="noopener">clientes.nic.cl</a> → tu dominio → baja a <b>4. Configuración Técnica</b>. Viene marcado "Redireccionamiento Web": marca <b>Servidores DNS</b>. En <b>Nombre de Servidor</b> escribe el primero (sin punto al final) → <b>Agregar Servidor de Nombre</b> → en el campo nuevo, el segundo. No marques "Configurar a NIC Chile como servidor secundario". Abajo, botón verde <b>Actualizar datos de dominio</b>: sale "La modificación fue realizada correctamente".</li>' +
+      '<li><b>Comprueba aquí</b>. NIC.cl publica el cambio cada cierto rato: puede tardar de minutos a unas horas.</li>';
+    return el("div", { class: "bloque quest" }, [pasos, f, res]);
+  }
+  function pintarHoy() {
+    var d = new Date(); $("fecha").textContent = d.toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long" });
+    var cont = $("falta"); cont.textContent = "";
+    if (abierto.codigo && !P.falta.some(function (x) { return x.id === "codigo"; }))  // "Usar código" desde Ajustes, con el negocio ya creado
+      P.falta.unshift({ id: "codigo", t: "Conecta tu espacio de El Taller", d: "Con el código de tu espacio, lo que dejaste ahí llega a tu carpeta (y lo nuevo, solo).", b: "Usar código" });
+    if (abierto.dominio && !P.falta.some(function (x) { return x.id === "dominio"; }))  // "Comprobar de nuevo" desde Ajustes, ya conectado
+      P.falta.unshift({ id: "dominio", t: "Tu dominio", d: "Revisa a dónde apunta hoy.", b: "Abrir" });
+    $("falta-t").textContent = P.falta.length ? "Lo que falta · " + P.falta.length : "Lo que falta";
+    if (!P.falta.length) cont.append(el("div", { class: "listo", text: "Todo listo. Escríbele a Rubén al WhatsApp de tu negocio." }));
+    P.falta.forEach(function (x, i) {
+      var corriendo = { "claude-instalar": "claude", "claude-entrar": "entrar", "apple": "apple", "codigo": "codigo" }[x.id];
+      corriendo = corriendo && (P.trabajos[corriendo] || {}).estado === "corriendo";
+      var b = el("button", { class: "btn sec", type: "button", text: corriendo ? "…" : x.b, disabled: corriendo || null, onclick: function () { FALTA[x.id] && FALTA[x.id](); } });
+      var it = el("div", { class: "item" }, [el("span", { class: "ic", text: String(i + 1) }), el("span", {}, [el("b", { text: x.t }), el("small", { text: x.d })]), b]);
+      var ex = extra(x.id); if (ex) it.append(el("div", { class: "extra" }, ex));
+      cont.append(it);
+    });
+    // las tarjetas
+    var c = $("cards"); c.textContent = "";
+    function card(ic, t, sub, estado, metr, nota) {
+      var h = el("header", {}, [el("span", { class: "lg", html: IC[ic] }), el("span", {}, [el("b", { text: t }), el("small", { text: sub })]), estado]);
+      var k = el("a", { class: "con", href: "#ajustes" }, h);
+      if (metr) k.append(el("div", { class: "metr" }, metr.map(function (m) { return el("div", {}, [el("strong", { text: m[0] }), el("span", { text: m[1] })]); })));
+      if (nota) k.append(el("div", { class: "nota", text: nota }));
+      c.append(k);
+    }
+    var C = P.claude, planTxt = C.plan ? "Plan " + C.plan.charAt(0).toUpperCase() + C.plan.slice(1) : "";
+    card("claude", "Claude", C.sesion ? (planTxt || "Sesión activa") : C.instalado ? "Sin sesión" : "Sin instalar",
+      C.sesion ? pill("ok", "Activo") : pill("warn", "Falta"),
+      C.sesion ? [[String(C.uso.tareas), "tareas en 7 días"], ["US$" + C.uso.costo.toFixed(2).replace(".", ","), "lo que costarían en la API"]] : null,
+      C.sesion ? "Tu límite del plan lo ves en claude.ai → Ajustes → Uso." : null);
+    card("wa", "WhatsApp", P.whatsapp.conectado ? P.whatsapp.numero : "Sin conectar", P.whatsapp.conectado ? pill("ok", "Conectado") : pill("warn", "Falta"),
+      P.whatsapp.conectado ? [[String(P.hoy.mensajes), "mensajes hoy"], [String(P.hoy.personas), "clientes atendidos"]] : null, null);
+    card("ig", "Instagram", P.instagram.conectado ? "@" + P.instagram.usuario : "Sin conectar", P.instagram.conectado ? pill("ok", "Conectado") : pill("off", "Opcional"), null,
+      P.instagram.conectado ? "Mensajes directos y reels. Las métricas, pronto." : "Se conecta junto con WhatsApp.");
+    var DOM = P.dominio || {};
+    card("web", "Tu dominio", DOM.cloudflare ? DOM.nombre : DOM.nombre ? DOM.nombre + " · falta conectar" : "Sin dominio",
+      DOM.cloudflare ? pill("ok", "Conectado") : DOM.nombre ? pill("warn", "Falta") : pill("off", "Quest"), null,
+      DOM.cloudflare ? "Tu dirección en internet, a tu nombre. Rubén publica tu página ahí." : "Lo compras en NIC.cl y lo conectas a Cloudflare: está en Lo que falta.");
+    card("mp", "Mercado Pago", "Sin conectar", pill("off", "Pronto"), null, "Para cobrar con links de pago y ver lo vendido aquí.");
+    card("app", "App", "Todavía no", pill("off", "Si conviene"), null, "Pídesela a Rubén cuando tenga sentido: reservas, pedidos, fidelidad.");
+    // actividad
+    var a = $("actividad"); a.textContent = "";
+    if (!P.actividad.length) a.append(el("li", { class: "vacio", text: "Todavía nada." }));
+    P.actividad.forEach(function (e) { a.append(el("li", {}, [el("time", { text: hora(e.fecha) }), el("span", { class: "d " + (e.nivel || "") }), el("p", { text: e.texto })])); });
+  }
+
+  // ───────── TRABAJAR ─────────
+  function pintarTrabajar() {
+    var ab = $("abrir"); ab.textContent = "";
+    if (P.whatsapp.conectado) {
+      ab.append(el("a", { class: "btn grande", href: waLink(P.whatsapp.numero), target: "_blank", rel: "noopener", html: IC.wa.replace('fill="#25d366"', 'fill="currentColor"') + "Escribirle a Rubén" }),
+        el("span", { class: "num", text: P.whatsapp.numero }),
+        el("small", { text: P.dueno_asociado ? "Solo te obedece a ti: tu teléfono quedó asociado. A tus clientes los atiende distinto, con lo que dejaste en publico.md." : "Falta asociar tu teléfono: en Hoy, \"Asocia tu teléfono\"." }));
+    } else {
+      ab.append(el("b", { text: "Primero conecta el WhatsApp de tu negocio." }), el("small", { text: "Mientras, puedes escribirle a Rubén desde aquí abajo." }),
+        el("a", { class: "btn sec", href: "#hoy", text: "Ver lo que falta" }));
+    }
+    var cv = $("conversacion"); cv.textContent = "";
+    if (!P.conversacion.length) cv.append(el("li", { class: "vacio", text: "Todavía no hablan." }));
+    P.conversacion.forEach(function (m) {
+      var quien = m.de === "dueno" ? "Tú" : m.de === "sistema" ? "" : "Rubén";
+      cv.append(el("li", {}, [el("time", { text: hora(m.fecha) }), el("span", { class: "d" + (m.canal === "aviso" ? " aviso" : "") }),
+        el("p", { text: (quien ? quien + ": " : "") + m.texto.slice(0, 400) }, el("small", { text: m.canal }))]));
+    });
+  }
+  $("p-ir").addEventListener("click", function () {
+    var t = $("p-txt").value.trim(); if (!t) return;
+    var b = $("p-ir"); b.disabled = true; $("p-resp").textContent = "Rubén está pensando…"; $("p-txt").value = "";
+    api("/api/probar", { texto: t }).then(function (j) { $("p-resp").textContent = j.respuesta; refrescar(); })
+      .catch(function (e) { $("p-resp").textContent = e.message; $("p-txt").value = t; }).then(function () { b.disabled = false; });
+  });
+  $("p-txt").addEventListener("keydown", function (e) { if (e.key === "Enter") $("p-ir").click(); });
+
+  // ───────── VENTAS ─────────
+  var TIPOS = { producto: "Producto", servicio: "Servicio", mensual: "Recurrente · mensual", anual: "Recurrente · anual" };
+  function pintarVentas() {
+    var c = $("prods"); c.textContent = "";
+    if (!P.ventas.length) c.append(el("p", { class: "vacio", style: "padding:0", text: P.negocio.nombre ? "Todavía no hay nada. Agrega lo primero que vendes, o díselo a Rubén." : "Primero ponle nombre a tu negocio (en Hoy)." }));
+    P.ventas.forEach(function (p) {
+      var rec = p.tipo === "mensual" || p.tipo === "anual";
+      var meta = el("div", { class: "meta" }, [el("span", { class: "tag" + (rec ? " rec" : ""), text: TIPOS[p.tipo] || p.tipo }), p.cupos ? el("span", { class: "tag", text: p.cupos }) : null, p.activo === false ? el("span", { class: "tag", text: "Pausado" }) : null]);
+      c.append(el("div", { class: "prod" + (p.activo === false ? " pausado" : "") }, [
+        el("div", {}, [el("b", { text: p.nombre }), meta, p.incluye ? el("p", { text: p.incluye }) : null]),
+        el("div", { class: "precio" }, el("strong", { text: clp(p.precio) + (p.precio && p.tipo === "mensual" ? "/mes" : p.precio && p.tipo === "anual" ? "/año" : "") })),
+        el("div", { class: "acc" }, [el("button", { class: "mini", type: "button", text: p.activo === false ? "Activar" : "Pausar", onclick: function () { accion("/api/ventas", { accion: "pausar", id: p.id }); } }),
+          el("button", { class: "mini", type: "button", text: "Quitar", onclick: function () { accion("/api/ventas", { accion: "quitar", id: p.id }, "Quitado: Rubén ya no lo ofrece"); } })])]));
+    });
+    $("nuevo").hidden = !P.negocio.nombre;
+  }
+  $("nuevo").addEventListener("submit", function (e) {
+    e.preventDefault();
+    accion("/api/ventas", { accion: "agregar", nombre: $("n-nombre").value, tipo: $("n-tipo").value, precio: $("n-precio").value, cupos: $("n-cupos").value, incluye: $("n-desc").value },
+      "Agregado: Rubén ya lo puede ofrecer").then(function () { e.target.reset(); });
+  });
+
+  // ───────── CONTEXTO ─────────
+  function peso(n) { return n > 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB"; }
+  function cuando(t) { var d = new Date(t * 1000), h = new Date(); return d.toDateString() === h.toDateString() ? "hoy" : d.toLocaleDateString("es-CL", { day: "numeric", month: "short" }).replace(".", ""); }
+  function pintarContexto() {
+    var a = $("archivos"), sel = $("doc").dataset.ruta; a.textContent = "";
+    if (!P.negocio.nombre) { a.append(el("p", { class: "vacio", text: "Primero ponle nombre a tu negocio (en Hoy)." })); return; }
+    a.append(el("span", { class: "sep", text: "La memoria" }));
+    P.contexto.memoria.forEach(function (f) { a.append(el("button", { type: "button", "aria-pressed": String(f.ruta === sel), onclick: function () { abrirDoc(f.ruta); } }, [el("b", { text: f.nombre }), el("small", { text: cuando(f.fecha) })])); });
+    a.append(el("span", { class: "sep", text: "Contexto general" }));
+    if (!P.contexto.general.length) a.append(el("p", { class: "vacio", style: "padding:6px 10px", text: "Vacío. Arrastra archivos aquí al lado." }));
+    P.contexto.general.forEach(function (f) { a.append(el("button", { type: "button", "aria-pressed": String(f.ruta === sel), onclick: function () { abrirDoc(f.ruta); } }, [el("b", { text: f.nombre }), el("small", { text: peso(f.peso) })])); });
+  }
+  function abrirDoc(ruta) {
+    var d = $("doc"); d.dataset.ruta = ruta; d.textContent = ""; d.append(el("div", { class: "ruta", text: ruta }), el("pre", { text: "…" }));
+    api("/api/archivo?ruta=" + encodeURIComponent(ruta)).then(function (j) {
+      d.querySelector("pre").textContent = j.binario ? "Archivo de " + peso(j.peso) + ". Rubén lo puede leer; aquí no se muestra." : (j.texto.replace(/<!--[\s\S]*?-->/g, "").trim() || "(vacío)");
+    }).catch(function (e) { d.querySelector("pre").textContent = e.message; });
+    pintarContexto();
+  }
+  function subir(files) {
+    var lista = [].slice.call(files), i = 0;
+    (function sig() {
+      if (i >= lista.length) { $("subiendo").textContent = lista.length ? "Listo." : ""; refrescar(); return; }
+      var f = lista[i++], x = new XMLHttpRequest();
+      x.open("POST", "/api/contexto/subir"); x.setRequestHeader("X-Taller-Clave", CLAVE); x.setRequestHeader("X-Nombre", encodeURIComponent(f.name));
+      x.upload.onprogress = function (e) { if (e.lengthComputable) $("subiendo").textContent = "Subiendo " + f.name + " · " + Math.round(100 * e.loaded / e.total) + "%"; };
+      x.onload = function () { if (x.status !== 200) toast("No pude subir " + f.name, true); sig(); };
+      x.onerror = function () { toast("No pude subir " + f.name, true); sig(); };
+      x.send(f);
+    })();
+  }
+  var drop = $("drop");
+  drop.addEventListener("click", function (e) { if (e.target !== $("archivo")) $("archivo").click(); });
+  $("archivo").addEventListener("change", function (e) { subir(e.target.files); e.target.value = ""; });
+  ["dragenter", "dragover"].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add("over"); }); });
+  ["dragleave", "drop"].forEach(function (t) { drop.addEventListener(t, function () { drop.classList.remove("over"); }); });
+  drop.addEventListener("drop", function (e) { e.preventDefault(); subir(e.dataTransfer.files); });
+
+  // ───────── CLIENTES (El Taller administra los espacios de sus clientes) ─────────
+  var CL = null, clSel = null, clCargando = false, clBorrar = "";
+  function cargarClientes() {
+    if (clCargando) return; clCargando = true;
+    api("/api/clientela", {}).then(function (j) { CL = j; if (!clSel && j.cuentas.length) clSel = elegirPrimero(j.cuentas); pintarClientes(); })
+      .catch(function (e) { $("cl-lista").textContent = e.message; }).then(function () { clCargando = false; });
+  }
+  function elegirPrimero(cs) { var x = cs.slice().sort(orden)[0]; return x && x.id; }
+  function pagado(x) { return x.reserva && x.reserva.estado === "pagada"; }
+  function dia(x) { if (!pagado(x)) return 0; return Math.round((new Date(new Date().toISOString().slice(0, 10) + "T12:00:00Z") - new Date(x.reserva.inicio + "T12:00:00Z")) / 864e5) + 1; }
+  function orden(a, b) { return (pagado(b) - pagado(a)) || ((b.reserva ? 1 : 0) - (a.reserva ? 1 : 0)) || ((b.creada || 0) - (a.creada || 0)); }
+  function estadoCli(x) {
+    if (pagado(x)) { var d = dia(x); return d < 1 ? "Pagado · parte el " + x.reserva.inicio.slice(8) + "/" + x.reserva.inicio.slice(5, 7) : d > 30 ? "Terminó sus 30 días" : "Día " + d + " de 30"; }
+    if (x.reserva) return "Eligió el " + x.reserva.inicio.slice(8) + "/" + x.reserva.inicio.slice(5, 7) + " · sin pagar";
+    return "Sin fecha";
+  }
+  function copiar(t, ok) { (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { toast(ok || "Copiado"); }, function () { toast(t); }); }
+  function cl(accion, datos, ok) { return api("/api/clientela/" + accion, datos).then(function (j) { if (ok) toast(ok); cargarClientes(); return j; }).catch(function (e) { toast(e.message, true); throw e; }); }
+  function pintarClientes() {
+    if (!CL) return;
+    var l = $("cl-lista"); l.textContent = "";
+    l.append(el("span", { class: "sep", text: CL.cuentas.length + (CL.cuentas.length === 1 ? " cliente" : " clientes") + (CL.proximo_libre ? " · próximo día 1 libre: " + CL.proximo_libre.slice(8) + "/" + CL.proximo_libre.slice(5, 7) : "") }));
+    CL.cuentas.slice().sort(orden).forEach(function (x) {
+      l.append(el("button", { class: "cli", type: "button", "aria-pressed": String(x.id === clSel), onclick: function () { clSel = x.id; clBorrar = ""; pintarClientes(); } },
+        [el("span", {}, [el("b", { text: x.negocio || x.nombre || x.id }), el("small", { style: "display:block", text: (x.nombre || "") + (x.nombre ? " · " : "") + estadoCli(x) })]),
+         el("small", { class: x.instalacion && x.instalacion.usado ? "e" : "", text: (x.instalacion && x.instalacion.usado ? "instalado · " : "") + (x.contexto || []).length })]));
+    });
+    var x = CL.cuentas.filter(function (y) { return y.id === clSel; })[0], d = $("cl-det"); d.textContent = "";
+    if (!x) { d.append(el("p", { class: "vacio", text: "Elige un cliente, o crea uno nuevo." })); return; }
+    var i = x.instalacion || {}, linea = i.codigo ? "curl -fsSL https://jpfraneto.com/taller.sh | bash -s " + i.codigo : "";
+    var base = "https://eltallerconjp.jpfraneto.com", slug = (x.instagram || x.id).toLowerCase();
+    d.append(det("web", x.negocio || x.nombre || "Cliente", [x.nombre, x.instagram ? "@" + x.instagram : "", x.telefono].filter(Boolean).join(" · ") || "Sin datos de contacto", [
+      ["30 días", estadoCli(x), x.reserva && !pagado(x) ? { t: "Confirmar pago", fn: function () { cl("confirmar", { id: x.id }, "Pago confirmado: su fecha quedó fija"); } } : null],
+      ["Su espacio", "su enlace sirve una vez, por 7 días", { t: "Copiar enlace", fn: function () { cl("enlace", { id: x.id }).then(function (j) { copiar(j.url, "Enlace copiado: mándaselo por WhatsApp"); }); } }],
+      ["Instalación", i.usado ? "instalado el " + new Date(i.usado).toLocaleDateString("es-CL") : i.codigo ? "código " + i.codigo + " · vence " + new Date(i.vence).toLocaleDateString("es-CL") : pagado(x) ? "sin código" : "se abre al pagar",
+        i.codigo && !i.usado ? { t: "Copiar línea", fn: function () { copiar(linea, "Línea copiada: mándasela"); } } : pagado(x) ? { t: "Nuevo código", fn: function () { cl("codigo", { id: x.id }, "Código nuevo"); } } : null],
+      ["Perfil público", x.publico ? "visible en jpfraneto.com/p/" + slug : "privado", { t: x.publico ? "Ocultar" : "Mostrar", fn: function () { cl("perfil", { id: x.id, publico: !x.publico }, x.publico ? "Perfil oculto" : "Perfil visible"); } }],
+      x.publico ? ["Ver perfil", "/p/" + slug, { t: "Abrir", url: base + "/p/" + slug }] : null,
+      x.prototipo ? ["Prototipo", x.prototipo.titulo || x.prototipo.url, { t: "Abrir", url: x.prototipo.url }] : null]));
+    // su contexto
+    var lista = el("ul", { class: "ctx" });
+    if (!(x.contexto || []).length) lista.append(el("li", {}, el("span", { class: "vacio", style: "padding:0", text: "Todavía nada." })));
+    (x.contexto || []).slice().reverse().forEach(function (it) {
+      var t = it.tipo === "archivo" ? it.nombre : it.texto, quien = it.de === "jp" ? "tú" : "el cliente";
+      var li = el("li", {}, [el("span", { text: t }), el("small", { text: quien + (it.peso ? " · " + peso(it.peso) : "") })]);
+      if (it.tipo === "archivo") { li.style.cursor = "pointer"; li.addEventListener("click", function () {
+        fetch("/api/clientela/archivo?id=" + encodeURIComponent(x.id) + "&a=" + encodeURIComponent(it.id), { headers: { "X-Taller-Clave": CLAVE } })
+          .then(function (r) { if (!r.ok) throw new Error("No pude abrirlo"); return r.blob(); }).then(function (b) { window.open(URL.createObjectURL(b), "_blank"); }).catch(function (e) { toast(e.message, true); }); }); }
+      lista.append(li);
+    });
+    var nota = el("input", { class: "txt", placeholder: "Una nota o un link para su contexto" });
+    var fn = el("form", { class: "fila-in", style: "margin:0" }, [nota, el("button", { class: "btn sec", type: "submit", text: "Agregar" })]);
+    fn.addEventListener("submit", function (e) { e.preventDefault(); if (nota.value.trim()) cl("nota", { id: x.id, texto: nota.value.trim() }, "Anotado: le llega a su computador"); });
+    var inp = el("input", { type: "file", multiple: "", hidden: "" }), drop = el("label", { class: "drop" }, [el("b", { text: "Arrastra aquí archivos para su contexto" }), el("span", { text: "Le llegan a su computador solos (hasta 95 MB cada uno)." }), inp]);
+    function subirCli(files) {
+      var fs = [].slice.call(files), k = 0;
+      (function sig() {
+        if (k >= fs.length) { cargarClientes(); return; }
+        var f = fs[k++], r = new XMLHttpRequest();
+        r.open("POST", "/api/clientela/subir?id=" + encodeURIComponent(x.id) + "&nombre=" + encodeURIComponent(f.name));
+        r.setRequestHeader("X-Taller-Clave", CLAVE); if (f.type) r.setRequestHeader("Content-Type", f.type);
+        r.upload.onprogress = function (e) { if (e.lengthComputable) drop.firstChild.textContent = "Subiendo " + f.name + " · " + Math.round(100 * e.loaded / e.total) + "%"; };
+        r.onload = function () { if (r.status !== 200) toast("No pude subir " + f.name, true); else toast("Subido: " + f.name); sig(); };
+        r.onerror = function () { toast("No pude subir " + f.name, true); sig(); };
+        r.send(f);
+      })();
+    }
+    inp.addEventListener("change", function (e) { subirCli(e.target.files); });
+    ["dragenter", "dragover"].forEach(function (t) { drop.addEventListener(t, function (e) { e.preventDefault(); drop.classList.add("over"); }); });
+    ["dragleave", "drop"].forEach(function (t) { drop.addEventListener(t, function () { drop.classList.remove("over"); }); });
+    drop.addEventListener("drop", function (e) { e.preventDefault(); subirCli(e.dataTransfer.files); });
+    d.append(el("div", { class: "doc", style: "display:grid;gap:10px" }, [el("h2", { text: "Su contexto · " + (x.contexto || []).length }), lista, fn, drop]));
+    // borrar, en dos pasos (no hay vuelta atrás)
+    var bb = el("button", { class: "btn sec peligro" + (clBorrar === x.id ? " si" : ""), type: "button", text: clBorrar === x.id ? "Sí, borrar " + (x.negocio || "") + " para siempre" : "Borrar este cliente",
+      onclick: function () { if (clBorrar !== x.id) { clBorrar = x.id; pintarClientes(); return; } cl("borrar", { id: x.id }, "Borrado").then(function () { clSel = null; clBorrar = ""; }); } });
+    d.append(bb);
+  }
+  $("cl-nuevo-b").addEventListener("click", function () { $("cl-nuevo").hidden = false; $("cl-negocio").focus(); });
+  $("cl-nuevo-x").addEventListener("click", function () { $("cl-nuevo").hidden = true; });
+  $("cl-nuevo").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var d = { negocio: $("cl-negocio").value.trim(), nombre: $("cl-nombre").value.trim(), instagram: $("cl-ig").value.trim().replace(/^@/, "") };
+    var tel = $("cl-tel").value.replace(/\D/g, ""); if (tel) d.telefono = tel.length === 9 ? "56" + tel : tel;
+    if ($("cl-proto").value.trim()) { d.prototipo = $("cl-proto").value.trim(); d.prototipo_titulo = $("cl-proto-t").value.trim(); }
+    cl("enlace", d).then(function (j) { clSel = j.cuenta.id; $("cl-nuevo").hidden = true; e.target.reset(); copiar(j.url, "Listo: su enlace quedó copiado. Mándaselo por WhatsApp."); });
+  });
+
+  // ───────── AJUSTES ─────────
+  function det(ic, titulo, texto, filas) {
+    var dl = el("dl", { class: "datos" });
+    filas.forEach(function (f) {
+      if (!f) return;
+      var a = null;
+      if (f[2]) a = f[2].url ? el("a", { class: "sutil", href: f[2].url, target: "_blank", rel: "noopener", text: f[2].t }) : el("button", { class: "sutil", type: "button", text: f[2].t, onclick: f[2].fn });
+      dl.append(el("dt", { text: f[0] }), el("dd", {}, [typeof f[1] === "string" ? el("span", { text: f[1] }) : el("span", {}, f[1]), a]));
+    });
+    return el("div", { class: "det" }, [el("div", { class: "izq" }, [el("h3", { html: IC[ic] + titulo }), el("p", { text: texto })]), dl]);
+  }
+  function sw(on, fn, label) { return el("button", { class: "sw", role: "switch", type: "button", "aria-checked": String(!!on), "aria-label": label, onclick: fn }); }
+  function pintarAjustes() {
+    var C = P.claude, pc = P.computador, cx = $("conex"); cx.textContent = "";
+    var ir = function (id) { return function () { location.hash = "hoy"; FALTA[id](); }; };
+    cx.append(det("claude", "Claude", "El cerebro de Rubén: la IA que trabaja en tu negocio. Usa tu cuenta: lo que hace cuenta para tu plan.", [
+      ["Estado", C.sesion ? pill("ok", "Sesión activa") : C.instalado ? pill("warn", "Sin sesión") : pill("warn", "Sin instalar"),
+        !C.instalado ? { t: "Instalar", fn: ir("claude-instalar") } : !C.sesion ? { t: "Entrar", fn: ir("claude-entrar") } : null],
+      C.sesion ? ["Cuenta", C.email || "—", { t: "Cambiar", fn: function () { abierto["claude-entrar"] = true; accion("/api/claude/entrar", {}, "Se abrió tu navegador"); location.hash = "hoy"; } }] : null,
+      C.sesion ? ["Plan", C.plan ? C.plan.charAt(0).toUpperCase() + C.plan.slice(1) : "—", { t: "Cambiar", url: "https://claude.ai/upgrade" }] : null,
+      C.sesion ? ["Últimos 7 días", C.uso.tareas + " tareas · equivale a US$" + C.uso.costo.toFixed(2).replace(".", ","), null] : null,
+      C.sesion ? ["Límite del plan", "se ve en claude.ai", { t: "Ver", url: "https://claude.ai/settings/usage" }] : null,
+      C.instalado ? ["Programa", "Claude Code " + (C.version || ""), null] : null]));
+    cx.append(det("wa", "WhatsApp del negocio", "El chip vive en el teléfono de la pega. Tus clientes escriben a ese número y Rubén contesta. Tú le escribes desde tu teléfono.", [
+      ["Número", P.whatsapp.numero || "Sin conectar", P.whatsapp.conectado ? { t: "Probar", url: waLink(P.whatsapp.numero) } : { t: "Conectar", fn: ir("meta") }],
+      ["Estado", P.whatsapp.conectado ? (P.whatsapp.escuchando ? pill("ok", "Conectado a Meta") : pill("warn", "Sin señal")) : pill("warn", "Falta"), null],
+      P.whatsapp.conectado ? ["Tu teléfono", P.dueno_asociado ? "asociado" : "sin asociar", { t: P.dueno_asociado ? "Agregar otro" : "Asociar", fn: ir("dueno") }] : null,
+      P.whatsapp.conectado ? ["Hoy", P.hoy.mensajes + " mensajes · " + P.hoy.personas + " clientes · " + P.hoy.pasados + " te los pasó a ti", null] : null]));
+    cx.append(det("ig", "Instagram", "Lee y contesta tus mensajes directos y publica tus reels con tu sí.", [
+      ["Cuenta", P.instagram.usuario ? "@" + P.instagram.usuario : "Sin conectar", { t: P.instagram.conectado ? "Cambiar" : "Conectar", fn: ir("meta") }],
+      ["Estado", P.instagram.conectado ? pill("ok", "Conectado") : pill("off", "Opcional"), null],
+      P.instagram.conectado ? ["Foto", P.foto ? "lista" : "sin foto", { t: "Actualizar", fn: function () { accion("/api/foto", {}, "Listo"); } }] : null]));
+    var ES = P.espacio || {};
+    cx.append(det("web", "Tu espacio en El Taller", "Lo que dejas en eltallerconjp.jpfraneto.com (fotos, videos, notas) llega solo a la carpeta de tu negocio.", [
+      ["Estado", ES.conectado ? pill("ok", "Conectado") : pill("off", "Sin código"), ES.conectado ? null : { t: "Usar código", fn: function () { location.hash = "hoy"; abierto.codigo = true; pintarHoy(); } }],
+      ES.conectado ? ["Archivos que llegaron", String(ES.archivos), null] : null,
+      ES.conectado ? ["Última revisión", ES.sincronizado ? ES.sincronizado.slice(11, 16) : "—", null] : null,
+      ES.error ? ["Ojo", ES.error, null] : null]));
+    var DM = P.dominio || {};
+    cx.append(det("web", "Tu dominio", "Tu dirección en internet, comprada en NIC.cl a tu nombre y conectada a Cloudflare, donde vive tu página.", [
+      ["Dominio", DM.nombre || "Sin dominio", { t: DM.nombre ? "Comprobar de nuevo" : "Hacer la quest", fn: function () { location.hash = "hoy"; abierto.dominio = true; delete cajas.dominio; pintarHoy(); } }],
+      ["Estado", DM.cloudflare ? pill("ok", "Apunta a Cloudflare") : DM.nombre ? pill("warn", "Todavía no") : pill("off", "Quest"), null],
+      DM.ns && DM.ns.length ? ["Nameservers", DM.ns.join(" · "), null] : null,
+      DM.revisado ? ["Revisado", DM.revisado.slice(0, 16), null] : null]));
+    cx.append(det("mp", "Mercado Pago", "Donde entra la plata. Conectado, Rubén arma links de pago y en Ventas ves lo vendido.", [["Estado", pill("off", "Pronto"), null]]));
+    cx.append(det("pc", "Este computador", "Rubén trabaja aquí. Mientras esté prendido y con internet, tu negocio contesta.", [
+      ["Enchufado", pc.enchufado === false ? pill("warn", "No") : pc.enchufado ? pill("ok", "Sí") : "—", null],
+      ["Se mantiene despierto", pc.despierto ? pill("ok", "Sí") : pill("warn", "No"), null],
+      ["Vuelve solo tras un corte", pc.inicio_automatico ? pill("ok", "Sí") : pill("warn", "No"), pc.inicio_automatico ? null : { t: "Activar", fn: function () { accion("/api/abrir-usuarios", {}, "Activa \"Iniciar sesión automáticamente\""); } }],
+      ["Historial (deshacer)", P.historial ? pill("ok", "Activo") : pill("warn", "Falta"), P.historial ? null : { t: "Activar", fn: ir("apple") }],
+      pc.disco_libre_gb != null ? ["Disco libre", pc.disco_libre_gb + " GB", null] : null,
+      P.negocio.carpeta ? ["Carpeta", P.negocio.carpeta.replace(/^\/Users\/[^/]+/, "~"), null] : null]));
+    // preferencias
+    var pr = $("prefs"); pr.textContent = "";
+    function fila(t, d, ctrl) { pr.append(el("div", { class: "fila" }, [el("span", {}, [el("b", { text: t }), el("small", { text: d })]), ctrl])); }
+    fila("Rubén contesta", "Apagado, no responde nada (los mensajes quedan anotados).", sw(P.encendido, function () { accion("/api/encender", { encendido: !P.encendido }); }, "Rubén contesta"));
+    fila("Atender a tus clientes por WhatsApp", "Con lo que escribiste en publico.md, sin herramientas. Lo que no sabe, te lo pasa.", sw(P.atiende_clientes, function () { accion("/api/clientes", { activo: !P.atiende_clientes }); }, "Atender clientes"));
+    var solo = el("input", { class: "txt", value: P.puede_solo || "", placeholder: "Ej: publicar la página cuando se lo pido" });
+    solo.addEventListener("change", function () { accion("/api/amigo", { puede_solo: solo.value }, "Guardado"); });
+    fila("Qué puede hacer sin preguntarte", "Vacío: te pregunta antes de todo, salvo anotar en la memoria. Cobrar o mover plata: siempre pregunta.", solo);
+    var mod = el("select", { class: "txt", "aria-label": "Modelo" }, [["", "El normal"], ["opus", "El más potente (gasta más de tu plan)"], ["haiku", "El más rápido"]].map(function (o) { return el("option", { value: o[0], text: o[1], selected: P.modelo === o[0] || null }); }));
+    mod.addEventListener("change", function () { accion("/api/amigo", { modelo: mod.value }, "Guardado"); });
+    fila("Modelo", "El normal sirve para casi todo.", mod);
+    fila("Versión de El Taller", P.nueva ? "Hay una nueva: " + P.nueva.version : "Estás al día (" + P.version + ").", P.nueva ? el("button", { class: "btn sec", type: "button", text: "Actualizar", onclick: function () { $("up-si").click(); } }) : el("span"));
+    fila("Ajustes avanzados", "App propia de Meta, túnel, la ventana en tu web, la caja de seguridad.", el("a", { class: "btn sec", href: "/avanzado", text: "Abrir" }));
+  }
+
+  // ───────── refrescar ─────────
+  var tocando = false;
+  document.addEventListener("focusin", function (e) { tocando = /INPUT|TEXTAREA|SELECT/.test(e.target.tagName); });
+  document.addEventListener("focusout", function () { tocando = false; });
+  function refrescar() {
+    return api("/api/estado").then(function (j) {
+      E = j; P = j.panel; $("caido").hidden = true;
+      pintarLado(); pintarUpdate();
+      if (!tocando) { pintarHoy(); pintarTrabajar(); pintarVentas(); pintarContexto(); pintarAjustes(); }
+      ver();
+    }).catch(function () { $("caido").hidden = false; });
+  }
+  refrescar();
+  setInterval(function () { if (!document.hidden) refrescar(); }, 4000);
+})();
+</script>
+</body>
+</html>

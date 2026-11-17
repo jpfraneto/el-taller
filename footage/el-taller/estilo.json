@@ -1,0 +1,51 @@
+{
+  "_ayuda": "El estilo de los PRÓXIMOS reels y portadas de El Taller. Cambiar algo acá cambia todo lo que se renderice después; lo ya publicado no se toca (la grilla muestra la evolución). Probar un cambio: tools/.venv/bin/python tools/episode.py <ep> muestra. Qué va dónde: este archivo = el look y los textos fijos · TASTE.md = criterio editorial (qué contar, cómo cortar, cómo escribir hooks) · reels.json / cover.json = un episodio · código = algo nuevo que el pipeline no sabe hacer.",
+
+  "serie": {
+    "_ayuda": "nombre: arriba en cada reel y en la tarjeta final · color: el amarillo de la serie (subtítulos destacados, etiquetas, portadas) · handle y tagline: tarjeta final.",
+    "nombre": "EL TALLER",
+    "handle": "@eltallerconjp",
+    "tagline": "Cuéntame de tu negocio y te doy ideas",
+    "color": "#FFD23F"
+  },
+
+  "actos": [
+    {"n": "1/3", "nombre": "EL CASO", "cta": ["Sigue en 2/3:", "*El nudo →*"]},
+    {"n": "2/3", "nombre": "EL NUDO", "cta": ["Sigue en 3/3:", "*La propuesta →*"]},
+    {"n": "3/3", "nombre": "LA PROPUESTA", "cta": ["¿Qué haría tu negocio", "*con algo así?*", "Coméntalo abajo"]}
+  ],
+  "_ayuda_actos": "nombre: abajo en cada portada · cta: las líneas de la tarjeta final de cada reel (*así* = en amarillo). El planner las usa salvo que el episodio pida otra cosa.",
+
+  "reels": {
+    "_ayuda": "segundos_de_voz: el largo que el planner apunta [mín, máx] · zooms: el encuadre de cada corte, en ciclo · muletillas: palabras que se cortan · sonidos: el efecto de cada tipo de gráfico (hit, pop, stamp, whoosh, swish, tick) · color_grade: filtro de ffmpeg sobre el video.",
+    "segundos_de_voz": [30, 60],
+    "zooms": [1.15, 1.6, 1.3, 1.6, 1.15, 1.45],
+    "muletillas": ["eh", "em", "emm", "mm", "mmm", "ehh", "ah", "ehm"],
+    "sonidos": {"title": "hit", "callout": "pop", "stamp": "stamp", "image": "whoosh", "phone": "swish", "laptop": "whoosh", "broll": "swish", "button": "pop"},
+    "modo": "sobrio",
+    "_ayuda_sobrio": "modo sobrio (JP, 2026-11-13, Ep. 10: «way more sobrio. just keep it raw»): sin gráficos, sin efectos, sin etiqueta arriba. Subtítulos de a una palabra: el español (es_y) al ritmo de la voz y, abajo, el inglés (en_y) más chico y suave, de la traducción de cada pieza (\"en\" en reels.json). Al empezar, un zócalo de noticiero con nombre y rol (JP · programador desde 2026-11-14; antes RUBÉN · maestro chasquilla); al final, el cta en letra simple y la firma. modo \"\" = el look de antes (títulos, callouts, sonidos).",
+    "sobrio": {"nombre": "JP", "rol": "programador", "firma": "@eltallerconjp",
+               "es_y": 1290, "es_size": 92, "en_y": 1395, "en_size": 50, "zocalo_x": 64, "zocalo_y": 1040, "final": 2.6},
+    "color_grade": "eq=contrast=1.07:saturation=1.14:gamma=0.97,colorbalance=rs=0.03:gs=0.0:bs=-0.04:rm=0.02:bm=-0.03:rh=0.02:bh=-0.02,vignette=angle=PI/5,noise=alls=5:allf=t"
+  },
+
+  "portadas": {
+    "_ayuda": "fondo: la foto detrás de las 3 portadas (relativa a footage/) · kicker: el texto chico de arriba ({ep} = número de episodio) · franja: la foto de un tejido mapuche-huilliche real (con crédito a quien lo tejió), repetida a lo ancho de la fila: separa un capítulo del siguiente; imagen null = sin franja. alto en px (de 1920).",
+    "fondo": "el-taller/brand/taller-vacio.jpg",
+    "kicker": "EL TALLER · EP. {ep}",
+    "franja": {"imagen": null, "alto": 120, "credito": ""},
+    "_ayuda_finde": "la fila del fin de semana (cover.json \"finde\": true; JP 2026-11-14: «it should be *felt* that they are for the weekend»): fondo plano en vez de la foto del galpón, letra en tinta, JP recortado encima.",
+    "finde": {"kicker": "EL TALLER · FIN DE SEMANA", "fondo": "#FFD23F", "tinta": "#14110f"}
+  },
+
+ "cta": ["¿Qué haría tu negocio", "*con algo así?*", "Coméntalo abajo"],
+ "_ayuda_cta": "cta: la tarjeta final de cada reel cuando no es parte de una fila de 3 (desde 2026-11-10: una toma → 1 a 5 reels).",
+
+ "publicacion": {
+  "_ayuda": "Una toma → 1 a max_reels reels, que salen uno por horario: cada día a cada una de las horas (zona). Desde 2026-11-10 (JP: «me gusta la cadencia de 3 reels al día», pero no los 3 de una): tres horarios repartidos en el día. Desde 2026-11-12 (JP: «aim at releasing them at 5 am»): la fila sale junta a las 5, dos minutos entre reel y reel para que quede en orden. `episode.py <ep> publish` muestra la agenda y pregunta una vez; `episode.py watch` los publica a su hora. instagram_env: dónde están las credenciales de esta cuenta (fuera del repo).",
+  "max_reels": 5,
+  "horas": ["05:00", "05:02", "05:04"],
+  "zona": "America/Santiago",
+  "instagram_env": "~/.config/eltaller/instagram.env"
+ }
+}

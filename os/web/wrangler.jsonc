@@ -1,0 +1,40 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // El Taller · eltallerconjp.jpfraneto.com: la página + la ventana en vivo + conectar con Meta + reparto de mensajes + tu espacio.
+  // Deploy: cd os/web && npx wrangler deploy.
+  // Secretos: VENTANA_CLAVE (publicar la ventana), META_APP_SECRET (lo pone JP), META_VERIFY_TOKEN (webhook de la app),
+  //   ADMIN_CLAVE (os/clientes.py), TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID (avisos a JP), MP_ACCESS_TOKEN (+ MP_WEBHOOK_SECRET).
+  "name": "el-taller",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-08-18",
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/", "/api/*", "/meta", "/relay", "/conectar", "/conectar/*", "/p/*"] },
+  "kv_namespaces": [
+    { "binding": "VENTANA", "id": "14a09b56ba62409388ceadcc94ed0768" },
+    { "binding": "RUTAS", "id": "f56a9f0ef1cb45b6834c8557cf47e061" }
+  ],
+  "durable_objects": { "bindings": [{ "name": "CAJA", "class_name": "Caja" }, { "name": "ESPACIO", "class_name": "Espacio" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Caja"] }, { "tag": "v2", "new_sqlite_classes": ["Espacio"] }],
+  // Tu espacio (src/espacio.js): lo que cada negocio deja antes del día 1 (fotos, PDFs, audios), privado.
+  "r2_buckets": [{ "binding": "CONTEXTO", "bucket_name": "el-taller-contexto" }],
+  "vars": {
+    "META_APP_ID": "29474239675513962",   // app "El Taller Con JP" (portafolio Anky)
+    "IG_CONFIG_ID": "953658084206488",    // Facebook Login for Business: "Instagram API (Unified Login)"
+    "WA_CONFIG_ID": "2538407743310647",   // "WhatsApp Embedded Signup Configuration With 60 Expiration Token" (2026-11-10)
+    "GRAPH_VERSION": "v27.0",
+    // Business Discovery (quién es un @: foto, nombre): desde la cuenta de Instagram de El Taller. El token va en el secreto IG_LOOKUP_TOKEN.
+    // El WhatsApp de El Taller: ahí llegan los códigos de "Conectar WhatsApp". WA_VERIFICA = "1" cuando ese número esté en la API
+    // de WhatsApp y su webhook llegue a /meta; mientras, en la hoja el WhatsApp se escribe a mano.
+    "ELTALLER_WA": "56948455809",
+    "WA_VERIFICA": "0",
+    "IG_LOOKUP_USER": "17841442175100750",
+    // Mientras no esté el secreto MP_ACCESS_TOKEN, "Pagar" abre este link fijo y JP confirma a mano.
+    "MP_LINK": "https://mpago.li/2ecWpft",
+    // Las cuentas cuyo computador (la llave que recibe con el código) puede administrar a los clientes desde su panel: El Taller
+    "ADMIN_CUENTAS": "<id-de-tu-cuenta>"
+  },
+  "routes": [
+    // eltallerderuben.cl and eltallerderuben.jpfraneto.com moved to the redirect worker (footage/el-taller/eltallerderuben/)
+    { "pattern": "eltallerconjp.jpfraneto.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}

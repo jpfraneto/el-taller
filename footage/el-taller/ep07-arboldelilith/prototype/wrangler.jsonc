@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // The niche's router: owns the domain, the login and the data; serves the champion product (src/worker.js).
+  "name": "arboldelilith-app",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  "routes": [{ "pattern": "arboldelilith.jpfraneto.com", "custom_domain": true }],
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "arboldelilith",
+      // Replace with the id printed by `npx wrangler d1 create arboldelilith` before deploying.
+      "database_id": "8cd4dfbf-2815-43d5-8064-2f40f32ecd39"
+    }
+  ],
+  "vars": {
+    "PUBLIC_URL": "https://arboldelilith.jpfraneto.com",
+    // Prototype: login codes are shown on screen (888888) instead of going out by WhatsApp. "" once WhatsApp is connected.
+    "DEMO_OTP": "1",
+    // Prototype: without Pili's Mercado Pago token, "Pagar" opens a payment screen clearly marked as a test.
+    "DEMO": "1"
+  }
+  // Secrets (npx wrangler secret put NAME · local: .dev.vars):
+  //   PILI_KEY           Pili's private link: /pili/entrar/<PILI_KEY> (kept in ../.pili_key, not committed)
+  //   MP_ACCESS_TOKEN    Pili's Mercado Pago access token (her account, her money). Unset = test payments.
+  //   MP_WEBHOOK_SECRET  Mercado Pago webhook secret ("Order (Mercado Pago)" event → https://arboldelilith.jpfraneto.com/mp/webhook)
+  //   PILI_WA            optional: her WhatsApp, digits only, once she says which one
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Refugio Bruma · Umbral Sur</title>
+  <meta name="description" content="Refugio Bruma: 92 millones, llave en mano. Recórrelo, mira de qué está hecho y habla con Iván.">
+  <meta name="theme-color" content="#1b1a18">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Gelasio:wght@500;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <header class="top">
+    <img src="/assets/logo.png" alt="Umbral Sur" class="logo">
+    <nav><a href="#recorrido">Recórrelo</a><a href="#muro">El muro</a><a href="#precio">Precio</a><a href="#cupos">Cupos</a></nav>
+  </header>
+
+  <!-- 1 · Una casa, un precio, una frase -->
+  <section class="hero" id="inicio">
+    <img src="/img/hero.webp" alt="Refugio Bruma entre los árboles, con la terraza y el hot tub" class="hero-img">
+    <div class="hero-txt">
+      <p class="kicker">Refugio Bruma</p>
+      <h1><span class="big">92 millones,</span> llave en mano.</h1>
+      <p class="lead">Desde los permisos hasta la última almohada. Lo diseña y lo construye Iván, desde Villarrica, para cualquier lugar de Chile.</p>
+      <div class="facts" id="facts"></div>
+      <a href="#recorrido" class="btn btn-light">Recórrelo ↓</a>
+    </div>
+  </section>
+
+  <!-- 2 · Recórrelo: la casa por dentro, en el orden en que la caminas -->
+  <section class="walk" id="recorrido">
+    <div class="sec-head">
+      <p class="kicker">Recórrelo</p>
+      <h2>Entra antes de que exista.</h2>
+      <p class="sub">Desliza: es el orden en que lo caminarías.</p>
+    </div>
+    <div class="walk-track" id="walk"></div>
+    <div class="walk-nav">
+      <button class="wbtn" id="wprev" aria-label="Anterior">‹</button>
+      <div class="walk-dots" id="wdots"></div>
+      <button class="wbtn" id="wnext" aria-label="Siguiente">›</button>
+    </div>
+  </section>
+
+  <!-- 3 · El muro: por qué refugio y no casa -->
+  <section class="wall" id="muro">
+    <div class="sec-head">
+      <p class="kicker">¿Por qué refugio y no casa?</p>
+      <h2>Lo que no se ve, pero cambia todo.</h2>
+      <p class="sub">Toca cada capa del muro.</p>
+    </div>
+    <div class="wall-box">
+      <svg id="wallsvg" viewBox="0 0 360 300" class="wall-svg" aria-label="Corte del muro del Refugio Bruma"></svg>
+      <div class="wall-side"><span>afuera</span><span>adentro</span></div>
+    </div>
+    <div class="layer-card" id="layercard"></div>
+    <p class="note">Esquema referencial, a partir de las partidas publicadas por Umbral Sur.</p>
+  </section>
+
+  <!-- 4 · Tres formas de tenerlo, en vez de nueve casillas -->
+  <section class="price" id="precio">
+    <div class="sec-head">
+      <p class="kicker">Tres formas de tenerlo</p>
+      <h2>Elige cómo lo quieres recibir.</h2>
+    </div>
+    <div class="options" id="options"></div>
+    <details class="breakdown">
+      <summary><em>¿Dónde van los <b id="bdtotal">92</b> millones?</em> <span>Etapa por etapa</span></summary>
+      <ol id="stages"></ol>
+      <p class="note">Valores con IVA incluido, publicados en umbralsur.com. No incluye movimiento de tierra ni el terreno.</p>
+    </details>
+  </section>
+
+  <!-- 5 · Pocos, a propósito: la capacidad de obra es lo escaso -->
+  <section class="slots" id="cupos">
+    <div class="sec-head">
+      <p class="kicker">Cupos de obra <span id="slotyear"></span></p>
+      <h2>Pocos, a propósito.</h2>
+      <p class="sub">Iván está en cada obra. Por eso construye <b id="slotn"></b> refugios al año, no más.</p>
+    </div>
+    <div class="slot-grid" id="slots"></div>
+    <p class="note" id="slotnote"></p>
+
+    <!-- Avance de obra: el cupo 1, a la vista. Etapas tomadas de sus propias publicaciones (confirmar con Iván). -->
+    <div class="avance" id="avance">
+      <p class="kicker">Avance de obra · Cupo 1</p>
+      <h3>Refugio Niebla, Coyhaique</h3>
+      <div class="abar"><i id="abar"></i></div>
+      <p class="apct"><b id="apct"></b> del camino</p>
+      <ol class="astages" id="astages"></ol>
+      <a class="abtn" href="https://www.instagram.com/refugiosumbralsur/" target="_blank" rel="noopener">Ver la obra semana a semana ↗</a>
+      <p class="note"><i>Etapas según las publicaciones de Umbral Sur. Confirmar con Iván.</i></p>
+    </div>
+  </section>
+
+  <!-- 6 · La persona -->
+  <section class="ivan" id="ivan">
+    <img src="/img/ivan.webp" alt="Iván Isaacs, ingeniero constructor, Umbral Sur" class="ivan-img">
+    <div class="ivan-txt">
+      <p class="kicker">Quién lo construye</p>
+      <h2>Iván Isaacs</h2>
+      <p class="role">Ingeniero constructor · Umbral Sur</p>
+      <p>Dibuja la ingeniería de cada refugio, elige los materiales y está en la obra. El primer refugio ya va camino a Coyhaique.</p>
+      <div class="land">
+        <p class="q">¿Tienes terreno?</p>
+        <div class="chips" id="land"></div>
+      </div>
+      <a class="btn btn-wa" id="wa" target="_blank" rel="noopener">Escríbele a Iván por WhatsApp</a>
+      <a class="btn btn-ghost" href="https://maps.google.com/?q=Pedro+Montt+365,+Villarrica,+Chile" target="_blank" rel="noopener">Ven a la oficina · Pedro Montt 365, of. 01, Villarrica</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/refugiosumbralsur/reel/Dbqn7RcBpej/" target="_blank" rel="noopener">Escúchalo contar cómo nació Umbral Sur ↗</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/refugiosumbralsur/" target="_blank" rel="noopener">Míralo construir · @refugiosumbralsur</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <img src="/assets/logo.png" alt="" class="logo">
+    <p>"El refugio que tu mente necesita."</p>
+    <p class="tiny">Prototipo hecho por El Taller con JP para Umbral Sur. Imágenes: Umbral Sur.</p>
+  </footer>
+
+  <div class="bar" id="bar">
+    <div><b id="barname">Bruma amoblado</b><span id="barprice">$92.000.000</span></div>
+    <a class="btn btn-wa sm" id="wa2" target="_blank" rel="noopener">Hablar con Iván</a>
+  </div>
+
+  <script src="/js/app.js" type="module"></script>
+</body>
+</html>

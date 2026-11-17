@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "delsurpropiedades-app",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  // jpfraneto.com is on Cloudflare: the Worker answers on this subdomain directly.
+  "routes": [{ "pattern": "delsurpropiedades.jpfraneto.com", "custom_domain": true }],
+  // /3257 (the code in every post) is the page itself: the browser opens that listing.
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*", "/data/propiedades.json", "/nueva/*"], "not_found_handling": "single-page-application" },
+  // The last good read of their site (src/delsur.js): 'snapshot', 'estado', 'cursor'.
+  "kv_namespaces": [{ "binding": "DELSUR", "id": "b5ee1b73d46d4e2d93ddd92e0c6f0563" }],
+  // One category of their site every 10 minutes: the 13 categories go round about every 2 hours.
+  "triggers": { "crons": ["*/10 * * * *"] },
+  "vars": {
+    // Where every "Me interesa" goes. While it's a demo (Del Sur hasn't said yes), El Taller's WhatsApp: the same number
+    // serves every episode, and each message says which demo it came from. When they approve: their own WhatsApp
+    // (public on delsurpropiedades.cl): 56990992056, DEMO "".
+    "WA_NUMERO": "56948455809",
+    "DEMO": "Del Sur Propiedades",
+    // "Cuéntanos qué buscas" questions per IP per day.
+    "LIMITE_DIARIO": "30"
+  }
+  // Secrets (npx wrangler secret put NAME; local dev: .dev.vars):
+  //   OPENROUTER_API_KEY  El Taller's key (el-taller/.openrouter_key)
+}

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>¿Cuánto vale tu auto? · TuAuto Temuco</title>
+  <meta name="description" content="Súbele una foto a tu auto y mira en cuánto se publican autos como el tuyo. TuAuto, Temuco: compra, vende, financia.">
+  <meta property="og:title" content="¿Cuánto vale tu auto? Súbele una foto.">
+  <meta property="og:description" content="En 30 segundos: en cuánto se publican autos como el tuyo. TuAuto, Temuco.">
+  <meta property="og:image" content="https://tuauto.jpfraneto.com/img/og.jpg">
+  <meta name="theme-color" content="#090c18">
+  <link rel="icon" href="/img/icon.png">
+  <link rel="apple-touch-icon" href="/img/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body data-vista="inicio">
+
+  <header class="top">
+    <div class="top-in">
+      <a href="#" class="brand" aria-label="TuAuto, inicio"><img src="/img/logo-blanco.png" alt="tuauto"></a>
+      <nav class="nav">
+        <a href="#stock" data-nav="stock">Comprar</a>
+        <a href="#duelo" data-nav="duelo">El Duelo</a>
+        <a href="#nosotros" data-nav="nosotros">Nosotros</a>
+      </nav>
+      <a class="top-wa" id="wa-top" target="_blank" rel="noopener">Escríbenos</a>
+    </div>
+  </header>
+
+  <!-- ── Inicio: una pregunta, un botón ─────────────────────────────── -->
+  <main class="vista" id="v-inicio">
+    <section class="hero">
+      <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+      <button class="hero-tag" id="hero-tag" type="button" hidden></button>
+
+      <div class="hero-in">
+        <p class="eyebrow"><span class="pulso"></span>Compramos tu auto · Temuco</p>
+        <h1>¿Cuánto vale<br><span class="hl">tu auto?</span></h1>
+        <p class="lead">Súbele una foto. En 30 segundos te muestro en cuánto se publican autos como el tuyo, y TuAuto te lo compra o te lo vende.</p>
+        <div class="cta">
+          <label class="btn-main" for="foto-camara">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            Subir foto de mi auto
+          </label>
+          <input type="file" id="foto-camara" accept="image/*" hidden>
+          <a class="btn-sub" href="#stock">Quiero comprar un auto <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="fine">¿Sin foto a mano? <button type="button" class="link" id="probar">Prueba con uno de ejemplo</button>. Es una referencia de avisos, no una oferta.</p>
+      </div>
+
+      <div class="hero-pie">
+        <p><b id="stock-n">53</b> autos certificados hoy en Prieto Sur 1073</p>
+        <div class="marcas" id="marcas"></div>
+        <p class="proto">Prototipo de <a href="https://jpfraneto.com">El Taller con JP</a> · no es el sitio oficial de TuAuto</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Comprar: el stock 1:1 ─────────────────────────────────────── -->
+  <main class="vista" id="v-stock" hidden>
+    <section class="stock">
+      <div class="sec-head">
+        <p class="eyebrow">Comprar · <span id="stock-n2"></span> autos hoy</p>
+        <h2>Todos, con su precio.</h2>
+        <p class="sub">Certificados, con garantía. Copiados tal cual de automotriztuauto.cl el <span id="stock-fecha"></span>.</p>
+      </div>
+      <div class="filtros">
+        <div class="chips" id="chips"></div>
+        <div class="filtros-2">
+          <input type="search" id="buscar" placeholder="Buscar marca o modelo" aria-label="Buscar marca o modelo">
+          <select id="orden" aria-label="Ordenar">
+            <option value="nuevo">Recién llegados</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="km-asc">Menos kilómetros</option>
+            <option value="ano-desc">Más nuevos</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="vacio" id="vacio" hidden>Nada con ese filtro. <button class="link" id="limpiar">Ver todos</button></p>
+    </section>
+  </main>
+
+  <!-- ── El Duelo ──────────────────────────────────────────────────── -->
+  <main class="vista" id="v-duelo" hidden>
+    <section class="duelo" id="duelo">
+      <div class="sec-head">
+        <p class="eyebrow">El Duelo</p>
+        <h2>¿No sabes cuál?<br>Ponlos a correr.</h2>
+        <p class="sub">Elige dos autos del stock. Cuatro rondas: precio, kilómetros, año y motor. El que gana avanza.</p>
+      </div>
+      <div class="duelo-pick">
+        <button class="pick pick-a" id="pick-a" type="button"></button>
+        <span class="vs">VS</span>
+        <button class="pick pick-b" id="pick-b" type="button"></button>
+      </div>
+      <div class="duelo-btns">
+        <button class="btn btn-tag" id="largar" type="button">¡Largar!</button>
+        <button class="btn btn-ghost" id="azar" type="button">Dos al azar</button>
+      </div>
+      <div class="pista" id="pista" hidden>
+        <div class="carril carril-a"><div class="corredor" id="car-a"></div></div>
+        <div class="carril carril-b"><div class="corredor" id="car-b"></div></div>
+        <div class="meta" aria-hidden="true"></div>
+        <div class="semaforo" id="semaforo" hidden><i></i><i></i><i></i></div>
+      </div>
+      <ol class="rondas" id="rondas"></ol>
+      <div class="ganador" id="ganador" hidden></div>
+    </section>
+  </main>
+
+  <!-- ── Nosotros: las personas (de su Instagram) ──────────────────── -->
+  <main class="vista" id="v-nosotros" hidden>
+    <section class="nosotros">
+      <div class="sec-head">
+        <p class="eyebrow">Nosotros</p>
+        <h2>Las personas<br>detrás de TuAuto.</h2>
+        <p class="sub">Un equipo en Temuco que compra, certifica, fotografía y vende cada auto. Así se ven en su Instagram.</p>
+      </div>
+      <div class="equipo">
+        <a class="persona" href="https://www.instagram.com/patovergarac_/" target="_blank" rel="noopener">
+          <img src="/img/ig/patricio.jpg" alt="Patricio Vergara" loading="lazy" style="object-position:50% 20%">
+          <div class="persona-tx"><b>Patricio Vergara</b><span>CEO · el “Big Boss” del Torneo de Marcas Japonesas</span><small>@patovergarac_</small></div>
+        </a>
+        <a class="persona" href="https://www.instagram.com/sergiohueichaqueo/" target="_blank" rel="noopener">
+          <img src="/img/ig/mustang.jpg" alt="Sergio Hueichaqueo, a la derecha, con Patricio Vergara" loading="lazy" style="object-position:72% 30%">
+          <div class="persona-tx"><b>Sergio Hueichaqueo</b><span>Jefe de Operaciones y Adquisiciones: por él pasa cada auto que TuAuto compra</span><small>@sergiohueichaqueo · a la derecha</small></div>
+        </a>
+        <a class="persona" href="https://www.instagram.com/ro_chacon_/" target="_blank" rel="noopener">
+          <img src="/img/ig/wrv.jpg" alt="Rodrigo Chacón, a la derecha, con Patricio Vergara y una Honda WR-V" loading="lazy" style="object-position:80% 30%">
+          <div class="persona-tx"><b>Rodrigo Chacón</b><span>Equipo TuAuto · te presenta los autos del stock</span><small>@ro_chacon_ · a la derecha</small></div>
+        </a>
+      </div>
+
+      <div class="ig-head">
+        <h3>Del Instagram</h3>
+        <a href="https://www.instagram.com/automotriztuauto.cl/" target="_blank" rel="noopener">@automotriztuauto.cl →</a>
+      </div>
+      <div class="ig-tira">
+        <a href="https://www.instagram.com/reel/DE7qLTmOhpL/" target="_blank" rel="noopener"><img src="/img/ig/vende.jpg" alt="Vende tu auto con nosotros" loading="lazy"></a>
+        <a href="https://www.instagram.com/reel/DfAl_FCv7Mk/" target="_blank" rel="noopener"><img src="/img/ig/torneo.jpg" alt="Torneo de Marcas Japonesas" loading="lazy"></a>
+        <a href="https://www.instagram.com/reel/DceS6iPtyUr/" target="_blank" rel="noopener"><img src="/img/ig/cambio.jpg" alt="En el showroom de TuAuto" loading="lazy"></a>
+        <a href="https://www.instagram.com/reel/DdmKm4jNXb1/" target="_blank" rel="noopener"><img src="/img/ig/dieciocho.jpg" alt="Fiestas patrias en TuAuto" loading="lazy"></a>
+        <a href="https://www.instagram.com/reel/DfSaoaJNlao/" target="_blank" rel="noopener"><img src="/img/ig/silverado.jpg" alt="Chevrolet Silverado High Country" loading="lazy"></a>
+        <a href="https://www.instagram.com/reel/DdHcROXt1t9/" target="_blank" rel="noopener"><img src="/img/ig/volvo.jpg" alt="Volvo XC40" loading="lazy"></a>
+        <a href="https://www.instagram.com/automotriztuauto.cl/" target="_blank" rel="noopener"><img src="/img/ig/mg.jpg" alt="En el estudio de TuAuto" loading="lazy"></a>
+        <a href="https://www.instagram.com/automotriztuauto.cl/" target="_blank" rel="noopener"><img src="/img/ig/audi.jpg" alt="Audi Q2 en el showroom" loading="lazy"></a>
+      </div>
+
+      <div class="visita">
+        <img src="/img/sello-oro.png" alt="Estándar de oro" class="sello">
+        <div>
+          <h3>Prieto Sur 1073, Temuco.</h3>
+          <p>Lunes a viernes 9 a 19 · sábado 10 a 14. Compra, vende, financia TuAuto.</p>
+          <a class="btn-main btn-sm" id="wa-visita" target="_blank" rel="noopener">Agendar una visita</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie" id="pie" hidden>
+    <p>Prototipo hecho por <a href="https://jpfraneto.com">El Taller con JP</a> para TuAuto (Automotriz TuAuto, Temuco), a partir de su web y su Instagram públicos. Los autos, fotos y precios son los de <a href="https://automotriztuauto.cl/stock/">automotriztuauto.cl</a>. Los rangos de tasación son una referencia de avisos publicados, no una oferta: el número final lo da TuAuto en la revisión.</p>
+  </footer>
+
+  <!-- Hojas (overlays) -->
+  <div class="hoja" id="hoja-auto" hidden role="dialog" aria-modal="true" aria-label="Detalle del auto">
+    <div class="hoja-in" id="detalle"></div>
+  </div>
+
+  <div class="hoja hoja-glass" id="hoja-tasar" hidden role="dialog" aria-modal="true" aria-label="Tasa tu auto">
+    <div class="hoja-in" id="tasacion"></div>
+  </div>
+
+  <div class="hoja" id="hoja-elegir" hidden role="dialog" aria-modal="true" aria-label="Elegir auto para el duelo">
+    <div class="hoja-in" id="elegir"></div>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

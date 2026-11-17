@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>El Taller</title>
+<meta name="theme-color" content="#0c0b0a" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0b0a'/%3E%3Ctext x='31' y='43' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='32' fill='%23ffffff'%3Ejp%3C/text%3E%3Ccircle cx='50' cy='42' r='3.5' fill='%23FFD23F'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800;900&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/app.css" />
+<style>
+  /* El perfil de un negocio de El Taller: todos con la misma forma, las cuatro piezas de las que se hace cargo Claude. */
+  .wrap { max-width: 600px; display: grid; gap: 26px; padding-top: 18px; }
+  .yo { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; }
+  .cara { position: relative; width: 112px; height: 112px; border-radius: 50%; padding: 4px; background: var(--line); }
+  .cara.activo { background: conic-gradient(var(--y) calc(var(--p) * 1%), rgba(255,255,255,.14) 0); }
+  .cara img, .cara .ini { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: grid; place-items: center;
+    border: 3px solid var(--bg); background: var(--panel2); font: 900 2.6rem/1 var(--head); color: var(--y); }
+  .yo h1 { font-size: clamp(2rem, 8vw, 3.2rem); }
+  .yo .quien { color: var(--mute); margin-top: 6px; font-size: 15px; }
+  .yo .quien a { text-decoration: none; color: var(--ink); font-weight: 600; }
+  .linea { font-size: 17px; color: var(--ink); max-width: 46ch; }
+  .mes { display: grid; gap: 10px; }
+  .mes .t { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--mute); }
+  .mes .t b { color: var(--y); font: 900 1.05rem/1 var(--head); text-transform: uppercase; letter-spacing: .01em; }
+  .barra { display: grid; grid-template-columns: repeat(30, 1fr); gap: 3px; }
+  .barra i { height: 8px; border-radius: 2px; background: rgba(255,255,255,.12); }
+  .barra i.ya { background: var(--y); }
+  .barra i.hoy { background: var(--y); box-shadow: 0 0 0 2px rgba(255,210,63,.35); }
+  h2.k { font: 600 12px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+  .piezas { display: grid; gap: 10px; }
+  .pieza { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 14px 16px;
+    border-radius: 18px; background: rgba(22,21,19,.92); border: 1px solid var(--line); text-decoration: none; }
+  a.pieza:hover { border-color: rgba(255,255,255,.32); }
+  .pieza .ic { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: var(--panel2); }
+  .pieza .ic svg { width: 22px; height: 22px; }
+  .pieza b { display: block; font-weight: 600; font-size: 15.5px; }
+  .pieza small { display: block; color: var(--mute); font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pieza .e { font: 600 11px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--dim); display: flex; align-items: center; gap: 6px; }
+  .pieza .e::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.25); }
+  .pieza.vivo .e { color: var(--wa); }
+  .pieza.vivo .e::before { background: var(--wa); box-shadow: 0 0 0 3px rgba(37,211,102,.18); }
+  .tu { display: grid; gap: 14px; justify-items: start; }
+  .tu p { color: var(--mute); }
+  @media (max-width: 420px) { .cara { width: 88px; height: 88px; } .yo { gap: 16px; } }
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><img src="/galpon.jpg" alt="" /></div>
+<header class="top">
+  <a class="brand" href="/" aria-label="El Taller">jp<b>.</b></a>
+  <a class="link" href="/">El Taller</a>
+</header>
+
+<main class="wrap" id="app">
+  <section class="yo">
+    <div class="cara" id="cara"></div>
+    <div>
+      <h1 id="negocio"></h1>
+      <p class="quien" id="quien"></p>
+    </div>
+  </section>
+  <p class="linea" id="linea" hidden></p>
+
+  <section class="mes" id="mes" hidden>
+    <div class="t"><b id="mes-t"></b><span id="mes-s"></span></div>
+    <div class="barra" id="barra"></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2 class="k">De lo que se hace cargo Claude</h2>
+    <div class="piezas" id="piezas"></div>
+  </section>
+
+  <section class="card tu">
+    <h2>¿Tu negocio también?</h2>
+    <p>Todos los negocios de El Taller tienen estas cuatro piezas, y Claude se hace cargo de ellas.</p>
+    <a class="btn" href="/">Ver El Taller</a>
+  </section>
+</main>
+
+<p class="foot"><a href="https://jpfraneto.com">hecho por jp en puerto varas</a></p>
+
+<script>
+(function () {
+  var P = window.PERFIL;
+  if (!P) { location.replace("/"); return; }
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
+  function dominio(u) { try { return new URL(u).hostname.replace(/^www\./, ""); } catch (e) { return u; } }
+  var MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+  function fecha(f) { var d = new Date(f + "T12:00:00"); return d.getDate() + " " + MESES[d.getMonth()]; }
+
+  // la cara: el anillo amarillo es su mes con JP
+  var cara = $("cara");
+  if (P.foto) { var img = el("img"); img.src = P.foto; img.alt = P.nombre || P.negocio; cara.appendChild(img); }
+  else cara.appendChild(el("div", "ini", (P.negocio || P.nombre || "?").charAt(0).toUpperCase()));
+  $("negocio").textContent = P.negocio || P.nombre;
+  var q = $("quien");
+  if (P.nombre) q.appendChild(document.createTextNode(P.nombre + (P.instagram ? " · " : "")));
+  if (P.instagram) { var a = el("a", "", "@" + P.instagram); a.href = "https://instagram.com/" + P.instagram; a.target = "_blank"; a.rel = "noopener"; q.appendChild(a); }
+  if (P.linea) { $("linea").textContent = P.linea; $("linea").hidden = false; }
+
+  if (P.inicio) {
+    var dia = Math.max(0, Math.min(P.dia, P.dias));
+    $("mes").hidden = false;
+    if (P.dia < 1) { $("mes-t").textContent = "Parte el " + fecha(P.inicio); $("mes-s").textContent = "30 días con JP"; }
+    else if (P.dia <= P.dias) { $("mes-t").textContent = "Día " + P.dia + " de " + P.dias; $("mes-s").textContent = "con JP, desde el " + fecha(P.inicio); cara.classList.add("activo"); cara.style.setProperty("--p", Math.round(P.dia / P.dias * 100)); }
+    else { $("mes-t").textContent = "Hizo sus 30 días con JP"; $("mes-s").textContent = "desde el " + fecha(P.inicio); dia = P.dias; }
+    for (var i = 1; i <= P.dias; i++) $("barra").appendChild(el("i", i < dia ? "ya" : i === dia && P.dia <= P.dias ? "hoy" : i <= dia ? "ya" : ""));
+  }
+
+  // las cuatro piezas, siempre en el mismo orden: es lo que todos tienen en común
+  var IC = {
+    wa: '<svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.42-.08-.12-.27-.2-.57-.34M12.05 21.79a9.87 9.87 0 0 1-5.03-1.38l-.36-.22-3.74.99 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88a9.88 9.88 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.89 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42"/></svg>',
+    ig: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>',
+    web: '<svg viewBox="0 0 24 24" fill="none" stroke="#ffd23f" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg>',
+    app: '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>'
+  };
+  var piezas = [
+    { ic: "wa", t: "WhatsApp", v: P.whatsapp ? "Escríbele" : "En camino", url: P.whatsapp ? "https://wa.me/" + P.whatsapp : "" },
+    { ic: "ig", t: "Contenido para Instagram", v: P.instagram ? "@" + P.instagram : "En camino", url: P.instagram ? "https://instagram.com/" + P.instagram : "" },
+    { ic: "web", t: "Página web", v: P.web ? dominio(P.web) : "En camino", url: P.web },
+    { ic: "app", t: "App", v: P.app ? dominio(P.app) : "Si conviene tener una", url: P.app }
+  ];
+  piezas.forEach(function (x) {
+    var r = el(x.url ? "a" : "div", "pieza" + (x.url ? " vivo" : ""));
+    if (x.url) { r.href = x.url; r.target = "_blank"; r.rel = "noopener"; }
+    var ic = el("span", "ic"); ic.innerHTML = IC[x.ic]; r.appendChild(ic);
+    var tx = el("span"); tx.appendChild(el("b", "", x.t)); tx.appendChild(el("small", "", x.v)); r.appendChild(tx);
+    r.appendChild(el("span", "e", x.url ? "vivo" : "pronto"));
+    $("piezas").appendChild(r);
+  });
+})();
+</script>
+</body>
+</html>

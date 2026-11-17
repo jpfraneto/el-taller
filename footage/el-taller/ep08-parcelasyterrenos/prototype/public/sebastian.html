@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Panel · Parcelas y Terrenos</title>
+<meta name="theme-color" content="#1d3528">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/panel.css">
+</head>
+<body class="panel">
+
+<div class="entrar" id="entrar" hidden>
+  <h1>Panel de Sebastián</h1>
+  <form id="form-clave" class="form">
+    <label>Clave<input name="clave" type="password" autocomplete="current-password" required></label>
+    <button class="btn verde">Entrar</button>
+    <p class="form-err" hidden></p>
+  </form>
+</div>
+
+<main id="app" hidden>
+  <header class="p-cab">
+    <div>
+      <p class="kicker oscuro" id="fecha"></p>
+      <h1>Hola, Sebastián</h1>
+    </div>
+    <a class="ver-pagina" href="/" target="_blank">Ver la página ↗</a>
+  </header>
+
+  <section class="resumen" id="resumen"></section>
+
+  <section class="numeros" id="numeros"></section>
+
+  <section class="bloque" id="b-plata">
+    <h2>La plata</h2>
+    <div id="plata"></div>
+  </section>
+
+  <section class="bloque" id="b-indice">
+    <h2>El índice</h2>
+    <p class="sub">Las parcelas de otros sitios, leídas cada día a las 06:00. Solo datos y el link.</p>
+    <div id="indice"></div>
+  </section>
+
+  <section class="bloque" id="b-corredoras">
+    <h2>Corredoras</h2>
+    <p class="sub">Las que se sumaron (verificadas) y las que leemos de su web pública. Cuántas visitas les mandó el mapa este mes.</p>
+    <div id="corredoras"></div>
+  </section>
+
+  <section class="bloque" id="b-aprobar">
+    <h2>Recién publicadas</h2>
+    <p class="sub">Quedan en el mapa al tiro. Si alguna no corresponde, bájala.</p>
+    <div id="aprobar"></div>
+  </section>
+
+  <section class="bloque" id="b-auspicios">
+    <h2>Quieren auspiciar</h2>
+    <div id="auspicios"></div>
+  </section>
+
+  <section class="bloque" id="b-ongs">
+    <h2>ONGs (el cartel gratis)</h2>
+    <div id="ongs"></div>
+  </section>
+
+  <section class="bloque" id="b-visitas">
+    <h2>Próximas visitas</h2>
+    <div id="visitas"></div>
+  </section>
+
+  <section class="bloque">
+    <h2>Lo que te preguntan</h2>
+    <div id="temas"></div>
+    <div id="ideas"></div>
+  </section>
+
+  <section class="bloque">
+    <h2>Interesados</h2>
+    <p class="sub">Dejaron su WhatsApp. Claude te resume qué buscan.</p>
+    <div id="leads"></div>
+  </section>
+
+  <section class="bloque">
+    <details id="mirando"><summary></summary><div id="leads-mirando"></div></details>
+  </section>
+
+  <section class="bloque">
+    <h2>Las parcelas publicadas</h2>
+    <div id="publicadas"></div>
+  </section>
+
+  <footer class="p-pie">
+    <p>Lo que la gente escribe en la página llega aquí y a cada vendedor por WhatsApp (cuando conectemos el número). El resumen te llega a las 20:00.</p>
+    <p class="demo-ctl"><button id="salir">Salir</button></p>
+  </footer>
+</main>
+
+<script src="/js/letrero.js"></script>
+<script src="/js/panel.js"></script>
+</body>
+</html>

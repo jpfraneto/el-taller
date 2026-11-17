@@ -1,0 +1,64 @@
+{
+  "_que_es": "Las amarras de este prototipo con El Taller (EL-TALLER.md §5, 'El traspaso'). Cada una: el valor del demo, el suyo (null hasta que lo tenga) y cómo se consigue. Todas suyas = se despliega en su cuenta.",
+  "negocio": "Del Sur Propiedades",
+  "dueno": "Alejandra y Francisca",
+  "estado": "demo",
+  "amarras": [
+    {
+      "id": "hosting",
+      "que": "Dónde corre la vitrina (la página, la búsqueda, la lectura diaria)",
+      "demo": "Cloudflare de El Taller (worker delsurpropiedades-app)",
+      "suyo": null,
+      "como": "Cuenta de Cloudflare gratis con su mail → un token de API para desplegar (Workers + KV) → npx wrangler deploy con su cuenta",
+      "donde": "wrangler.jsonc (account), kv_namespaces"
+    },
+    {
+      "id": "dominio",
+      "que": "La dirección",
+      "demo": "delsurpropiedades.jpfraneto.com",
+      "suyo": null,
+      "como": "Ya tienen delsurpropiedades.cl (su página la maneja una agencia: Weblabs, según su código). Sin tocarla: un subdominio (ej. buscar.delsurpropiedades.cl) con un CNAME a su worker, lo agrega quien maneje su DNS. O, si lo deciden, la vitrina reemplaza la página entera.",
+      "donde": "wrangler.jsonc → routes"
+    },
+    {
+      "id": "whatsapp",
+      "que": "A dónde va cada 'Me interesa'",
+      "demo": "56948455809 (El Taller, mensajes con [Demo Del Sur Propiedades])",
+      "suyo": "56990992056",
+      "como": "Ya es público en su página; al decir sí se cambia y DEMO queda vacío",
+      "donde": "wrangler.jsonc → vars.WA_NUMERO, vars.DEMO"
+    },
+    {
+      "id": "ia",
+      "que": "La búsqueda 'cuéntanos cómo quieres vivir' (lee lo que escribe la persona y elige entre sus propiedades)",
+      "demo": "llave OpenRouter de El Taller, 30 búsquedas por persona al día",
+      "suyo": null,
+      "como": "Cuenta en openrouter.ai con créditos prepagados (cada búsqueda cuesta menos de 1 peso) → npx wrangler secret put OPENROUTER_API_KEY",
+      "donde": "secreto OPENROUTER_API_KEY"
+    },
+    {
+      "id": "datos",
+      "que": "Sus propiedades",
+      "demo": "se leen de delsurpropiedades.cl (su página es la fuente; nada se migra)",
+      "suyo": "delsurpropiedades.cl",
+      "como": "Ya es suyo. Siguen publicando donde publican; la vitrina relee cada 10 minutos una categoría y guarda la última copia buena",
+      "donde": "src/delsur.js (lector), cron en wrangler.jsonc"
+    },
+    {
+      "id": "aviso",
+      "que": "Quién se entera si la lectura se rompe (su página cambió o se cayó)",
+      "demo": "nadie todavía: queda en /api/estado",
+      "suyo": null,
+      "como": "Con su WhatsApp conectado (quest del panel): un mensaje al dueño, y a JP durante los 30 días",
+      "donde": "pendiente"
+    },
+    {
+      "id": "codigo",
+      "que": "El código de este prototipo",
+      "demo": "footage/el-taller/ep11-delsurpropiedades/prototype/ en el repo de JP",
+      "suyo": null,
+      "como": "Un repo suyo (o la carpeta de El Taller en su Mac) con esta carpeta tal cual: no depende de nada fuera de ella",
+      "donde": "esta carpeta"
+    }
+  ]
+}

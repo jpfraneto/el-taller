@@ -1,0 +1,14 @@
+{
+  "name": "tuauto-app",
+  "version": "1.0.0",
+  "description": "TuAuto: ¿cuánto vale tu auto? Sácale una foto. Stock 1:1 + El Duelo + bandeja del equipo (prototipo El Taller Ep. 06)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --ip 0.0.0.0 --port 8806 --remote",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}

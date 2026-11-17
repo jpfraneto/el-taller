@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.jpfraneto.parcelasyterrenos-indice</string>
+  <key>ProgramArguments</key><array><string>/Users/kithkui/.nvm/versions/node/v22.12.0/bin/node</string><string>/Users/kithkui/code/jpfraneto.com/footage/el-taller/ep08-parcelasyterrenos/prototype/scripts/leer-indice.mjs</string></array>
+  <key>WorkingDirectory</key><string>/Users/kithkui/code/jpfraneto.com/footage/el-taller/ep08-parcelasyterrenos/prototype</string>
+  <key>StartCalendarInterval</key><dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>0</integer></dict>
+  <key>StandardOutPath</key><string>/Users/kithkui/Library/Logs/eltaller/parcelas-indice.log</string>
+  <key>StandardErrorPath</key><string>/Users/kithkui/Library/Logs/eltaller/parcelas-indice.log</string>
+</dict>
+</plist>

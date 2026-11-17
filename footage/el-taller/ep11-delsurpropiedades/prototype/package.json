@@ -1,0 +1,14 @@
+{
+  "name": "delsurpropiedades-app",
+  "version": "1.0.0",
+  "description": "Del Sur Propiedades: Puerto Varas a la vista, sus propiedades en fotos y en el mapa (prototipo El Taller Ep. 11)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev --ip 0.0.0.0 --port 8811",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}

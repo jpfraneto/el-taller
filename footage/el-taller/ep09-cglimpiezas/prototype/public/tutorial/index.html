@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CG Limpiezas · tu sistema, paso a paso</title>
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CG Limpiezas">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://cglimpiezas.jpfraneto.com/tutorial/">
+<meta property="og:title" content="CG Limpiezas · tu sistema, paso a paso">
+<meta property="og:description" content="La página, el WhatsApp y el Instagram de CG, en tu computador.">
+<meta property="og:image" content="https://cglimpiezas.jpfraneto.com/img/og/tutorial.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CG Limpiezas · tu sistema, paso a paso">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CG Limpiezas · tu sistema, paso a paso">
+<meta name="twitter:description" content="La página, el WhatsApp y el Instagram de CG, en tu computador.">
+<meta name="twitter:image" content="https://cglimpiezas.jpfraneto.com/img/og/tutorial.jpg">
+<meta name="theme-color" content="#f5f2ec">
+<link rel="icon" href="../img/pfp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/app.css">
+<style>
+  .resumen { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin: 0 0 8px; }
+  .resumen div { background: #fff; border-radius: 12px; padding: 10px 12px; font-size: 13px; color: #33435c; }
+  .resumen b { display: block; font-family: var(--marca); font-size: 18px; color: var(--tinta); }
+  .paso { background: #fff; border-radius: 18px; padding: 18px 16px; margin-top: 14px; box-shadow: 0 1px 0 rgba(14,34,64,.06), 0 8px 30px rgba(14,34,64,.06); }
+  .paso header { display: flex; gap: 12px; align-items: flex-start; }
+  .paso .n { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--tinta); color: var(--espuma); font-family: var(--marca); font-weight: 800; }
+  .paso.hecho .n { background: #1f9d55; }
+  .paso h2 { font-family: var(--marca); font-size: 22px; letter-spacing: -0.02em; margin: 2px 0 2px; line-height: 1.1; }
+  .paso .para { font-size: 14px; color: #5a6a80; margin: 0; }
+  .paso .st { margin-left: auto; flex: none; font-size: 12px; font-weight: 700; border-radius: 999px; padding: 4px 9px; background: #fff3cc; color: #7a5b00; }
+  .paso.hecho .st { background: #dcf5e3; color: #146c2e; }
+  .paso ol { margin: 14px 0 0; padding-left: 20px; font-size: 15px; line-height: 1.5; color: #22324a; }
+  .paso li { margin-bottom: 8px; }
+  .paso li a { color: #0b5d80; font-weight: 600; }
+  .copia { display: block; width: 100%; text-align: left; white-space: pre-line; font: inherit; font-size: 14px; line-height: 1.4; background: var(--espuma); border: 1px dashed #b9c1cc; border-radius: 10px; padding: 10px; margin: 6px 0; color: var(--tinta); cursor: copy; }
+  .copia::after { content: "  · tocar para copiar"; color: #8a96a8; font-size: 12px; }
+  .copia.ok::after { content: "  · copiado ✓"; color: #1f9d55; }
+  .descargas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 8px 0; }
+  .descargas a { display: grid; gap: 4px; font-size: 12px; text-align: center; color: var(--tinta); text-decoration: none; }
+  .descargas img { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 10px; }
+  .ojo { background: #fff8e1; border-radius: 10px; padding: 10px 12px; font-size: 14px; line-height: 1.45; margin-top: 10px; color: #4a3b00; }
+  .marcar { margin-top: 10px; display: flex; gap: 8px; align-items: center; font-size: 14px; }
+</style>
+</head>
+<body>
+<main class="cz">
+  <div class="cz-top"><img src="../img/logo.png" alt="CG Limpiezas"><a href="../">ver la propuesta</a></div>
+  <h1>Tu sistema,<br><em>paso a paso.</em></h1>
+  <p class="sub">Todo lo que viste (tu Instagram nuevo, el cotizador con foto, el link de cada cotización, el pago) andando
+    con <b>tus</b> cuentas: la plata cae en tu Mercado Pago, los mensajes llegan a tu WhatsApp. Un paso a la vez; cada uno
+    se marca solo cuando está listo.</p>
+
+  <div class="resumen">
+    <div><b>$0</b>Cloudflare (donde vive tu página)</div>
+    <div><b>~$10.000 al año</b>tu dominio .cl (NIC Chile)</div>
+    <div><b>~US$5</b>de crédito de IA: unas 20.000 fotos leídas</div>
+    <div><b>su comisión</b>Mercado Pago, por cada venta</div>
+  </div>
+
+  <section class="paso" id="p-precios">
+    <header><span class="n">1</span><div><h2>Tus precios</h2><p class="para">Para que el cotizador use lo que tú cobras, no lo que cobra el mercado.</p></div><span class="st" data-st>…</span></header>
+    <ol>
+      <li>Abre <b>tu link privado</b> (te lo mandó JP; termina en <code>?k=…</code>). Ahí están tus 11 trabajos públicos.</li>
+      <li>En cada uno: corrige qué es y el tamaño si no calza, y escribe <b>cuánto cobraste</b> (más o menos está bien).</li>
+      <li>Toca <b>Guardar</b>. Desde ese momento salen en "Lo que hemos limpiado" con su precio, y el cotizador calcula con los tuyos.</li>
+    </ol>
+    <p class="ojo">Abre ese link una vez en tu teléfono: así tu teléfono queda como el de CG y, cuando un cliente te mande su cotización, al abrirla vas a ver "Para CG" para poner el precio.</p>
+  </section>
+
+  <section class="paso" id="p-ig" data-manual="ig">
+    <header><span class="n">2</span><div><h2>Tu Instagram nuevo</h2><p class="para">Donde la gente descubre que existes.</p></div><span class="st" data-st>…</span></header>
+    <ol>
+      <li><b>Foto de perfil:</b> <a href="../descargas/cg-foto-perfil.png" download>descarga la nueva</a> → Instagram → Editar perfil → Cambiar foto.</li>
+      <li><b>Bio:</b> Editar perfil → Presentación. Pega esto (cambia lo amarillo por lo tuyo):
+        <button type="button" class="copia" data-copia>Lavamos alfombras, sillones y colchones hace 35 años. En familia.
+Inyección-extracción · casas y empresas
+📍 [tus comunas]
+💧 Mándanos la foto → precio al tiro ↓</button></li>
+      <li><b>Link de la bio:</b> Editar perfil → Enlaces → Agregar enlace externo. Pega:
+        <button type="button" class="copia" data-copia data-link="/cotiza/"></button></li>
+      <li><b>Los 3 reels:</b> descárgalos, súbelos como reel con su portada y su texto, y fíjalos arriba (los tres puntos → Fijar en el perfil). El sonido lo eliges en Instagram.
+        <div class="descargas">
+          <a href="../descargas/cg-reel-1.mp4" download><img src="../descargas/cg-portada-1.jpg" alt="">Reel 1</a>
+          <a href="../descargas/cg-reel-2.mp4" download><img src="../descargas/cg-portada-2.jpg" alt="">Reel 2</a>
+          <a href="../descargas/cg-reel-3.mp4" download><img src="../descargas/cg-portada-3.jpg" alt="">Reel 3</a>
+        </div>
+        <div id="captions"></div></li>
+    </ol>
+    <label class="marcar"><input type="checkbox" data-hice="ig"> Ya lo hice</label>
+  </section>
+
+  <section class="paso" id="p-wa">
+    <header><span class="n">3</span><div><h2>Tu WhatsApp</h2><p class="para">Donde hablas con tu cliente. Hoy el botón va al WhatsApp de El Taller (es un demo).</p></div><span class="st" data-st>…</span></header>
+    <ol>
+      <li>Cuando quieras que lleguen a ti, dile a JP: <b>"usa mi número"</b> (el +56 9 9230 8805 de tu bio, u otro).</li>
+      <li>Desde ahí, cada cliente que cotiza te escribe a ti: <i>"Hola 👋 vengo por esta cotización: [link]"</i>.</li>
+      <li>Abres el link, pones el precio, <b>Confirmar</b>, y <b>Copiar respuesta</b>: la pegas en el chat. El cliente paga desde ese mismo link.</li>
+    </ol>
+  </section>
+
+  <section class="paso" id="p-mp">
+    <header><span class="n">4</span><div><h2>Tu Mercado Pago</h2><p class="para">Para que el cliente pague desde su cotización y la plata llegue directo a tu cuenta.</p></div><span class="st" data-st>…</span></header>
+    <ol>
+      <li>Entra a <a href="https://www.mercadopago.cl/developers/panel/app" target="_blank" rel="noopener">mercadopago.cl/developers</a> con <b>tu</b> cuenta de Mercado Pago (la misma donde recibes plata).</li>
+      <li><b>Crear aplicación</b> → nombre "CG Limpiezas" → tipo: pagos online → producto: <b>Checkout Pro</b>.</li>
+      <li>Dentro de la aplicación → <b>Credenciales de producción</b> → activa las credenciales (te pide el rubro y la web: pon la de tu cotizador).</li>
+      <li>Copia el <b>Access Token</b> (empieza con <code>APP_USR-</code>).</li>
+      <li>En la misma aplicación → <b>Webhooks</b> → URL: <button type="button" class="copia" data-copia data-link="/api/mp"></button> evento <b>Order</b> → Guardar. Copia la <b>clave secreta</b> que aparece.</li>
+      <li>Esas dos cosas (el Access Token y la clave secreta) <b>se pegan en tu computador</b>, en el panel de El Taller, una sola vez. Nunca por WhatsApp ni por correo.</li>
+    </ol>
+    <p class="ojo">Mientras no esté conectado, el pago dice "Pago de prueba" y no se cobra nada.</p>
+  </section>
+
+  <section class="paso" id="p-ia">
+    <header><span class="n">5</span><div><h2>Tu IA (la que lee las fotos)</h2><p class="para">Hoy lee las fotos con la cuenta de El Taller.</p></div><span class="st" data-st>…</span></header>
+    <ol>
+      <li>Crea tu cuenta en <a href="https://openrouter.ai" target="_blank" rel="noopener">openrouter.ai</a> (con tu Google).</li>
+      <li><b>Credits</b> → carga US$5 con tarjeta. Leer una foto cuesta menos de un peso: alcanza para unas 20.000.</li>
+      <li><b>Keys</b> → Create key → nombre "CG cotizador" → copia la clave (empieza con <code>sk-or-</code>).</li>
+      <li>Se pega en el mismo lugar que el Access Token: el panel de El Taller en tu computador.</li>
+    </ol>
+  </section>
+
+  <section class="paso" id="p-dominio">
+    <header><span class="n">6</span><div><h2>Tu dominio y tu página</h2><p class="para">Hoy vive en cglimpiezas.jpfraneto.com. Que sea tuya: cglimpiezas.cl, en tu cuenta.</p></div><span class="st" data-st>…</span></header>
+    <ol>
+      <li>Revisa si está libre y cómpralo en <a href="https://www.nic.cl" target="_blank" rel="noopener">nic.cl</a> (cglimpiezas.cl u otro que te guste). ~$10.000 al año, a tu nombre.</li>
+      <li>Crea tu cuenta gratis en <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">cloudflare.com</a> → <b>Agregar un dominio</b> → tu dominio → plan Free. Te da 2 "nameservers".</li>
+      <li>En nic.cl → tu dominio → <b>Servidores DNS</b> → pega esos 2. En unas horas queda activo.</li>
+      <li>Con tu Cloudflare conectado en el panel de El Taller, tu página se publica ahí: tu código, tu cuenta, tu dominio. JP ya no es necesario.</li>
+    </ol>
+  </section>
+</main>
+<script type="module" src="../js/tutorial.js"></script>
+</body>
+</html>

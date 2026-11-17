@@ -1,0 +1,5 @@
+# Copy to .dev.vars (never commit it). In production: npx wrangler secret put NAME
+# Claude answering visitors (OpenRouter, anthropic/claude-haiku-5.5). Key: footage/el-taller/.openrouter_key
+OPENROUTER_API_KEY=
+# Sebastián's panel (/sebastian) asks for this key. Kept in ../.panel_key
+PANEL_KEY=

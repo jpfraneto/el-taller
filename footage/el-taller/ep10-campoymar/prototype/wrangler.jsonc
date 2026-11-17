@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "campoymar-app",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  // jpfraneto.com is on Cloudflare: the Worker answers on this subdomain directly.
+  "routes": [{ "pattern": "campoymar.jpfraneto.com", "custom_domain": true }],
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  // La hornada: what came out today (hoy), the recipes being tested and their reservations (pruebas), where it arrived (llego).
+  "kv_namespaces": [{ "binding": "CAMPO", "id": "74f8fa9409a240e39cc4b0f587c7949b" }],
+  "vars": {
+    // Where every "WhatsApp" goes. While it's a demo (Campo & Mar hasn't said yes), El Taller's WhatsApp: the same
+    // number serves every episode, and each message says which demo it came from. When they approve: their mayorista
+    // WhatsApp (public in @datitosdelajose's post, 2026-09-15): 56935466209, DEMO "".
+    "WA_NUMERO": "56948455809",
+    "DEMO": "Campo & Mar",
+    // Reservations per IP per day.
+    "LIMITE_DIARIO": "12"
+  }
+  // Secrets (npx wrangler secret put NAME; local dev: .dev.vars):
+  //   HORNO_CLAVE  the key in Campo & Mar's private link /horno/?k=… (they write what came out, the tests, where it arrived)
+}

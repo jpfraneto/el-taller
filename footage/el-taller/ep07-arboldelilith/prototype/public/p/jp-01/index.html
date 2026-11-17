@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Árbol de Lilith · Círculos de Mujeres</title>
+  <meta name="description" content="Círculos de mujeres al compás de la luna, con Pilar Abarzúa. Llanquihue · Puerto Varas.">
+  <meta name="theme-color" content="#F6EDE2">
+  <link rel="icon" href="/comun/icon-180.png">
+  <link rel="apple-touch-icon" href="/comun/icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/comun/lilith.css">
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+  <!-- Producto jp-01 «La próxima luna» (JP + Claude, 2026-11-10). Cree que: la energía de Pili se va en inscribir a mano. -->
+  <header class="top">
+    <a class="marca" href="/"><img src="/comun/icon-180.png" alt="" width="34" height="34"><span>Árbol de Lilith</span></a>
+    <button class="mis" id="mis" hidden>Mis lugares</button>
+  </header>
+
+  <main>
+    <section class="hero acuarela" id="hero" aria-live="polite">
+      <div class="esqueleto"></div>
+    </section>
+
+    <section class="pregunta" id="pregunta" hidden></section>
+
+    <section class="lista" id="despues" hidden>
+      <h2 class="versal">Más adelante</h2>
+      <div id="eventos"></div>
+    </section>
+
+    <section class="lista" id="horasec">
+      <div class="hora">
+        <p class="versal">Solo tú y Pili · 1 hora</p>
+        <h3>Una hora 1:1</h3>
+        <p>Una lectura de Tarot Madre Paz, una sesión de terapia o, simplemente, conversar lo que estás viviendo. Presencial en Llanquihue u online. También para regalar.</p>
+        <p class="precio">$40.000 <small>· 60 minutos</small></p>
+        <button class="btn arena" id="hora">Quiero mi hora</button>
+      </div>
+    </section>
+
+    <section class="ofrece" id="ofrece">
+      <h2 class="versal">Lo que ofrezco</h2>
+      <div id="ofrecelist"></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <img src="/comun/logo.jpg" alt="Árbol de Lilith" width="120" height="120">
+    <p class="cita">Nada florece todo el año.<br><em>Y nosotras tampoco.</em></p>
+    <p>Pilar Abarzúa · Llanquihue · Puerto Varas<br><a href="https://www.instagram.com/arboldelilith/" target="_blank" rel="noopener">@arboldelilith</a></p>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

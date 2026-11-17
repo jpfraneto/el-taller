@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pide · Campo &amp; Mar</title>
+<meta name="description" content="Pastelería sin gluten nacida frente al mar. Dónde comprar, qué lleva cada cosa, encarga tu torta o pide el catálogo para tu café.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Campo & Mar">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://campoymar.jpfraneto.com/pide/">
+<meta property="og:title" content="Campo & Mar · pide aquí">
+<meta property="og:description" content="Dónde comprar, qué lleva cada cosa, encarga tu torta o pide el catálogo para tu café.">
+<meta property="og:image" content="https://campoymar.jpfraneto.com/img/posts/queque-chocolate.jpg">
+<meta name="theme-color" content="#f7f1e8">
+<link rel="icon" href="../img/pfp.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/app.css?v=7">
+</head>
+<body>
+<main class="pide hoy">
+  <header class="marca">
+    <div class="letrero"><div class="logo">CAMPO <span class="amp">&amp;</span> MAR</div><div class="usuario">@campoymar_chiloe</div></div>
+    <div class="sub">pastelería · Chiloé</div>
+    <p class="promesa">Que nadie sienta que está renunciando al sabor.</p>
+    <p style="margin:10px 0 0;font-size:13px"><a href="../hoy/" style="color:var(--vino)">¿Es para ti? Encarga aquí →</a></p>
+  </header>
+
+  <!-- ── Para tu café ────────────────────────────────────── -->
+  <section id="p-cafe">
+    <div class="rotulo">para tu café</div>
+    <h2>Pastelería sin gluten para tu vitrina</h2>
+    <p class="bajada">Hecha en Chiloé. Hoy ya está en:</p>
+    <div style="display:flex;align-items:end;gap:12px;margin:6px 0 12px"><div class="cifra">9</div>
+      <div style="font-size:15px;line-height:1.35;padding-bottom:6px">cafés y tiendas, de Quellón a Osorno.</div></div>
+    <div class="puntos" id="puntos-cafe"></div>
+
+    <div class="rotulo">por qué</div>
+    <h2>Por qué funciona en un café</h2>
+    <ul class="porque">
+      <li><b>Lo que tu cliente pregunta, ya está respondido.</b> Cada producto viene con su ficha: sin gluten, vegano,
+        con qué se endulza. La puedes poner en la vitrina.</li>
+      <li><b>Le das una opción a quien nunca tiene.</b> Celíacos, veganos, gente que cuida el azúcar: los que hoy piden
+        solo un café.</li>
+      <li><b>Precio mayorista y pedido mínimo:</b> <span class="hueco">por poner (no está público)</span>.</li>
+    </ul>
+
+    <div class="rotulo">catálogo mayorista</div>
+    <h2>Lo que puedes tener</h2>
+    <p class="bajada">Marca lo que te interesa y cuántos por semana.</p>
+    <div class="productos" id="prod-cafe"></div>
+
+    <div class="rotulo">pide precios</div>
+    <h2>Quiero ser punto de venta</h2>
+    <form class="form" id="form-cafe">
+      <ul class="carrito" id="carrito-cafe"></ul>
+      <fieldset class="retiro cuatro">
+        <legend>¿Dónde está tu café?</legend>
+        <label><input type="radio" name="ciudad" value="Puerto Varas" checked><b>Puerto Varas</b></label>
+        <label><input type="radio" name="ciudad" value="Puerto Montt"><b>Puerto Montt</b></label>
+        <label><input type="radio" name="ciudad" value="Osorno"><b>Osorno</b></label>
+        <label><input type="radio" name="ciudad" value="Chiloé"><b>Chiloé</b></label>
+        <label><input type="radio" name="ciudad" value="otra"><b>Otra</b></label>
+      </fieldset>
+      <label id="otra-ciudad" hidden>¿Qué ciudad?<input type="text" name="otra" maxlength="40" placeholder="Frutillar"></label>
+      <div class="dos">
+        <label>Tu café<input type="text" name="local" required maxlength="60" placeholder="Café …"></label>
+        <label>Tu nombre<input type="text" name="nombre" autocomplete="given-name" required maxlength="40"></label>
+      </div>
+      <a class="wa" id="wa-cafe" href="#" target="_blank" rel="noopener" aria-disabled="true">Pedir precios por WhatsApp</a>
+      <p class="aviso">Te respondemos con los precios mayoristas, el mínimo y los días de despacho.</p>
+    </form>
+  </section>
+
+  <p class="pie-pide">Campo &amp; Mar · Ancud · Castro · <a href="https://instagram.com/campoymar_chiloe">@campoymar_chiloe</a><br>
+    <a href="../hoy/">la tienda</a> · El Taller de Rubén · <a href="../perfil/">su Instagram, rediseñado</a></p>
+</main>
+<button type="button" class="btn-huecos huecos-pide" id="huecos" aria-pressed="false">huecos</button>
+
+<script type="module" src="../js/pide.js?v=7"></script>
+</body>
+</html>

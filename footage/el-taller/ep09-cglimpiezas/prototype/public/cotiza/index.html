@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CG Limpiezas · cotiza con una foto</title>
+<meta name="description" content="Sácale una foto a tu alfombra, sillón o colchón y te decimos el precio al tiro.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CG Limpiezas">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://cglimpiezas.jpfraneto.com/cotiza/">
+<meta property="og:title" content="CG Limpiezas · sácale una foto, te decimos el precio">
+<meta property="og:description" content="Alfombras, sillones y colchones. Inyección-extracción, hace 35 años.">
+<meta property="og:image" content="https://cglimpiezas.jpfraneto.com/img/og/cotiza.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CG Limpiezas · sácale una foto, te decimos el precio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CG Limpiezas · sácale una foto, te decimos el precio">
+<meta name="twitter:description" content="Alfombras, sillones y colchones. Inyección-extracción, hace 35 años.">
+<meta name="twitter:image" content="https://cglimpiezas.jpfraneto.com/img/og/cotiza.jpg">
+<meta name="theme-color" content="#f5f2ec">
+<link rel="icon" href="../img/pfp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+<main class="cz">
+  <div class="cz-top">
+    <img src="../img/logo.png" alt="CG Limpiezas">
+    <a href="../">← el Instagram</a>
+  </div>
+
+  <h1>Sácale una foto.<br><em>Te decimos el precio.</em></h1>
+
+  <section id="paso-foto">
+    <label class="subir" for="foto">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+      Sacar foto
+    </label>
+    <input id="foto" type="file" accept="image/*" hidden>
+  </section>
+
+  <section id="resultado" class="tarjeta" hidden>
+    <img id="preview" class="foto-cliente" alt="Tu foto">
+    <div class="mirando" id="mirando"><span class="gota"></span>Mirando tu foto…</div>
+    <div id="lectura" hidden>
+      <p class="veo" id="veo"></p>
+      <div class="precio" id="precio"></div>
+      <p class="nota" id="nota-precio"></p>
+      <a class="wa" id="wa" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+        Agendar por WhatsApp</a>
+      <details class="ajustar">
+        <summary>¿No calza? Ajusta</summary>
+        <div class="ajustes">
+          <label>Qué es <select id="tipo"></select></label>
+          <label id="lbl-cantidad"><span id="txt-cantidad">Cantidad</span> <input id="cantidad" type="number" inputmode="numeric" min="1"></label>
+          <label id="lbl-plazas" hidden>Tamaño
+            <select id="plazas"><option value="1">1 plaza</option><option value="1.5">1½ plaza</option><option value="2">2 plazas</option><option value="king">King / Queen</option></select></label>
+          <label class="check"><input id="orina" type="checkbox"> Tiene pipí de mascota u olor</label>
+        </div>
+      </details>
+      <button type="button" class="otra" id="otra">Otra foto</button>
+    </div>
+    <p class="error" id="error" hidden></p>
+  </section>
+
+  <h2 class="trabajos-t">Lo que hemos limpiado</h2>
+  <ul class="trabajos" id="trabajos"></ul>
+</main>
+<script type="module" src="../js/cotiza.js"></script>
+</body>
+</html>

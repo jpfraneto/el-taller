@@ -1,0 +1,432 @@
+{
+ "ep": "07",
+ "name": "La vergüenza, la tecnología y la mentira",
+ "take": "IMG_4705",
+ "accent": "#D89A8E",
+ "accent_ink": "#3B2A22",
+ "zooms": [
+  2.2,
+  2.7,
+  2.4,
+  2.8,
+  2.2,
+  2.6
+ ],
+ "fixes": [
+  [
+   "cloud",
+   "Claude"
+  ],
+  [
+   "cloth",
+   "Claude"
+  ],
+  [
+   "nick.cl",
+   "NIC.cl"
+  ],
+  [
+   "árvoldelilis.cl",
+   "arboldelilith.cl"
+  ],
+  [
+   "árvoldelilit.cl",
+   "arboldelilith.cl"
+  ],
+  [
+   "árvoldelilith.cl",
+   "arboldelilith.cl"
+  ],
+  [
+   "de palabras",
+   "de palabra"
+  ],
+  [
+   "pague",
+   "pagué"
+  ],
+  [
+   "24-7",
+   "24/7"
+  ],
+  [
+   "árbol de lilith",
+   "Árbol de Lilith"
+  ],
+  [
+   "whatsapp",
+   "WhatsApp"
+  ],
+  [
+   "pili",
+   "Pili"
+  ],
+  [
+   "24 o 7",
+   "24/7"
+  ],
+  [
+   "24-7",
+   "24/7"
+  ]
+ ],
+ "reels": [
+  {
+   "id": "01-la-verguenza",
+   "act": "1/3",
+   "cta": [
+    "Sigue en 2/3:",
+    "*La tecnología →*"
+   ],
+   "pieces": [
+    {
+     "t": 36.0,
+     "say": "hoy día estuve a punto de dejar de grabar estos videos"
+    },
+    {
+     "t": 39.0,
+     "say": "llegué al punto en el que me siento ridículo"
+    },
+    {
+     "t": 60.0,
+     "say": "estoy mostrándome al mundo y poniendo mi cara al frente de este mundo de internet"
+    },
+    {
+     "t": 70.0,
+     "say": "me estoy quemando por dentro me da mucha vergüenza"
+    },
+    {
+     "t": 409.2,
+     "say": "la vergüenza y el miedo de exponerte"
+    },
+    {
+     "t": 412.8,
+     "say": "la persona que te diga que no tiene eso no es información útil"
+    },
+    {
+     "t": 416.0,
+     "say": "porque en verdad lo que está pasando es algo fundamentalmente novedoso"
+    },
+    {
+     "t": 421.2,
+     "say": "nuestras mentes no están acostumbradas a tener que hablarle a una cámara"
+    },
+    {
+     "t": 428.0,
+     "say": "a una persona que no sabemos quién es"
+    },
+    {
+     "t": 434.1,
+     "say": "yo estoy grabando esto y no sé quién va a ver esto"
+    },
+    {
+     "t": 452.0,
+     "say": "no tengo idea quién me va a juzgar"
+    },
+    {
+     "t": 457.0,
+     "say": "no tengo idea quién se va a reír"
+    },
+    {
+     "t": 461.9,
+     "say": "no tengo idea quién va a querer trabajar conmigo"
+    },
+    {
+     "t": 465.0,
+     "say": "en verdad no tengo idea de nada estoy muy perdido"
+    },
+    {
+     "t": 470.0,
+     "say": "es necesario estar en esa duda"
+    },
+    {
+     "t": 76.4,
+     "say": "pero hay que dar cara porque es lo que es"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "ME SIENTO",
+      "*RIDÍCULO*"
+     ],
+     "until": "me estoy quemando"
+    },
+    {
+     "type": "callout",
+     "at": "no es información",
+     "through": "útil",
+     "lines": [
+      "NO ES",
+      "*INFORMACIÓN ÚTIL*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "fundamentalmente",
+     "through": "novedoso",
+     "lines": [
+      "ES ALGO",
+      "*NUEVO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "hablarle a una cámara",
+     "through": "quién es",
+     "lines": [
+      "HABLARLE A",
+      "*UN DESCONOCIDO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "no tengo idea quién me va",
+     "through": "trabajar conmigo",
+     "lines": [
+      "NO TENGO",
+      "*IDEA*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "es necesario estar",
+     "through": "esa duda",
+     "lines": [
+      "ESTAR EN",
+      "*ESA DUDA*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "hay que dar cara",
+     "through": "es lo que es",
+     "lines": [
+      "HAY QUE",
+      "*DAR CARA*"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "02-la-tecnologia",
+   "act": "2/3",
+   "cta": [
+    "Sigue en 3/3:",
+    "*La mentira →*"
+   ],
+   "pieces": [
+    {
+     "t": 530.0,
+     "say": "esa sensación que tiene la gente de que la tecnología es como un enemigo es real"
+    },
+    {
+     "t": 535.0,
+     "say": "porque las personas que construyen tecnología no habían tenido la capacidad hasta hoy día de preocuparse de cualquier persona porque era caro construir tecnología"
+    },
+    {
+     "t": 519.5,
+     "say": "las herramientas que hay para llegar a ese proceso son arcaicas es burocrático y es absurdamente burocrático"
+    },
+    {
+     "t": 553.4,
+     "say": "no existía la posibilidad de decirle a una inteligencia"
+    },
+    {
+     "t": 558.0,
+     "say": "que nos implemente cualquier cosa que nosotros queremos implementar"
+    },
+    {
+     "t": 590.0,
+     "say": "y la traducción entre esa idea y la ejecución de esa idea"
+    },
+    {
+     "t": 597.0,
+     "say": "hoy día es más barata que nunca y va a seguir abaratándose"
+    },
+    {
+     "t": 1160.0,
+     "say": "esa dependencia entre yo que soy el dueño del negocio y el programador para que me actualice la página web es una dependencia que es sumamente cara"
+    },
+    {
+     "t": 1170.0,
+     "say": "y que se va a borrar"
+    },
+    {
+     "t": 1175.0,
+     "say": "porque no es necesaria ya no es necesaria"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "LA TECNOLOGÍA",
+      "*COMO ENEMIGO*"
+     ],
+     "until": "porque las personas"
+    },
+    {
+     "type": "callout",
+     "at": "era caro",
+     "through": "construir tecnología",
+     "lines": [
+      "ERA CARO",
+      "*PENSAR EN TI*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "absurdamente",
+     "through": "burocrático",
+     "lines": [
+      "ABSURDAMENTE",
+      "*BUROCRÁTICO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "más barata",
+     "through": "abaratándose",
+     "lines": [
+      "MÁS BARATO",
+      "*QUE NUNCA*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "sumamente cara",
+     "for": 2.0,
+     "lines": [
+      "DEPENDER DEL",
+      "*PROGRAMADOR*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "ya no es",
+     "through": "necesaria",
+     "lines": [
+      "YA NO ES",
+      "*NECESARIO*"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "03-la-mentira",
+   "act": "3/3",
+   "cta": [
+    "¿Cuál es tu",
+    "*llama única?*",
+    "Coméntalo abajo"
+   ],
+   "pieces": [
+    {
+     "t": 1305.0,
+     "say": "soy fundador soy empresario o soy emprendedor y tengo que estar 24-7 preocupado de mi negocio porque si no no anda"
+    },
+    {
+     "t": 1313.5,
+     "say": "yo creo que nos consume y yo creo que es una mentira que nos contaron para no ayudarnos a creernos el cuento de que podemos hacerla por nuestra cuenta"
+    },
+    {
+     "t": 1322.0,
+     "say": "todos tenemos algo que agregar todos tenemos algo que aportar todos tenemos una llama única que nos hace ser quienes somos"
+    },
+    {
+     "t": 1330.0,
+     "say": "y poder participar de la economía desde ahí a partir de tener un negocio chico que tiene una oferta concreta es valioso"
+    },
+    {
+     "t": 975.0,
+     "say": "que la gente va a comprar porque sabe lo que está comprando un círculo de mujeres en 2 semanas que cuesta 10 lucas y que hay 10 cupos"
+    },
+    {
+     "t": 988.0,
+     "say": "puedo pagar ahí"
+    },
+    {
+     "t": 992.0,
+     "say": "no tengo que preguntar esto no tengo que preguntar otro porque la confianza se construye a través del contenido"
+    },
+    {
+     "t": 833.3,
+     "say": "y en la medida en la que hacemos que nuestra oferta sea más concreta más clara llamamos esa fuerza con más claridad"
+    }
+   ],
+   "graphics": [
+    {
+     "type": "title",
+     "lines": [
+      "24/7 ES UNA",
+      "*MENTIRA*"
+     ],
+     "until": "yo creo que nos consume"
+    },
+    {
+     "type": "callout",
+     "at": "es una mentira",
+     "through": "nos contaron",
+     "lines": [
+      "UNA MENTIRA",
+      "*QUE NOS CONTARON*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "una llama",
+     "through": "quienes somos",
+     "lines": [
+      "UNA LLAMA",
+      "*ÚNICA*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "un negocio chico",
+     "through": "es valioso",
+     "lines": [
+      "UN NEGOCIO CHICO",
+      "*ES VALIOSO*"
+     ]
+    },
+    {
+     "type": "stamp",
+     "at": "10 lucas",
+     "for": 1.8,
+     "text": "$10.000 · 10 CUPOS"
+    },
+    {
+     "type": "callout",
+     "at": "puedo pagar",
+     "through": "pagar ahí",
+     "lines": [
+      "PAGAS",
+      "*AHÍ MISMO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "la confianza",
+     "through": "del contenido",
+     "lines": [
+      "LA CONFIANZA",
+      "*ES EL CONTENIDO*"
+     ]
+    },
+    {
+     "type": "callout",
+     "at": "llamamos esa fuerza",
+     "through": "claridad",
+     "lines": [
+      "MÁS CLARO,",
+      "*MÁS FUERZA*"
+     ]
+    }
+   ]
+  }
+ ],
+ "endcard": "EPISODIO 7"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cglimpiezas-app",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  // jpfraneto.com is on Cloudflare: the Worker answers on this subdomain directly.
+  "routes": [{ "pattern": "cglimpiezas.jpfraneto.com", "custom_domain": true }],
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*", "/mp/*"] },
+  // Backup photo reader if OpenRouter fails (Cloudflare's own vision model, no key needed).
+  "ai": { "binding": "AI" },
+  // The per-IP daily counter for photo reads, "casos" (CG's prices for its public jobs) and the quotes (with their photo).
+  "kv_namespaces": [{ "binding": "COTIZA", "id": "0b4ae60d3dc04ab68c572bd28aa6c471" }],
+  "vars": {
+    // Photo reads per IP per day.
+    "LIMITE_DIARIO": "30",
+    // Where "WhatsApp" goes. While it's a demo (CG hasn't said yes), El Taller's WhatsApp: the same number serves every
+    // episode, and each message says which demo it came from. When CG approves: their number (56992308805), DEMO "".
+    "WA_NUMERO": "56948455809",
+    "DEMO": "CG Limpiezas",
+    // CG's own WhatsApp (their bio): when WA_NUMERO is this one, the tutorial marks "tu WhatsApp" as done.
+    "WA_CG": "56992308805"
+  }
+  // Secrets (npx wrangler secret put NAME; local dev: .dev.vars):
+  //   OPENROUTER_API_KEY reads the photo (google/gemini-2.5-flash-lite); key in footage/el-taller/.openrouter_key
+  //   CG_CLAVE           the key in Fran's private link /tus-casos/?k=… (prices of their public jobs); in .dev.vars
+  //   MP_ACCESS_TOKEN    CG's Mercado Pago Access Token (APP_USR-…): payments land in CG's account. Unset = test payments.
+  //   MP_WEBHOOK_SECRET  the secret of the webhook (Mercado Pago → Tus integraciones → Webhooks → /api/mp, event "Order")
+  // Var PUBLIC_URL (optional): the domain Mercado Pago returns to, once CG has its own (e.g. https://cglimpiezas.cl).
+}
